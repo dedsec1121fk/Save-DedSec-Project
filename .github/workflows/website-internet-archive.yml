@@ -13,7 +13,7 @@ on:
     - cron: "17 03 * * 0"
 
 permissions:
-  contents: write   # required for auto-push
+  contents: read
 
 concurrency:
   group: dedsec-website-internet-archive
@@ -22,16 +22,15 @@ concurrency:
 env:
   SITE_URL: https://ded-sec.space
   IA_ITEM_IDENTIFIER: dedsec1121fk-dedsec-website-snapshots
-  # HARDCODED credentials – will be auto‑removed after first run
-  IA_ACCESS_KEY: 11ddlmcHs1j4ytdc
-  IA_SECRET_KEY: pcdSnp7B0m3W5yqB
 
 jobs:
   archive:
-    # Skip runs triggered by our own auto‑commit (contains [skip ci])
-    if: (github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)) && !contains(github.event.head_commit.message, '[skip ci]')
+    if: github.event_name != 'push' || github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     runs-on: ubuntu-latest
     timeout-minutes: 350
+    env:
+      IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
+      IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
 
     steps:
       - name: Check out website repository
@@ -48,7 +47,7 @@ jobs:
         shell: bash
         run: |
           if [[ -z "${IA_ACCESS_KEY:-}" || -z "${IA_SECRET_KEY:-}" ]]; then
-            echo "::error::Add IA_ACCESS_KEY and IA_SECRET_KEY in Settings > Secrets and variables > Actions."
+            echo "::error::Add Internet_Archive_1 (access key) and Internet_Archive_2 (secret key) in Settings > Secrets and variables > Actions."
             exit 1
           fi
 
@@ -325,30 +324,3 @@ jobs:
             --header "x-archive-queue-derive:0" \
             --upload-file "$report_name" \
             "https://s3.us.archive.org/${IA_ITEM_IDENTIFIER}/${report_name}"
-
-      # ----- AUTO‑UPDATE: remove hardcoded credentials after first run -----
-      - name: Remove hardcoded credentials and self‑update (first run only)
-        if: secrets.IA_ACCESS_KEY == '' && secrets.IA_SECRET_KEY == ''
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        shell: bash
-        run: |
-          set -euo pipefail
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-
-          # Replace hardcoded values with secret references in both workflow files
-          for file in .github/workflows/website-internet-archive.yml .github/workflows/project-internet-archive.yml; do
-            if [[ -f "$file" ]]; then
-              # Remove the hardcoded lines and replace with secret syntax
-              sed -i '/IA_ACCESS_KEY:/s/.*/  IA_ACCESS_KEY: \${{ secrets.IA_ACCESS_KEY }}/' "$file"
-              sed -i '/IA_SECRET_KEY:/s/.*/  IA_SECRET_KEY: \${{ secrets.IA_SECRET_KEY }}/' "$file"
-            fi
-          done
-
-          # Commit and push if there are changes
-          if ! git diff --quiet; then
-            git add .github/workflows/*.yml
-            git commit -m "Remove hardcoded IA credentials [skip ci]"
-            git push origin HEAD:${GITHUB_REF_NAME}
-          fi
