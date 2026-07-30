@@ -1,7 +1,7 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "generated_at_utc": null,
-  "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This GitHub file is the synchronized combined copy.",
-  "resume_behavior": "Every confirmed file upload or deletion is checkpointed. A later run skips completed files and retries only unfinished work.",
+  "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This file is the synchronized combined copy.",
+  "resume_behavior": "Internet Archive files checkpoint after every successful operation. Wayback uses a separate serial resumable queue.",
   "targets": {}
 }

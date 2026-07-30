@@ -171,11 +171,7 @@ jobs:
           if event_name == "workflow_dispatch":
               group_name = manual_group
               if manual_group == "all":
-                  targets = (
-                      dedsec_targets
-                      + website_targets
-                      + other_targets
-                  )
+                  targets = dedsec_targets + website_targets + other_targets
               elif manual_group == "dedsec-project":
                   targets = dedsec_targets
               elif manual_group == "websites":
@@ -183,9 +179,7 @@ jobs:
               elif manual_group == "other-projects":
                   targets = other_targets
               else:
-                  raise SystemExit(
-                      f"Unknown manual group: {manual_group}"
-                  )
+                  raise SystemExit(f"Unknown manual group: {manual_group}")
 
           elif schedule == "0 8 * * 0,3,5":
               group_name = "dedsec-project"
@@ -207,38 +201,25 @@ jobs:
 
           matrix = {"include": targets}
 
-          with open(
-              os.environ["GITHUB_OUTPUT"],
-              "a",
-              encoding="utf-8",
-          ) as output:
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
               output.write(f"target_count={len(targets)}\n")
               output.write(
                   "target_matrix="
-                  + json.dumps(
-                      matrix,
-                      separators=(",", ":"),
-                  )
+                  + json.dumps(matrix, separators=(",", ":"))
                   + "\n"
               )
               output.write(
                   "selected_targets="
-                  + json.dumps(
-                      targets,
-                      separators=(",", ":"),
-                  )
+                  + json.dumps(targets, separators=(",", ":"))
                   + "\n"
               )
               output.write(f"group_name={group_name}\n")
 
-          print(
-              f"Selected {len(targets)} targets "
-              f"for group {group_name!r}."
-          )
+          print(f"Selected {len(targets)} targets for group {group_name!r}.")
           PY
 
-  archive-targets:
-    name: Sync ${{ matrix.title }}
+  sync-targets:
+    name: Mirror ${{ matrix.title }}
     needs: prepare
     if: needs.prepare.outputs.target_count != '0'
     runs-on: ubuntu-latest
@@ -291,12 +272,12 @@ jobs:
           set -euo pipefail
 
           [[ -n "${IA_ACCESS_KEY:-}" ]] || {
-            echo "::error::Missing Internet_Archive_1. It must contain the Internet Archive S3 access key."
+            echo "::error::Missing Internet_Archive_1."
             exit 1
           }
 
           [[ -n "${IA_SECRET_KEY:-}" ]] || {
-            echo "::error::Missing Internet_Archive_2. It must contain the Internet Archive S3 secret key."
+            echo "::error::Missing Internet_Archive_2."
             exit 1
           }
 
@@ -317,19 +298,17 @@ jobs:
             TARGET_SLUG="$TARGET_SLUG" python - <<'PY'
           import hashlib
           import os
-          import time
 
           slug = os.environ["TARGET_SLUG"]
           seed = int(hashlib.sha256(slug.encode()).hexdigest()[:8], 16)
-          # Stable spread between targets plus a small time-dependent component.
-          print(5 + (seed % 41) + (int(time.time()) % 7))
+          print(5 + (seed % 36))
           PY
           )"
 
-          echo "Waiting ${delay}s before contacting Internet Archive."
+          echo "Waiting ${delay}s before the first Internet Archive request."
           sleep "$delay"
 
-      - name: Incrementally synchronize Internet Archive and Wayback
+      - name: Incrementally synchronize Internet Archive files
         id: sync
         shell: bash
         env:
@@ -346,7 +325,6 @@ jobs:
           import os
           import pathlib
           import random
-          import shutil
           import stat
           import subprocess
           import tempfile
@@ -358,20 +336,17 @@ jobs:
           from datetime import datetime, timezone
           from zoneinfo import ZoneInfo
 
-          SCHEMA_VERSION = 4
+          SCHEMA_VERSION = 5
           SOURCE_ROOT = pathlib.Path("source")
-          CONTROLLER_ROOT = pathlib.Path("controller")
           CONTROLLER_STATE_PATH = (
-              CONTROLLER_ROOT
+              pathlib.Path("controller")
               / ".github"
               / "workflows"
               / "update.json"
           )
           LOCAL_STATE_DIR = pathlib.Path("archive-state")
-          LOCAL_STATE_PATH = (
-              LOCAL_STATE_DIR
-              / f"{os.environ['TARGET_SLUG']}.json"
-          )
+          LOCAL_STATE_DIR.mkdir(parents=True, exist_ok=True)
+          LOCAL_STATE_PATH = LOCAL_STATE_DIR / f"{os.environ['TARGET_SLUG']}.json"
           IA_STATE_NAME = "archive-state/update.json"
 
           REPOSITORY = os.environ["TARGET_REPOSITORY"]
@@ -380,12 +355,9 @@ jobs:
           MARKER = os.environ["TARGET_MARKER"]
           KIND = os.environ["TARGET_KIND"]
           SITES = [
-              site.strip().rstrip("/")
-              for site in os.environ.get(
-                  "TARGET_SITES",
-                  "",
-              ).split("|")
-              if site.strip()
+              item.strip().rstrip("/")
+              for item in os.environ.get("TARGET_SITES", "").split("|")
+              if item.strip()
           ]
           WINDOW = os.environ["TARGET_WINDOW"]
           ITEM = os.environ["IA_ITEM_IDENTIFIER"]
@@ -395,88 +367,60 @@ jobs:
           RUN_ATTEMPT = os.environ["RUN_ATTEMPT"]
           LEGACY_PREFIXES = tuple(
               prefix.strip()
-              for prefix in os.environ.get(
-                  "LEGACY_PREFIXES",
-                  "",
-              ).split(",")
+              for prefix in os.environ.get("LEGACY_PREFIXES", "").split(",")
               if prefix.strip()
           )
 
-          LOCAL_STATE_DIR.mkdir(
-              parents=True,
-              exist_ok=True,
-          )
-          CONTROLLER_STATE_PATH.parent.mkdir(
-              parents=True,
-              exist_ok=True,
-          )
+          RETRYABLE_HTTP = {408, 425, 429, 500, 502, 503, 504}
 
           def utc_now() -> str:
-              return datetime.now(
-                  timezone.utc
-              ).strftime("%Y-%m-%dT%H:%M:%SZ")
+              return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
           def greece_now() -> str:
               return datetime.now(
                   ZoneInfo("Europe/Athens")
               ).strftime("%Y-%m-%d %H:%M:%S %Z")
 
+          def delay_for(attempt: int, retry_after: str | None = None) -> int:
+              if retry_after and retry_after.isdigit():
+                  return min(300, max(1, int(retry_after)))
+              return min(120, 10 * (2 ** min(attempt - 1, 4)))
+
           def sha256_file(path: pathlib.Path) -> str:
               digest = hashlib.sha256()
               with path.open("rb") as stream:
-                  for chunk in iter(
-                      lambda: stream.read(
-                          1024 * 1024
-                      ),
-                      b"",
-                  ):
+                  for chunk in iter(lambda: stream.read(1024 * 1024), b""):
                       digest.update(chunk)
               return digest.hexdigest()
 
-          def remote_url(
-              host: str,
-              item: str,
-              remote_name: str,
-          ) -> str:
+          def remote_url(host: str, remote_name: str) -> str:
               return (
                   host.rstrip("/")
                   + "/"
-                  + urllib.parse.quote(
-                      item,
-                      safe="",
-                  )
+                  + urllib.parse.quote(ITEM, safe="")
                   + "/"
-                  + urllib.parse.quote(
-                      remote_name,
-                      safe="/~._-()",
-                  )
+                  + urllib.parse.quote(remote_name, safe="/~._-()")
               )
 
-          def run_curl(
-              arguments: list[str],
-              *,
-              retries: int = 6,
-          ) -> None:
-              command = [
-                  "curl",
-                  "--silent",
-                  "--show-error",
-                  "--fail-with-body",
-                  "--location",
-                  "--retry",
-                  str(retries),
-                  "--retry-all-errors",
-                  "--retry-delay",
-                  "10",
-                  "--retry-max-time",
-                  "1200",
-                  "--connect-timeout",
-                  "45",
-                  *arguments,
-              ]
-
+          def run_curl(arguments: list[str]) -> None:
               subprocess.run(
-                  command,
+                  [
+                      "curl",
+                      "--silent",
+                      "--show-error",
+                      "--fail-with-body",
+                      "--location",
+                      "--retry",
+                      "8",
+                      "--retry-all-errors",
+                      "--retry-delay",
+                      "10",
+                      "--retry-max-time",
+                      "1200",
+                      "--connect-timeout",
+                      "45",
+                      *arguments,
+                  ],
                   check=True,
               )
 
@@ -484,14 +428,11 @@ jobs:
               local_path: pathlib.Path,
               remote_name: str,
               *,
-              metadata: bool = False,
+              include_item_metadata: bool = False,
           ) -> None:
               headers = [
                   "--header",
-                  (
-                      "Authorization: LOW "
-                      f"{ACCESS_KEY}:{SECRET_KEY}"
-                  ),
+                  f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
                   "--header",
                   "x-amz-auto-make-bucket:1",
                   "--header",
@@ -502,7 +443,7 @@ jobs:
                   "x-archive-queue-derive:0",
               ]
 
-              if metadata:
+              if include_item_metadata:
                   headers.extend([
                       "--header",
                       f"x-archive-meta-title:{TITLE}",
@@ -513,14 +454,14 @@ jobs:
                       "--header",
                       (
                           "x-archive-meta-description:"
-                          "Incrementally synchronized current files "
-                          f"and Git history for {REPOSITORY}."
+                          "Incrementally synchronized current files and "
+                          f"Git history for {REPOSITORY}."
                       ),
                       "--header",
                       (
                           "x-archive-meta-subject:"
-                          "DedSec Project; source code; "
-                          "Git history; software preservation"
+                          "DedSec Project; source code; Git history; "
+                          "software preservation"
                       ),
                   ])
 
@@ -528,133 +469,76 @@ jobs:
                   *headers,
                   "--upload-file",
                   str(local_path),
-                  remote_url(
-                      "https://s3.us.archive.org",
-                      ITEM,
-                      remote_name,
-                  ),
+                  remote_url("https://s3.us.archive.org", remote_name),
               ])
 
-          def delete_remote(
-              remote_name: str,
-          ) -> None:
-              url = remote_url(
-                  "https://s3.us.archive.org",
-                  ITEM,
-                  remote_name,
-              )
-
-              command = [
-                  "curl",
-                  "--silent",
-                  "--show-error",
-                  "--location",
-                  "--request",
-                  "DELETE",
-                  "--retry",
-                  "6",
-                  "--retry-all-errors",
-                  "--retry-delay",
-                  "10",
-                  "--header",
-                  (
-                      "Authorization: LOW "
-                      f"{ACCESS_KEY}:{SECRET_KEY}"
-                  ),
-                  "--header",
-                  "x-archive-cascade-delete:1",
-                  "--header",
-                  "x-archive-keep-old-version:0",
-                  "--write-out",
-                  "%{http_code}",
-                  "--output",
-                  "delete-response.txt",
-                  url,
-              ]
-
+          def delete_remote(remote_name: str) -> None:
+              response_path = pathlib.Path("delete-response.txt")
               result = subprocess.run(
-                  command,
+                  [
+                      "curl",
+                      "--silent",
+                      "--show-error",
+                      "--location",
+                      "--request",
+                      "DELETE",
+                      "--retry",
+                      "8",
+                      "--retry-all-errors",
+                      "--retry-delay",
+                      "10",
+                      "--retry-max-time",
+                      "1200",
+                      "--header",
+                      f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
+                      "--header",
+                      "x-archive-cascade-delete:1",
+                      "--header",
+                      "x-archive-keep-old-version:0",
+                      "--write-out",
+                      "%{http_code}",
+                      "--output",
+                      str(response_path),
+                      remote_url("https://s3.us.archive.org", remote_name),
+                  ],
                   check=True,
                   text=True,
                   capture_output=True,
               )
 
               status_code = result.stdout.strip()
-              if status_code not in {
-                  "200",
-                  "202",
-                  "204",
-                  "404",
-              }:
-                  body = pathlib.Path(
-                      "delete-response.txt"
-                  ).read_text(
+              if status_code not in {"200", "202", "204", "404"}:
+                  body = response_path.read_text(
                       encoding="utf-8",
                       errors="replace",
                   )
                   raise RuntimeError(
-                      f"Delete failed for "
-                      f"{remote_name!r}: "
-                      f"HTTP {status_code}: "
-                      f"{body[:1000]}"
+                      f"Delete failed for {remote_name!r}: "
+                      f"HTTP {status_code}: {body[:1000]}"
                   )
-
-          RETRYABLE_HTTP_CODES = {
-              408,
-              425,
-              429,
-              500,
-              502,
-              503,
-              504,
-          }
-
-          def retry_delay(
-              attempt: int,
-              retry_after: str | None = None,
-          ) -> int:
-              if (
-                  retry_after
-                  and retry_after.isdigit()
-              ):
-                  return min(
-                      300,
-                      max(1, int(retry_after)),
-                  )
-
-              # 10, 20, 40, 80, then 120 seconds.
-              return min(
-                  120,
-                  10 * (2 ** min(attempt - 1, 4)),
-              )
 
           def get_json_with_retry(
               url_factory,
               *,
               label: str,
               not_found,
-              attempts: int = 12,
+              attempts: int = 8,
+              tolerate_unavailable: bool = False,
           ):
               last_error: BaseException | None = None
 
               for attempt in range(1, attempts + 1):
-                  url = url_factory()
                   request = urllib.request.Request(
-                      url,
+                      url_factory(),
                       headers={
                           "Accept": "application/json",
                           "Cache-Control": "no-cache",
-                          "User-Agent": (
-                              "DedSec-Incremental-Archive/4.1"
-                          ),
+                          "User-Agent": "DedSec-Archive-Sync/5.0",
                       },
                   )
 
                   try:
-                      with urllib.request.urlopen(
-                          request,
-                          timeout=120,
-                      ) as response:
+                      with urllib.request.urlopen(request, timeout=120) as response:
                           return json.load(response)
 
                   except urllib.error.HTTPError as error:
@@ -662,23 +546,16 @@ jobs:
                           return not_found
 
                       last_error = error
-                      if (
-                          error.code
-                          not in RETRYABLE_HTTP_CODES
-                      ):
+                      if error.code not in RETRYABLE_HTTP:
                           raise
 
-                      delay = retry_delay(
+                      delay = delay_for(
                           attempt,
-                          error.headers.get(
-                              "Retry-After"
-                          ),
+                          error.headers.get("Retry-After"),
                       )
                       print(
-                          f"{label}: Internet Archive "
-                          f"returned HTTP {error.code}; "
-                          f"retrying {attempt}/{attempts} "
-                          f"in {delay}s."
+                          f"{label}: HTTP {error.code}; "
+                          f"retry {attempt}/{attempts} in {delay}s."
                       )
                       time.sleep(delay)
 
@@ -689,79 +566,70 @@ jobs:
                       UnicodeDecodeError,
                   ) as error:
                       last_error = error
-                      delay = retry_delay(attempt)
+                      delay = delay_for(attempt)
                       print(
-                          f"{label}: temporary read "
-                          f"failure {error!r}; retrying "
-                          f"{attempt}/{attempts} "
-                          f"in {delay}s."
+                          f"{label}: temporary error {error!r}; "
+                          f"retry {attempt}/{attempts} in {delay}s."
                       )
                       time.sleep(delay)
 
+              if tolerate_unavailable:
+                  print(
+                      f"::warning title={label} unavailable::"
+                      f"Continuing safely without it: {last_error!r}"
+                  )
+                  return not_found
+
               raise RuntimeError(
-                  f"{label} remained unavailable after "
-                  f"{attempts} attempts: {last_error!r}"
+                  f"{label} remained unavailable after {attempts} attempts: "
+                  f"{last_error!r}"
               )
 
-          def download_json(
-              remote_name: str,
-          ) -> dict | None:
+          def download_remote_state() -> dict | None:
               def url_factory() -> str:
-                  base = remote_url(
-                      "https://archive.org/download",
-                      ITEM,
-                      remote_name,
-                  )
                   return (
-                      f"{base}?state_read="
-                      f"{int(time.time())}-"
-                      f"{random.random()}"
+                      remote_url("https://archive.org/download", IA_STATE_NAME)
+                      + f"?state_read={int(time.time())}-{random.random()}"
                   )
 
               payload = get_json_with_retry(
                   url_factory,
-                  label=(
-                      f"Checkpoint download for {ITEM}"
-                  ),
+                  label=f"Checkpoint download for {ITEM}",
                   not_found=None,
+                  attempts=6,
+                  tolerate_unavailable=True,
               )
+              return payload if isinstance(payload, dict) else None
 
-              return (
-                  payload
-                  if isinstance(payload, dict)
-                  else None
-              )
-
-          def fetch_metadata() -> dict[str, dict]:
-              encoded_item = urllib.parse.quote(
-                  ITEM,
-                  safe="",
-              )
+          def fetch_metadata() -> tuple[dict[str, dict], bool]:
+              encoded_item = urllib.parse.quote(ITEM, safe="")
 
               def url_factory() -> str:
                   return (
-                      f"https://archive.org/metadata/"
-                      f"{encoded_item}"
-                      f"?state_check={int(time.time())}"
-                      f"-{random.random()}"
+                      f"https://archive.org/metadata/{encoded_item}"
+                      f"?metadata_read={int(time.time())}-{random.random()}"
                   )
 
               payload = get_json_with_retry(
                   url_factory,
                   label=f"Metadata read for {ITEM}",
                   not_found={},
+                  attempts=8,
+                  tolerate_unavailable=True,
               )
 
-              files = {}
+              if not isinstance(payload, dict) or "files" not in payload:
+                  return {}, False
+
+              files: dict[str, dict] = {}
               for entry in payload.get("files", []):
                   if not isinstance(entry, dict):
                       continue
                   name = entry.get("name")
-                  if not isinstance(name, str):
-                      continue
-                  files[name] = entry
+                  if isinstance(name, str):
+                      files[name] = entry
 
-              return files
+              return files, True
 
           def default_state() -> dict:
               return {
@@ -780,6 +648,14 @@ jobs:
                   "files": {},
                   "directories": [],
                   "git_bundle": {},
+                  "wayback": {
+                      "pending": [],
+                      "completed": 0,
+                      "permanent_failures": 0,
+                      "recent_failures": [],
+                      "initial_queue_created": False,
+                      "last_processed_at_utc": None,
+                  },
                   "last_completed_commit": None,
                   "last_completed_at_utc": None,
                   "last_completed_at_greece": None,
@@ -787,55 +663,72 @@ jobs:
                   "current_run": {},
               }
 
-          def load_controller_fallback() -> dict | None:
+          def load_controller_state() -> dict | None:
               if not CONTROLLER_STATE_PATH.exists():
                   return None
 
               try:
                   aggregate = json.loads(
-                      CONTROLLER_STATE_PATH.read_text(
-                          encoding="utf-8"
-                      )
+                      CONTROLLER_STATE_PATH.read_text(encoding="utf-8")
                   )
-              except (
-                  OSError,
-                  json.JSONDecodeError,
-              ):
+              except (OSError, json.JSONDecodeError):
                   return None
 
-              target = (
-                  aggregate.get(
-                      "targets",
-                      {},
-                  ).get(SLUG)
+              candidate = aggregate.get("targets", {}).get(SLUG)
+              return candidate if isinstance(candidate, dict) else None
+
+          remote_state = download_remote_state()
+          controller_state = load_controller_state()
+
+          if isinstance(remote_state, dict):
+              state = remote_state
+              state_source = "internet_archive"
+          elif isinstance(controller_state, dict):
+              state = controller_state
+              state_source = "github_update_json"
+              print(
+                  "Internet Archive checkpoint was unavailable; "
+                  "resuming from .github/workflows/update.json."
+              )
+          else:
+              state = default_state()
+              state_source = "new_initial_sync"
+              print(
+                  "No usable checkpoint exists. "
+                  "Starting a safe initial synchronization."
               )
 
-              if isinstance(target, dict):
-                  return target
-
-              return None
-
-          state = download_json(IA_STATE_NAME)
-          if not isinstance(state, dict):
-              state = load_controller_fallback()
-
-          if (
-              not isinstance(state, dict)
-              or state.get("schema_version")
-              != SCHEMA_VERSION
-          ):
-              state = default_state()
+          if state.get("schema_version") != SCHEMA_VERSION:
+              old_target = state.get("target", {})
+              old_files = state.get("files", {})
+              old_directories = state.get("directories", [])
+              old_bundle = state.get("git_bundle", {})
+              old_wayback = state.get("wayback", {})
+              migrated = default_state()
+              if isinstance(old_files, dict):
+                  migrated["files"] = old_files
+              if isinstance(old_directories, list):
+                  migrated["directories"] = old_directories
+              if isinstance(old_bundle, dict):
+                  migrated["git_bundle"] = old_bundle
+              if isinstance(old_wayback, dict):
+                  migrated["wayback"].update(old_wayback)
+              state = migrated
 
           state["target"] = default_state()["target"]
           state.setdefault("files", {})
           state.setdefault("directories", [])
           state.setdefault("git_bundle", {})
-          state.setdefault(
+          state.setdefault("wayback", default_state()["wayback"])
+          for key, value in default_state()["wayback"].items():
+              state["wayback"].setdefault(key, value)
+
+          first_item_write = not state.get("files") and not state.get(
               "initial_sync_completed",
               False,
           )
 
-          def write_local_and_controller_state() -> None:
+          def write_local_state() -> None:
               LOCAL_STATE_PATH.write_text(
                   json.dumps(
                       state,
@@ -847,73 +740,17 @@ jobs:
                   encoding="utf-8",
               )
 
-              try:
-                  if CONTROLLER_STATE_PATH.exists():
-                      aggregate = json.loads(
-                          CONTROLLER_STATE_PATH.read_text(
-                              encoding="utf-8"
-                          )
-                      )
-                  else:
-                      aggregate = {
-                          "schema_version": SCHEMA_VERSION,
-                          "generated_at_utc": None,
-                          "targets": {},
-                      }
-              except (
-                  OSError,
-                  json.JSONDecodeError,
-              ):
-                  aggregate = {
-                      "schema_version": SCHEMA_VERSION,
-                      "generated_at_utc": None,
-                      "targets": {},
-                  }
-
-              aggregate["schema_version"] = (
-                  SCHEMA_VERSION
-              )
-              aggregate["generated_at_utc"] = utc_now()
-              aggregate.setdefault(
-                  "targets",
-                  {},
-              )[SLUG] = state
-
-              CONTROLLER_STATE_PATH.write_text(
-                  json.dumps(
-                      aggregate,
-                      indent=2,
-                      ensure_ascii=False,
-                      sort_keys=True,
-                  )
-                  + "\n",
-                  encoding="utf-8",
-              )
-
-          first_state_upload = (
-              not state.get("files")
-              and not state.get(
-                  "initial_sync_completed",
-                  False,
-              )
-          )
-
           def persist_state() -> None:
-              global first_state_upload
-
+              nonlocal_first = False
               state["state_updated_at_utc"] = utc_now()
-              write_local_and_controller_state()
+              write_local_state()
               upload_file(
                   LOCAL_STATE_PATH,
                   IA_STATE_NAME,
-                  metadata=first_state_upload,
+                  include_item_metadata=first_item_write,
               )
-              first_state_upload = False
 
-          def inventory_working_tree() -> tuple[
-              dict[str, dict],
-              list[str],
-          ]:
+          def inventory_working_tree() -> tuple[dict[str, dict], list[str]]:
               files: dict[str, dict] = {}
               directories: set[str] = set()
 
@@ -923,54 +760,36 @@ jobs:
                   followlinks=False,
               ):
                   directory_names[:] = sorted(
-                      name
-                      for name in directory_names
-                      if name != ".git"
+                      name for name in directory_names if name != ".git"
                   )
 
                   root_path = pathlib.Path(root)
-                  relative_root = root_path.relative_to(
-                      SOURCE_ROOT
-                  )
-
+                  relative_root = root_path.relative_to(SOURCE_ROOT)
                   if str(relative_root) != ".":
-                      directories.add(
-                          relative_root.as_posix()
-                      )
+                      directories.add(relative_root.as_posix())
 
                   for name in sorted(filenames):
                       path = root_path / name
-                      relative = path.relative_to(
-                          SOURCE_ROOT
-                      ).as_posix()
+                      relative = path.relative_to(SOURCE_ROOT).as_posix()
 
                       if (
                           relative == ".git"
-                          or relative.startswith(
-                              ".git/"
-                          )
+                          or relative.startswith(".git/")
                           or "/.git/" in relative
                       ):
                           continue
 
                       if path.is_symlink():
                           target = os.readlink(path)
-                          payload = (
-                              "SYMLINK\0" + target
-                          ).encode("utf-8")
                           digest = hashlib.sha256(
-                              payload
+                              ("SYMLINK\0" + target).encode("utf-8")
                           ).hexdigest()
                           files[relative] = {
                               "sha256": digest,
-                              "size": len(
-                                  target.encode("utf-8")
-                              ),
+                              "size": len(target.encode("utf-8")),
                               "type": "symlink",
                               "link_target": target,
-                              "remote_name": (
-                                  "mirror/" + relative
-                              ),
+                              "remote_name": "mirror/" + relative,
                           }
                           continue
 
@@ -986,27 +805,17 @@ jobs:
                           "sha256": sha256_file(path),
                           "size": path.stat().st_size,
                           "type": "file",
-                          "executable": bool(
-                              mode & stat.S_IXUSR
-                          ),
-                          "remote_name": (
-                              "mirror/" + relative
-                          ),
+                          "executable": bool(mode & stat.S_IXUSR),
+                          "remote_name": "mirror/" + relative,
                       }
 
               return files, sorted(directories)
 
-          def local_payload_for(
+          def local_payload(
               relative_path: str,
               metadata: dict,
           ) -> tuple[pathlib.Path, pathlib.Path | None]:
-              source_path = (
-                  SOURCE_ROOT
-                  / pathlib.PurePosixPath(
-                      relative_path
-                  )
-              )
-
+              source_path = SOURCE_ROOT / pathlib.PurePosixPath(relative_path)
               if metadata["type"] == "file":
                   return source_path, None
 
@@ -1015,32 +824,19 @@ jobs:
                   suffix=".txt",
                   delete=False,
               )
-              temporary_path = pathlib.Path(
-                  temporary.name
-              )
-
+              temporary_path = pathlib.Path(temporary.name)
               with temporary:
-                  temporary.write(
-                      metadata[
-                          "link_target"
-                      ].encode("utf-8")
-                  )
-
+                  temporary.write(metadata["link_target"].encode("utf-8"))
               return temporary_path, temporary_path
 
           def build_wayback_urls(
-              changed_paths: list[str],
+              paths: list[str],
               *,
-              initial: bool,
+              include_all: bool,
               commit: str,
           ) -> list[str]:
-              github = (
-                  f"https://github.com/{REPOSITORY}"
-              )
-              raw_github = (
-                  "https://raw.githubusercontent.com/"
-                  f"{REPOSITORY}"
-              )
+              github = f"https://github.com/{REPOSITORY}"
+              raw_github = f"https://raw.githubusercontent.com/{REPOSITORY}"
 
               urls = {
                   github,
@@ -1053,17 +849,10 @@ jobs:
                   f"{github}/archive/{commit}.tar.gz",
               }
 
-              paths = (
-                  sorted(current_files)
-                  if initial
-                  else sorted(changed_paths)
-              )
+              selected_paths = sorted(current_files) if include_all else sorted(paths)
 
-              public_excluded_prefixes = (
-                  ".git/",
-                  ".github/",
-              )
-              public_excluded_names = {
+              excluded_prefixes = (".git/", ".github/")
+              excluded_names = {
                   ".gitignore",
                   ".gitattributes",
                   ".nojekyll",
@@ -1080,470 +869,201 @@ jobs:
                   for site in SITES:
                       urls.add(site + "/")
 
-              for relative in paths:
-                  encoded = urllib.parse.quote(
-                      relative,
-                      safe="/~._-()",
-                  )
-
-                  urls.add(
-                      f"{github}/blob/"
-                      f"{commit}/{encoded}"
-                  )
-                  urls.add(
-                      f"{raw_github}/"
-                      f"{commit}/{encoded}"
-                  )
+              for relative in selected_paths:
+                  encoded = urllib.parse.quote(relative, safe="/~._-()")
+                  urls.add(f"{github}/blob/{commit}/{encoded}")
+                  urls.add(f"{raw_github}/{commit}/{encoded}")
 
                   if KIND != "website":
                       continue
 
                   if (
-                      relative.startswith(
-                          public_excluded_prefixes
-                      )
-                      or relative in public_excluded_names
+                      relative.startswith(excluded_prefixes)
+                      or relative in excluded_names
                       or "/." in relative
                   ):
                       continue
 
                   for site in SITES:
-                      urls.add(
-                          f"{site}/{encoded}"
-                      )
-
+                      urls.add(f"{site}/{encoded}")
                       lower = relative.lower()
                       if lower == "index.html":
                           urls.add(site + "/")
-                      elif lower.endswith(
-                          "/index.html"
-                      ):
-                          urls.add(
-                              f"{site}/"
-                              f"{encoded[:-len('index.html')]}"
-                          )
+                      elif lower.endswith("/index.html"):
+                          urls.add(f"{site}/{encoded[:-len('index.html')]}")
 
               return sorted(urls)
 
-          def submit_wayback(
-              urls: list[str],
-          ) -> dict:
-              accepted = []
-              failures = []
-
-              for number, url in enumerate(
-                  urls,
-                  start=1,
-              ):
-                  payload = urllib.parse.urlencode({
-                      "url": url,
-                      "capture_outlinks": "0",
-                      "capture_screenshot": "0",
-                      "skip_first_archive": "0",
-                  }).encode("utf-8")
-
-                  succeeded = False
-                  last_error = "Unknown error"
-
-                  for attempt in range(1, 7):
-                      request = urllib.request.Request(
-                          "https://web.archive.org/save",
-                          data=payload,
-                          method="POST",
-                          headers={
-                              "Authorization": (
-                                  f"LOW {ACCESS_KEY}:"
-                                  f"{SECRET_KEY}"
-                              ),
-                              "Accept": (
-                                  "application/json"
-                              ),
-                              "User-Agent": (
-                                  "DedSec-Incremental-"
-                                  "Archive/4.0"
-                              ),
-                          },
-                      )
-
-                      try:
-                          with urllib.request.urlopen(
-                              request,
-                              timeout=120,
-                          ) as response:
-                              body = response.read().decode(
-                                  "utf-8",
-                                  "replace",
-                              )
-
-                              try:
-                                  result = json.loads(
-                                      body
-                                  )
-                              except json.JSONDecodeError:
-                                  result = {
-                                      "response": (
-                                          body[:2000]
-                                      ),
-                                  }
-
-                              accepted.append({
-                                  "url": url,
-                                  "http_status": (
-                                      response.status
-                                  ),
-                                  "result": result,
-                              })
-                              print(
-                                  f"[Wayback "
-                                  f"{number}/{len(urls)}] "
-                                  f"accepted: {url}"
-                              )
-                              succeeded = True
-                              break
-
-                      except urllib.error.HTTPError as error:
-                          body = error.read().decode(
-                              "utf-8",
-                              "replace",
-                          )
-                          last_error = (
-                              f"HTTP {error.code}: "
-                              f"{body[:1000]}"
-                          )
-
-                          if error.code == 403 and (
-                              "InvalidAccessKeyId" in body
-                              or "SignatureDoesNotMatch"
-                              in body
-                          ):
-                              raise RuntimeError(
-                                  "Internet Archive rejected "
-                                  "the configured credentials."
-                              )
-
-                          if error.code not in {
-                              408,
-                              425,
-                              429,
-                              500,
-                              502,
-                              503,
-                              504,
-                          }:
-                              break
-
-                          retry_after = (
-                              error.headers.get(
-                                  "Retry-After"
-                              )
-                          )
-                          delay = (
-                              int(retry_after)
-                              if retry_after
-                              and retry_after.isdigit()
-                              else min(
-                                  180,
-                                  12 * attempt,
-                              )
-                          )
-                          time.sleep(delay)
-
-                      except Exception as error:
-                          last_error = repr(error)
-                          time.sleep(
-                              min(
-                                  180,
-                                  12 * attempt,
-                              )
-                          )
-
-                  if not succeeded:
-                      failures.append({
-                          "url": url,
-                          "error": last_error,
-                      })
-                      print(
-                          "::warning title=Wayback "
-                          f"capture failed::{url} — "
-                          f"{last_error}"
-                      )
-
-                  time.sleep(
-                      0.7
-                      + random.random() * 0.5
-                  )
-
-              return {
-                  "submitted_at_utc": utc_now(),
-                  "requested": len(urls),
-                  "accepted": len(accepted),
-                  "failed": len(failures),
-                  "accepted_requests": accepted,
-                  "failures": failures,
-              }
-
-          def upload_stable_json(
-              payload: dict,
-              local_name: str,
-              remote_name: str,
-          ) -> None:
-              path = pathlib.Path(local_name)
-              path.write_text(
-                  json.dumps(
-                      payload,
-                      indent=2,
-                      ensure_ascii=False,
-                      sort_keys=True,
-                  )
-                  + "\n",
-                  encoding="utf-8",
-              )
-              upload_file(
-                  path,
-                  remote_name,
-              )
-
           current_commit = subprocess.check_output(
-              [
-                  "git",
-                  "-C",
-                  str(SOURCE_ROOT),
-                  "rev-parse",
-                  "HEAD",
-              ],
+              ["git", "-C", str(SOURCE_ROOT), "rev-parse", "HEAD"],
               text=True,
           ).strip()
 
-          current_files, current_directories = (
-              inventory_working_tree()
-          )
-          remote_metadata = fetch_metadata()
-
+          current_files, current_directories = inventory_working_tree()
+          remote_metadata, metadata_reliable = fetch_metadata()
           old_files = state.get("files", {})
-          initial_sync = not state.get(
-              "initial_sync_completed",
-              False,
-          )
+          initial_sync = not state.get("initial_sync_completed", False)
 
-          uploads = []
+          uploads: list[str] = []
           for relative, metadata in current_files.items():
               previous = old_files.get(relative)
-              remote_name = metadata["remote_name"]
-              remote_entry = remote_metadata.get(
-                  remote_name
-              )
+              remote_entry = remote_metadata.get(metadata["remote_name"])
 
               remote_size = None
               if isinstance(remote_entry, dict):
                   try:
-                      remote_size = int(
-                          remote_entry.get("size")
-                      )
-                  except (
-                      TypeError,
-                      ValueError,
-                  ):
+                      remote_size = int(remote_entry.get("size"))
+                  except (TypeError, ValueError):
                       remote_size = None
 
-              if (
-                  not isinstance(previous, dict)
-                  or previous.get("sha256")
-                  != metadata["sha256"]
-                  or previous.get("type")
-                  != metadata["type"]
-                  or remote_entry is None
+              state_matches = (
+                  isinstance(previous, dict)
+                  and previous.get("sha256") == metadata["sha256"]
+                  and previous.get("type") == metadata["type"]
+              )
+
+              remote_matches = (
+                  not metadata_reliable
                   or (
-                      metadata["type"] == "file"
-                      and remote_size is not None
-                      and remote_size
-                      != metadata["size"]
+                      remote_entry is not None
+                      and (
+                          metadata["type"] != "file"
+                          or remote_size is None
+                          or remote_size == metadata["size"]
+                      )
                   )
-              ):
+              )
+
+              if not state_matches or not remote_matches:
                   uploads.append(relative)
 
-          removed_from_repository = sorted(
-              set(old_files)
-              - set(current_files)
-          )
+          removed_from_repository = sorted(set(old_files) - set(current_files))
 
           expected_remote_names = {
-              metadata["remote_name"]
-              for metadata in current_files.values()
+              metadata["remote_name"] for metadata in current_files.values()
           }
 
-          orphan_remote_names = sorted(
-              name
-              for name in remote_metadata
-              if name.startswith("mirror/")
-              and name not in expected_remote_names
-              and not name.startswith(".~~")
+          orphan_remote_names = (
+              sorted(
+                  name
+                  for name in remote_metadata
+                  if name.startswith("mirror/")
+                  and name not in expected_remote_names
+                  and not name.startswith(".~~")
+              )
+              if metadata_reliable
+              else []
           )
 
           state["current_run"] = {
               "run_id": RUN_ID,
               "run_attempt": RUN_ATTEMPT,
               "status": "in_progress",
+              "state_source": state_source,
+              "metadata_reliable_at_start": metadata_reliable,
               "started_at_utc": utc_now(),
               "source_commit": current_commit,
               "initial_sync": initial_sync,
-              "total_current_files": len(
-                  current_files
-              ),
+              "total_current_files": len(current_files),
               "planned_uploads": len(uploads),
-              "planned_repository_deletes": len(
-                  removed_from_repository
-              ),
-              "planned_orphan_deletes": len(
-                  orphan_remote_names
-              ),
+              "planned_repository_deletes": len(removed_from_repository),
+              "planned_orphan_deletes": len(orphan_remote_names),
               "completed_uploads": 0,
               "completed_deletes": 0,
               "last_successful_operation": None,
               "remaining_uploads": list(uploads),
               "remaining_deletes": (
-                  removed_from_repository
-                  + orphan_remote_names
+                  list(removed_from_repository) + list(orphan_remote_names)
               ),
           }
-          persist_state()
+          write_local_state()
 
           changed_paths = list(uploads)
 
           try:
-              for index, relative in enumerate(
-                  uploads,
-                  start=1,
-              ):
+              for index, relative in enumerate(uploads, start=1):
                   metadata = current_files[relative]
-                  local_path, temporary_path = (
-                      local_payload_for(
-                          relative,
-                          metadata,
-                      )
-                  )
+                  local_path, temporary_path = local_payload(relative, metadata)
 
                   try:
-                      print(
-                          f"[Upload {index}/"
-                          f"{len(uploads)}] "
-                          f"{relative}"
-                      )
-                      upload_file(
-                          local_path,
-                          metadata["remote_name"],
-                      )
+                      print(f"[Upload {index}/{len(uploads)}] {relative}")
+                      upload_file(local_path, metadata["remote_name"])
                   finally:
                       if temporary_path is not None:
-                          temporary_path.unlink(
-                              missing_ok=True
-                          )
+                          temporary_path.unlink(missing_ok=True)
 
-                  state["files"][relative] = (
-                      metadata
-                  )
-                  state["directories"] = (
-                      current_directories
-                  )
-                  state["current_run"][
-                      "completed_uploads"
-                  ] += 1
-                  state["current_run"][
-                      "last_successful_operation"
-                  ] = {
+                  state["files"][relative] = metadata
+                  state["directories"] = current_directories
+                  state["current_run"]["completed_uploads"] += 1
+                  state["current_run"]["last_successful_operation"] = {
                       "action": "upload",
                       "path": relative,
-                      "remote_name": (
-                          metadata["remote_name"]
-                      ),
+                      "remote_name": metadata["remote_name"],
                       "completed_at_utc": utc_now(),
                   }
-                  state["current_run"][
-                      "remaining_uploads"
-                  ] = uploads[index:]
+                  state["current_run"]["remaining_uploads"] = uploads[index:]
 
-                  # This is the exact file-level resume checkpoint.
-                  # It is written locally and overwritten in Internet
-                  # Archive after every successful file upload.
+                  # Persist after every successful file. If this checkpoint
+                  # itself fails, only the just-finished file may be retried.
                   persist_state()
 
-              delete_operations = [
-                  (
-                      relative,
-                      old_files[relative][
-                          "remote_name"
-                      ],
-                      "repository_deleted",
-                  )
-                  for relative in removed_from_repository
-              ]
+              can_delete_from_state = state_source != "new_initial_sync"
+              delete_operations: list[tuple[str, str, str]] = []
 
-              delete_operations.extend(
-                  (
-                      remote_name.removeprefix(
-                          "mirror/"
-                      ),
-                      remote_name,
-                      "orphan_remote",
+              if can_delete_from_state:
+                  delete_operations.extend(
+                      (
+                          relative,
+                          old_files[relative]["remote_name"],
+                          "repository_deleted",
+                      )
+                      for relative in removed_from_repository
+                      if isinstance(old_files.get(relative), dict)
+                      and old_files[relative].get("remote_name")
                   )
-                  for remote_name in orphan_remote_names
-              )
 
-              for index, (
-                  relative,
-                  remote_name,
-                  reason,
-              ) in enumerate(
+              if metadata_reliable:
+                  delete_operations.extend(
+                      (
+                          remote_name.removeprefix("mirror/"),
+                          remote_name,
+                          "orphan_remote",
+                      )
+                      for remote_name in orphan_remote_names
+                  )
+
+              for index, (relative, remote_name, reason) in enumerate(
                   delete_operations,
                   start=1,
               ):
                   print(
-                      f"[Delete {index}/"
-                      f"{len(delete_operations)}] "
-                      f"{remote_name}"
+                      f"[Delete {index}/{len(delete_operations)}] {remote_name}"
                   )
                   delete_remote(remote_name)
-
-                  state["files"].pop(
-                      relative,
-                      None,
-                  )
-                  state["current_run"][
-                      "completed_deletes"
-                  ] += 1
-                  state["current_run"][
-                      "last_successful_operation"
-                  ] = {
+                  state["files"].pop(relative, None)
+                  state["current_run"]["completed_deletes"] += 1
+                  state["current_run"]["last_successful_operation"] = {
                       "action": "delete",
                       "path": relative,
                       "remote_name": remote_name,
                       "reason": reason,
                       "completed_at_utc": utc_now(),
                   }
-                  state["current_run"][
-                      "remaining_deletes"
-                  ] = [
-                      operation[1]
-                      for operation
-                      in delete_operations[
-                          index:
-                      ]
+                  state["current_run"]["remaining_deletes"] = [
+                      operation[1] for operation in delete_operations[index:]
                   ]
                   persist_state()
 
               bundle_changed = (
-                  state.get(
-                      "git_bundle",
-                      {},
-                  ).get("commit")
-                  != current_commit
-                  or "git-history.bundle"
-                  not in remote_metadata
+                  state.get("git_bundle", {}).get("commit") != current_commit
+                  or (
+                      metadata_reliable
+                      and "git-history.bundle" not in remote_metadata
+                  )
               )
 
               if bundle_changed:
-                  bundle_path = pathlib.Path(
-                      "git-history.bundle"
-                  )
+                  bundle_path = pathlib.Path("git-history.bundle")
                   subprocess.run(
                       [
                           "git",
@@ -1551,44 +1071,28 @@ jobs:
                           str(SOURCE_ROOT),
                           "bundle",
                           "create",
-                          str(
-                              bundle_path.resolve()
-                          ),
+                          str(bundle_path.resolve()),
                           "--all",
                       ],
                       check=True,
                   )
-
-                  upload_file(
-                      bundle_path,
-                      "git-history.bundle",
-                  )
-
+                  upload_file(bundle_path, "git-history.bundle")
                   state["git_bundle"] = {
                       "commit": current_commit,
-                      "sha256": sha256_file(
-                          bundle_path
-                      ),
-                      "size": (
-                          bundle_path.stat().st_size
-                      ),
-                      "remote_name": (
-                          "git-history.bundle"
-                      ),
+                      "sha256": sha256_file(bundle_path),
+                      "size": bundle_path.stat().st_size,
+                      "remote_name": "git-history.bundle",
                       "uploaded_at_utc": utc_now(),
                   }
-                  state["current_run"][
-                      "last_successful_operation"
-                  ] = {
-                      "action": (
-                          "upload_git_bundle"
-                      ),
-                      "remote_name": (
-                          "git-history.bundle"
-                      ),
+                  state["current_run"]["last_successful_operation"] = {
+                      "action": "upload_git_bundle",
+                      "remote_name": "git-history.bundle",
                       "completed_at_utc": utc_now(),
                   }
                   persist_state()
+
+              state["files"] = current_files
+              state["directories"] = current_directories
 
               manifest = {
                   "schema_version": SCHEMA_VERSION,
@@ -1601,185 +1105,135 @@ jobs:
                   "directories": current_directories,
                   "file_count": len(current_files),
                   "files": current_files,
-                  "git_bundle": state.get(
-                      "git_bundle",
-                      {},
-                  ),
-                  "restore_notes": {
-                      "current_files": (
-                          "Download the mirror/ tree "
-                          "using the paths in this "
-                          "manifest."
-                      ),
-                      "git_history": (
-                          "git clone "
-                          "git-history.bundle "
-                          "restored-repository"
-                      ),
-                  },
+                  "git_bundle": state.get("git_bundle", {}),
               }
-
-              upload_stable_json(
-                  manifest,
-                  "manifest.json",
-                  "manifest.json",
-              )
-
-              checksum_path = pathlib.Path(
-                  "SHA256SUMS.txt"
-              )
-              checksum_path.write_text(
-                  "".join(
-                      f"{metadata['sha256']}  "
-                      f"{relative}\n"
-                      for relative, metadata
-                      in sorted(
-                          current_files.items()
-                      )
+              manifest_path = pathlib.Path("manifest.json")
+              manifest_path.write_text(
+                  json.dumps(
+                      manifest,
+                      indent=2,
+                      ensure_ascii=False,
+                      sort_keys=True,
                   )
-                  + (
-                      f"{state['git_bundle'].get('sha256', '')}"
-                      "  git-history.bundle\n"
-                  ),
+                  + "\n",
                   encoding="utf-8",
               )
-              upload_file(
-                  checksum_path,
-                  "SHA256SUMS.txt",
+              upload_file(manifest_path, "manifest.json")
+
+              checksum_path = pathlib.Path("SHA256SUMS.txt")
+              checksum_lines = [
+                  f"{metadata['sha256']}  {relative}\n"
+                  for relative, metadata in sorted(current_files.items())
+              ]
+              bundle_sha = state.get("git_bundle", {}).get("sha256")
+              if bundle_sha:
+                  checksum_lines.append(
+                      f"{bundle_sha}  git-history.bundle\n"
+                  )
+              checksum_path.write_text(
+                  "".join(checksum_lines),
+                  encoding="utf-8",
               )
+              upload_file(checksum_path, "SHA256SUMS.txt")
 
               wayback_urls = build_wayback_urls(
                   changed_paths,
-                  initial=initial_sync,
+                  include_all=not state["wayback"].get(
+                      "initial_queue_created",
+                      False,
+                  ),
                   commit=current_commit,
               )
-              wayback_report = submit_wayback(
-                  wayback_urls
-              )
-              wayback_report["initial_full_capture"] = (
-                  initial_sync
-              )
-              wayback_report[
-                  "changed_paths_submitted"
-              ] = changed_paths
-              wayback_report[
-                  "deleted_repository_paths"
-              ] = removed_from_repository
 
-              upload_stable_json(
-                  wayback_report,
-                  "wayback-report.json",
-                  "wayback-report.json",
-              )
+              pending = list(state["wayback"].get("pending", []))
+              pending_set = set(pending)
+              for url in wayback_urls:
+                  if url not in pending_set:
+                      pending.append(url)
+                      pending_set.add(url)
 
-              # Verify that all current mirror objects and stable
-              # control files are visible before marking complete.
+              state["wayback"]["pending"] = pending
+              state["wayback"]["initial_queue_created"] = True
+              state["wayback"]["last_queue_update_at_utc"] = utc_now()
+              state["wayback"]["last_queue_added"] = len(wayback_urls)
+
               expected = {
-                  metadata["remote_name"]
-                  for metadata
-                  in current_files.values()
+                  metadata["remote_name"] for metadata in current_files.values()
               }
               expected.update({
                   IA_STATE_NAME,
                   "git-history.bundle",
                   "manifest.json",
                   "SHA256SUMS.txt",
-                  "wayback-report.json",
               })
 
-              visible = set()
-              for attempt in range(1, 61):
-                  visible = set(
-                      fetch_metadata()
-                  )
-                  missing = expected - visible
-                  if not missing:
-                      break
-
-                  print(
-                      "Waiting for Internet Archive "
-                      "metadata. Missing "
-                      f"{len(missing)} files."
-                  )
-                  time.sleep(10)
-              else:
-                  raise RuntimeError(
-                      "Final verification failed. "
-                      "The current archive was not "
-                      "marked complete."
-                  )
-
-              # Remove legacy timestamped packages created by older
-              # workflow versions only after the new mirror is complete.
-              legacy_files = sorted(
-                  name
-                  for name in visible
-                  if (
-                      name.startswith(
-                          LEGACY_PREFIXES
+              final_metadata: dict[str, dict] = {}
+              final_metadata_reliable = False
+              for attempt in range(1, 7):
+                  final_metadata, final_metadata_reliable = fetch_metadata()
+                  if final_metadata_reliable:
+                      missing = expected - set(final_metadata)
+                      if not missing:
+                          break
+                      print(
+                          f"Final verification waiting: "
+                          f"{len(missing)} current files not visible yet."
                       )
-                      or (
-                          name.startswith(".~~")
-                          and name.removeprefix(
-                              ".~~"
-                          ).startswith(
-                              LEGACY_PREFIXES
+                  else:
+                      print("Final metadata verification is temporarily unavailable.")
+                  time.sleep(delay_for(attempt))
+              else:
+                  final_metadata_reliable = False
+
+              legacy_files: list[str] = []
+              if final_metadata_reliable:
+                  legacy_files = sorted(
+                      name
+                      for name in final_metadata
+                      if (
+                          name.startswith(LEGACY_PREFIXES)
+                          or (
+                              name.startswith(".~~")
+                              and name.removeprefix(".~~").startswith(
+                                  LEGACY_PREFIXES
+                              )
                           )
                       )
+                      and name not in expected
                   )
-                  and name not in expected
-              )
 
-              for name in legacy_files:
-                  print(
-                      f"Deleting legacy archive: {name}"
-                  )
-                  delete_remote(name)
+                  for name in legacy_files:
+                      print(f"Deleting legacy timestamped archive: {name}")
+                      delete_remote(name)
 
-              state["files"] = current_files
-              state["directories"] = (
-                  current_directories
-              )
-              state["initial_sync_completed"] = True
-              state["last_completed_commit"] = (
-                  current_commit
-              )
-              state["last_completed_at_utc"] = (
-                  utc_now()
-              )
-              state[
-                  "last_completed_at_greece"
-              ] = greece_now()
+              state["last_completed_commit"] = current_commit
+              state["last_completed_at_utc"] = utc_now()
+              state["last_completed_at_greece"] = greece_now()
+              state["initial_sync_completed"] = final_metadata_reliable
               state["last_result"] = {
                   "initial_full_sync": initial_sync,
-                  "uploaded_new_or_changed": len(
-                      uploads
+                  "uploaded_new_or_changed": len(uploads),
+                  "deleted_from_repository": (
+                      len(removed_from_repository)
+                      if can_delete_from_state
+                      else 0
                   ),
-                  "deleted_from_repository": len(
-                      removed_from_repository
+                  "deleted_orphan_remote_files": (
+                      len(orphan_remote_names)
+                      if metadata_reliable
+                      else 0
                   ),
-                  "deleted_orphan_remote_files": len(
-                      orphan_remote_names
-                  ),
-                  "deleted_legacy_archives": len(
-                      legacy_files
-                  ),
-                  "unchanged_files": (
-                      len(current_files)
-                      - len(uploads)
-                  ),
-                  "wayback_requested": (
-                      wayback_report["requested"]
-                  ),
-                  "wayback_accepted": (
-                      wayback_report["accepted"]
-                  ),
-                  "wayback_failed": (
-                      wayback_report["failed"]
-                  ),
+                  "deleted_legacy_archives": len(legacy_files),
+                  "unchanged_files": len(current_files) - len(uploads),
+                  "mirror_verified": final_metadata_reliable,
+                  "wayback_pending": len(state["wayback"]["pending"]),
               }
               state["current_run"].update({
-                  "status": "complete",
+                  "status": (
+                      "complete"
+                      if final_metadata_reliable
+                      else "uploaded_unverified"
+                  ),
                   "completed_at_utc": utc_now(),
                   "remaining_uploads": [],
                   "remaining_deletes": [],
@@ -1787,68 +1241,435 @@ jobs:
               persist_state()
 
           except BaseException as error:
-              state["current_run"]["status"] = (
-                  "failed"
-              )
-              state["current_run"][
-                  "failed_at_utc"
-              ] = utc_now()
+              state["current_run"]["status"] = "failed"
+              state["current_run"]["failed_at_utc"] = utc_now()
               state["current_run"]["error"] = (
-                  f"{type(error).__name__}: "
-                  f"{error}"
+                  f"{type(error).__name__}: {error}"
               )
-              state["current_run"][
-                  "traceback"
-              ] = traceback.format_exc()[-8000:]
+              state["current_run"]["traceback"] = traceback.format_exc()[-8000:]
+              write_local_state()
 
               try:
-                  persist_state()
-              except Exception as state_error:
+                  upload_file(
+                      LOCAL_STATE_PATH,
+                      IA_STATE_NAME,
+                      include_item_metadata=first_item_write,
+                  )
+              except Exception as checkpoint_error:
                   print(
-                      "::warning title=State checkpoint "
-                      "failed::"
-                      f"{state_error!r}"
+                      "::warning title=Remote checkpoint failed::"
+                      f"{checkpoint_error!r}. "
+                      "The local checkpoint artifact will still be saved."
                   )
 
               raise
 
-          with open(
-              os.environ["GITHUB_OUTPUT"],
-              "a",
-              encoding="utf-8",
-          ) as output:
+          with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+              output.write(f"slug={SLUG}\n")
+              output.write(f"status={state['current_run']['status']}\n")
               output.write(
-                  f"slug={SLUG}\n"
+                  f"uploaded={state['last_result']['uploaded_new_or_changed']}\n"
               )
               output.write(
-                  f"status={state['current_run']['status']}\n"
-              )
-              output.write(
-                  "uploaded="
-                  f"{state['last_result']['uploaded_new_or_changed']}\n"
-              )
-              output.write(
-                  "deleted="
-                  f"{state['last_result']['deleted_from_repository']}\n"
+                  f"wayback_pending={len(state['wayback']['pending'])}\n"
               )
           PY
 
-      - name: Upload local checkpoint copy
+      - name: Upload local checkpoint artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
           name: archive-checkpoint-${{ matrix.slug }}-${{ github.run_id }}
-          path: |
-            archive-state/${{ matrix.slug }}.json
-            controller/.github/workflows/update.json
+          path: archive-state/${{ matrix.slug }}.json
           if-no-files-found: ignore
           retention-days: 14
+
+  process-wayback:
+    name: Process resumable Wayback queue
+    needs:
+      - prepare
+      - sync-targets
+    if: |
+      always() &&
+      needs.prepare.outputs.target_count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+
+    env:
+      SELECTED_TARGETS: ${{ needs.prepare.outputs.selected_targets }}
+      IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
+      IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
+      MAX_URLS_PER_RUN: "360"
+      MAX_SECONDS_PER_RUN: "10800"
+
+    steps:
+      - name: Process URLs serially with checkpoints
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python <<'PY'
+          from __future__ import annotations
+
+          import json
+          import os
+          import pathlib
+          import random
+          import subprocess
+          import time
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          from datetime import datetime, timezone
+
+          targets = json.loads(os.environ["SELECTED_TARGETS"])
+          access = os.environ["IA_ACCESS_KEY"]
+          secret = os.environ["IA_SECRET_KEY"]
+          max_urls = int(os.environ["MAX_URLS_PER_RUN"])
+          max_seconds = int(os.environ["MAX_SECONDS_PER_RUN"])
+          started = time.monotonic()
+          retryable = {408, 425, 429, 500, 502, 503, 504}
+
+          def utc_now() -> str:
+              return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+
+          def state_url(target: dict) -> str:
+              item = urllib.parse.quote(target["ia_item"], safe="")
+              return (
+                  f"https://archive.org/download/{item}/"
+                  f"archive-state/update.json"
+                  f"?wayback_read={int(time.time())}-{random.random()}"
+              )
+
+          def upload_state(target: dict, state: dict) -> None:
+              path = pathlib.Path(f"state-{target['slug']}.json")
+              path.write_text(
+                  json.dumps(
+                      state,
+                      indent=2,
+                      ensure_ascii=False,
+                      sort_keys=True,
+                  )
+                  + "\n",
+                  encoding="utf-8",
+              )
+              item = urllib.parse.quote(target["ia_item"], safe="")
+              remote_name = "archive-state/update.json"
+
+              subprocess.run(
+                  [
+                      "curl",
+                      "--silent",
+                      "--show-error",
+                      "--fail-with-body",
+                      "--location",
+                      "--retry",
+                      "8",
+                      "--retry-all-errors",
+                      "--retry-delay",
+                      "10",
+                      "--retry-max-time",
+                      "1200",
+                      "--header",
+                      f"Authorization: LOW {access}:{secret}",
+                      "--header",
+                      "x-amz-auto-make-bucket:1",
+                      "--header",
+                      "x-archive-ignore-preexisting-bucket:1",
+                      "--header",
+                      "x-archive-keep-old-version:0",
+                      "--header",
+                      "x-archive-queue-derive:0",
+                      "--upload-file",
+                      str(path),
+                      (
+                          f"https://s3.us.archive.org/{item}/"
+                          + urllib.parse.quote(
+                              remote_name,
+                              safe="/~._-()",
+                          )
+                      ),
+                  ],
+                  check=True,
+              )
+
+          def fetch_state(target: dict) -> dict | None:
+              last_error = None
+
+              for attempt in range(1, 7):
+                  request = urllib.request.Request(
+                      state_url(target),
+                      headers={
+                          "Accept": "application/json",
+                          "Cache-Control": "no-cache",
+                          "User-Agent": "DedSec-Wayback-Queue/5.0",
+                      },
+                  )
+
+                  try:
+                      with urllib.request.urlopen(
+                          request,
+                          timeout=120,
+                      ) as response:
+                          state = json.load(response)
+                      return state if isinstance(state, dict) else None
+
+                  except urllib.error.HTTPError as error:
+                      if error.code == 404:
+                          return None
+
+                      last_error = error
+                      if error.code not in retryable:
+                          raise
+
+                      retry_after = error.headers.get("Retry-After")
+                      delay = (
+                          min(300, int(retry_after))
+                          if retry_after and retry_after.isdigit()
+                          else min(120, 10 * (2 ** min(attempt - 1, 4)))
+                      )
+                      print(
+                          f"{target['slug']}: state HTTP {error.code}; "
+                          f"retry {attempt}/6 in {delay}s."
+                      )
+                      time.sleep(delay)
+
+                  except (
+                      urllib.error.URLError,
+                      TimeoutError,
+                      json.JSONDecodeError,
+                      UnicodeDecodeError,
+                  ) as error:
+                      last_error = error
+                      delay = min(120, 10 * (2 ** min(attempt - 1, 4)))
+                      print(
+                          f"{target['slug']}: temporary state error; "
+                          f"retry {attempt}/6 in {delay}s."
+                      )
+                      time.sleep(delay)
+
+              print(
+                  "::warning title=Wayback state unavailable::"
+                  f"{target['slug']}: {last_error!r}"
+              )
+              return None
+
+          def submit_url(url: str) -> tuple[str, str | None]:
+              payload = urllib.parse.urlencode({
+                  "url": url,
+                  "capture_outlinks": "0",
+                  "capture_screenshot": "0",
+                  "skip_first_archive": "0",
+              }).encode("utf-8")
+
+              last_error = None
+
+              for attempt in range(1, 5):
+                  request = urllib.request.Request(
+                      "https://web.archive.org/save",
+                      data=payload,
+                      method="POST",
+                      headers={
+                          "Authorization": f"LOW {access}:{secret}",
+                          "Accept": "application/json",
+                          "User-Agent": "DedSec-Wayback-Queue/5.0",
+                      },
+                  )
+
+                  try:
+                      with urllib.request.urlopen(
+                          request,
+                          timeout=150,
+                      ) as response:
+                          response.read()
+                      return "accepted", None
+
+                  except urllib.error.HTTPError as error:
+                      body = error.read().decode("utf-8", "replace")
+                      last_error = f"HTTP {error.code}: {body[:800]}"
+
+                      if error.code == 403 and (
+                          "InvalidAccessKeyId" in body
+                          or "SignatureDoesNotMatch" in body
+                      ):
+                          raise RuntimeError(
+                              "Internet Archive rejected the configured credentials."
+                          )
+
+                      session_limit = (
+                          "user-session-limit" in body
+                          or "active Save Page Now sessions" in body
+                      )
+
+                      if error.code not in retryable and not session_limit:
+                          return "permanent_failure", last_error
+
+                      retry_after = error.headers.get("Retry-After")
+                      delay = (
+                          min(300, int(retry_after))
+                          if retry_after and retry_after.isdigit()
+                          else (65 if session_limit or error.code == 429 else 30)
+                      )
+                      print(
+                          f"Wayback temporary error for {url}: "
+                          f"{last_error}; retry {attempt}/4 in {delay}s."
+                      )
+                      time.sleep(delay)
+
+                  except (
+                      urllib.error.URLError,
+                      TimeoutError,
+                  ) as error:
+                      last_error = repr(error)
+                      time.sleep(30)
+
+              return "transient_failure", last_error
+
+          loaded: list[tuple[dict, dict]] = []
+          for target in targets:
+              state = fetch_state(target)
+              if not isinstance(state, dict):
+                  continue
+              state.setdefault("wayback", {})
+              state["wayback"].setdefault("pending", [])
+              state["wayback"].setdefault("completed", 0)
+              state["wayback"].setdefault("permanent_failures", 0)
+              state["wayback"].setdefault("recent_failures", [])
+              loaded.append((target, state))
+
+          if not loaded:
+              print("No Wayback queues were available. Nothing to process.")
+              raise SystemExit(0)
+
+          processed = 0
+          accepted = 0
+          permanent_failures = 0
+          transient_deferrals = 0
+          round_index = 0
+
+          while (
+              processed < max_urls
+              and time.monotonic() - started < max_seconds
+          ):
+              active = [
+                  (target, state)
+                  for target, state in loaded
+                  if state["wayback"].get("pending")
+              ]
+              if not active:
+                  break
+
+              target, state = active[round_index % len(active)]
+              round_index += 1
+              pending = state["wayback"]["pending"]
+              url = pending.pop(0)
+
+              print(
+                  f"[Wayback {processed + 1}/{max_urls}] "
+                  f"{target['slug']}: {url}"
+              )
+              result, error = submit_url(url)
+              processed += 1
+
+              if result == "accepted":
+                  accepted += 1
+                  state["wayback"]["completed"] += 1
+                  state["wayback"]["last_successful_url"] = url
+                  state["wayback"]["last_successful_at_utc"] = utc_now()
+
+              elif result == "permanent_failure":
+                  permanent_failures += 1
+                  state["wayback"]["permanent_failures"] += 1
+                  failures = state["wayback"]["recent_failures"]
+                  failures.append({
+                      "url": url,
+                      "error": error,
+                      "at_utc": utc_now(),
+                  })
+                  state["wayback"]["recent_failures"] = failures[-50:]
+
+              else:
+                  transient_deferrals += 1
+                  pending.append(url)
+                  state["wayback"]["last_transient_error"] = {
+                      "url": url,
+                      "error": error,
+                      "at_utc": utc_now(),
+                  }
+
+              state["wayback"]["last_processed_at_utc"] = utc_now()
+              state["wayback"]["remaining"] = len(pending)
+
+              # Checkpoint after every processed URL.
+              upload_state(target, state)
+
+              if result == "transient_failure":
+                  time.sleep(20)
+              else:
+                  time.sleep(4)
+
+          for target, state in loaded:
+              state["wayback"]["last_batch"] = {
+                  "processed_at_utc": utc_now(),
+                  "workflow_run_id": os.environ.get("GITHUB_RUN_ID"),
+                  "remaining": len(state["wayback"].get("pending", [])),
+              }
+              upload_state(target, state)
+
+          report = {
+              "processed_at_utc": utc_now(),
+              "selected_targets": [target["slug"] for target, _ in loaded],
+              "processed": processed,
+              "accepted": accepted,
+              "permanent_failures": permanent_failures,
+              "transient_deferrals": transient_deferrals,
+              "remaining_total": sum(
+                  len(state["wayback"].get("pending", []))
+                  for _, state in loaded
+              ),
+              "limit": max_urls,
+              "time_limit_seconds": max_seconds,
+          }
+
+          pathlib.Path("wayback-batch-report.json").write_text(
+              json.dumps(report, indent=2) + "\n",
+              encoding="utf-8",
+          )
+
+          with open(
+              os.environ.get("GITHUB_STEP_SUMMARY", "/dev/null"),
+              "a",
+              encoding="utf-8",
+          ) as output:
+              output.write("## Resumable Wayback queue\n\n")
+              output.write(f"- Processed: **{processed}**\n")
+              output.write(f"- Accepted: **{accepted}**\n")
+              output.write(
+                  f"- Permanent failures: **{permanent_failures}**\n"
+              )
+              output.write(
+                  f"- Temporarily deferred: **{transient_deferrals}**\n"
+              )
+              output.write(
+                  f"- URLs still queued: **{report['remaining_total']}**\n"
+              )
+          PY
+
+      - name: Upload Wayback batch report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: wayback-batch-report-${{ github.run_id }}
+          path: wayback-batch-report.json
+          if-no-files-found: ignore
+          retention-days: 30
 
   update-controller-state:
     name: Update update.json and README
     needs:
       - prepare
-      - archive-targets
+      - sync-targets
+      - process-wayback
     if: |
       always() &&
       needs.prepare.outputs.target_count != '0'
@@ -1857,8 +1678,6 @@ jobs:
 
     env:
       SELECTED_TARGETS: ${{ needs.prepare.outputs.selected_targets }}
-      IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
-      IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
 
     steps:
       - name: Check out archive controller
@@ -1866,6 +1685,14 @@ jobs:
         with:
           path: controller
           fetch-depth: 0
+
+      - name: Download local checkpoint artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: archive-checkpoint-*-${{ github.run_id }}
+          path: checkpoint-artifacts
+          merge-multiple: true
+        continue-on-error: true
 
       - name: Synchronize persistent update.json and README
         shell: bash
@@ -1878,12 +1705,14 @@ jobs:
           import json
           import os
           import pathlib
+          import random
+          import time
           import urllib.error
           import urllib.parse
           import urllib.request
           from datetime import datetime, timezone
 
-          SCHEMA_VERSION = 4
+          SCHEMA_VERSION = 5
           CONTROLLER = pathlib.Path("controller")
           UPDATE_PATH = (
               CONTROLLER
@@ -1892,54 +1721,29 @@ jobs:
               / "update.json"
           )
           README_PATH = CONTROLLER / "README.md"
-
-          targets = json.loads(
-              os.environ["SELECTED_TARGETS"]
-          )
+          ARTIFACT_DIR = pathlib.Path("checkpoint-artifacts")
+          targets = json.loads(os.environ["SELECTED_TARGETS"])
+          retryable = {408, 425, 429, 500, 502, 503, 504}
 
           def utc_now() -> str:
-              return datetime.now(
-                  timezone.utc
-              ).strftime("%Y-%m-%dT%H:%M:%SZ")
+              return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-          def state_url(
-              item: str,
-          ) -> str:
-              return (
-                  "https://archive.org/download/"
-                  + urllib.parse.quote(
-                      item,
-                      safe="",
-                  )
-                  + "/archive-state/update.json"
-                  + f"?controller_sync={urllib.parse.quote(utc_now())}"
-              )
-
-          def fetch_state(
-              target: dict,
-          ) -> dict | None:
-              retryable = {
-                  408,
-                  425,
-                  429,
-                  500,
-                  502,
-                  503,
-                  504,
-              }
+          def fetch_remote_state(target: dict) -> dict | None:
+              item = urllib.parse.quote(target["ia_item"], safe="")
               last_error = None
 
-              for attempt in range(1, 9):
+              for attempt in range(1, 7):
+                  url = (
+                      f"https://archive.org/download/{item}/"
+                      f"archive-state/update.json"
+                      f"?controller={int(time.time())}-{random.random()}"
+                  )
                   request = urllib.request.Request(
-                      state_url(
-                          target["ia_item"]
-                      ),
+                      url,
                       headers={
                           "Accept": "application/json",
                           "Cache-Control": "no-cache",
-                          "User-Agent": (
-                              "DedSec-Controller-State/4.1"
-                          ),
+                          "User-Agent": "DedSec-Controller-State/5.0",
                       },
                   )
 
@@ -1949,12 +1753,7 @@ jobs:
                           timeout=120,
                       ) as response:
                           state = json.load(response)
-
-                      return (
-                          state
-                          if isinstance(state, dict)
-                          else None
-                      )
+                      return state if isinstance(state, dict) else None
 
                   except urllib.error.HTTPError as error:
                       if error.code == 404:
@@ -1964,29 +1763,15 @@ jobs:
                       if error.code not in retryable:
                           raise
 
-                      retry_after = error.headers.get(
-                          "Retry-After"
-                      )
+                      retry_after = error.headers.get("Retry-After")
                       delay = (
                           min(300, int(retry_after))
-                          if retry_after
-                          and retry_after.isdigit()
-                          else min(
-                              120,
-                              10 * (
-                                  2
-                                  ** min(
-                                      attempt - 1,
-                                      4,
-                                  )
-                              ),
-                          )
+                          if retry_after and retry_after.isdigit()
+                          else min(120, 10 * (2 ** min(attempt - 1, 4)))
                       )
                       print(
-                          f"Controller state read for "
-                          f"{target['slug']} returned "
-                          f"HTTP {error.code}; retrying "
-                          f"{attempt}/8 in {delay}s."
+                          f"{target['slug']}: controller HTTP {error.code}; "
+                          f"retry {attempt}/6 in {delay}s."
                       )
                       time.sleep(delay)
 
@@ -1997,89 +1782,81 @@ jobs:
                       UnicodeDecodeError,
                   ) as error:
                       last_error = error
-                      delay = min(
-                          120,
-                          10 * (
-                              2
-                              ** min(
-                                  attempt - 1,
-                                  4,
-                              )
-                          ),
-                      )
+                      delay = min(120, 10 * (2 ** min(attempt - 1, 4)))
                       print(
-                          f"Controller state read for "
-                          f"{target['slug']} failed "
-                          f"temporarily; retrying "
-                          f"{attempt}/8 in {delay}s."
+                          f"{target['slug']}: temporary controller error; "
+                          f"retry {attempt}/6 in {delay}s."
                       )
                       time.sleep(delay)
 
               print(
-                  "::warning title=Controller state "
-                  f"temporarily unavailable::"
+                  "::warning title=Remote state unavailable::"
                   f"{target['slug']}: {last_error!r}"
               )
               return None
 
+          def load_artifact_state(slug: str) -> dict | None:
+              candidates = list(ARTIFACT_DIR.rglob(f"{slug}.json"))
+              for path in candidates:
+                  try:
+                      state = json.loads(path.read_text(encoding="utf-8"))
+                  except (OSError, json.JSONDecodeError):
+                      continue
+                  if isinstance(state, dict):
+                      return state
+              return None
+
           try:
-              aggregate = json.loads(
-                  UPDATE_PATH.read_text(
-                      encoding="utf-8"
-                  )
-              )
-          except (
-              OSError,
-              json.JSONDecodeError,
-          ):
+              aggregate = json.loads(UPDATE_PATH.read_text(encoding="utf-8"))
+          except (OSError, json.JSONDecodeError):
               aggregate = {
                   "schema_version": SCHEMA_VERSION,
                   "generated_at_utc": None,
                   "targets": {},
               }
 
-          aggregate["schema_version"] = (
-              SCHEMA_VERSION
-          )
-          aggregate.setdefault(
-              "targets",
-              {},
-          )
+          aggregate["schema_version"] = SCHEMA_VERSION
+          aggregate.setdefault("targets", {})
 
-          fetched_states = {}
+          refreshed: dict[str, dict] = {}
 
           for target in targets:
-              state = fetch_state(target)
+              remote = fetch_remote_state(target)
+              artifact = load_artifact_state(target["slug"])
+              previous = aggregate["targets"].get(target["slug"])
+
+              # Prefer remote state because Wayback updates it after sync.
+              # Fall back to the local artifact, then the previous controller copy.
+              state = (
+                  remote
+                  if isinstance(remote, dict)
+                  else artifact
+                  if isinstance(artifact, dict)
+                  else previous
+                  if isinstance(previous, dict)
+                  else None
+              )
+
               if state is None:
                   print(
-                      "::warning title=Archive state "
-                      f"unavailable::{target['slug']}"
+                      f"::warning title=No state available::{target['slug']}"
                   )
                   continue
 
-              aggregate["targets"][
-                  target["slug"]
-              ] = state
-              fetched_states[
-                  target["slug"]
-              ] = state
+              aggregate["targets"][target["slug"]] = state
+              refreshed[target["slug"]] = state
 
           aggregate["generated_at_utc"] = utc_now()
           aggregate["source_of_truth"] = (
-              "Each Internet Archive item stores "
-              "archive-state/update.json. This GitHub "
-              "file is the synchronized readable copy."
+              "Each Internet Archive item stores archive-state/update.json. "
+              "This file is the synchronized combined copy."
           )
           aggregate["resume_behavior"] = (
-              "Every confirmed file upload or deletion "
-              "is checkpointed. A later run recomputes "
-              "the difference and skips completed files."
+              "File synchronization checkpoints after every successful file. "
+              "Wayback captures use a separate serial resumable queue."
           )
 
-          UPDATE_PATH.parent.mkdir(
-              parents=True,
-              exist_ok=True,
-          )
+          UPDATE_PATH.parent.mkdir(parents=True, exist_ok=True)
           UPDATE_PATH.write_text(
               json.dumps(
                   aggregate,
@@ -2091,76 +1868,38 @@ jobs:
               encoding="utf-8",
           )
 
-          if README_PATH.exists():
-              readme = README_PATH.read_text(
-                  encoding="utf-8"
-              )
-          else:
-              readme = "# Save DedSec Project\n"
+          readme = (
+              README_PATH.read_text(encoding="utf-8")
+              if README_PATH.exists()
+              else "# Save DedSec Project\n"
+          )
 
-          def replace_block(
-              text: str,
-              marker: str,
-              block: str,
-          ) -> str:
+          def replace_block(text: str, marker: str, block: str) -> str:
               start = f"<!-- {marker}_START -->"
               end = f"<!-- {marker}_END -->"
 
               if start in text and end in text:
-                  before, remainder = text.split(
-                      start,
-                      1,
-                  )
-                  _, after = remainder.split(
-                      end,
-                      1,
-                  )
-                  return (
-                      before.rstrip()
-                      + "\n\n"
-                      + block
-                      + after
-                  )
+                  before, remainder = text.split(start, 1)
+                  _, after = remainder.split(end, 1)
+                  return before.rstrip() + "\n\n" + block + after
 
-              return (
-                  text.rstrip()
-                  + "\n\n"
-                  + block
-                  + "\n"
-              )
+              return text.rstrip() + "\n\n" + block + "\n"
 
-          def build_status_block(
-              state: dict,
-          ) -> str:
+          def status_block(state: dict) -> str:
               target = state["target"]
               marker = target["marker"]
-              start = (
-                  f"<!-- {marker}_START -->"
-              )
+              start = f"<!-- {marker}_START -->"
               end = f"<!-- {marker}_END -->"
-
-              current = state.get(
-                  "current_run",
-                  {},
-              )
-              result = state.get(
-                  "last_result",
-                  {},
-              )
-              commit = (
-                  state.get(
-                      "last_completed_commit"
-                  )
-                  or current.get(
-                      "source_commit"
-                  )
-                  or ""
-              )
-
+              current = state.get("current_run", {})
+              result = state.get("last_result", {})
+              wayback = state.get("wayback", {})
               repository = target["repository"]
+              commit = state.get("last_completed_commit") or current.get(
+                  "source_commit",
+                  "",
+              )
               ia_url = (
-                  "https://archive.org/details/"
-                  + target["ia_item"]
+                  "https://archive.org/details/" + target["ia_item"]
               )
               wayback_url = (
                   "https://web.archive.org/web/*/"
@@ -2169,131 +1908,83 @@ jobs:
                   + "*"
               )
 
-              status = current.get(
-                  "status",
-                  "not_started",
-              )
-              last_operation = current.get(
-                  "last_successful_operation"
-              )
-              last_operation_text = (
-                  json.dumps(
-                      last_operation,
-                      ensure_ascii=False,
-                  )
-                  if last_operation
-                  else "None"
-              )
-
               lines = [
                   start,
                   f"### {target['title']}",
                   "",
                   (
-                      "**Current synchronization "
-                      f"status:** `{status}`  "
+                      "**Current file-sync status:** "
+                      f"`{current.get('status', 'not_started')}`  "
                   ),
                   (
-                      "**Last complete save:** "
-                      f"{state.get('last_completed_at_greece') or 'Not completed yet'}"
-                      "  "
+                      "**Last complete or attempted save:** "
+                      f"{state.get('last_completed_at_greece') or 'Not completed yet'}  "
+                  ),
+                  f"**Current mirrored files:** {len(state.get('files', {}))}  ",
+                  (
+                      "**Latest file update:** "
+                      f"{result.get('uploaded_new_or_changed', 0)} uploaded, "
+                      f"{result.get('deleted_from_repository', 0)} deleted, "
+                      f"{result.get('unchanged_files', 0)} unchanged.  "
                   ),
                   (
-                      "**Mirrored current files:** "
-                      f"{len(state.get('files', {}))}  "
+                      "**Mirror verification:** "
+                      f"`{result.get('mirror_verified', False)}`  "
                   ),
                   (
-                      "**Pending uploads:** "
-                      f"{len(current.get('remaining_uploads', []))}  "
+                      "**Wayback queue remaining:** "
+                      f"{len(wayback.get('pending', []))}  "
                   ),
                   (
-                      "**Pending deletions:** "
-                      f"{len(current.get('remaining_deletes', []))}  "
-                  ),
-                  (
-                      "**Last successful operation:** "
-                      f"`{last_operation_text}`  "
-                  ),
-                  (
-                      "**Last completed update:** "
-                      f"{result.get('uploaded_new_or_changed', 0)} "
-                      "new/changed, "
-                      f"{result.get('deleted_from_repository', 0)} "
-                      "deleted, "
-                      f"{result.get('unchanged_files', 0)} "
-                      "unchanged.  "
+                      "**Wayback captures accepted:** "
+                      f"{wayback.get('completed', 0)}  "
                   ),
                   (
                       "**Scheduled window:** "
                       f"{target['window']}  "
                   ),
                   (
-                      "**Resume mode:** File-level. "
-                      "Completed files are skipped; only "
-                      "the interrupted file may be retried."
+                      "**Resume mode:** File uploads and Wayback URLs "
+                      "are checkpointed separately."
                   ),
                   "",
-                  (
-                      "- [Internet Archive current mirror]"
-                      f"({ia_url})"
-                  ),
-                  (
-                      "- [Wayback Machine capture history]"
-                      f"({wayback_url})"
-                  ),
+                  f"- [Internet Archive current mirror]({ia_url})",
+                  f"- [Wayback Machine capture history]({wayback_url})",
               ]
 
               if commit:
                   lines.append(
                       "- [Last archived commit]"
-                      f"(https://github.com/"
-                      f"{repository}/commit/{commit})"
+                      f"(https://github.com/{repository}/commit/{commit})"
                   )
 
               if target.get("kind") == "website":
-                  for site in target.get(
-                      "sites",
-                      [],
-                  ):
+                  for site in target.get("sites", []):
                       lines.append(
-                          "- ["
-                          + site
-                          + " Wayback history]"
-                          + "(https://web.archive.org/"
-                          + "web/*/"
-                          + site
-                          + "/*)"
+                          f"- [{site} Wayback history]"
+                          f"(https://web.archive.org/web/*/{site}/*)"
                       )
 
               lines.extend([
                   "",
                   (
-                      "This section is updated from "
+                      "This section is generated from "
                       "`.github/workflows/update.json`."
                   ),
                   end,
               ])
-
               return "\n".join(lines)
 
-          for slug, state in fetched_states.items():
-              marker = state.get(
-                  "target",
-                  {},
-              ).get("marker")
-              if not marker:
-                  continue
+          for state in refreshed.values():
+              marker = state.get("target", {}).get("marker")
+              if marker:
+                  readme = replace_block(
+                      readme,
+                      marker,
+                      status_block(state),
+                  )
 
-              readme = replace_block(
-                  readme,
-                  marker,
-                  build_status_block(state),
-              )
-
-          README_PATH.write_text(
-              readme,
-              encoding="utf-8",
-          )
+          README_PATH.write_text(readme, encoding="utf-8")
           PY
 
       - name: Commit state and README
@@ -2301,9 +1992,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          git -C controller config \
-            user.name "github-actions[bot]"
-
+          git -C controller config user.name "github-actions[bot]"
           git -C controller config \
             user.email \
             "41898282+github-actions[bot]@users.noreply.github.com"
@@ -2316,7 +2005,6 @@ jobs:
             echo "State and README are already current."
           else
             git -C controller commit \
-              -m "chore: update archive checkpoint [skip ci]"
-
+              -m "chore: update archive state [skip ci]"
             git -C controller push
           fi
