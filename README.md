@@ -1,43 +1,72 @@
 # Save DedSec Project
 
-This repository automatically preserves the current DedSec Project ecosystem in Internet Archive and Wayback Machine.
+This repository keeps the current DedSec Project ecosystem synchronized with Internet Archive and progressively captured by the Wayback Machine.
 
-## Incremental and Resumable Synchronization
+## Fixed Architecture
 
-The first successful run uploads every current file. Later runs calculate SHA-256 hashes and synchronize only the differences:
+Internet Archive file synchronization and Wayback capture processing are separate:
+
+1. Repository files are mirrored first.
+2. Every successful file upload or deletion is checkpointed immediately.
+3. The file-sync job finishes without waiting for thousands of Wayback captures.
+4. One serial Wayback job processes a limited resumable queue.
+5. Remaining Wayback URLs continue during the next scheduled or manual run.
+
+This prevents Wayback rate limits from canceling otherwise successful repository backups.
+
+## Incremental Internet Archive Mirror
+
+The first successful run uploads every current file. Later runs use SHA-256 hashes:
 
 - New files are uploaded.
-- Changed files replace their matching Internet Archive objects.
-- Files deleted from GitHub are deleted from the Internet Archive mirror.
+- Changed files replace their matching archive objects.
+- Deleted repository files are deleted from the current mirror.
 - Unchanged files are skipped.
-- Missing remote mirror files are detected and restored.
-- The stable `git-history.bundle` is replaced only when repository history changes.
+- Missing remote mirror files are restored.
+- Git history is stored in `git-history.bundle`.
 
-Every successful file upload or deletion is checkpointed in the target Internet Archive item as:
+Every target item contains:
 
 ```text
+mirror/<original path>
+git-history.bundle
+manifest.json
+SHA256SUMS.txt
 archive-state/update.json
 ```
 
-A synchronized readable copy is committed here as:
+The Internet Archive checkpoint is updated after every successful file operation.
+
+A synchronized combined copy is stored here:
 
 ```text
 .github/workflows/update.json
 ```
 
-Resume is **file-level**. If a job stops, the next run skips all checkpointed files and continues with the remaining files. A file interrupted in the middle may need to restart, but previously completed files do not.
+If Internet Archive temporarily returns HTTP 503 during a first run, the workflow falls back to the GitHub `update.json` state or starts a safe initial sync. It never deletes unknown files without a trustworthy previous state.
+
+## Resumable Wayback Queue
+
+Wayback URLs are not submitted in parallel anymore.
+
+A single job:
+
+- Processes at most 360 URLs per workflow run.
+- Runs for at most three hours.
+- Checkpoints after every processed URL.
+- Treats active-session limits and HTTP 429/500/502/503/504 as temporary.
+- Leaves unfinished URLs in the queue for the next run.
+- Does not fail the Internet Archive file backup merely because Wayback is busy.
 
 ## Weekly Schedule
 
-All groups run on **Wednesday, Friday and Sunday** using the `Europe/Athens` timezone.
+All groups run Wednesday, Friday and Sunday using `Europe/Athens`.
 
-| Greece time | Archive group | Maximum duration |
-|---|---|---|
-| 08:00 | DedSec Project main and backup repositories | 5 hours |
-| 13:50 | Main website, backup website and website source | 5 hours |
-| 19:30 | GitHub profile, Corrupted Files, Pocket AI and Offline Survival | 4 hours |
-
-Repositories in the same group run in parallel.
+| Greece time | Archive group |
+|---|---|
+| 08:00 | DedSec Project main and backup repositories |
+| 13:50 | Main website, backup website and website source |
+| 19:30 | GitHub profile, Corrupted Files, Pocket AI and Offline Survival |
 
 ## Official Websites
 
@@ -54,22 +83,7 @@ Repositories in the same group run in parallel.
 - **Pocket AI:** https://github.com/dedsec1121fk/Pocket-AI
 - **Offline Survival Project:** https://github.com/dedsec1121fk/Offline-Survival-Project
 
-## Internet Archive Storage Layout
-
-Each repository uses its own Internet Archive item:
-
-```text
-mirror/<original repository path>
-git-history.bundle
-manifest.json
-SHA256SUMS.txt
-wayback-report.json
-archive-state/update.json
-```
-
-The `mirror/` tree always represents the latest fully synchronized working tree. Timestamped packages created by older workflow versions are removed only after the new mirror passes verification.
-
-## Permanent Archive Links
+## Permanent Internet Archive Links
 
 - **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
 - **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
@@ -84,10 +98,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- WEBSITES_ARCHIVE_STATUS_START -->
 ### DedSec Websites and Website Source
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [Main website Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -97,10 +109,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 ### DedSec Project Main Repository
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots)
 - [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/DedSec*)
@@ -109,10 +119,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 ### DedSec Project Backup Repository
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots)
 - [Wayback history](https://web.archive.org/web/*/https://github.com/sal-scar/DedSec*)
@@ -121,10 +129,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 ### DedSec GitHub Profile Repository
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
 - [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk*)
@@ -133,10 +139,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 ### Corrupted Files Project
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots)
 - [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Corrupted-Files-Project*)
@@ -145,10 +149,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- POCKET_AI_ARCHIVE_STATUS_START -->
 ### Pocket AI
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots)
 - [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Pocket-AI*)
@@ -157,10 +159,8 @@ The `mirror/` tree always represents the latest fully synchronized working tree.
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 ### Offline Survival Project
 
-**Current synchronization status:** `not_started`  
-**Last complete save:** Not completed yet.  
-**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens.  
-**Resume mode:** File-level.
+**Current file-sync status:** `not_started`  
+**Wayback queue remaining:** Not generated yet.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots)
 - [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Offline-Survival-Project*)
