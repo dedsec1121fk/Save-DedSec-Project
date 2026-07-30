@@ -246,7 +246,7 @@ jobs:
 
     strategy:
       fail-fast: false
-      max-parallel: 7
+      max-parallel: 4
       matrix: ${{ fromJSON(needs.prepare.outputs.target_matrix) }}
 
     env:
@@ -307,6 +307,27 @@ jobs:
 
           echo "::add-mask::$IA_ACCESS_KEY"
           echo "::add-mask::$IA_SECRET_KEY"
+
+      - name: Stagger parallel Internet Archive requests
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          delay="$(
+            TARGET_SLUG="$TARGET_SLUG" python - <<'PY'
+          import hashlib
+          import os
+          import time
+
+          slug = os.environ["TARGET_SLUG"]
+          seed = int(hashlib.sha256(slug.encode()).hexdigest()[:8], 16)
+          # Stable spread between targets plus a small time-dependent component.
+          print(5 + (seed % 41) + (int(time.time()) % 7))
+          PY
+          )"
+
+          echo "Waiting ${delay}s before contacting Internet Archive."
+          sleep "$delay"
 
       - name: Incrementally synchronize Internet Archive and Wayback
         id: sync
@@ -447,6 +468,10 @@ jobs:
                   "--retry-all-errors",
                   "--retry-delay",
                   "10",
+                  "--retry-max-time",
+                  "1200",
+                  "--connect-timeout",
+                  "45",
                   *arguments,
               ]
 
@@ -574,71 +599,158 @@ jobs:
                       f"{body[:1000]}"
                   )
 
+          RETRYABLE_HTTP_CODES = {
+              408,
+              425,
+              429,
+              500,
+              502,
+              503,
+              504,
+          }
+
+          def retry_delay(
+              attempt: int,
+              retry_after: str | None = None,
+          ) -> int:
+              if (
+                  retry_after
+                  and retry_after.isdigit()
+              ):
+                  return min(
+                      300,
+                      max(1, int(retry_after)),
+                  )
+
+              # 10, 20, 40, 80, then 120 seconds.
+              return min(
+                  120,
+                  10 * (2 ** min(attempt - 1, 4)),
+              )
+
+          def get_json_with_retry(
+              url_factory,
+              *,
+              label: str,
+              not_found,
+              attempts: int = 12,
+          ):
+              last_error: BaseException | None = None
+
+              for attempt in range(1, attempts + 1):
+                  url = url_factory()
+                  request = urllib.request.Request(
+                      url,
+                      headers={
+                          "Accept": "application/json",
+                          "Cache-Control": "no-cache",
+                          "User-Agent": (
+                              "DedSec-Incremental-Archive/4.1"
+                          ),
+                      },
+                  )
+
+                  try:
+                      with urllib.request.urlopen(
+                          request,
+                          timeout=120,
+                      ) as response:
+                          return json.load(response)
+
+                  except urllib.error.HTTPError as error:
+                      if error.code == 404:
+                          return not_found
+
+                      last_error = error
+                      if (
+                          error.code
+                          not in RETRYABLE_HTTP_CODES
+                      ):
+                          raise
+
+                      delay = retry_delay(
+                          attempt,
+                          error.headers.get(
+                              "Retry-After"
+                          ),
+                      )
+                      print(
+                          f"{label}: Internet Archive "
+                          f"returned HTTP {error.code}; "
+                          f"retrying {attempt}/{attempts} "
+                          f"in {delay}s."
+                      )
+                      time.sleep(delay)
+
+                  except (
+                      urllib.error.URLError,
+                      TimeoutError,
+                      json.JSONDecodeError,
+                      UnicodeDecodeError,
+                  ) as error:
+                      last_error = error
+                      delay = retry_delay(attempt)
+                      print(
+                          f"{label}: temporary read "
+                          f"failure {error!r}; retrying "
+                          f"{attempt}/{attempts} "
+                          f"in {delay}s."
+                      )
+                      time.sleep(delay)
+
+              raise RuntimeError(
+                  f"{label} remained unavailable after "
+                  f"{attempts} attempts: {last_error!r}"
+              )
+
           def download_json(
               remote_name: str,
           ) -> dict | None:
-              url = remote_url(
-                  "https://archive.org/download",
-                  ITEM,
-                  remote_name,
-              )
-              request = urllib.request.Request(
-                  url,
-                  headers={
-                      "Accept": "application/json",
-                      "User-Agent": (
-                          "DedSec-Incremental-Archive/4.0"
-                      ),
-                  },
+              def url_factory() -> str:
+                  base = remote_url(
+                      "https://archive.org/download",
+                      ITEM,
+                      remote_name,
+                  )
+                  return (
+                      f"{base}?state_read="
+                      f"{int(time.time())}-"
+                      f"{random.random()}"
+                  )
+
+              payload = get_json_with_retry(
+                  url_factory,
+                  label=(
+                      f"Checkpoint download for {ITEM}"
+                  ),
+                  not_found=None,
               )
 
-              try:
-                  with urllib.request.urlopen(
-                      request,
-                      timeout=90,
-                  ) as response:
-                      return json.load(response)
-              except urllib.error.HTTPError as error:
-                  if error.code == 404:
-                      return None
-                  raise
-              except (
-                  json.JSONDecodeError,
-                  UnicodeDecodeError,
-              ):
-                  return None
+              return (
+                  payload
+                  if isinstance(payload, dict)
+                  else None
+              )
 
           def fetch_metadata() -> dict[str, dict]:
               encoded_item = urllib.parse.quote(
                   ITEM,
                   safe="",
               )
-              url = (
-                  f"https://archive.org/metadata/"
-                  f"{encoded_item}"
-                  f"?state_check={int(time.time())}"
-                  f"-{random.random()}"
-              )
-              request = urllib.request.Request(
-                  url,
-                  headers={
-                      "Accept": "application/json",
-                      "User-Agent": (
-                          "DedSec-Incremental-Archive/4.0"
-                      ),
-                  },
-              )
 
-              try:
-                  with urllib.request.urlopen(
-                      request,
-                      timeout=90,
-                  ) as response:
-                      payload = json.load(response)
-              except urllib.error.HTTPError as error:
-                  if error.code == 404:
-                      return {}
-                  raise
+              def url_factory() -> str:
+                  return (
+                      f"https://archive.org/metadata/"
+                      f"{encoded_item}"
+                      f"?state_check={int(time.time())}"
+                      f"-{random.random()}"
+                  )
+
+              payload = get_json_with_retry(
+                  url_factory,
+                  label=f"Metadata read for {ITEM}",
+                  not_found={},
+              )
 
               files = {}
               for entry in payload.get("files", []):
@@ -1806,38 +1918,109 @@ jobs:
           def fetch_state(
               target: dict,
           ) -> dict | None:
-              request = urllib.request.Request(
-                  state_url(
-                      target["ia_item"]
-                  ),
-                  headers={
-                      "Accept": "application/json",
-                      "User-Agent": (
-                          "DedSec-Controller-State/4.0"
+              retryable = {
+                  408,
+                  425,
+                  429,
+                  500,
+                  502,
+                  503,
+                  504,
+              }
+              last_error = None
+
+              for attempt in range(1, 9):
+                  request = urllib.request.Request(
+                      state_url(
+                          target["ia_item"]
                       ),
-                  },
+                      headers={
+                          "Accept": "application/json",
+                          "Cache-Control": "no-cache",
+                          "User-Agent": (
+                              "DedSec-Controller-State/4.1"
+                          ),
+                      },
+                  )
+
+                  try:
+                      with urllib.request.urlopen(
+                          request,
+                          timeout=120,
+                      ) as response:
+                          state = json.load(response)
+
+                      return (
+                          state
+                          if isinstance(state, dict)
+                          else None
+                      )
+
+                  except urllib.error.HTTPError as error:
+                      if error.code == 404:
+                          return None
+
+                      last_error = error
+                      if error.code not in retryable:
+                          raise
+
+                      retry_after = error.headers.get(
+                          "Retry-After"
+                      )
+                      delay = (
+                          min(300, int(retry_after))
+                          if retry_after
+                          and retry_after.isdigit()
+                          else min(
+                              120,
+                              10 * (
+                                  2
+                                  ** min(
+                                      attempt - 1,
+                                      4,
+                                  )
+                              ),
+                          )
+                      )
+                      print(
+                          f"Controller state read for "
+                          f"{target['slug']} returned "
+                          f"HTTP {error.code}; retrying "
+                          f"{attempt}/8 in {delay}s."
+                      )
+                      time.sleep(delay)
+
+                  except (
+                      urllib.error.URLError,
+                      TimeoutError,
+                      json.JSONDecodeError,
+                      UnicodeDecodeError,
+                  ) as error:
+                      last_error = error
+                      delay = min(
+                          120,
+                          10 * (
+                              2
+                              ** min(
+                                  attempt - 1,
+                                  4,
+                              )
+                          ),
+                      )
+                      print(
+                          f"Controller state read for "
+                          f"{target['slug']} failed "
+                          f"temporarily; retrying "
+                          f"{attempt}/8 in {delay}s."
+                      )
+                      time.sleep(delay)
+
+              print(
+                  "::warning title=Controller state "
+                  f"temporarily unavailable::"
+                  f"{target['slug']}: {last_error!r}"
               )
-
-              try:
-                  with urllib.request.urlopen(
-                      request,
-                      timeout=90,
-                  ) as response:
-                      state = json.load(response)
-              except urllib.error.HTTPError as error:
-                  if error.code == 404:
-                      return None
-                  raise
-              except (
-                  json.JSONDecodeError,
-                  UnicodeDecodeError,
-              ):
-                  return None
-
-              if not isinstance(state, dict):
-                  return None
-
-              return state
+              return None
 
           try:
               aggregate = json.loads(
