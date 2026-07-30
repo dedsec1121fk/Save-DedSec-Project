@@ -1,0 +1,799 @@
+name: Archive Entire DedSec Project
+on:
+  schedule:
+  - cron: "0 12 * * *"
+    timezone: "Europe/Athens"
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: archive-entire-dedsec-project
+  cancel-in-progress: false
+jobs:
+  archive-websites:
+    name: Archive complete websites
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      SOURCE_REPOSITORY: dedsec1121fk/dedsec1121fk.github.io
+      SITE_URLS: |
+        https://ded-sec.space
+        https://ded-sec.online
+      IA_ITEM_IDENTIFIER: dedsec1121fk-dedsec-website-snapshots
+      IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
+      IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
+    steps:
+    - name: Check out the public website source
+      uses: actions/checkout@v6
+      with:
+        repository: dedsec1121fk/dedsec1121fk.github.io
+        path: source
+        fetch-depth: 0
+        persist-credentials: false
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.13"
+
+    - name: Validate Internet Archive secrets
+      shell: bash
+      run: |
+        set -euo pipefail
+        [[ -n "${IA_ACCESS_KEY:-}" ]] || {
+          echo "::error::Missing secret Internet_Archive_1. It must contain the Internet Archive S3 access key."
+          exit 1
+        }
+        [[ -n "${IA_SECRET_KEY:-}" ]] || {
+          echo "::error::Missing secret Internet_Archive_2. It must contain the Internet Archive S3 secret key."
+          exit 1
+        }
+        if [[ "$IA_ACCESS_KEY" =~ [[:space:]] || "$IA_SECRET_KEY" =~ [[:space:]] ]]; then
+          echo "::error::An Internet Archive secret contains whitespace. Recreate both GitHub secrets by copying the values exactly."
+          exit 1
+        fi
+        echo "::add-mask::$IA_ACCESS_KEY"
+        echo "::add-mask::$IA_SECRET_KEY"
+
+    - name: Create complete website snapshot
+      id: snapshot
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p archive-output
+
+        timestamp="$(date -u +%Y%m%dT%H%M%SZ)"
+        commit="$(git -C source rev-parse HEAD)"
+        short_sha="${commit:0:12}"
+        snapshot="dedsec-websites-${timestamp}-${short_sha}.zip"
+        manifest="dedsec-websites-${timestamp}-${short_sha}-manifest.json"
+        checksum="dedsec-websites-${timestamp}-${short_sha}.sha256"
+
+        git -C source archive --format=zip --output="${GITHUB_WORKSPACE}/archive-output/${snapshot}" HEAD
+
+        SNAPSHOT="$snapshot" MANIFEST="$manifest" CHECKSUM="$checksum" \
+        TIMESTAMP="$timestamp" COMMIT="$commit" python <<'PY'
+        import hashlib
+        import json
+        import os
+        import pathlib
+        import subprocess
+
+        output = pathlib.Path("archive-output")
+        snapshot = output / os.environ["SNAPSHOT"]
+        raw = subprocess.check_output(["git", "-C", "source", "ls-files", "-z"])
+        tracked = [
+            item.decode("utf-8", "surrogateescape")
+            for item in raw.split(b"\0")
+            if item
+        ]
+        digest = hashlib.sha256(snapshot.read_bytes()).hexdigest()
+        sites = [line.strip().rstrip("/") for line in os.environ["SITE_URLS"].splitlines() if line.strip()]
+
+        manifest = {
+            "archive_type": "Complete DedSec Project website source snapshot",
+            "source_repository": os.environ["SOURCE_REPOSITORY"],
+            "source_commit": os.environ["COMMIT"],
+            "created_utc": os.environ["TIMESTAMP"],
+            "public_websites": sites,
+            "snapshot_file": snapshot.name,
+            "snapshot_sha256": digest,
+            "tracked_file_count": len(tracked),
+            "tracked_files": tracked,
+        }
+        (output / os.environ["MANIFEST"]).write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        (output / os.environ["CHECKSUM"]).write_text(
+            f"{digest}  {snapshot.name}\n",
+            encoding="ascii",
+        )
+        PY
+
+        {
+          echo "timestamp=$timestamp"
+          echo "commit=$commit"
+          echo "short_sha=$short_sha"
+          echo "snapshot=$snapshot"
+          echo "manifest=$manifest"
+          echo "checksum=$checksum"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Upload website snapshot to Internet Archive
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        upload_to_ia() {
+          local file="$1"
+          local remote_name
+          remote_name="$(basename "$file")"
+
+          curl --silent --show-error --fail-with-body --location \
+            --retry 6 --retry-all-errors --retry-delay 10 \
+            --header "Authorization: LOW ${IA_ACCESS_KEY}:${IA_SECRET_KEY}" \
+            --header "x-amz-auto-make-bucket:1" \
+            --header "x-archive-ignore-preexisting-bucket:1" \
+            --header "x-archive-queue-derive:0" \
+            --header "x-archive-meta-title:DedSec Project Website Snapshots" \
+            --header "x-archive-meta-creator:DedSec Project" \
+            --header "x-archive-meta-mediatype:software" \
+            --header "x-archive-meta-description:Daily complete source snapshots of the DedSec Project main and backup websites." \
+            --header "x-archive-meta-subject:DedSec Project; website; source code; cybersecurity education" \
+            --upload-file "$file" \
+            "https://s3.us.archive.org/${IA_ITEM_IDENTIFIER}/${remote_name}"
+        }
+
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.snapshot }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.manifest }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.checksum }}"
+
+    - name: Build complete Wayback URL list
+      id: urls
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        python <<'PY'
+        import os
+        import pathlib
+        import subprocess
+        import urllib.parse
+
+        sites = [line.strip().rstrip("/") for line in os.environ["SITE_URLS"].splitlines() if line.strip()]
+        raw = subprocess.check_output(["git", "-C", "source", "ls-files", "-z"])
+        paths = [
+            item.decode("utf-8", "surrogateescape")
+            for item in raw.split(b"\0")
+            if item
+        ]
+
+        excluded_prefixes = (".git/", ".github/")
+        excluded_names = {
+            ".gitignore", ".gitattributes", ".nojekyll",
+            "README", "README.md", "README.txt",
+            "LICENSE", "LICENSE.md", "LICENSE.txt", "SECURITY.md",
+        }
+
+        urls = set()
+        for site in sites:
+            urls.add(site + "/")
+
+        for path in paths:
+            normalized = path.replace("\\", "/").lstrip("/")
+            if not normalized or normalized.startswith(excluded_prefixes):
+                continue
+            if normalized in excluded_names or "/." in normalized:
+                continue
+            if not (pathlib.Path("source") / path).is_file():
+                continue
+
+            encoded = urllib.parse.quote(normalized, safe="/~._-()")
+            for site in sites:
+                urls.add(f"{site}/{encoded}")
+                lower = normalized.lower()
+                if lower == "index.html":
+                    urls.add(site + "/")
+                elif lower.endswith("/index.html"):
+                    urls.add(f"{site}/{encoded[:-len('index.html')]}")
+
+        pathlib.Path("wayback-urls.txt").write_text(
+            "\n".join(sorted(urls)) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Prepared {len(urls)} website URLs.")
+        PY
+
+        echo "count=$(wc -l < wayback-urls.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
+    - name: Submit every website URL to Wayback Machine
+      id: wayback
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        python <<'PY'
+        import json
+        import os
+        import pathlib
+        import random
+        import time
+        import urllib.error
+        import urllib.parse
+        import urllib.request
+
+        access = os.environ["IA_ACCESS_KEY"]
+        secret = os.environ["IA_SECRET_KEY"]
+        urls = [
+            line.strip()
+            for line in pathlib.Path("wayback-urls.txt").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+
+        accepted = []
+        failures = []
+
+        for number, url in enumerate(urls, start=1):
+            payload = urllib.parse.urlencode({
+                "url": url,
+                "capture_outlinks": "0",
+                "capture_screenshot": "0",
+                "skip_first_archive": "0",
+            }).encode("utf-8")
+
+            last_error = "unknown error"
+            succeeded = False
+            for attempt in range(1, 7):
+                request = urllib.request.Request(
+                    "https://web.archive.org/save",
+                    data=payload,
+                    method="POST",
+                    headers={
+                        "Authorization": f"LOW {access}:{secret}",
+                        "Accept": "application/json",
+                        "User-Agent": "DedSec-Project-Website-Archiver/2.0",
+                    },
+                )
+                try:
+                    with urllib.request.urlopen(request, timeout=120) as response:
+                        body = response.read().decode("utf-8", "replace")
+                        try:
+                            result = json.loads(body)
+                        except json.JSONDecodeError:
+                            result = {"response": body[:2000]}
+                        accepted.append({"url": url, "status": response.status, "result": result})
+                        print(f"[{number}/{len(urls)}] accepted: {url}")
+                        succeeded = True
+                        break
+                except urllib.error.HTTPError as exc:
+                    body = exc.read().decode("utf-8", "replace")
+                    last_error = f"HTTP {exc.code}: {body[:800]}"
+                    if exc.code == 403 and (
+                        "InvalidAccessKeyId" in body
+                        or "SignatureDoesNotMatch" in body
+                    ):
+                        raise SystemExit(
+                            "Internet Archive rejected the credentials. "
+                            "Internet_Archive_1 must be the S3 access key and "
+                            "Internet_Archive_2 must be the S3 secret key."
+                        )
+                    if exc.code not in {408, 425, 429, 500, 502, 503, 504}:
+                        break
+                    retry_after = exc.headers.get("Retry-After")
+                    delay = int(retry_after) if retry_after and retry_after.isdigit() else min(120, 10 * attempt)
+                    print(f"[{number}/{len(urls)}] retry {attempt}/6 in {delay}s: {url}")
+                    time.sleep(delay)
+                except Exception as exc:
+                    last_error = repr(exc)
+                    delay = min(120, 10 * attempt)
+                    print(f"[{number}/{len(urls)}] retry {attempt}/6 in {delay}s: {url}")
+                    time.sleep(delay)
+
+            if not succeeded:
+                failures.append({"url": url, "error": last_error})
+                print(f"::warning title=Wayback capture failed::{url} — {last_error}")
+
+            time.sleep(2 + random.random())
+
+        report = {
+            "submitted_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "requested": len(urls),
+            "accepted": len(accepted),
+            "failed": len(failures),
+            "accepted_requests": accepted,
+            "failures": failures,
+        }
+        pathlib.Path("wayback-report.json").write_text(
+            json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+            output.write(f"requested={len(urls)}\n")
+            output.write(f"accepted={len(accepted)}\n")
+            output.write(f"failed={len(failures)}\n")
+
+        print(f"Wayback accepted {len(accepted)} of {len(urls)} requests.")
+        if urls and not accepted:
+            raise SystemExit("Every Wayback Machine website submission failed.")
+        PY
+
+    - name: Upload Wayback report to Internet Archive
+      shell: bash
+      run: |
+        set -euo pipefail
+        report_name="dedsec-websites-${{ steps.snapshot.outputs.timestamp }}-${{ steps.snapshot.outputs.short_sha }}-wayback-report.json"
+        cp wayback-report.json "$report_name"
+
+        curl --silent --show-error --fail-with-body --location \
+          --retry 6 --retry-all-errors --retry-delay 10 \
+          --header "Authorization: LOW ${IA_ACCESS_KEY}:${IA_SECRET_KEY}" \
+          --header "x-amz-auto-make-bucket:1" \
+          --header "x-archive-ignore-preexisting-bucket:1" \
+          --header "x-archive-queue-derive:0" \
+          --upload-file "$report_name" \
+          "https://s3.us.archive.org/${IA_ITEM_IDENTIFIER}/${report_name}"
+
+  archive-project-repositories:
+    name: Archive complete project repositories
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+    env:
+      MAIN_REPOSITORY: dedsec1121fk/DedSec
+      BACKUP_REPOSITORY: sal-scar/DedSec
+      IA_ITEM_IDENTIFIER: dedsec1121fk-dedsec-project-repository-snapshots
+      IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
+      IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
+    steps:
+    - name: Check out main project repository
+      uses: actions/checkout@v6
+      with:
+        repository: dedsec1121fk/DedSec
+        path: main-source
+        fetch-depth: 0
+        persist-credentials: false
+
+    - name: Check out backup project repository
+      uses: actions/checkout@v6
+      with:
+        repository: sal-scar/DedSec
+        path: backup-source
+        fetch-depth: 0
+        persist-credentials: false
+
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: "3.13"
+
+    - name: Validate Internet Archive secrets
+      shell: bash
+      run: |
+        set -euo pipefail
+        [[ -n "${IA_ACCESS_KEY:-}" ]] || {
+          echo "::error::Missing secret Internet_Archive_1. It must contain the Internet Archive S3 access key."
+          exit 1
+        }
+        [[ -n "${IA_SECRET_KEY:-}" ]] || {
+          echo "::error::Missing secret Internet_Archive_2. It must contain the Internet Archive S3 secret key."
+          exit 1
+        }
+        if [[ "$IA_ACCESS_KEY" =~ [[:space:]] || "$IA_SECRET_KEY" =~ [[:space:]] ]]; then
+          echo "::error::An Internet Archive secret contains whitespace. Recreate both GitHub secrets by copying the values exactly."
+          exit 1
+        fi
+        echo "::add-mask::$IA_ACCESS_KEY"
+        echo "::add-mask::$IA_SECRET_KEY"
+
+    - name: Create complete source and Git-history snapshots
+      id: snapshot
+      shell: bash
+      run: |
+        set -euo pipefail
+        mkdir -p archive-output
+
+        timestamp="$(date -u +%Y%m%dT%H%M%SZ)"
+        main_commit="$(git -C main-source rev-parse HEAD)"
+        backup_commit="$(git -C backup-source rev-parse HEAD)"
+        main_short="${main_commit:0:12}"
+        backup_short="${backup_commit:0:12}"
+
+        main_zip="dedsec-main-source-${timestamp}-${main_short}.zip"
+        main_bundle="dedsec-main-history-${timestamp}-${main_short}.bundle"
+        backup_zip="dedsec-backup-source-${timestamp}-${backup_short}.zip"
+        backup_bundle="dedsec-backup-history-${timestamp}-${backup_short}.bundle"
+        manifest="dedsec-project-repositories-${timestamp}-manifest.json"
+        checksums="dedsec-project-repositories-${timestamp}-SHA256SUMS.txt"
+
+        git -C main-source archive --format=zip --output="${GITHUB_WORKSPACE}/archive-output/${main_zip}" HEAD
+        git -C main-source bundle create "${GITHUB_WORKSPACE}/archive-output/${main_bundle}" --all
+        git -C backup-source archive --format=zip --output="${GITHUB_WORKSPACE}/archive-output/${backup_zip}" HEAD
+        git -C backup-source bundle create "${GITHUB_WORKSPACE}/archive-output/${backup_bundle}" --all
+
+        MAIN_ZIP="$main_zip" MAIN_BUNDLE="$main_bundle" \
+        BACKUP_ZIP="$backup_zip" BACKUP_BUNDLE="$backup_bundle" \
+        MANIFEST="$manifest" CHECKSUMS="$checksums" TIMESTAMP="$timestamp" \
+        MAIN_COMMIT="$main_commit" BACKUP_COMMIT="$backup_commit" python <<'PY'
+        import hashlib
+        import json
+        import os
+        import pathlib
+        import subprocess
+
+        output = pathlib.Path("archive-output")
+        names = [
+            os.environ["MAIN_ZIP"],
+            os.environ["MAIN_BUNDLE"],
+            os.environ["BACKUP_ZIP"],
+            os.environ["BACKUP_BUNDLE"],
+        ]
+        digests = {}
+        for name in names:
+            digests[name] = hashlib.sha256((output / name).read_bytes()).hexdigest()
+
+        def files(path):
+            raw = subprocess.check_output(["git", "-C", path, "ls-files", "-z"])
+            return [
+                item.decode("utf-8", "surrogateescape")
+                for item in raw.split(b"\0")
+                if item
+            ]
+
+        main_files = files("main-source")
+        backup_files = files("backup-source")
+        manifest = {
+            "archive_type": "Complete DedSec Project repository snapshots",
+            "created_utc": os.environ["TIMESTAMP"],
+            "repositories": [
+                {
+                    "repository": os.environ["MAIN_REPOSITORY"],
+                    "commit": os.environ["MAIN_COMMIT"],
+                    "source_zip": os.environ["MAIN_ZIP"],
+                    "git_history_bundle": os.environ["MAIN_BUNDLE"],
+                    "tracked_file_count": len(main_files),
+                    "tracked_files": main_files,
+                },
+                {
+                    "repository": os.environ["BACKUP_REPOSITORY"],
+                    "commit": os.environ["BACKUP_COMMIT"],
+                    "source_zip": os.environ["BACKUP_ZIP"],
+                    "git_history_bundle": os.environ["BACKUP_BUNDLE"],
+                    "tracked_file_count": len(backup_files),
+                    "tracked_files": backup_files,
+                },
+            ],
+            "sha256": digests,
+            "restore_examples": {
+                "main_history": f"git clone {os.environ['MAIN_BUNDLE']} DedSec-main-restored",
+                "backup_history": f"git clone {os.environ['BACKUP_BUNDLE']} DedSec-backup-restored",
+            },
+        }
+        (output / os.environ["MANIFEST"]).write_text(
+            json.dumps(manifest, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+        (output / os.environ["CHECKSUMS"]).write_text(
+            "".join(f"{digest}  {name}\n" for name, digest in digests.items()),
+            encoding="ascii",
+        )
+        PY
+
+        {
+          echo "timestamp=$timestamp"
+          echo "main_commit=$main_commit"
+          echo "backup_commit=$backup_commit"
+          echo "main_short=$main_short"
+          echo "backup_short=$backup_short"
+          echo "main_zip=$main_zip"
+          echo "main_bundle=$main_bundle"
+          echo "backup_zip=$backup_zip"
+          echo "backup_bundle=$backup_bundle"
+          echo "manifest=$manifest"
+          echo "checksums=$checksums"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Upload repository snapshots to Internet Archive
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        upload_to_ia() {
+          local file="$1"
+          local remote_name
+          remote_name="$(basename "$file")"
+
+          curl --silent --show-error --fail-with-body --location \
+            --retry 6 --retry-all-errors --retry-delay 10 \
+            --header "Authorization: LOW ${IA_ACCESS_KEY}:${IA_SECRET_KEY}" \
+            --header "x-amz-auto-make-bucket:1" \
+            --header "x-archive-ignore-preexisting-bucket:1" \
+            --header "x-archive-queue-derive:0" \
+            --header "x-archive-meta-title:DedSec Project Complete Repository Snapshots" \
+            --header "x-archive-meta-creator:DedSec Project" \
+            --header "x-archive-meta-mediatype:software" \
+            --header "x-archive-meta-description:Daily complete source archives and Git-history bundles of the main and backup DedSec Project repositories." \
+            --header "x-archive-meta-subject:DedSec Project; GitHub; source code; Git history; cybersecurity education" \
+            --upload-file "$file" \
+            "https://s3.us.archive.org/${IA_ITEM_IDENTIFIER}/${remote_name}"
+        }
+
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.main_zip }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.main_bundle }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.backup_zip }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.backup_bundle }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.manifest }}"
+        upload_to_ia "archive-output/${{ steps.snapshot.outputs.checksums }}"
+
+    - name: Build complete GitHub Wayback URL list
+      id: urls
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        python <<'PY'
+        import pathlib
+        import subprocess
+        import urllib.parse
+
+        repositories = [
+            ("dedsec1121fk/DedSec", "main-source"),
+            ("sal-scar/DedSec", "backup-source"),
+        ]
+        urls = set()
+
+        for repository, local_path in repositories:
+            commit = subprocess.check_output(
+                ["git", "-C", local_path, "rev-parse", "HEAD"],
+                text=True,
+            ).strip()
+            github = f"https://github.com/{repository}"
+            raw_host = f"https://raw.githubusercontent.com/{repository}"
+            urls.update({
+                github,
+                f"{github}/commit/{commit}",
+                f"{github}/tree/{commit}",
+                f"{github}/archive/{commit}.zip",
+                f"{github}/archive/{commit}.tar.gz",
+            })
+
+            raw = subprocess.check_output(["git", "-C", local_path, "ls-files", "-z"])
+            paths = [
+                item.decode("utf-8", "surrogateescape")
+                for item in raw.split(b"\0")
+                if item
+            ]
+            for path in paths:
+                normalized = path.replace("\\", "/").lstrip("/")
+                if not normalized:
+                    continue
+                if not (pathlib.Path(local_path) / path).is_file():
+                    continue
+                encoded = urllib.parse.quote(normalized, safe="/~._-()")
+                urls.add(f"{github}/blob/{commit}/{encoded}")
+                urls.add(f"{raw_host}/{commit}/{encoded}")
+
+        pathlib.Path("wayback-urls.txt").write_text(
+            "\n".join(sorted(urls)) + "\n",
+            encoding="utf-8",
+        )
+        print(f"Prepared {len(urls)} repository URLs.")
+        PY
+
+        echo "count=$(wc -l < wayback-urls.txt | tr -d ' ')" >> "$GITHUB_OUTPUT"
+
+    - name: Submit every repository URL to Wayback Machine
+      id: wayback
+      shell: bash
+      run: |
+        set -euo pipefail
+
+        python <<'PY'
+        import json
+        import os
+        import pathlib
+        import random
+        import time
+        import urllib.error
+        import urllib.parse
+        import urllib.request
+
+        access = os.environ["IA_ACCESS_KEY"]
+        secret = os.environ["IA_SECRET_KEY"]
+        urls = [
+            line.strip()
+            for line in pathlib.Path("wayback-urls.txt").read_text(encoding="utf-8").splitlines()
+            if line.strip()
+        ]
+
+        accepted = []
+        failures = []
+
+        for number, url in enumerate(urls, start=1):
+            payload = urllib.parse.urlencode({
+                "url": url,
+                "capture_outlinks": "0",
+                "capture_screenshot": "0",
+                "skip_first_archive": "0",
+            }).encode("utf-8")
+
+            last_error = "unknown error"
+            succeeded = False
+            for attempt in range(1, 7):
+                request = urllib.request.Request(
+                    "https://web.archive.org/save",
+                    data=payload,
+                    method="POST",
+                    headers={
+                        "Authorization": f"LOW {access}:{secret}",
+                        "Accept": "application/json",
+                        "User-Agent": "DedSec-Project-Repository-Archiver/2.0",
+                    },
+                )
+                try:
+                    with urllib.request.urlopen(request, timeout=120) as response:
+                        body = response.read().decode("utf-8", "replace")
+                        try:
+                            result = json.loads(body)
+                        except json.JSONDecodeError:
+                            result = {"response": body[:2000]}
+                        accepted.append({"url": url, "status": response.status, "result": result})
+                        print(f"[{number}/{len(urls)}] accepted: {url}")
+                        succeeded = True
+                        break
+                except urllib.error.HTTPError as exc:
+                    body = exc.read().decode("utf-8", "replace")
+                    last_error = f"HTTP {exc.code}: {body[:800]}"
+                    if exc.code == 403 and (
+                        "InvalidAccessKeyId" in body
+                        or "SignatureDoesNotMatch" in body
+                    ):
+                        raise SystemExit(
+                            "Internet Archive rejected the credentials. "
+                            "Internet_Archive_1 must be the S3 access key and "
+                            "Internet_Archive_2 must be the S3 secret key."
+                        )
+                    if exc.code not in {408, 425, 429, 500, 502, 503, 504}:
+                        break
+                    retry_after = exc.headers.get("Retry-After")
+                    delay = int(retry_after) if retry_after and retry_after.isdigit() else min(120, 10 * attempt)
+                    print(f"[{number}/{len(urls)}] retry {attempt}/6 in {delay}s: {url}")
+                    time.sleep(delay)
+                except Exception as exc:
+                    last_error = repr(exc)
+                    delay = min(120, 10 * attempt)
+                    print(f"[{number}/{len(urls)}] retry {attempt}/6 in {delay}s: {url}")
+                    time.sleep(delay)
+
+            if not succeeded:
+                failures.append({"url": url, "error": last_error})
+                print(f"::warning title=Wayback capture failed::{url} — {last_error}")
+
+            time.sleep(2 + random.random())
+
+        report = {
+            "submitted_utc": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            "requested": len(urls),
+            "accepted": len(accepted),
+            "failed": len(failures),
+            "accepted_requests": accepted,
+            "failures": failures,
+        }
+        pathlib.Path("wayback-report.json").write_text(
+            json.dumps(report, indent=2, ensure_ascii=False) + "\n",
+            encoding="utf-8",
+        )
+
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
+            output.write(f"requested={len(urls)}\n")
+            output.write(f"accepted={len(accepted)}\n")
+            output.write(f"failed={len(failures)}\n")
+
+        print(f"Wayback accepted {len(accepted)} of {len(urls)} requests.")
+        if urls and not accepted:
+            raise SystemExit("Every Wayback Machine repository submission failed.")
+        PY
+
+    - name: Upload Wayback report to Internet Archive
+      shell: bash
+      run: |
+        set -euo pipefail
+        report_name="dedsec-project-repositories-${{ steps.snapshot.outputs.timestamp }}-wayback-report.json"
+        cp wayback-report.json "$report_name"
+
+        curl --silent --show-error --fail-with-body --location \
+          --retry 6 --retry-all-errors --retry-delay 10 \
+          --header "Authorization: LOW ${IA_ACCESS_KEY}:${IA_SECRET_KEY}" \
+          --header "x-amz-auto-make-bucket:1" \
+          --header "x-archive-ignore-preexisting-bucket:1" \
+          --header "x-archive-queue-derive:0" \
+          --upload-file "$report_name" \
+          "https://s3.us.archive.org/${IA_ITEM_IDENTIFIER}/${report_name}"
+
+  update-readme:
+    name: Update README archive links and timestamp
+    needs:
+    - archive-websites
+    - archive-project-repositories
+    if: ${{ success() }}
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out the private archive repository
+      uses: actions/checkout@v6
+      with:
+        fetch-depth: 0
+    - name: Write Internet Archive and Wayback links to README
+      shell: bash
+      run: |-
+        set -euo pipefail
+
+        python <<'PY'
+        import os
+        import pathlib
+        from datetime import datetime
+        from zoneinfo import ZoneInfo
+
+        readme_path = pathlib.Path("README.md")
+        start = "<!-- DEDSEC_AUTOMATIC_ARCHIVE_STATUS_START -->"
+        end = "<!-- DEDSEC_AUTOMATIC_ARCHIVE_STATUS_END -->"
+
+        if readme_path.exists():
+            readme = readme_path.read_text(encoding="utf-8")
+        else:
+            readme = "# Save DedSec Project\n"
+
+        saved = datetime.now(ZoneInfo("Europe/Athens")).strftime(
+            "%Y-%m-%d %H:%M:%S %Z"
+        )
+        run_url = (
+            f"https://github.com/{os.environ['GITHUB_REPOSITORY']}"
+            f"/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+        )
+
+        block = f"""{start}
+        ## Saved Archive Links
+
+        ### Internet Archive
+
+        - [Complete website source snapshots](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
+        - [Complete main and backup project repository snapshots](https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots)
+
+        ### Wayback Machine
+
+        - [Main website saved captures](https://web.archive.org/web/*/https://ded-sec.space/*)
+        - [Backup website saved captures](https://web.archive.org/web/*/https://ded-sec.online/*)
+        - [Website source repository saved captures](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk.github.io*)
+        - [Main project repository saved captures](https://web.archive.org/web/*/https://github.com/dedsec1121fk/DedSec*)
+        - [Backup project repository saved captures](https://web.archive.org/web/*/https://github.com/sal-scar/DedSec*)
+
+        ## Last Successful Automatic Save
+
+        **Last successfully saved:** {saved} (Greece time)  
+        **Workflow run:** [Open this archive run]({run_url})  
+        **Schedule:** Every day at 12:00 Europe/Athens.
+
+        Both the complete website archive and complete repository archive finished successfully in this workflow run.
+
+        This marked section is replaced automatically after every successful run.
+        {end}"""
+
+        if start in readme and end in readme:
+            before, remainder = readme.split(start, 1)
+            _, after = remainder.split(end, 1)
+            updated = before.rstrip() + "\n\n" + block + after
+        else:
+            updated = readme.rstrip() + "\n\n" + block + "\n"
+
+        readme_path.write_text(updated, encoding="utf-8")
+        PY
+
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        git add README.md
+
+        if git diff --cached --quiet; then
+          echo "README already contains the current archive status."
+        else
+          git commit -m "docs: update archive links and last save [skip ci]"
+          git push
+        fi
