@@ -1,7 +1,0 @@
-{
-  "schema_version": 5,
-  "generated_at_utc": null,
-  "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This file is the synchronized combined copy.",
-  "resume_behavior": "Internet Archive files checkpoint after every successful operation. Wayback uses a separate serial resumable queue.",
-  "targets": {}
-}
