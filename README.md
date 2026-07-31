@@ -40,7 +40,7 @@ The Internet Archive checkpoint is updated after every successful file operation
 A synchronized combined copy is stored here:
 
 ```text
-.github/workflows/update.json
+update.json
 ```
 
 If Internet Archive temporarily returns HTTP 503 during a first run, the workflow falls back to the GitHub `update.json` state or starts a safe initial sync. It never deletes unknown files without a trustworthy previous state.
