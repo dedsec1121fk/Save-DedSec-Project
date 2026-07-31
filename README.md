@@ -21,9 +21,9 @@ Fork owners can configure their own Internet Archive credentials and item identi
 <!-- PERMANENT_ARCHIVE_LINKS_START -->
 ## Permanent Internet Archive Links
 
-- **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
 - **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
 - **DedSec backup:** https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots
+- **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
 - **GitHub profile:** https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots
 - **Corrupted Files:** https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots
 - **Pocket AI:** https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots
@@ -137,39 +137,79 @@ All groups run Wednesday, Friday and Sunday using `Europe/Athens`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 ### DedSec GitHub Profile Repository
 
-**Current file-sync status:** `not_started`  
-**Wayback queue remaining:** Not generated yet.
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-07-31 20:02:19 EEST  
+**Current mirrored files:** 6  
+**Latest file update:** 0 uploaded, 0 deleted, 6 unchanged.  
+**Mirror verification:** `True`  
+**Wayback queue remaining:** 0  
+**Wayback captures accepted:** 49  
+**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
+**Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
-- [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk*)
+- [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk*)
+- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk/commit/fcf8264fd93445718f4676af060afa58d797abaa)
+
+This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_END -->
 
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 ### Corrupted Files Project
 
-**Current file-sync status:** `not_started`  
-**Wayback queue remaining:** Not generated yet.
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-07-31 20:02:11 EEST  
+**Current mirrored files:** 1721  
+**Latest file update:** 0 uploaded, 0 deleted, 1721 unchanged.  
+**Mirror verification:** `True`  
+**Wayback queue remaining:** 3407  
+**Wayback captures accepted:** 46  
+**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
+**Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots)
-- [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Corrupted-Files-Project*)
+- [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Corrupted-Files-Project*)
+- [Last archived commit](https://github.com/dedsec1121fk/Corrupted-Files-Project/commit/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8)
+
+This section is generated from `update.json`.
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_END -->
 
 <!-- POCKET_AI_ARCHIVE_STATUS_START -->
 ### Pocket AI
 
-**Current file-sync status:** `not_started`  
-**Wayback queue remaining:** Not generated yet.
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-07-31 17:44:12 EEST  
+**Current mirrored files:** 128  
+**Latest file update:** 0 uploaded, 0 deleted, 128 unchanged.  
+**Mirror verification:** `True`  
+**Wayback queue remaining:** 204  
+**Wayback captures accepted:** 62  
+**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
+**Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots)
-- [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Pocket-AI*)
+- [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Pocket-AI*)
+- [Last archived commit](https://github.com/dedsec1121fk/Pocket-AI/commit/8f468aa3aa4e0078544458bde0b9c8ab5cb64127)
+
+This section is generated from `update.json`.
 <!-- POCKET_AI_ARCHIVE_STATUS_END -->
 
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 ### Offline Survival Project
 
-**Current file-sync status:** `not_started`  
-**Wayback queue remaining:** Not generated yet.
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-07-31 17:44:50 EEST  
+**Current mirrored files:** 1409  
+**Latest file update:** 0 uploaded, 0 deleted, 1409 unchanged.  
+**Mirror verification:** `True`  
+**Wayback queue remaining:** 2757  
+**Wayback captures accepted:** 72  
+**Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
+**Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots)
-- [Wayback history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Offline-Survival-Project*)
+- [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/Offline-Survival-Project*)
+- [Last archived commit](https://github.com/dedsec1121fk/Offline-Survival-Project/commit/80bff10df9f28093ea965ae4043e781d7a52dc87)
+
+This section is generated from `update.json`.
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_END -->
