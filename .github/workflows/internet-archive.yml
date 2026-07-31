@@ -340,8 +340,6 @@ jobs:
           SOURCE_ROOT = pathlib.Path("source")
           CONTROLLER_STATE_PATH = (
               pathlib.Path("controller")
-              / ".github"
-              / "workflows"
               / "update.json"
           )
           LOCAL_STATE_DIR = pathlib.Path("archive-state")
@@ -688,7 +686,7 @@ jobs:
               state_source = "github_update_json"
               print(
                   "Internet Archive checkpoint was unavailable; "
-                  "resuming from .github/workflows/update.json."
+                  "resuming from update.json."
               )
           else:
               state = default_state()
@@ -1714,12 +1712,7 @@ jobs:
 
           SCHEMA_VERSION = 5
           CONTROLLER = pathlib.Path("controller")
-          UPDATE_PATH = (
-              CONTROLLER
-              / ".github"
-              / "workflows"
-              / "update.json"
-          )
+          UPDATE_PATH = CONTROLLER / "update.json"
           README_PATH = CONTROLLER / "README.md"
           ARTIFACT_DIR = pathlib.Path("checkpoint-artifacts")
           targets = json.loads(os.environ["SELECTED_TARGETS"])
@@ -1969,7 +1962,7 @@ jobs:
                   "",
                   (
                       "This section is generated from "
-                      "`.github/workflows/update.json`."
+                      "`update.json`."
                   ),
                   end,
               ])
@@ -1998,7 +1991,7 @@ jobs:
             "41898282+github-actions[bot]@users.noreply.github.com"
 
           git -C controller add \
-            .github/workflows/update.json \
+            update.json \
             README.md
 
           if git -C controller diff --cached --quiet; then
