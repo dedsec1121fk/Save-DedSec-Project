@@ -39,6 +39,7 @@ jobs:
       target_count: ${{ steps.plan.outputs.target_count }}
       target_matrix: ${{ steps.plan.outputs.target_matrix }}
       selected_targets: ${{ steps.plan.outputs.selected_targets }}
+      all_targets: ${{ steps.plan.outputs.all_targets }}
       group_name: ${{ steps.plan.outputs.group_name }}
 
     steps:
@@ -61,6 +62,7 @@ jobs:
                   "repository": "dedsec1121fk/DedSec",
                   "slug": "dedsec-main",
                   "title": "DedSec Project Main Repository",
+                  "archive_label": "DedSec main",
                   "marker": "DEDSEC_MAIN_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
                   "timeout_minutes": 300,
@@ -80,6 +82,7 @@ jobs:
                   "repository": "sal-scar/DedSec",
                   "slug": "dedsec-backup",
                   "title": "DedSec Project Backup Repository",
+                  "archive_label": "DedSec backup",
                   "marker": "DEDSEC_BACKUP_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
                   "timeout_minutes": 300,
@@ -98,6 +101,7 @@ jobs:
                   "repository": "dedsec1121fk/dedsec1121fk.github.io",
                   "slug": "dedsec-websites",
                   "title": "DedSec Websites and Website Source",
+                  "archive_label": "Websites",
                   "marker": "WEBSITES_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-dedsec-website-snapshots",
                   "timeout_minutes": 300,
@@ -118,6 +122,7 @@ jobs:
                   "repository": "dedsec1121fk/dedsec1121fk",
                   "slug": "github-profile",
                   "title": "DedSec GitHub Profile Repository",
+                  "archive_label": "GitHub profile",
                   "marker": "GITHUB_PROFILE_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-github-profile-repository-snapshots",
                   "timeout_minutes": 240,
@@ -130,6 +135,7 @@ jobs:
                   "repository": "dedsec1121fk/Corrupted-Files-Project",
                   "slug": "corrupted-files-project",
                   "title": "Corrupted Files Project",
+                  "archive_label": "Corrupted Files",
                   "marker": "CORRUPTED_FILES_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-corrupted-files-project-repository-snapshots",
                   "timeout_minutes": 240,
@@ -142,6 +148,7 @@ jobs:
                   "repository": "dedsec1121fk/Pocket-AI",
                   "slug": "pocket-ai",
                   "title": "Pocket AI",
+                  "archive_label": "Pocket AI",
                   "marker": "POCKET_AI_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-pocket-ai-repository-snapshots",
                   "timeout_minutes": 240,
@@ -154,6 +161,7 @@ jobs:
                   "repository": "dedsec1121fk/Offline-Survival-Project",
                   "slug": "offline-survival-project",
                   "title": "Offline Survival Project",
+                  "archive_label": "Offline Survival",
                   "marker": "OFFLINE_SURVIVAL_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-offline-survival-project-repository-snapshots",
                   "timeout_minutes": 240,
@@ -164,6 +172,8 @@ jobs:
               },
           ]
 
+          all_targets = dedsec_targets + website_targets + other_targets
+
           event_name = os.environ.get("EVENT_NAME", "")
           schedule = os.environ.get("EVENT_SCHEDULE", "")
           manual_group = os.environ.get("MANUAL_GROUP", "") or "all"
@@ -171,7 +181,7 @@ jobs:
           if event_name == "workflow_dispatch":
               group_name = manual_group
               if manual_group == "all":
-                  targets = dedsec_targets + website_targets + other_targets
+                  targets = all_targets
               elif manual_group == "dedsec-project":
                   targets = dedsec_targets
               elif manual_group == "websites":
@@ -211,6 +221,11 @@ jobs:
               output.write(
                   "selected_targets="
                   + json.dumps(targets, separators=(",", ":"))
+                  + "\n"
+              )
+              output.write(
+                  "all_targets="
+                  + json.dumps(all_targets, separators=(",", ":"))
                   + "\n"
               )
               output.write(f"group_name={group_name}\n")
@@ -1676,6 +1691,7 @@ jobs:
 
     env:
       SELECTED_TARGETS: ${{ needs.prepare.outputs.selected_targets }}
+      ALL_TARGETS: ${{ needs.prepare.outputs.all_targets }}
 
     steps:
       - name: Check out archive controller
@@ -1716,6 +1732,7 @@ jobs:
           README_PATH = CONTROLLER / "README.md"
           ARTIFACT_DIR = pathlib.Path("checkpoint-artifacts")
           targets = json.loads(os.environ["SELECTED_TARGETS"])
+          all_targets = json.loads(os.environ["ALL_TARGETS"])
           retryable = {408, 425, 429, 500, 502, 503, 504}
 
           def utc_now() -> str:
@@ -1878,6 +1895,34 @@ jobs:
 
               return text.rstrip() + "\n\n" + block + "\n"
 
+          def archive_links_block(all_target_definitions: list[dict]) -> str:
+              marker = "PERMANENT_ARCHIVE_LINKS"
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              lines = [
+                  start,
+                  "## Permanent Internet Archive Links",
+                  "",
+              ]
+
+              for target in all_target_definitions:
+                  label = target.get("archive_label") or target["title"]
+                  ia_url = (
+                      "https://archive.org/details/" + target["ia_item"]
+                  )
+                  lines.append(f"- **{label}:** {ia_url}")
+
+              lines.extend([
+                  "",
+                  (
+                      "This section is regenerated on every archive run from "
+                      "the target configuration in "
+                      "`.github/workflows/internet-archive.yml`."
+                  ),
+                  end,
+              ])
+              return "\n".join(lines)
+
           def status_block(state: dict) -> str:
               target = state["target"]
               marker = target["marker"]
@@ -1967,6 +2012,12 @@ jobs:
                   end,
               ])
               return "\n".join(lines)
+
+          readme = replace_block(
+              readme,
+              "PERMANENT_ARCHIVE_LINKS",
+              archive_links_block(all_targets),
+          )
 
           for state in refreshed.values():
               marker = state.get("target", {}).get("marker")
