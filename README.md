@@ -14,6 +14,24 @@ Internet Archive file synchronization and Wayback capture processing are separat
 
 This prevents Wayback rate limits from canceling otherwise successful repository backups.
 
+## Forking This Archive Controller
+
+Fork owners can configure their own Internet Archive credentials and item identifiers by following [Fork Instructions](Fork%20Instructions.md).
+
+<!-- PERMANENT_ARCHIVE_LINKS_START -->
+## Permanent Internet Archive Links
+
+- **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
+- **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
+- **DedSec backup:** https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots
+- **GitHub profile:** https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots
+- **Corrupted Files:** https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots
+- **Pocket AI:** https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots
+- **Offline Survival:** https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots
+
+This section is regenerated on every archive run from the target configuration in `.github/workflows/internet-archive.yml`.
+<!-- PERMANENT_ARCHIVE_LINKS_END -->
+
 ## Incremental Internet Archive Mirror
 
 The first successful run uploads every current file. Later runs use SHA-256 hashes:
@@ -82,16 +100,6 @@ All groups run Wednesday, Friday and Sunday using `Europe/Athens`.
 - **Corrupted Files Project:** https://github.com/dedsec1121fk/Corrupted-Files-Project
 - **Pocket AI:** https://github.com/dedsec1121fk/Pocket-AI
 - **Offline Survival Project:** https://github.com/dedsec1121fk/Offline-Survival-Project
-
-## Permanent Internet Archive Links
-
-- **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
-- **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
-- **DedSec backup:** https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots
-- **GitHub profile:** https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots
-- **Corrupted Files:** https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots
-- **Pocket AI:** https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots
-- **Offline Survival:** https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots
 
 ## Automatic Archive Status
 
