@@ -169,18 +169,18 @@ This section is generated from `update.json`.
 ### DedSec GitHub Profile Repository
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-01 07:12:11 EEST  
+**Last complete or attempted save:** 2026-08-02 19:48:07 EEST  
 **Current mirrored files:** 6  
-**Latest file update:** 2 uploaded, 0 deleted, 4 unchanged.  
+**Latest file update:** 3 uploaded, 0 deleted, 3 unchanged.  
 **Mirror verification:** `True`  
 **Wayback queue remaining:** 0  
-**Wayback captures accepted:** 61  
+**Wayback captures accepted:** 75  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
 - [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk*)
-- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk/commit/8e1a7e04f7e34d8fa84d4c99f5259297608df43f)
+- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk/commit/81b12a93f77f990818e7b883bb613936292a6e2c)
 
 This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_END -->
@@ -189,12 +189,12 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-01 07:12:23 EEST  
+**Last complete or attempted save:** 2026-08-02 19:47:56 EEST  
 **Current mirrored files:** 1721  
 **Latest file update:** 0 uploaded, 0 deleted, 1721 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 3377  
-**Wayback captures accepted:** 75  
+**Wayback queue remaining:** 3323  
+**Wayback captures accepted:** 129  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -209,12 +209,12 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-01 07:12:46 EEST  
+**Last complete or attempted save:** 2026-08-02 19:47:33 EEST  
 **Current mirrored files:** 128  
 **Latest file update:** 0 uploaded, 0 deleted, 128 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 174  
-**Wayback captures accepted:** 92  
+**Wayback queue remaining:** 120  
+**Wayback captures accepted:** 146  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -229,12 +229,12 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-07-31 17:44:50 EEST  
+**Last complete or attempted save:** 2026-08-02 19:47:40 EEST  
 **Current mirrored files:** 1409  
 **Latest file update:** 0 uploaded, 0 deleted, 1409 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 2728  
-**Wayback captures accepted:** 101  
+**Wayback queue remaining:** 2674  
+**Wayback captures accepted:** 155  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
