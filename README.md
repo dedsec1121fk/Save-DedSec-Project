@@ -128,13 +128,13 @@ This section is generated from `update.json`.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 ### DedSec Project Main Repository
 
-**Current file-sync status:** `complete`  
+**Current file-sync status:** `in_progress`  
 **Last complete or attempted save:** 2026-08-01 07:12:13 EEST  
-**Current mirrored files:** 200  
+**Current mirrored files:** 587  
 **Latest file update:** 0 uploaded, 0 deleted, 200 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 273  
-**Wayback captures accepted:** 137  
+**Wayback queue remaining:** 217  
+**Wayback captures accepted:** 193  
 **Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -149,18 +149,18 @@ This section is generated from `update.json`.
 ### DedSec Project Backup Repository
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-01 07:11:57 EEST  
-**Current mirrored files:** 200  
-**Latest file update:** 0 uploaded, 0 deleted, 200 unchanged.  
+**Last complete or attempted save:** 2026-08-02 09:42:43 EEST  
+**Current mirrored files:** 587  
+**Latest file update:** 393 uploaded, 0 deleted, 194 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 275  
-**Wayback captures accepted:** 136  
+**Wayback queue remaining:** 1009  
+**Wayback captures accepted:** 192  
 **Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots)
 - [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/sal-scar/DedSec*)
-- [Last archived commit](https://github.com/sal-scar/DedSec/commit/c9de48df0a563bd682cb4bfe1fe187a647f0681b)
+- [Last archived commit](https://github.com/sal-scar/DedSec/commit/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28)
 
 This section is generated from `update.json`.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_END -->
