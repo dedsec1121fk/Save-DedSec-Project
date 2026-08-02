@@ -107,12 +107,12 @@ All groups run Wednesday, Friday and Sunday using `Europe/Athens`.
 ### DedSec Websites and Website Source
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-01 07:11:12 EEST  
+**Last complete or attempted save:** 2026-08-02 14:14:39 EEST  
 **Current mirrored files:** 789  
 **Latest file update:** 0 uploaded, 0 deleted, 789 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 3071  
-**Wayback captures accepted:** 169  
+**Wayback queue remaining:** 2947  
+**Wayback captures accepted:** 293  
 **Scheduled window:** Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
