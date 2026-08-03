@@ -107,12 +107,12 @@ All groups run Wednesday, Friday and Sunday using `Europe/Athens`.
 ### DedSec Websites and Website Source
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-02 14:14:39 EEST  
+**Last complete or attempted save:** 2026-08-03 10:33:58 EEST  
 **Current mirrored files:** 789  
 **Latest file update:** 0 uploaded, 0 deleted, 789 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 2947  
-**Wayback captures accepted:** 293  
+**Wayback queue remaining:** 2931  
+**Wayback captures accepted:** 309  
 **Scheduled window:** Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -128,19 +128,19 @@ This section is generated from `update.json`.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 ### DedSec Project Main Repository
 
-**Current file-sync status:** `in_progress`  
-**Last complete or attempted save:** 2026-08-01 07:12:13 EEST  
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-08-03 10:35:20 EEST  
 **Current mirrored files:** 587  
-**Latest file update:** 0 uploaded, 0 deleted, 200 unchanged.  
+**Latest file update:** 0 uploaded, 0 deleted, 587 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 217  
-**Wayback captures accepted:** 193  
+**Wayback queue remaining:** 205  
+**Wayback captures accepted:** 209  
 **Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots)
 - [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/DedSec*)
-- [Last archived commit](https://github.com/dedsec1121fk/DedSec/commit/c9de48df0a563bd682cb4bfe1fe187a647f0681b)
+- [Last archived commit](https://github.com/dedsec1121fk/DedSec/commit/160a769d7c173da58ec9268c8263c0d947b01c31)
 
 This section is generated from `update.json`.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_END -->
@@ -149,12 +149,12 @@ This section is generated from `update.json`.
 ### DedSec Project Backup Repository
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-02 09:42:43 EEST  
+**Last complete or attempted save:** 2026-08-03 10:49:08 EEST  
 **Current mirrored files:** 587  
-**Latest file update:** 393 uploaded, 0 deleted, 194 unchanged.  
+**Latest file update:** 0 uploaded, 0 deleted, 587 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 1009  
-**Wayback captures accepted:** 192  
+**Wayback queue remaining:** 995  
+**Wayback captures accepted:** 206  
 **Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -169,18 +169,18 @@ This section is generated from `update.json`.
 ### DedSec GitHub Profile Repository
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-02 19:48:07 EEST  
-**Current mirrored files:** 6  
-**Latest file update:** 3 uploaded, 0 deleted, 3 unchanged.  
+**Last complete or attempted save:** 2026-08-03 10:37:41 EEST  
+**Current mirrored files:** 8  
+**Latest file update:** 6 uploaded, 0 deleted, 2 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 0  
-**Wayback captures accepted:** 75  
+**Wayback queue remaining:** 6  
+**Wayback captures accepted:** 89  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
 - [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk*)
-- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk/commit/81b12a93f77f990818e7b883bb613936292a6e2c)
+- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk/commit/55d90fdade89623e6b5fee9220dc32abfc4c04ac)
 
 This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_END -->
@@ -189,12 +189,12 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-02 19:47:56 EEST  
+**Last complete or attempted save:** 2026-08-03 10:35:07 EEST  
 **Current mirrored files:** 1721  
 **Latest file update:** 0 uploaded, 0 deleted, 1721 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 3323  
-**Wayback captures accepted:** 129  
+**Wayback queue remaining:** 3309  
+**Wayback captures accepted:** 143  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -209,12 +209,12 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-02 19:47:33 EEST  
+**Last complete or attempted save:** 2026-08-03 10:36:36 EEST  
 **Current mirrored files:** 128  
 **Latest file update:** 0 uploaded, 0 deleted, 128 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 120  
-**Wayback captures accepted:** 146  
+**Wayback queue remaining:** 111  
+**Wayback captures accepted:** 160  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -229,12 +229,12 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-02 19:47:40 EEST  
+**Last complete or attempted save:** 2026-08-03 10:36:08 EEST  
 **Current mirrored files:** 1409  
 **Latest file update:** 0 uploaded, 0 deleted, 1409 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 2674  
-**Wayback captures accepted:** 155  
+**Wayback queue remaining:** 2659  
+**Wayback captures accepted:** 170  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
