@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-08-03T10:52:52Z",
+  "generated_at_utc": "2026-08-04T10:57:18Z",
   "resume_behavior": "File synchronization checkpoints after every successful file. Wayback captures use a separate serial resumable queue.",
   "schema_version": 5,
   "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This file is the synchronized combined copy.",
   "targets": {
     "corrupted-files-project": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:35:07Z",
+        "completed_at_utc": "2026-08-04T07:52:34Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
@@ -18,9 +18,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
+        "run_id": "30889446096",
         "source_commit": "d6a37ae50dec7a6934a0ad6e868a548a0d87abe8",
-        "started_at_utc": "2026-08-03T07:34:59Z",
+        "started_at_utc": "2026-08-04T07:52:28Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 1721
@@ -12673,8 +12673,8 @@
         "uploaded_at_utc": "2026-07-30T22:19:11Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:35:07 EEST",
-      "last_completed_at_utc": "2026-08-03T07:35:07Z",
+      "last_completed_at_greece": "2026-08-04 10:52:34 EEST",
+      "last_completed_at_utc": "2026-08-04T07:52:34Z",
       "last_completed_commit": "d6a37ae50dec7a6934a0ad6e868a548a0d87abe8",
       "last_result": {
         "deleted_from_repository": 0,
@@ -12684,10 +12684,10 @@
         "mirror_verified": true,
         "unchanged_files": 1721,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 3323
+        "wayback_pending": 3309
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:35:07Z",
+      "state_updated_at_utc": "2026-08-04T07:52:34Z",
       "target": {
         "ia_item": "dedsec1121fk-corrupted-files-project-repository-snapshots",
         "kind": "repository",
@@ -12699,38 +12699,24 @@
         "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
       },
       "wayback": {
-        "completed": 143,
+        "completed": 157,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-03T10:52:27Z",
-          "remaining": 3309,
-          "workflow_run_id": "30793995304"
+          "processed_at_utc": "2026-08-04T10:56:52Z",
+          "remaining": 3295,
+          "workflow_run_id": "30889446096"
         },
-        "last_processed_at_utc": "2026-08-03T10:43:22Z",
+        "last_processed_at_utc": "2026-08-04T10:47:00Z",
         "last_queue_added": 8,
-        "last_queue_update_at_utc": "2026-08-03T07:35:07Z",
-        "last_successful_at_utc": "2026-08-03T10:43:22Z",
-        "last_successful_url": "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1968/greece_1968_panagoulis_torture_junta_repression_resistance_military_courts_fear/98---Evidence-Matrix---greece_1968_panagoulis_torture_junta_repression_resistance_military_courts_fear.jpg",
+        "last_queue_update_at_utc": "2026-08-04T07:52:33Z",
+        "last_successful_at_utc": "2026-08-04T10:47:00Z",
+        "last_successful_url": "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinis/01---EN-Cover-Card.jpg",
         "last_transient_error": {
           "at_utc": "2026-08-02T17:15:59Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1949/greece_1949_makronisos_exile_camp_anti_communist_re_education/98---Evidence-Matrix---greece_1949_makronisos_exile_camp_anti_communist_re_education.jpg"
         },
         "pending": [
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1968/greece_1968_panagoulis_torture_junta_repression_resistance_military_courts_fear/99---Research-Guide---greece_1968_panagoulis_torture_junta_repression_resistance_military_courts_fear.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/athens_polytechnic_uprising/Athens-Polytechnic-1973.png",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/greece_1973_athens_polytechnic_uprising_and_junta_violence/01---Cover-Card.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/greece_1973_athens_polytechnic_uprising_and_junta_violence/02---Proof-Map.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/greece_1973_athens_polytechnic_uprising_and_junta_violence/98---Evidence-Matrix---greece_1973_athens_polytechnic_uprising_and_junta_violence.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/greece_1973_athens_polytechnic_uprising_and_junta_violence/99---Research-Guide---greece_1973_athens_polytechnic_uprising_and_junta_violence.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/greece_1973_athens_polytechnic_uprising_memory_repression/01---EN-Image.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1973/greece_1973_athens_polytechnic_uprising_memory_repression/03---EL-Cover-Card.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_cyprus_coup_and_invasion_catastrophe/01---Cover-Card.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_cyprus_coup_and_invasion_catastrophe/02---Proof-Map.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_cyprus_coup_and_invasion_catastrophe/98---Evidence-Matrix---greece_1974_cyprus_coup_and_invasion_catastrophe.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_cyprus_coup_and_invasion_catastrophe/99---Research-Guide---greece_1974_cyprus_coup_and_invasion_catastrophe.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_cyprus_coup_junta_responsibility_invasion_national_trauma/02---EL-Cover-Card.jpg",
-          "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinis/01---EN-Cover-Card.jpg",
           "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinis/02---EL-Cover-Card.jpg",
           "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinis/99---Research-Guide---greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinishe.jpg",
           "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1974/greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinishe/98---Evidence-Matrix---greece_1974_junta_trials_partial_accountability_metapolitefsi_punishment_unfinishe.jpg",
@@ -16035,12 +16021,12 @@
             "url": "https://github.com/dedsec1121fk/Corrupted-Files-Project/blob/d6a37ae50dec7a6934a0ad6e868a548a0d87abe8/Greek/Images/1946/greece_1946_white_terror_after_liberation_civil_war_escalation/01---EN-White-Terror-After-Liberation-And-Civil-War-Escala-3D0C61De418.jpg"
           }
         ],
-        "remaining": 3309
+        "remaining": 3295
       }
     },
     "dedsec-backup": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:49:08Z",
+        "completed_at_utc": "2026-08-04T07:52:17Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
@@ -16052,9 +16038,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
+        "run_id": "30889446096",
         "source_commit": "28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28",
-        "started_at_utc": "2026-08-03T07:49:02Z",
+        "started_at_utc": "2026-08-04T07:52:09Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 587
@@ -20212,8 +20198,8 @@
         "uploaded_at_utc": "2026-08-02T06:41:55Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:49:08 EEST",
-      "last_completed_at_utc": "2026-08-03T07:49:08Z",
+      "last_completed_at_greece": "2026-08-04 10:52:17 EEST",
+      "last_completed_at_utc": "2026-08-04T07:52:17Z",
       "last_completed_commit": "28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28",
       "last_result": {
         "deleted_from_repository": 0,
@@ -20223,10 +20209,10 @@
         "mirror_verified": true,
         "unchanged_files": 587,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 1009
+        "wayback_pending": 998
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:49:08Z",
+      "state_updated_at_utc": "2026-08-04T07:52:17Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -20238,39 +20224,24 @@
         "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 206,
+        "completed": 221,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-03T10:52:20Z",
-          "remaining": 995,
-          "workflow_run_id": "30793995304"
+          "processed_at_utc": "2026-08-04T10:56:41Z",
+          "remaining": 983,
+          "workflow_run_id": "30889446096"
         },
-        "last_processed_at_utc": "2026-08-03T10:37:25Z",
+        "last_processed_at_utc": "2026-08-04T10:50:35Z",
         "last_queue_added": 8,
-        "last_queue_update_at_utc": "2026-08-03T07:49:08Z",
-        "last_successful_at_utc": "2026-08-03T10:37:25Z",
-        "last_successful_url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Images/2020%20Proof%20Of%20FK%27s%20AI%20Before%20Any%20Others%20In%20Greece.png",
+        "last_queue_update_at_utc": "2026-08-04T07:52:16Z",
+        "last_successful_at_utc": "2026-08-04T10:50:35Z",
+        "last_successful_url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Front_Camera.py",
         "last_transient_error": {
           "at_utc": "2026-07-31T00:30:12Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/sal-scar/DedSec/blob/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/halloween_havoc.html"
         },
         "pending": [
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Images/Corrupted%20Files%20Project.png",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Images/New%20Charon.jpg",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Images/Offline%20Survival%20Project.png",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/aegean_fortune.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/candy_slasher.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/cosmic_carnival.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/cyber_samurai.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/dynasty_riches_ancient_china.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/egypt_fire.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/frozen_fjord.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/halloween_havoc.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/jungle_relics.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/neon_nights.html",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Back_Camera.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Front_Camera.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Location.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Microphone.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Charon%20Chat.py",
@@ -21250,24 +21221,23 @@
           "https://raw.githubusercontent.com/sal-scar/DedSec/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28/Scripts/Developer%20Base/Tree%20Explorer.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28/Scripts/Settings.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28/Scripts/__pycache__/Settings.cpython-314.pyc",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28/Setup.sh"
+          "https://raw.githubusercontent.com/sal-scar/DedSec/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28/Setup.sh",
+          "https://github.com/sal-scar/DedSec/branches",
+          "https://github.com/sal-scar/DedSec/releases",
+          "https://github.com/sal-scar/DedSec/tags"
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 995
+        "remaining": 983
       }
     },
     "dedsec-main": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:35:20Z",
+        "completed_at_utc": "2026-08-04T07:52:40Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
-        "last_successful_operation": {
-          "action": "upload_git_bundle",
-          "completed_at_utc": "2026-08-03T07:35:12Z",
-          "remote_name": "git-history.bundle"
-        },
+        "last_successful_operation": null,
         "metadata_reliable_at_start": true,
         "planned_orphan_deletes": 0,
         "planned_repository_deletes": 0,
@@ -21275,9 +21245,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
+        "run_id": "30889446096",
         "source_commit": "160a769d7c173da58ec9268c8263c0d947b01c31",
-        "started_at_utc": "2026-08-03T07:34:25Z",
+        "started_at_utc": "2026-08-04T07:52:29Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 587
@@ -25435,8 +25405,8 @@
         "uploaded_at_utc": "2026-08-03T07:35:12Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:35:20 EEST",
-      "last_completed_at_utc": "2026-08-03T07:35:20Z",
+      "last_completed_at_greece": "2026-08-04 10:52:40 EEST",
+      "last_completed_at_utc": "2026-08-04T07:52:40Z",
       "last_completed_commit": "160a769d7c173da58ec9268c8263c0d947b01c31",
       "last_result": {
         "deleted_from_repository": 0,
@@ -25446,10 +25416,10 @@
         "mirror_verified": true,
         "unchanged_files": 587,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 220
+        "wayback_pending": 208
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:35:20Z",
+      "state_updated_at_utc": "2026-08-04T07:52:40Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -25461,39 +25431,24 @@
         "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 209,
+        "completed": 224,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-03T10:52:18Z",
-          "remaining": 205,
-          "workflow_run_id": "30793995304"
+          "processed_at_utc": "2026-08-04T10:56:35Z",
+          "remaining": 193,
+          "workflow_run_id": "30889446096"
         },
-        "last_processed_at_utc": "2026-08-03T10:52:10Z",
+        "last_processed_at_utc": "2026-08-04T10:50:23Z",
         "last_queue_added": 8,
-        "last_queue_update_at_utc": "2026-08-03T07:35:20Z",
-        "last_successful_at_utc": "2026-08-03T10:52:10Z",
-        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Images/Offline%20Survival%20Project.png",
+        "last_queue_update_at_utc": "2026-08-04T07:52:39Z",
+        "last_successful_at_utc": "2026-08-04T10:50:23Z",
+        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Charon%20Chat.py",
         "last_transient_error": {
           "at_utc": "2026-07-31T01:21:40Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/dedsec1121fk/DedSec/blob/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/DedSec%27s%20Database.py"
         },
         "pending": [
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/aegean_fortune.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/candy_slasher.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/cosmic_carnival.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/cyber_samurai.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/dynasty_riches_ancient_china.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/egypt_fire.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/frozen_fjord.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/halloween_havoc.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/jungle_relics.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/neon_nights.html",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Back_Camera.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Front_Camera.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Location.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Blank_Page_Microphone.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/Charon%20Chat.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/DedSec%27s%20Database.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/DedSec%27s_Chat.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/DedSlot%20Front%20Camera.py",
@@ -25683,16 +25638,19 @@
           "https://github.com/dedsec1121fk/DedSec/archive/160a769d7c173da58ec9268c8263c0d947b01c31.tar.gz",
           "https://github.com/dedsec1121fk/DedSec/archive/160a769d7c173da58ec9268c8263c0d947b01c31.zip",
           "https://github.com/dedsec1121fk/DedSec/commit/160a769d7c173da58ec9268c8263c0d947b01c31",
-          "https://github.com/dedsec1121fk/DedSec/tree/160a769d7c173da58ec9268c8263c0d947b01c31"
+          "https://github.com/dedsec1121fk/DedSec/tree/160a769d7c173da58ec9268c8263c0d947b01c31",
+          "https://github.com/dedsec1121fk/DedSec/branches",
+          "https://github.com/dedsec1121fk/DedSec/releases",
+          "https://github.com/dedsec1121fk/DedSec/tags"
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 205
+        "remaining": 193
       }
     },
     "dedsec-websites": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:33:58Z",
+        "completed_at_utc": "2026-08-04T07:51:33Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
@@ -25704,9 +25662,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
+        "run_id": "30889446096",
         "source_commit": "243e2386e60a00133b257f1d8a593be737432077",
-        "started_at_utc": "2026-08-03T07:33:44Z",
+        "started_at_utc": "2026-08-04T07:51:24Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 789
@@ -31401,8 +31359,8 @@
         "uploaded_at_utc": "2026-07-31T09:15:12Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:33:58 EEST",
-      "last_completed_at_utc": "2026-08-03T07:33:58Z",
+      "last_completed_at_greece": "2026-08-04 10:51:33 EEST",
+      "last_completed_at_utc": "2026-08-04T07:51:33Z",
       "last_completed_commit": "243e2386e60a00133b257f1d8a593be737432077",
       "last_result": {
         "deleted_from_repository": 0,
@@ -31412,10 +31370,10 @@
         "mirror_verified": true,
         "unchanged_files": 789,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 2945
+        "wayback_pending": 2931
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:33:58Z",
+      "state_updated_at_utc": "2026-08-04T07:51:33Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-snapshots",
         "kind": "website",
@@ -31430,39 +31388,24 @@
         "window": "Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens"
       },
       "wayback": {
-        "completed": 309,
+        "completed": 324,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-03T10:52:22Z",
-          "remaining": 2931,
-          "workflow_run_id": "30793995304"
+          "processed_at_utc": "2026-08-04T10:56:46Z",
+          "remaining": 2916,
+          "workflow_run_id": "30889446096"
         },
-        "last_processed_at_utc": "2026-08-03T10:37:36Z",
+        "last_processed_at_utc": "2026-08-04T10:56:28Z",
         "last_queue_added": 10,
-        "last_queue_update_at_utc": "2026-08-03T07:33:57Z",
-        "last_successful_at_utc": "2026-08-03T10:37:36Z",
-        "last_successful_url": "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Backup-Restore-Verification.html",
+        "last_queue_update_at_utc": "2026-08-04T07:51:33Z",
+        "last_successful_at_utc": "2026-08-04T10:56:28Z",
+        "last_successful_url": "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Header-Checker.html",
         "last_transient_error": {
           "at_utc": "2026-07-31T00:12:14Z",
           "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))",
           "url": "https://ded-sec.online/Assets/Images/products/build-website-ai-phone-en.webp"
         },
         "pending": [
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Battery-Baseline.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Crash-Background-Triage.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Migration-Readiness.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Storage-Usage-Analysis.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Thermal-Performance.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/App-Compatibility-Matrix.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Charging-Compatibility.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Connectivity-Profile.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Device-Spec-Profile.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Comparison.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Technology-Capstone.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Cli-Arguments.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Dependency-Inventory.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/File-Organizer.html",
-          "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Header-Checker.html",
           "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Integrity-Monitor.html",
           "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Json-Config-Validator.html",
           "https://ded-sec.online/Smartphone-Academy/Pages/Practical/Python-Automation/Log-Parser.html",
@@ -34382,30 +34325,30 @@
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 2931
+        "remaining": 2916
       }
     },
     "github-profile": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:37:41Z",
+        "completed_at_utc": "2026-08-04T07:52:18Z",
         "completed_deletes": 0,
-        "completed_uploads": 6,
+        "completed_uploads": 3,
         "initial_sync": false,
         "last_successful_operation": {
           "action": "upload_git_bundle",
-          "completed_at_utc": "2026-08-03T07:35:01Z",
+          "completed_at_utc": "2026-08-04T07:52:07Z",
           "remote_name": "git-history.bundle"
         },
         "metadata_reliable_at_start": true,
         "planned_orphan_deletes": 0,
         "planned_repository_deletes": 0,
-        "planned_uploads": 6,
+        "planned_uploads": 3,
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
-        "source_commit": "55d90fdade89623e6b5fee9220dc32abfc4c04ac",
-        "started_at_utc": "2026-08-03T07:34:04Z",
+        "run_id": "30889446096",
+        "source_commit": "e97a58f70e15233519f37214ea488fc0f75464f6",
+        "started_at_utc": "2026-08-04T07:51:49Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 8
@@ -34427,8 +34370,8 @@
         ".github/profile-themes.json": {
           "executable": false,
           "remote_name": "mirror/.github/profile-themes.json",
-          "sha256": "5893c5c49b2cbc2608e92d80408088ef4d9de43f3f2b585df70891ce148ffaa9",
-          "size": 3083,
+          "sha256": "b83a80eacb2737475d85fcd91b8784182beae5b9f6cd15ee10a77858fa4bb9d5",
+          "size": 3076,
           "type": "file"
         },
         ".github/scripts/rotate_card_theme.py": {
@@ -34462,41 +34405,41 @@
         "README.md": {
           "executable": false,
           "remote_name": "mirror/README.md",
-          "sha256": "2254ee6ae8b9aa520d21ec469d7c51a84404fc60a566801465dbe979fc1dea40",
-          "size": 1888,
+          "sha256": "53931b082d80f5737dbe17796defc7e90ae12e76c9a4309c0a52dfe618680027",
+          "size": 1874,
           "type": "file"
         },
         "profile/streak.svg": {
           "executable": false,
           "remote_name": "mirror/profile/streak.svg",
-          "sha256": "9b05ad6b928dc7b0c3576106c8f2b18430f7485d117a76851beb2e53a756e6b8",
-          "size": 6331,
+          "sha256": "3de4a489d85687761ba1b33a3d62327c1c9a7806cc589ad2edc75c8acab5ab26",
+          "size": 6321,
           "type": "file"
         }
       },
       "git_bundle": {
-        "commit": "55d90fdade89623e6b5fee9220dc32abfc4c04ac",
+        "commit": "e97a58f70e15233519f37214ea488fc0f75464f6",
         "remote_name": "git-history.bundle",
-        "sha256": "6666e6b553e504cffbf5cd5d8b8c1427bc6ef1774b16c941994c33ad4fe41694",
-        "size": 11500300,
-        "uploaded_at_utc": "2026-08-03T07:35:01Z"
+        "sha256": "6bbc9bbeb6a3454d5f10c865168911b6b6424f2f62652f65d7d5336c36bf7987",
+        "size": 11501740,
+        "uploaded_at_utc": "2026-08-04T07:52:07Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:37:41 EEST",
-      "last_completed_at_utc": "2026-08-03T07:37:41Z",
-      "last_completed_commit": "55d90fdade89623e6b5fee9220dc32abfc4c04ac",
+      "last_completed_at_greece": "2026-08-04 10:52:18 EEST",
+      "last_completed_at_utc": "2026-08-04T07:52:18Z",
+      "last_completed_commit": "e97a58f70e15233519f37214ea488fc0f75464f6",
       "last_result": {
         "deleted_from_repository": 0,
         "deleted_legacy_archives": 0,
         "deleted_orphan_remote_files": 0,
         "initial_full_sync": false,
         "mirror_verified": true,
-        "unchanged_files": 2,
-        "uploaded_new_or_changed": 6,
+        "unchanged_files": 5,
+        "uploaded_new_or_changed": 3,
         "wayback_pending": 20
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:37:41Z",
+      "state_updated_at_utc": "2026-08-04T07:52:18Z",
       "target": {
         "ia_item": "dedsec1121fk-github-profile-repository-snapshots",
         "kind": "repository",
@@ -34508,30 +34451,30 @@
         "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
       },
       "wayback": {
-        "completed": 89,
+        "completed": 103,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-02T19:48:27Z",
-          "remaining": 0,
-          "workflow_run_id": "30757401109"
+          "processed_at_utc": "2026-08-04T10:56:50Z",
+          "remaining": 6,
+          "workflow_run_id": "30889446096"
         },
-        "last_processed_at_utc": "2026-08-03T10:43:11Z",
-        "last_queue_added": 20,
-        "last_queue_update_at_utc": "2026-08-03T07:35:09Z",
-        "last_successful_at_utc": "2026-08-03T10:43:11Z",
-        "last_successful_url": "https://github.com/dedsec1121fk/dedsec1121fk/tree/55d90fdade89623e6b5fee9220dc32abfc4c04ac",
+        "last_processed_at_utc": "2026-08-04T10:41:04Z",
+        "last_queue_added": 14,
+        "last_queue_update_at_utc": "2026-08-04T07:52:18Z",
+        "last_successful_at_utc": "2026-08-04T10:41:04Z",
+        "last_successful_url": "https://github.com/dedsec1121fk/dedsec1121fk/commit/e97a58f70e15233519f37214ea488fc0f75464f6",
         "last_transient_error": {
           "at_utc": "2026-07-31T18:18:03Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/dedsec1121fk/dedsec1121fk/archive/fcf8264fd93445718f4676af060afa58d797abaa.zip"
         },
         "pending": [
-          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/55d90fdade89623e6b5fee9220dc32abfc4c04ac/.github/profile-themes.json",
-          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/55d90fdade89623e6b5fee9220dc32abfc4c04ac/.github/scripts/rotate_card_theme.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/55d90fdade89623e6b5fee9220dc32abfc4c04ac/.github/workflows/rotate-card-colors.yml",
-          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/55d90fdade89623e6b5fee9220dc32abfc4c04ac/.github/workflows/streak-stats.yml",
-          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/55d90fdade89623e6b5fee9220dc32abfc4c04ac/README.md",
-          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/55d90fdade89623e6b5fee9220dc32abfc4c04ac/profile/streak.svg"
+          "https://github.com/dedsec1121fk/dedsec1121fk/releases",
+          "https://github.com/dedsec1121fk/dedsec1121fk/tags",
+          "https://github.com/dedsec1121fk/dedsec1121fk/tree/e97a58f70e15233519f37214ea488fc0f75464f6",
+          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e97a58f70e15233519f37214ea488fc0f75464f6/.github/profile-themes.json",
+          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e97a58f70e15233519f37214ea488fc0f75464f6/README.md",
+          "https://raw.githubusercontent.com/dedsec1121fk/dedsec1121fk/e97a58f70e15233519f37214ea488fc0f75464f6/profile/streak.svg"
         ],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -34540,7 +34483,7 @@
     },
     "offline-survival-project": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:36:08Z",
+        "completed_at_utc": "2026-08-04T07:53:09Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
@@ -34552,9 +34495,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
+        "run_id": "30889446096",
         "source_commit": "80bff10df9f28093ea965ae4043e781d7a52dc87",
-        "started_at_utc": "2026-08-03T07:36:01Z",
+        "started_at_utc": "2026-08-04T07:53:04Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 1409
@@ -44956,8 +44899,8 @@
         "uploaded_at_utc": "2026-07-30T22:10:57Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:36:08 EEST",
-      "last_completed_at_utc": "2026-08-03T07:36:08Z",
+      "last_completed_at_greece": "2026-08-04 10:53:09 EEST",
+      "last_completed_at_utc": "2026-08-04T07:53:09Z",
       "last_completed_commit": "80bff10df9f28093ea965ae4043e781d7a52dc87",
       "last_result": {
         "deleted_from_repository": 0,
@@ -44967,10 +44910,10 @@
         "mirror_verified": true,
         "unchanged_files": 1409,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 2673
+        "wayback_pending": 2659
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:36:08Z",
+      "state_updated_at_utc": "2026-08-04T07:53:09Z",
       "target": {
         "ia_item": "dedsec1121fk-offline-survival-project-repository-snapshots",
         "kind": "repository",
@@ -44982,38 +44925,24 @@
         "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
       },
       "wayback": {
-        "completed": 170,
+        "completed": 184,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-02T19:48:34Z",
-          "remaining": 2673,
-          "workflow_run_id": "30757401109"
+          "processed_at_utc": "2026-08-04T10:56:56Z",
+          "remaining": 2645,
+          "workflow_run_id": "30889446096"
         },
-        "last_processed_at_utc": "2026-08-03T10:49:10Z",
+        "last_processed_at_utc": "2026-08-04T10:47:25Z",
         "last_queue_added": 8,
-        "last_queue_update_at_utc": "2026-08-03T07:36:07Z",
-        "last_successful_at_utc": "2026-08-03T10:49:10Z",
-        "last_successful_url": "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Diet%20-%20Register.json",
+        "last_queue_update_at_utc": "2026-08-04T07:53:09Z",
+        "last_successful_at_utc": "2026-08-04T10:47:25Z",
+        "last_successful_url": "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Substitutions.json",
         "last_transient_error": {
           "at_utc": "2026-08-02T17:35:06Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Environment%20-%20Cleanup%20-%20Hazards/Environment%20-%20Cleanup%20-%20Hazards%20-%20Routine.json"
         },
         "pending": [
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Dry%20-%20Goods.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Egg%20-%20Handling.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Food%20-%20Lending.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Food%20-%20Privacy.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Fuel%20-%20Cooking.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Grain%20-%20Storage.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Herb%20-%20Drying.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Meal%20-%20Morale.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/No%20-%20Cook%20-%20Food.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Root%20-%20Storage.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Seed%20-%20Exchange.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Shared%20-%20Kitchen.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Sprouting.json",
-          "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Substitutions.json",
           "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Preservation/Wild%20-%20Food%20-%20Policy.json",
           "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Psychology%20-%20Planning%20-%20Daily%20operations/Agriculture%20-%20Records.json",
           "https://github.com/dedsec1121fk/Offline-Survival-Project/blob/80bff10df9f28093ea965ae4043e781d7a52dc87/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AC/Food%20-%20Agriculture%20-%20Psychology%20-%20Planning%20-%20Daily%20operations/Food%20-%20Safety.json",
@@ -47662,12 +47591,12 @@
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 2659
+        "remaining": 2645
       }
     },
     "pocket-ai": {
       "current_run": {
-        "completed_at_utc": "2026-08-03T07:36:36Z",
+        "completed_at_utc": "2026-08-04T07:53:11Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
@@ -47679,9 +47608,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30793995304",
+        "run_id": "30889446096",
         "source_commit": "8f468aa3aa4e0078544458bde0b9c8ab5cb64127",
-        "started_at_utc": "2026-08-03T07:36:32Z",
+        "started_at_utc": "2026-08-04T07:53:01Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 128
@@ -48609,8 +48538,8 @@
         "uploaded_at_utc": "2026-07-30T19:30:54Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-03 10:36:36 EEST",
-      "last_completed_at_utc": "2026-08-03T07:36:36Z",
+      "last_completed_at_greece": "2026-08-04 10:53:11 EEST",
+      "last_completed_at_utc": "2026-08-04T07:53:11Z",
       "last_completed_commit": "8f468aa3aa4e0078544458bde0b9c8ab5cb64127",
       "last_result": {
         "deleted_from_repository": 0,
@@ -48620,10 +48549,10 @@
         "mirror_verified": true,
         "unchanged_files": 128,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 125
+        "wayback_pending": 111
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-03T07:36:36Z",
+      "state_updated_at_utc": "2026-08-04T07:53:11Z",
       "target": {
         "ia_item": "dedsec1121fk-pocket-ai-repository-snapshots",
         "kind": "repository",
@@ -48635,38 +48564,24 @@
         "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
       },
       "wayback": {
-        "completed": 160,
+        "completed": 174,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-02T19:48:31Z",
-          "remaining": 120,
-          "workflow_run_id": "30757401109"
+          "processed_at_utc": "2026-08-03T10:52:32Z",
+          "remaining": 111,
+          "workflow_run_id": "30793995304"
         },
-        "last_processed_at_utc": "2026-08-03T10:48:59Z",
+        "last_processed_at_utc": "2026-08-04T10:47:13Z",
         "last_queue_added": 8,
-        "last_queue_update_at_utc": "2026-08-03T07:36:36Z",
-        "last_successful_at_utc": "2026-08-03T10:48:59Z",
-        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_NoKey_Web_Learner.json.gz",
+        "last_queue_update_at_utc": "2026-08-04T07:53:10Z",
+        "last_successful_at_utc": "2026-08-04T10:47:13Z",
+        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_School_Hybrid_Controller.json.gz",
         "last_transient_error": {
           "at_utc": "2026-08-02T18:44:08Z",
           "error": "URLError(TimeoutError('_ssl.c:983: The handshake operation timed out'))",
           "url": "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/Encyclopedia%20Knowledge/PocketAI_SimpleWiki_01.sqlite3"
         },
         "pending": [
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Persona_Controller.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Prompt_Compressor.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Query_Planner.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Rapid_Web_Shared_Learning_Controller.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Research_Specialist.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Resource_Guard.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Response_Cache_Controller.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Response_Verifier.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_SchoolComputing_Specialist.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_SchoolHumanities_Specialist.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_SchoolLanguage_Specialist.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_SchoolMath_Specialist.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_SchoolScience_Specialist.json.gz",
-          "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_School_Hybrid_Controller.json.gz",
           "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_School_Knowledge.json.gz",
           "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Universal_Knowledge.json.gz",
           "https://raw.githubusercontent.com/dedsec1121fk/Pocket-AI/8f468aa3aa4e0078544458bde0b9c8ab5cb64127/Models/PocketAI_Universal_Knowledge_Controller.json.gz",
@@ -48767,7 +48682,7 @@
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 111
+        "remaining": 97
       }
     }
   }
