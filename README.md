@@ -168,9 +168,9 @@ This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 ### DedSec GitHub Profile Repository
 
-**Current file-sync status:** `complete`  
+**Current file-sync status:** `in_progress`  
 **Last complete or attempted save:** 2026-08-05 20:02:17 EEST  
-**Current mirrored files:** 8  
+**Current mirrored files:** 9  
 **Latest file update:** 3 uploaded, 0 deleted, 5 unchanged.  
 **Mirror verification:** `True`  
 **Wayback queue remaining:** 0  
@@ -189,12 +189,12 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-05 20:02:18 EEST  
+**Last complete or attempted save:** 2026-08-07 20:15:02 EEST  
 **Current mirrored files:** 1721  
 **Latest file update:** 0 uploaded, 0 deleted, 1721 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 3252  
-**Wayback captures accepted:** 200  
+**Wayback queue remaining:** 3210  
+**Wayback captures accepted:** 242  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -209,12 +209,12 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-05 20:02:02 EEST  
+**Last complete or attempted save:** 2026-08-07 20:14:34 EEST  
 **Current mirrored files:** 128  
 **Latest file update:** 0 uploaded, 0 deleted, 128 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 57  
-**Wayback captures accepted:** 214  
+**Wayback queue remaining:** 12  
+**Wayback captures accepted:** 259  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -229,12 +229,12 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-05 20:01:34 EEST  
+**Last complete or attempted save:** 2026-08-07 20:14:38 EEST  
 **Current mirrored files:** 1409  
 **Latest file update:** 0 uploaded, 0 deleted, 1409 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 2605  
-**Wayback captures accepted:** 224  
+**Wayback queue remaining:** 2564  
+**Wayback captures accepted:** 265  
 **Scheduled window:** Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
