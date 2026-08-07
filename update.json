@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-05T20:03:36Z",
+  "generated_at_utc": "2026-08-07T09:22:08Z",
   "resume_behavior": "File synchronization checkpoints after every successful file. Wayback captures use a separate serial resumable queue.",
   "schema_version": 5,
   "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This file is the synchronized combined copy.",
@@ -15983,7 +15983,7 @@
     },
     "dedsec-backup": {
       "current_run": {
-        "completed_at_utc": "2026-08-05T05:55:53Z",
+        "completed_at_utc": "2026-08-07T06:05:38Z",
         "completed_deletes": 0,
         "completed_uploads": 0,
         "initial_sync": false,
@@ -15995,9 +15995,9 @@
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30979559977",
+        "run_id": "31152658474",
         "source_commit": "28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28",
-        "started_at_utc": "2026-08-05T05:55:47Z",
+        "started_at_utc": "2026-08-07T06:05:34Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 587
@@ -20155,8 +20155,8 @@
         "uploaded_at_utc": "2026-08-02T06:41:55Z"
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-05 08:55:53 EEST",
-      "last_completed_at_utc": "2026-08-05T05:55:53Z",
+      "last_completed_at_greece": "2026-08-07 09:05:38 EEST",
+      "last_completed_at_utc": "2026-08-07T06:05:38Z",
       "last_completed_commit": "28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28",
       "last_result": {
         "deleted_from_repository": 0,
@@ -20166,10 +20166,10 @@
         "mirror_verified": true,
         "unchanged_files": 587,
         "uploaded_new_or_changed": 0,
-        "wayback_pending": 983
+        "wayback_pending": 929
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-05T05:55:53Z",
+      "state_updated_at_utc": "2026-08-07T06:05:38Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -20181,80 +20181,24 @@
         "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 275,
+        "completed": 331,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-04T10:56:41Z",
-          "remaining": 983,
-          "workflow_run_id": "30889446096"
+          "processed_at_utc": "2026-08-05T08:57:23Z",
+          "remaining": 929,
+          "workflow_run_id": "30979559977"
         },
-        "last_processed_at_utc": "2026-08-05T08:54:15Z",
+        "last_processed_at_utc": "2026-08-07T09:16:05Z",
         "last_queue_added": 8,
-        "last_queue_update_at_utc": "2026-08-05T05:55:53Z",
-        "last_successful_at_utc": "2026-08-05T08:54:15Z",
-        "last_successful_url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/CTF%20God.py",
+        "last_queue_update_at_utc": "2026-08-07T06:05:38Z",
+        "last_successful_at_utc": "2026-08-07T09:16:05Z",
+        "last_successful_url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Converter.py",
         "last_transient_error": {
           "at_utc": "2026-07-31T00:30:12Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/sal-scar/DedSec/blob/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/halloween_havoc.html"
         },
         "pending": [
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/Detective.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/Pet%20Friends.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/Tamagotchi.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/Terminal%20Arcade.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Discord%20Nitro%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Epic%20Games%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Facebook%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Free%20Robux%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20GitHub%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Google%20Free%20Money%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Instagram%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20MetaMask%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Microsoft%20365%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20OnlyFans%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20PayPal%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Pinterest%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20PlayStation%20Network%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Reddit%20Karma%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Snapchat%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Steam%20Games%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Steam%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Tik%20Tok%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Trust%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Twitch%20Subs%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Twitter%20Follower%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20What%27s%20Up%20Dude%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Xbox%20Live%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20YouTube%20Subscribers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20iCloud%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Back%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Back%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Card%20Details%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Chrome%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Data%20Grabber%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Discord%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Facebook%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Front%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Front%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Google%20Location%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Instagram%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Location%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Microphone%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20OnlyFans%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Steam%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Twitch%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20YouTube%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/ButSystem.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/DedSec%20Market.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/Extra%20Content.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/Settings.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/ButSystem.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/DedSec%20Market.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Dead%20Man%27s%20Switch.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/DedSec%27s%20Server.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Devices%20Finder.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Converter.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Type%20Checker.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Free%20Internet.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Desktop.py",
@@ -21131,28 +21075,32 @@
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 929
+        "remaining": 873
       }
     },
     "dedsec-main": {
       "current_run": {
-        "completed_at_utc": "2026-08-04T07:52:40Z",
         "completed_deletes": 0,
-        "completed_uploads": 0,
+        "completed_uploads": 10,
         "initial_sync": false,
-        "last_successful_operation": null,
+        "last_successful_operation": {
+          "action": "upload",
+          "completed_at_utc": "2026-08-07T06:06:20Z",
+          "path": "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py",
+          "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py"
+        },
         "metadata_reliable_at_start": true,
         "planned_orphan_deletes": 0,
         "planned_repository_deletes": 0,
-        "planned_uploads": 0,
+        "planned_uploads": 10,
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "30889446096",
-        "source_commit": "160a769d7c173da58ec9268c8263c0d947b01c31",
-        "started_at_utc": "2026-08-04T07:52:29Z",
+        "run_id": "31152658474",
+        "source_commit": "f48d4c4a0a8918c1232c481baa677392ee0c625e",
+        "started_at_utc": "2026-08-07T06:05:31Z",
         "state_source": "internet_archive",
-        "status": "complete",
+        "status": "in_progress",
         "total_current_files": 587
       },
       "directories": [
@@ -24686,8 +24634,8 @@
         "Scripts/Personal Information Capture/Fake Instagram Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake Instagram Verification Page.py",
-          "sha256": "95c4202baad90287fbb6c81f7b5bfb18fc7e74586cd896b49668284260b2a276",
-          "size": 99625,
+          "sha256": "c44d9bc780590afaf3d26a208bcef61ae33e7171b8fbf96957493fd0e70d5f26",
+          "size": 99923,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake Location Page.py": {
@@ -24707,29 +24655,29 @@
         "Scripts/Personal Information Capture/Fake OnlyFans Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake OnlyFans Verification Page.py",
-          "sha256": "f5ad41226d836b9b35772eb459b4e43d8a658d91b50e31c80ae321136d5d54c7",
-          "size": 84891,
+          "sha256": "fae06cc4af4b8c707569687d0fb88c19f9ef07e65fdfc0c7b664920c7a5a4924",
+          "size": 85440,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake Steam Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake Steam Verification Page.py",
-          "sha256": "bc54a4ed27331e6772a46de456518420f29cab7fc5308caf1fb1638a4ec38903",
-          "size": 91664,
+          "sha256": "fde1b27c03d923a5ed263ad3f7b60fb8dbfa0f78749cc3c23e0bc8502963a202",
+          "size": 94326,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake Twitch Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake Twitch Verification Page.py",
-          "sha256": "8a1f55c4d71c4319d8b34a6f2281868e676aed3dd4a9f463be26b0bab872fded",
-          "size": 107404,
+          "sha256": "eb4fde69caab9b67ff49c3ff88a91ca4be282181599c84ea67788b56992ceebf",
+          "size": 104884,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake YouTube Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake YouTube Verification Page.py",
-          "sha256": "5647310e26521bcc6e3feb8421c588b2d49613f5eb883dfb78a4a42aefc322eb",
-          "size": 76499,
+          "sha256": "22757bd6561cfa57bba6125fdb8d469449e86e8aa26c6965b1480c2d5e71270e",
+          "size": 76730,
           "type": "file"
         },
         "Scripts/Settings.py": {
@@ -25246,8 +25194,8 @@
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Instagram Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Instagram Verification Page.py",
-          "sha256": "e0772b49892948046ea4b8d5a154c8dde536b587e4816b4f8f98825af5830637",
-          "size": 113798,
+          "sha256": "0123f5a9feb3ce937c5482abfe233182d397c61a03c3d02fd93f494cc82b0e0b",
+          "size": 114150,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Location Page.py": {
@@ -25267,29 +25215,29 @@
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake OnlyFans Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake OnlyFans Verification Page.py",
-          "sha256": "89b603ff2aa083773b251ea2fb838abea8db613d593081f6cdc8e17ea47ec1ee",
-          "size": 93383,
+          "sha256": "bba5b4d93aa807869015de4eb65ade07eff1a6340c7757ff319d5a8a06e86285",
+          "size": 93913,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Steam Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Steam Verification Page.py",
-          "sha256": "77a9e22e15a707d3040ac0285eda8e4c4b1035a29aba70c9d47377c0fd3cc143",
-          "size": 103020,
+          "sha256": "c7ac24861b0272f65e624971cd7179446cddf2f90920450a6e14d8d30b053619",
+          "size": 106749,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Twitch Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Twitch Verification Page.py",
-          "sha256": "87fad741fcea85ebe64ab093e3ac03e38ecc02fba4ae39c5dca971afbef875db",
-          "size": 121440,
+          "sha256": "988dafbd63259eb8c71153fb7feadc2d82dbf77db3a1434d9256d749e64673c3",
+          "size": 118424,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py",
-          "sha256": "c5ba3a310c808532c9fe70ac7c34bb51f58f4c9c6c9c4d7548f2ea12de4c7f81",
-          "size": 86361,
+          "sha256": "6615dc0a086e49003eafde795b2eb77bb283a2a6e99fe88da5352231f4e1eafd",
+          "size": 86593,
           "type": "file"
         },
         "Setup.sh": {
@@ -25322,7 +25270,7 @@
         "wayback_pending": 208
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-04T07:52:40Z",
+      "state_updated_at_utc": "2026-08-07T06:06:20Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -25334,81 +25282,24 @@
         "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 278,
+        "completed": 335,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-04T10:56:35Z",
-          "remaining": 193,
-          "workflow_run_id": "30889446096"
+          "processed_at_utc": "2026-08-05T08:57:18Z",
+          "remaining": 138,
+          "workflow_run_id": "30979559977"
         },
-        "last_processed_at_utc": "2026-08-05T08:54:04Z",
+        "last_processed_at_utc": "2026-08-07T09:15:59Z",
         "last_queue_added": 8,
         "last_queue_update_at_utc": "2026-08-04T07:52:39Z",
-        "last_successful_at_utc": "2026-08-05T08:54:04Z",
-        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/Tamagotchi.py",
+        "last_successful_at_utc": "2026-08-07T09:15:59Z",
+        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Developer%20Setup.py",
         "last_transient_error": {
           "at_utc": "2026-07-31T01:21:40Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://github.com/dedsec1121fk/DedSec/blob/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/DedSec%27s%20Database.py"
         },
         "pending": [
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%B1%CE%B9%CF%87%CE%BD%CE%AF%CE%B4%CE%B9%CE%B1/Terminal%20Arcade.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Discord%20Nitro%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Epic%20Games%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Facebook%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Free%20Robux%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20GitHub%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Google%20Free%20Money%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Instagram%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20MetaMask%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Microsoft%20365%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20OnlyFans%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20PayPal%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Pinterest%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20PlayStation%20Network%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Reddit%20Karma%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Snapchat%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Steam%20Games%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Steam%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Tik%20Tok%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Trust%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Twitch%20Subs%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Twitter%20Follower%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20What%27s%20Up%20Dude%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20Xbox%20Live%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20YouTube%20Subscribers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A0%CE%BB%CE%B1%CF%83%CF%84%CE%AD%CF%82%20%CE%A3%CE%B5%CE%BB%CE%AF%CE%B4%CE%B5%CF%82/Fake%20iCloud%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Back%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Back%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Card%20Details%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Chrome%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Data%20Grabber%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Discord%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Facebook%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Front%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Front%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Google%20Location%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Instagram%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Location%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Microphone%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20OnlyFans%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Steam%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20Twitch%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/%CE%A3%CF%85%CE%BB%CE%BB%CE%BF%CE%B3%CE%AE%20%CE%A0%CF%81%CE%BF%CF%83%CF%89%CF%80%CE%B9%CE%BA%CF%8E%CE%BD%20%CE%A0%CE%BB%CE%B7%CF%81%CE%BF%CF%86%CE%BF%CF%81%CE%B9%CF%8E%CE%BD/Fake%20YouTube%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/ButSystem.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/DedSec%20Market.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/Extra%20Content.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/%CE%95%CE%BB%CE%BB%CE%B7%CE%BD%CE%B9%CE%BA%CE%AE%20%CE%88%CE%BA%CE%B4%CE%BF%CF%83%CE%B7/Settings.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/ButSystem.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/DedSec%20Market.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Dead%20Man%27s%20Switch.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/DedSec%27s%20Server.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Devices%20Finder.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Converter.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Type%20Checker.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Free%20Internet.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Desktop.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Developer%20Setup.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Simple%20Websites%20Creator.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Smart%20Notes.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Tree%20Explorer.py",
@@ -25494,7 +25385,7 @@
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 139
+        "remaining": 82
       }
     },
     "dedsec-websites": {
