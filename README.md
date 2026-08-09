@@ -133,8 +133,8 @@ This section is generated from `update.json`.
 **Current mirrored files:** 587  
 **Latest file update:** 0 uploaded, 0 deleted, 587 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 82  
-**Wayback captures accepted:** 335  
+**Wayback queue remaining:** 30  
+**Wayback captures accepted:** 387  
 **Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -148,13 +148,13 @@ This section is generated from `update.json`.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 ### DedSec Project Backup Repository
 
-**Current file-sync status:** `complete`  
+**Current file-sync status:** `in_progress`  
 **Last complete or attempted save:** 2026-08-07 09:05:38 EEST  
 **Current mirrored files:** 587  
 **Latest file update:** 0 uploaded, 0 deleted, 587 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 873  
-**Wayback captures accepted:** 331  
+**Wayback queue remaining:** 819  
+**Wayback captures accepted:** 385  
 **Scheduled window:** Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 

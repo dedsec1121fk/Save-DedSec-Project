@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-07T20:22:22Z",
+  "generated_at_utc": "2026-08-09T09:42:57Z",
   "resume_behavior": "File synchronization checkpoints after every successful file. Wayback captures use a separate serial resumable queue.",
   "schema_version": 5,
   "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This file is the synchronized combined copy.",
@@ -15941,23 +15941,28 @@
     },
     "dedsec-backup": {
       "current_run": {
-        "completed_at_utc": "2026-08-07T06:05:38Z",
-        "completed_deletes": 0,
-        "completed_uploads": 0,
+        "completed_deletes": 50,
+        "completed_uploads": 41,
         "initial_sync": false,
-        "last_successful_operation": null,
+        "last_successful_operation": {
+          "action": "delete",
+          "completed_at_utc": "2026-08-09T05:48:42Z",
+          "path": "Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb",
+          "reason": "orphan_remote",
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb"
+        },
         "metadata_reliable_at_start": true,
-        "planned_orphan_deletes": 0,
-        "planned_repository_deletes": 0,
-        "planned_uploads": 0,
+        "planned_orphan_deletes": 25,
+        "planned_repository_deletes": 25,
+        "planned_uploads": 41,
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "31152658474",
-        "source_commit": "28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28",
-        "started_at_utc": "2026-08-07T06:05:34Z",
+        "run_id": "31297187194",
+        "source_commit": "75bc25bdca3290cc24ae1a42f093f62a5b9936a9",
+        "started_at_utc": "2026-08-09T05:41:36Z",
         "state_source": "internet_archive",
-        "status": "complete",
+        "status": "in_progress",
         "total_current_files": 587
       },
       "directories": [
@@ -16313,8 +16318,8 @@
         "LICENSE.txt": {
           "executable": false,
           "remote_name": "mirror/LICENSE.txt",
-          "sha256": "dbdddcc5d216248b9b0571be167eaa8676cf6ac6c25c26f4ced7dadc3f38931d",
-          "size": 1443,
+          "sha256": "c6f12eaa0e276492f77c5470f80a21779c31afe21e1ecfe12d108fd2c5f2547e",
+          "size": 1074,
           "type": "file"
         },
         "Needs/AUDIT.md": {
@@ -16380,11 +16385,11 @@
           "size": 32764,
           "type": "file"
         },
-        "Needs/Modules/Cache/blessed-1.47.0-py3-none-any.whl": {
+        "Needs/Modules/Cache/blessed-1.48.0-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/blessed-1.47.0-py3-none-any.whl",
-          "sha256": "f4df54a32289b6a3eaca49387b4f6823ba7e04ddb5ffa18f5e1fde44e8b79681",
-          "size": 131212,
+          "remote_name": "mirror/Needs/Modules/Cache/blessed-1.48.0-py3-none-any.whl",
+          "sha256": "c4ce01cba220f41d2ff244e9829cb4ef2390a26ace8ce1687b8bced1613676e5",
+          "size": 131267,
           "type": "file"
         },
         "Needs/Modules/Cache/blinker-1.9.0-py3-none-any.whl": {
@@ -16404,8 +16409,8 @@
         "Needs/Modules/Cache/cache-manifest.json": {
           "executable": false,
           "remote_name": "mirror/Needs/Modules/Cache/cache-manifest.json",
-          "sha256": "52c240f97b2e07c764a96989dc8e45f932044440195f9fb647137fc8f1bca782",
-          "size": 18123,
+          "sha256": "b5d00ef4dbd5d85e0ea2f29286a2b3f3882f0d32dac027f2291c653872e32d3d",
+          "size": 18121,
           "type": "file"
         },
         "Needs/Modules/Cache/cairocffi-1.7.1-py3-none-any.whl": {
@@ -16429,11 +16434,11 @@
           "size": 136983,
           "type": "file"
         },
-        "Needs/Modules/Cache/cffi-2.1.0.tar.gz": {
+        "Needs/Modules/Cache/cffi-2.1.1.tar.gz": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/cffi-2.1.0.tar.gz",
-          "sha256": "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9",
-          "size": 531036,
+          "remote_name": "mirror/Needs/Modules/Cache/cffi-2.1.1.tar.gz",
+          "sha256": "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be",
+          "size": 530807,
           "type": "file"
         },
         "Needs/Modules/Cache/charset_normalizer-3.4.9.tar.gz": {
@@ -16534,11 +16539,11 @@
           "size": 18683,
           "type": "file"
         },
-        "Needs/Modules/Cache/flit_core-3.12.0-py3-none-any.whl": {
+        "Needs/Modules/Cache/flit_core-4.0.2-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/flit_core-3.12.0-py3-none-any.whl",
-          "sha256": "e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c",
-          "size": 45594,
+          "remote_name": "mirror/Needs/Modules/Cache/flit_core-4.0.2-py3-none-any.whl",
+          "sha256": "8d80717e28d982b41594ed5b14d4e89fbc5bad55473fde27994a3101db18a94e",
+          "size": 44551,
           "type": "file"
         },
         "Needs/Modules/Cache/geographiclib-2.1-py3-none-any.whl": {
@@ -16709,11 +16714,11 @@
           "size": 717045,
           "type": "file"
         },
-        "Needs/Modules/Cache/packaging-26.2-py3-none-any.whl": {
+        "Needs/Modules/Cache/packaging-26.3-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/packaging-26.2-py3-none-any.whl",
-          "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
-          "size": 100195,
+          "remote_name": "mirror/Needs/Modules/Cache/packaging-26.3-py3-none-any.whl",
+          "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+          "size": 129956,
           "type": "file"
         },
         "Needs/Modules/Cache/paramiko-5.0.0-py3-none-any.whl": {
@@ -16737,11 +16742,11 @@
           "size": 47025035,
           "type": "file"
         },
-        "Needs/Modules/Cache/psd-tools-1.17.4.tar.gz": {
+        "Needs/Modules/Cache/psd-tools-1.18.0.tar.gz": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/psd-tools-1.17.4.tar.gz",
-          "sha256": "73409b7399fce2091200f9ccf172c95e798b904483e020ac79f28dfa1099ec6d",
-          "size": 21622829,
+          "remote_name": "mirror/Needs/Modules/Cache/psd-tools-1.18.0.tar.gz",
+          "sha256": "c0590044f714a51ced823e5011aaa14ea563a6438f735d89a84bfc482e9dac5c",
+          "size": 21624732,
           "type": "file"
         },
         "Needs/Modules/Cache/psutil-7.2.2.tar.gz": {
@@ -16877,11 +16882,11 @@
           "size": 472788,
           "type": "file"
         },
-        "Needs/Modules/Cache/python_socketio-5.16.3-py3-none-any.whl": {
+        "Needs/Modules/Cache/python_socketio-5.16.4-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/python_socketio-5.16.3-py3-none-any.whl",
-          "sha256": "e7ad14202a5e6448824c7c2f86161d04e13dec05992257df5c709e6a2798c041",
-          "size": 82087,
+          "remote_name": "mirror/Needs/Modules/Cache/python_socketio-5.16.4-py3-none-any.whl",
+          "sha256": "0eb9c7687e7fbf59e60d714fd62afba77dfaf8ef8a06a0bff05a86c351accc2f",
+          "size": 82098,
           "type": "file"
         },
         "Needs/Modules/Cache/python_whois-0.9.6-py3-none-any.whl": {
@@ -16905,11 +16910,11 @@
           "size": 45986,
           "type": "file"
         },
-        "Needs/Modules/Cache/rarfile-4.4-py3-none-any.whl": {
+        "Needs/Modules/Cache/rarfile-4.5-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/rarfile-4.4-py3-none-any.whl",
-          "sha256": "befb813c283fbcdd46dda2bad090f8272c8bb1de246d04cd570e9d890294d119",
-          "size": 29932,
+          "remote_name": "mirror/Needs/Modules/Cache/rarfile-4.5-py3-none-any.whl",
+          "sha256": "c74341f4b9a3a3ebb35ef396d59daf059eb028f34995a7162950a41d97b84de9",
+          "size": 30035,
           "type": "file"
         },
         "Needs/Modules/Cache/reportlab-5.0.0-py3-none-any.whl": {
@@ -16947,11 +16952,11 @@
           "size": 310654,
           "type": "file"
         },
-        "Needs/Modules/Cache/setuptools-83.0.0-py3-none-any.whl": {
+        "Needs/Modules/Cache/setuptools-84.0.0-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/setuptools-83.0.0-py3-none-any.whl",
-          "sha256": "29b23c360f22f414dc7336bb39178cc7bcbf6021ed2733cde173f09dba19abb3",
-          "size": 1008090,
+          "remote_name": "mirror/Needs/Modules/Cache/setuptools-84.0.0-py3-none-any.whl",
+          "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+          "size": 818216,
           "type": "file"
         },
         "Needs/Modules/Cache/setuptools_scm-10.2.1-py3-none-any.whl": {
@@ -16975,11 +16980,11 @@
           "size": 11050,
           "type": "file"
         },
-        "Needs/Modules/Cache/soupsieve-2.9.1-py3-none-any.whl": {
+        "Needs/Modules/Cache/soupsieve-2.9.2-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/soupsieve-2.9.1-py3-none-any.whl",
-          "sha256": "4f4477399246b7a0c720a88ca2454b11cd6bb9ae4c9d170140786e916776c14c",
-          "size": 37404,
+          "remote_name": "mirror/Needs/Modules/Cache/soupsieve-2.9.2-py3-none-any.whl",
+          "sha256": "8089a26fd974ca7a1f30276d3d8492ab266ab15af581642dfe8aa162e0c1c823",
+          "size": 37370,
           "type": "file"
         },
         "Needs/Modules/Cache/speedtest_cli-2.1.3-py2.py3-none-any.whl": {
@@ -17010,11 +17015,11 @@
           "size": 28404,
           "type": "file"
         },
-        "Needs/Modules/Cache/tldextract-5.3.1-py3-none-any.whl": {
+        "Needs/Modules/Cache/tldextract-5.3.2-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/tldextract-5.3.1-py3-none-any.whl",
-          "sha256": "6bfe36d518de569c572062b788e16a659ccaceffc486d243af0484e8ecf432d9",
-          "size": 105886,
+          "remote_name": "mirror/Needs/Modules/Cache/tldextract-5.3.2-py3-none-any.whl",
+          "sha256": "6c90d2a259f5c89f4fcf01f97af15708416a59ffedddff006d67222ab30d0fb0",
+          "size": 106415,
           "type": "file"
         },
         "Needs/Modules/Cache/typing_extensions-4.16.0-py3-none-any.whl": {
@@ -17269,11 +17274,11 @@
           "size": 8843796,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-3_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-4_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-3_aarch64.deb",
-          "sha256": "3553393285d5d37ff7319056a6d574e72765557a286fa48060a1abea4a6d1cc7",
-          "size": 10975132,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-4_aarch64.deb",
+          "sha256": "64b9615b005ed7ae47ead5daac578865558f6e40e9f2e44c0547d5edd24b79b6",
+          "size": 10972276,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/fftw_3.3.11_aarch64.deb": {
@@ -17304,11 +17309,11 @@
           "size": 168612,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/fontconfig_2.18.2_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/fontconfig_2.18.3_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/fontconfig_2.18.2_aarch64.deb",
-          "sha256": "f8770203011f61389251e2fcfc5738cb2caeb7d852cb70e80637a7749affd44b",
-          "size": 137680,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/fontconfig_2.18.3_aarch64.deb",
+          "sha256": "7f8b70dd7ca85b1e7cbb14a11e9e6bd4ce3189ab985aa7af51145484d85f2c61",
+          "size": 140288,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/freetype_2.14.3_aarch64.deb": {
@@ -17388,11 +17393,11 @@
           "size": 2557432,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/glslang_16.4.0-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/glslang_16.5.0_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/glslang_16.4.0-1_aarch64.deb",
-          "sha256": "df3807920f64178413d31bb7de4205c3ba373660e64e3d03643c8d3de0879315",
-          "size": 2516340,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/glslang_16.5.0_aarch64.deb",
+          "sha256": "9b1f96bdb0c7679c79d9ae60c1089deb38c0f8731a80232795fbd3aa582f8ac7",
+          "size": 2530880,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/gobject-introspection_1.86.0-2_aarch64.deb": {
@@ -17682,11 +17687,11 @@
           "size": 265960,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libdb_18.1.40-5_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libdb_18.1.40-6_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libdb_18.1.40-5_aarch64.deb",
-          "sha256": "86be427275c64d8facf7fbfd4fbbc6e86cdd6e865c8fbdecf1a9197a1183b9d8",
-          "size": 509420,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libdb_18.1.40-6_aarch64.deb",
+          "sha256": "60bfb4e8bed834d334806f39aae27ffc11ab819f2da2f9abb7a3b2d37970a532",
+          "size": 496988,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libde265_1.1.1_aarch64.deb": {
@@ -17794,11 +17799,11 @@
           "size": 82208,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libheif_1.23.1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libheif_1.23.1-1_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libheif_1.23.1_aarch64.deb",
-          "sha256": "491bd91edb91a414c2d457d9af992243ea56ce17d403e2f754654dd30960a7cb",
-          "size": 571012,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libheif_1.23.1-1_aarch64.deb",
+          "sha256": "b0877a2b777820d7e2034685cfcdc8f7bc08e217605dd4ab511cfd3a73e64140",
+          "size": 572716,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libiconv_1.18-1_aarch64.deb": {
@@ -17815,11 +17820,11 @@
           "size": 10210396,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libid3tag_0.16.4_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libid3tag_0.16.4-1_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libid3tag_0.16.4_aarch64.deb",
-          "sha256": "eb14c51e0a1a6ad4e0feba00eb4de4c95d0ee7f78b925d52a2565e2d3c22595e",
-          "size": 30456,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libid3tag_0.16.4-1_aarch64.deb",
+          "sha256": "3e472561e6791800f674a6fb6781cc600f57144eba83ea5bc08985ce5fb6cb3a",
+          "size": 30556,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libidn2_2.3.8-1_aarch64.deb": {
@@ -18151,11 +18156,11 @@
           "size": 15072,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libunbound_1.25.2_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libunbound_1.26.0_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libunbound_1.25.2_aarch64.deb",
-          "sha256": "a9f6e6e17e473430fb97bcedb4e6315cee12fcf636a0c1f05d26932f2b5db55e",
-          "size": 381208,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libunbound_1.26.0_aarch64.deb",
+          "sha256": "b7dc8206c8aa22463938b2691f15358b5a656f04100e24ad799b50df0a7a0a1a",
+          "size": 384980,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libunistring_1.4.2_aarch64.deb": {
@@ -18256,11 +18261,11 @@
           "size": 396540,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libx265_4.2_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libx265_4.3_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libx265_4.2_aarch64.deb",
-          "sha256": "c101bea9b03d06e778af7b49eb2c145b87499a2bdfb1cda5ae9b0daf997967c5",
-          "size": 1587380,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libx265_4.3_aarch64.deb",
+          "sha256": "8dbfd50ad2ceea5ffa2384f0f4cc16a87cbf56ac83b4861fa4f640d1beb352cd",
+          "size": 1599320,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libxau_1.0.12-2_aarch64.deb": {
@@ -18375,11 +18380,11 @@
           "size": 139308,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/luajit_1:2.1.1785606157+g2808400_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/luajit_1:2.1.1785763465+g1edc3e5_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/luajit_1:2.1.1785606157+g2808400_aarch64.deb",
-          "sha256": "aef3334a6f43b80579c13a322a744c6d7fa4e6f5b91100ac730dad61530a78ea",
-          "size": 293260,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/luajit_1:2.1.1785763465+g1edc3e5_aarch64.deb",
+          "sha256": "0478f84e598726eb4ce78f91a4d5a5fa513a80e957402bd810c29834e4f261fc",
+          "size": 292836,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/make_4.4.1-1_aarch64.deb": {
@@ -18389,11 +18394,11 @@
           "size": 240436,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-2_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-1_aarch64.deb",
-          "sha256": "c42e8a714302568aa1f286a0e13485a21fc422494335bb6b0c588f1bb9e33b19",
-          "size": 1818216,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-2_aarch64.deb",
+          "sha256": "f85143474a7235b178f56397ec81f655b6b4c473a45b57e563d4f957d6ed8f9c",
+          "size": 1544132,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/mpv_0.41.0-2_aarch64.deb": {
@@ -18438,11 +18443,11 @@
           "size": 1383276,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/nmap_7.99-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/nmap_7.991_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/nmap_7.99-1_aarch64.deb",
-          "sha256": "8c56e9b2d041e17018d9ceea0c6ab3c2d3b853c5b3726845a6d409e936a2878d",
-          "size": 5106648,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/nmap_7.991_aarch64.deb",
+          "sha256": "648203f6028bd8881755ada61982e4211886450e53bd8c46922e3e0ac3fa764c",
+          "size": 5152960,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/nodejs_26.4.0_aarch64.deb": {
@@ -18515,18 +18520,18 @@
           "size": 42588,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/p11-kit_0.26.4-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/p11-kit_0.26.5_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/p11-kit_0.26.4-1_aarch64.deb",
-          "sha256": "877fdca98fc811459bf3735b99ff362b4002759ee72ae39c39bb585dc02f8f12",
-          "size": 489888,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/p11-kit_0.26.5_aarch64.deb",
+          "sha256": "7911d7427e3c7182cf364e56a45a92307e5e7fddc105dc468f25ae39aa3e0ad7",
+          "size": 468204,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/pango_1.58.0_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/pango_1.58.2_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/pango_1.58.0_aarch64.deb",
-          "sha256": "a788d9dbe7c6dd92ffdde463a7424b05c2c14ee2cb63673de5a7bf8a48e88813",
-          "size": 364324,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/pango_1.58.2_aarch64.deb",
+          "sha256": "3089e2de505f3aed90b60235af7723bdc6e90bd0dd954bcd8083848a5d9c19e9",
+          "size": 364204,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/pcaudiolib_1.3-1_aarch64.deb": {
@@ -18578,11 +18583,11 @@
           "size": 848892,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/python-pip_26.2_all.deb": {
+        "Needs/Packages/Cache/aarch64/python-pip_26.2.1_all.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/python-pip_26.2_all.deb",
-          "sha256": "66065ee0955040cee6ba7f4471598ff9d138e2723970984a7b43bf00732d131a",
-          "size": 1190564,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/python-pip_26.2.1_all.deb",
+          "sha256": "92a9cb4b3c99dd20086f90fedc95c604eefc5bd0f88d1862690884474f82de44",
+          "size": 1190440,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/python_3.14.6-1_aarch64.deb": {
@@ -18788,11 +18793,11 @@
           "size": 720,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.359_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb",
-          "sha256": "2e3b0a27c090d45f1395c1b824f0caec7dfa5f36a6b16ae579acc8b1eb84ed6a",
-          "size": 129000,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.359_aarch64.deb",
+          "sha256": "ed6c8fe3cf01e5c1de8bfd8bd1ec73fa38114ba48594660883f9af44d2ca4054",
+          "size": 128664,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/wget_1.25.0-1_aarch64.deb": {
@@ -18861,8 +18866,8 @@
         "Needs/Packages/Cache/cache-manifest.json": {
           "executable": false,
           "remote_name": "mirror/Needs/Packages/Cache/cache-manifest.json",
-          "sha256": "3a189f2b3ee6fb23e88997518c62dd5f185de84ec4c71d8c1042726988bd5d1f",
-          "size": 334294,
+          "sha256": "9ec89ea1e986db7f5c7b2668367ec84ccbb0910b75a04e1a11f1df1af6c9f323",
+          "size": 334321,
           "type": "file"
         },
         "Needs/Packages/Indexes/aarch64/index-manifest.json": {
@@ -18910,8 +18915,8 @@
         "Needs/Packages/download-plan-aarch64.tsv": {
           "executable": false,
           "remote_name": "mirror/Needs/Packages/download-plan-aarch64.tsv",
-          "sha256": "bbcc7bd26f1ff829611f4c30bc286d757e93f6ffb0b5f78a6ba98237a66f8e63",
-          "size": 48103,
+          "sha256": "5ec2c2455542460dd336c62c63b0519f8b2dae3e2f87c819b0e59abb707dd306",
+          "size": 48105,
           "type": "file"
         },
         "Needs/Packages/export_cache_lock.py": {
@@ -18931,8 +18936,8 @@
         "Needs/Packages/package-lock-aarch64.json": {
           "executable": false,
           "remote_name": "mirror/Needs/Packages/package-lock-aarch64.json",
-          "sha256": "7e55471fb639c406ef6bda3558dc148b1edd8372f5fed80372a00cddc5ef85ef",
-          "size": 335283,
+          "sha256": "008c1ac86cd9280ca9d6be2b258f0b4be0b743dd260b3b69d60308fcf76104da",
+          "size": 335310,
           "type": "file"
         },
         "Needs/Packages/reconstruct-package.sh": {
@@ -18987,8 +18992,8 @@
         "README.md": {
           "executable": false,
           "remote_name": "mirror/README.md",
-          "sha256": "9c13381f7c42662c3482666d3b470ac5a849efeaa8ea9c9106b59bc087bf6cb2",
-          "size": 202173,
+          "sha256": "22029a41d1f2901c0438013a860625dcb326c7e5a1981e056c2e5532947c2bf8",
+          "size": 271556,
           "type": "file"
         },
         "SECURITY.md": {
@@ -19491,8 +19496,8 @@
         "Scripts/Personal Information Capture/Fake Instagram Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake Instagram Verification Page.py",
-          "sha256": "95c4202baad90287fbb6c81f7b5bfb18fc7e74586cd896b49668284260b2a276",
-          "size": 99625,
+          "sha256": "c44d9bc780590afaf3d26a208bcef61ae33e7171b8fbf96957493fd0e70d5f26",
+          "size": 99923,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake Location Page.py": {
@@ -19512,29 +19517,29 @@
         "Scripts/Personal Information Capture/Fake OnlyFans Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake OnlyFans Verification Page.py",
-          "sha256": "f5ad41226d836b9b35772eb459b4e43d8a658d91b50e31c80ae321136d5d54c7",
-          "size": 84891,
+          "sha256": "fae06cc4af4b8c707569687d0fb88c19f9ef07e65fdfc0c7b664920c7a5a4924",
+          "size": 85440,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake Steam Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake Steam Verification Page.py",
-          "sha256": "bc54a4ed27331e6772a46de456518420f29cab7fc5308caf1fb1638a4ec38903",
-          "size": 91664,
+          "sha256": "fde1b27c03d923a5ed263ad3f7b60fb8dbfa0f78749cc3c23e0bc8502963a202",
+          "size": 94326,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake Twitch Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake Twitch Verification Page.py",
-          "sha256": "8a1f55c4d71c4319d8b34a6f2281868e676aed3dd4a9f463be26b0bab872fded",
-          "size": 107404,
+          "sha256": "eb4fde69caab9b67ff49c3ff88a91ca4be282181599c84ea67788b56992ceebf",
+          "size": 104884,
           "type": "file"
         },
         "Scripts/Personal Information Capture/Fake YouTube Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Personal Information Capture/Fake YouTube Verification Page.py",
-          "sha256": "5647310e26521bcc6e3feb8421c588b2d49613f5eb883dfb78a4a42aefc322eb",
-          "size": 76499,
+          "sha256": "22757bd6561cfa57bba6125fdb8d469449e86e8aa26c6965b1480c2d5e71270e",
+          "size": 76730,
           "type": "file"
         },
         "Scripts/Settings.py": {
@@ -20051,8 +20056,8 @@
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Instagram Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Instagram Verification Page.py",
-          "sha256": "e0772b49892948046ea4b8d5a154c8dde536b587e4816b4f8f98825af5830637",
-          "size": 113798,
+          "sha256": "0123f5a9feb3ce937c5482abfe233182d397c61a03c3d02fd93f494cc82b0e0b",
+          "size": 114150,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Location Page.py": {
@@ -20072,29 +20077,29 @@
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake OnlyFans Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake OnlyFans Verification Page.py",
-          "sha256": "89b603ff2aa083773b251ea2fb838abea8db613d593081f6cdc8e17ea47ec1ee",
-          "size": 93383,
+          "sha256": "bba5b4d93aa807869015de4eb65ade07eff1a6340c7757ff319d5a8a06e86285",
+          "size": 93913,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Steam Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Steam Verification Page.py",
-          "sha256": "77a9e22e15a707d3040ac0285eda8e4c4b1035a29aba70c9d47377c0fd3cc143",
-          "size": 103020,
+          "sha256": "c7ac24861b0272f65e624971cd7179446cddf2f90920450a6e14d8d30b053619",
+          "size": 106749,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Twitch Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake Twitch Verification Page.py",
-          "sha256": "87fad741fcea85ebe64ab093e3ac03e38ecc02fba4ae39c5dca971afbef875db",
-          "size": 121440,
+          "sha256": "988dafbd63259eb8c71153fb7feadc2d82dbf77db3a1434d9256d749e64673c3",
+          "size": 118424,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py": {
           "executable": false,
           "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py",
-          "sha256": "c5ba3a310c808532c9fe70ac7c34bb51f58f4c9c6c9c4d7548f2ea12de4c7f81",
-          "size": 86361,
+          "sha256": "6615dc0a086e49003eafde795b2eb77bb283a2a6e99fe88da5352231f4e1eafd",
+          "size": 86593,
           "type": "file"
         },
         "Setup.sh": {
@@ -20127,7 +20132,7 @@
         "wayback_pending": 929
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-07T06:05:38Z",
+      "state_updated_at_utc": "2026-08-09T05:48:42Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -20139,87 +20144,24 @@
         "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 331,
+        "completed": 385,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-05T08:57:23Z",
-          "remaining": 929,
-          "workflow_run_id": "30979559977"
+          "processed_at_utc": "2026-08-09T09:42:45Z",
+          "remaining": 819,
+          "workflow_run_id": "31297187194"
         },
-        "last_processed_at_utc": "2026-08-07T09:16:05Z",
+        "last_processed_at_utc": "2026-08-09T09:42:24Z",
         "last_queue_added": 8,
         "last_queue_update_at_utc": "2026-08-07T06:05:38Z",
-        "last_successful_at_utc": "2026-08-07T09:16:05Z",
-        "last_successful_url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Converter.py",
+        "last_successful_at_utc": "2026-08-09T09:42:24Z",
+        "last_successful_url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Video%20Page.py",
         "last_transient_error": {
-          "at_utc": "2026-07-31T00:30:12Z",
+          "at_utc": "2026-08-09T09:31:01Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
-          "url": "https://github.com/sal-scar/DedSec/blob/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Slots%20Pages%20Demos/halloween_havoc.html"
+          "url": "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Chrome%20Verification%20Page.py"
         },
         "pending": [
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/File%20Type%20Checker.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Free%20Internet.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Desktop.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Developer%20Setup.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Simple%20Websites%20Creator.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Smart%20Notes.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Tree%20Explorer.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Extra%20Content.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Apple%20iCloud%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Discord%20Nitro%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Epic%20Games%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Facebook%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Free%20Robux%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20GitHub%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Google%20Free%20Money%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Instagram%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20MetaMask%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Microsoft%20365%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20OnlyFans%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20PayPal%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Pinterest%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20PlayStation%20Network%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Reddit%20Karma%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Snapchat%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Steam%20Games%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Steam%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Tik%20Tok%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Trust%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Twitch%20Subs%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Twitter%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20What%27s%20Up%20Dude%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Xbox%20Live%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20YouTube%20Subscribers%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Buzz.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/CTF%20God.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Detective.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Pet%20Friends.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Tamagotchi.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Terminal%20Arcade.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Bug%20Hunter.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Connections.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Dark.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/DedSec%27s%20Network.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Digital%20Footprint%20Finder.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Link%20Shield.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Masker.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/QR%20Code%20Generator.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Sod.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Store%20Scrapper.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Android%20App%20Launcher.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Loading%20Screen.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Password%20Master.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Termux%20Backup%20Restore.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Termux%20Repair%20Wizard.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Back%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Back%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Card%20Details%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Chrome%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Data%20Grabber%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Discord%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Facebook%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Video%20Page.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Google%20Location%20Page.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Instagram%20Verification%20Page.py",
           "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Location%20Page.py",
@@ -21029,34 +20971,44 @@
           "https://raw.githubusercontent.com/sal-scar/DedSec/28dbb1cb4a8d1df28c34b9aad8096a1cc90b2b28/Setup.sh",
           "https://github.com/sal-scar/DedSec/branches",
           "https://github.com/sal-scar/DedSec/releases",
-          "https://github.com/sal-scar/DedSec/tags"
+          "https://github.com/sal-scar/DedSec/tags",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Desktop.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Discord%20Nitro%20Page.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Free%20Robux%20Page.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Microsoft%20365%20Page.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20What%27s%20Up%20Dude%20Page.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Link%20Shield.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/QR%20Code%20Generator.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Password%20Master.py",
+          "https://raw.githubusercontent.com/sal-scar/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Chrome%20Verification%20Page.py"
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 873
+        "remaining": 819
       }
     },
     "dedsec-main": {
       "current_run": {
-        "completed_deletes": 0,
-        "completed_uploads": 10,
+        "completed_deletes": 50,
+        "completed_uploads": 31,
         "initial_sync": false,
         "last_successful_operation": {
-          "action": "upload",
-          "completed_at_utc": "2026-08-07T06:06:20Z",
-          "path": "Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py",
-          "remote_name": "mirror/Scripts/Ελληνική Έκδοση/Συλλογή Προσωπικών Πληροφοριών/Fake YouTube Verification Page.py"
+          "action": "delete",
+          "completed_at_utc": "2026-08-09T05:48:40Z",
+          "path": "Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb",
+          "reason": "orphan_remote",
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb"
         },
         "metadata_reliable_at_start": true,
-        "planned_orphan_deletes": 0,
-        "planned_repository_deletes": 0,
-        "planned_uploads": 10,
+        "planned_orphan_deletes": 25,
+        "planned_repository_deletes": 25,
+        "planned_uploads": 31,
         "remaining_deletes": [],
         "remaining_uploads": [],
         "run_attempt": "1",
-        "run_id": "31152658474",
-        "source_commit": "f48d4c4a0a8918c1232c481baa677392ee0c625e",
-        "started_at_utc": "2026-08-07T06:05:31Z",
+        "run_id": "31297187194",
+        "source_commit": "2b7ca49633df03d127f73c2bf15d5c57340d4871",
+        "started_at_utc": "2026-08-09T05:41:52Z",
         "state_source": "internet_archive",
         "status": "in_progress",
         "total_current_files": 587
@@ -21414,8 +21366,8 @@
         "LICENSE.txt": {
           "executable": false,
           "remote_name": "mirror/LICENSE.txt",
-          "sha256": "dbdddcc5d216248b9b0571be167eaa8676cf6ac6c25c26f4ced7dadc3f38931d",
-          "size": 1443,
+          "sha256": "c6f12eaa0e276492f77c5470f80a21779c31afe21e1ecfe12d108fd2c5f2547e",
+          "size": 1074,
           "type": "file"
         },
         "Needs/AUDIT.md": {
@@ -21481,11 +21433,11 @@
           "size": 32764,
           "type": "file"
         },
-        "Needs/Modules/Cache/blessed-1.47.0-py3-none-any.whl": {
+        "Needs/Modules/Cache/blessed-1.48.0-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/blessed-1.47.0-py3-none-any.whl",
-          "sha256": "f4df54a32289b6a3eaca49387b4f6823ba7e04ddb5ffa18f5e1fde44e8b79681",
-          "size": 131212,
+          "remote_name": "mirror/Needs/Modules/Cache/blessed-1.48.0-py3-none-any.whl",
+          "sha256": "c4ce01cba220f41d2ff244e9829cb4ef2390a26ace8ce1687b8bced1613676e5",
+          "size": 131267,
           "type": "file"
         },
         "Needs/Modules/Cache/blinker-1.9.0-py3-none-any.whl": {
@@ -21505,8 +21457,8 @@
         "Needs/Modules/Cache/cache-manifest.json": {
           "executable": false,
           "remote_name": "mirror/Needs/Modules/Cache/cache-manifest.json",
-          "sha256": "52c240f97b2e07c764a96989dc8e45f932044440195f9fb647137fc8f1bca782",
-          "size": 18123,
+          "sha256": "b5d00ef4dbd5d85e0ea2f29286a2b3f3882f0d32dac027f2291c653872e32d3d",
+          "size": 18121,
           "type": "file"
         },
         "Needs/Modules/Cache/cairocffi-1.7.1-py3-none-any.whl": {
@@ -21530,11 +21482,11 @@
           "size": 136983,
           "type": "file"
         },
-        "Needs/Modules/Cache/cffi-2.1.0.tar.gz": {
+        "Needs/Modules/Cache/cffi-2.1.1.tar.gz": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/cffi-2.1.0.tar.gz",
-          "sha256": "efc1cdd798b1aaf39b4610bba7aad28c9bea9b910f25c784ccf9ec1fa719d1f9",
-          "size": 531036,
+          "remote_name": "mirror/Needs/Modules/Cache/cffi-2.1.1.tar.gz",
+          "sha256": "dd31f52ea1086513bb9df30f8fcee9b8918323ae067a3d5b78bc826a000712be",
+          "size": 530807,
           "type": "file"
         },
         "Needs/Modules/Cache/charset_normalizer-3.4.9.tar.gz": {
@@ -21635,11 +21587,11 @@
           "size": 18683,
           "type": "file"
         },
-        "Needs/Modules/Cache/flit_core-3.12.0-py3-none-any.whl": {
+        "Needs/Modules/Cache/flit_core-4.0.2-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/flit_core-3.12.0-py3-none-any.whl",
-          "sha256": "e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c",
-          "size": 45594,
+          "remote_name": "mirror/Needs/Modules/Cache/flit_core-4.0.2-py3-none-any.whl",
+          "sha256": "8d80717e28d982b41594ed5b14d4e89fbc5bad55473fde27994a3101db18a94e",
+          "size": 44551,
           "type": "file"
         },
         "Needs/Modules/Cache/geographiclib-2.1-py3-none-any.whl": {
@@ -21810,11 +21762,11 @@
           "size": 717045,
           "type": "file"
         },
-        "Needs/Modules/Cache/packaging-26.2-py3-none-any.whl": {
+        "Needs/Modules/Cache/packaging-26.3-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/packaging-26.2-py3-none-any.whl",
-          "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
-          "size": 100195,
+          "remote_name": "mirror/Needs/Modules/Cache/packaging-26.3-py3-none-any.whl",
+          "sha256": "d7193f7c8e4e93f444fde0262bf90af30e16fa0ad0ad44cb553c87339b23cd1c",
+          "size": 129956,
           "type": "file"
         },
         "Needs/Modules/Cache/paramiko-5.0.0-py3-none-any.whl": {
@@ -21838,11 +21790,11 @@
           "size": 47025035,
           "type": "file"
         },
-        "Needs/Modules/Cache/psd-tools-1.17.4.tar.gz": {
+        "Needs/Modules/Cache/psd-tools-1.18.0.tar.gz": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/psd-tools-1.17.4.tar.gz",
-          "sha256": "73409b7399fce2091200f9ccf172c95e798b904483e020ac79f28dfa1099ec6d",
-          "size": 21622829,
+          "remote_name": "mirror/Needs/Modules/Cache/psd-tools-1.18.0.tar.gz",
+          "sha256": "c0590044f714a51ced823e5011aaa14ea563a6438f735d89a84bfc482e9dac5c",
+          "size": 21624732,
           "type": "file"
         },
         "Needs/Modules/Cache/psutil-7.2.2.tar.gz": {
@@ -21978,11 +21930,11 @@
           "size": 472788,
           "type": "file"
         },
-        "Needs/Modules/Cache/python_socketio-5.16.3-py3-none-any.whl": {
+        "Needs/Modules/Cache/python_socketio-5.16.4-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/python_socketio-5.16.3-py3-none-any.whl",
-          "sha256": "e7ad14202a5e6448824c7c2f86161d04e13dec05992257df5c709e6a2798c041",
-          "size": 82087,
+          "remote_name": "mirror/Needs/Modules/Cache/python_socketio-5.16.4-py3-none-any.whl",
+          "sha256": "0eb9c7687e7fbf59e60d714fd62afba77dfaf8ef8a06a0bff05a86c351accc2f",
+          "size": 82098,
           "type": "file"
         },
         "Needs/Modules/Cache/python_whois-0.9.6-py3-none-any.whl": {
@@ -22006,11 +21958,11 @@
           "size": 45986,
           "type": "file"
         },
-        "Needs/Modules/Cache/rarfile-4.4-py3-none-any.whl": {
+        "Needs/Modules/Cache/rarfile-4.5-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/rarfile-4.4-py3-none-any.whl",
-          "sha256": "befb813c283fbcdd46dda2bad090f8272c8bb1de246d04cd570e9d890294d119",
-          "size": 29932,
+          "remote_name": "mirror/Needs/Modules/Cache/rarfile-4.5-py3-none-any.whl",
+          "sha256": "c74341f4b9a3a3ebb35ef396d59daf059eb028f34995a7162950a41d97b84de9",
+          "size": 30035,
           "type": "file"
         },
         "Needs/Modules/Cache/reportlab-5.0.0-py3-none-any.whl": {
@@ -22048,11 +22000,11 @@
           "size": 310654,
           "type": "file"
         },
-        "Needs/Modules/Cache/setuptools-83.0.0-py3-none-any.whl": {
+        "Needs/Modules/Cache/setuptools-84.0.0-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/setuptools-83.0.0-py3-none-any.whl",
-          "sha256": "29b23c360f22f414dc7336bb39178cc7bcbf6021ed2733cde173f09dba19abb3",
-          "size": 1008090,
+          "remote_name": "mirror/Needs/Modules/Cache/setuptools-84.0.0-py3-none-any.whl",
+          "sha256": "51a52592b3b99e102b609654876bd65f19f999935166d1352678931132b0c670",
+          "size": 818216,
           "type": "file"
         },
         "Needs/Modules/Cache/setuptools_scm-10.2.1-py3-none-any.whl": {
@@ -22076,11 +22028,11 @@
           "size": 11050,
           "type": "file"
         },
-        "Needs/Modules/Cache/soupsieve-2.9.1-py3-none-any.whl": {
+        "Needs/Modules/Cache/soupsieve-2.9.2-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/soupsieve-2.9.1-py3-none-any.whl",
-          "sha256": "4f4477399246b7a0c720a88ca2454b11cd6bb9ae4c9d170140786e916776c14c",
-          "size": 37404,
+          "remote_name": "mirror/Needs/Modules/Cache/soupsieve-2.9.2-py3-none-any.whl",
+          "sha256": "8089a26fd974ca7a1f30276d3d8492ab266ab15af581642dfe8aa162e0c1c823",
+          "size": 37370,
           "type": "file"
         },
         "Needs/Modules/Cache/speedtest_cli-2.1.3-py2.py3-none-any.whl": {
@@ -22111,11 +22063,11 @@
           "size": 28404,
           "type": "file"
         },
-        "Needs/Modules/Cache/tldextract-5.3.1-py3-none-any.whl": {
+        "Needs/Modules/Cache/tldextract-5.3.2-py3-none-any.whl": {
           "executable": false,
-          "remote_name": "mirror/Needs/Modules/Cache/tldextract-5.3.1-py3-none-any.whl",
-          "sha256": "6bfe36d518de569c572062b788e16a659ccaceffc486d243af0484e8ecf432d9",
-          "size": 105886,
+          "remote_name": "mirror/Needs/Modules/Cache/tldextract-5.3.2-py3-none-any.whl",
+          "sha256": "6c90d2a259f5c89f4fcf01f97af15708416a59ffedddff006d67222ab30d0fb0",
+          "size": 106415,
           "type": "file"
         },
         "Needs/Modules/Cache/typing_extensions-4.16.0-py3-none-any.whl": {
@@ -22370,11 +22322,11 @@
           "size": 8843796,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-3_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-4_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-3_aarch64.deb",
-          "sha256": "3553393285d5d37ff7319056a6d574e72765557a286fa48060a1abea4a6d1cc7",
-          "size": 10975132,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/ffmpeg_8.1.2-4_aarch64.deb",
+          "sha256": "64b9615b005ed7ae47ead5daac578865558f6e40e9f2e44c0547d5edd24b79b6",
+          "size": 10972276,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/fftw_3.3.11_aarch64.deb": {
@@ -22405,11 +22357,11 @@
           "size": 168612,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/fontconfig_2.18.2_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/fontconfig_2.18.3_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/fontconfig_2.18.2_aarch64.deb",
-          "sha256": "f8770203011f61389251e2fcfc5738cb2caeb7d852cb70e80637a7749affd44b",
-          "size": 137680,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/fontconfig_2.18.3_aarch64.deb",
+          "sha256": "7f8b70dd7ca85b1e7cbb14a11e9e6bd4ce3189ab985aa7af51145484d85f2c61",
+          "size": 140288,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/freetype_2.14.3_aarch64.deb": {
@@ -22489,11 +22441,11 @@
           "size": 2557432,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/glslang_16.4.0-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/glslang_16.5.0_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/glslang_16.4.0-1_aarch64.deb",
-          "sha256": "df3807920f64178413d31bb7de4205c3ba373660e64e3d03643c8d3de0879315",
-          "size": 2516340,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/glslang_16.5.0_aarch64.deb",
+          "sha256": "9b1f96bdb0c7679c79d9ae60c1089deb38c0f8731a80232795fbd3aa582f8ac7",
+          "size": 2530880,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/gobject-introspection_1.86.0-2_aarch64.deb": {
@@ -22783,11 +22735,11 @@
           "size": 265960,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libdb_18.1.40-5_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libdb_18.1.40-6_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libdb_18.1.40-5_aarch64.deb",
-          "sha256": "86be427275c64d8facf7fbfd4fbbc6e86cdd6e865c8fbdecf1a9197a1183b9d8",
-          "size": 509420,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libdb_18.1.40-6_aarch64.deb",
+          "sha256": "60bfb4e8bed834d334806f39aae27ffc11ab819f2da2f9abb7a3b2d37970a532",
+          "size": 496988,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libde265_1.1.1_aarch64.deb": {
@@ -22895,11 +22847,11 @@
           "size": 82208,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libheif_1.23.1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libheif_1.23.1-1_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libheif_1.23.1_aarch64.deb",
-          "sha256": "491bd91edb91a414c2d457d9af992243ea56ce17d403e2f754654dd30960a7cb",
-          "size": 571012,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libheif_1.23.1-1_aarch64.deb",
+          "sha256": "b0877a2b777820d7e2034685cfcdc8f7bc08e217605dd4ab511cfd3a73e64140",
+          "size": 572716,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libiconv_1.18-1_aarch64.deb": {
@@ -22916,11 +22868,11 @@
           "size": 10210396,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libid3tag_0.16.4_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libid3tag_0.16.4-1_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libid3tag_0.16.4_aarch64.deb",
-          "sha256": "eb14c51e0a1a6ad4e0feba00eb4de4c95d0ee7f78b925d52a2565e2d3c22595e",
-          "size": 30456,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libid3tag_0.16.4-1_aarch64.deb",
+          "sha256": "3e472561e6791800f674a6fb6781cc600f57144eba83ea5bc08985ce5fb6cb3a",
+          "size": 30556,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libidn2_2.3.8-1_aarch64.deb": {
@@ -23252,11 +23204,11 @@
           "size": 15072,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libunbound_1.25.2_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libunbound_1.26.0_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libunbound_1.25.2_aarch64.deb",
-          "sha256": "a9f6e6e17e473430fb97bcedb4e6315cee12fcf636a0c1f05d26932f2b5db55e",
-          "size": 381208,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libunbound_1.26.0_aarch64.deb",
+          "sha256": "b7dc8206c8aa22463938b2691f15358b5a656f04100e24ad799b50df0a7a0a1a",
+          "size": 384980,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libunistring_1.4.2_aarch64.deb": {
@@ -23357,11 +23309,11 @@
           "size": 396540,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/libx265_4.2_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/libx265_4.3_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libx265_4.2_aarch64.deb",
-          "sha256": "c101bea9b03d06e778af7b49eb2c145b87499a2bdfb1cda5ae9b0daf997967c5",
-          "size": 1587380,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/libx265_4.3_aarch64.deb",
+          "sha256": "8dbfd50ad2ceea5ffa2384f0f4cc16a87cbf56ac83b4861fa4f640d1beb352cd",
+          "size": 1599320,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/libxau_1.0.12-2_aarch64.deb": {
@@ -23476,11 +23428,11 @@
           "size": 139308,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/luajit_1:2.1.1785606157+g2808400_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/luajit_1:2.1.1785763465+g1edc3e5_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/luajit_1:2.1.1785606157+g2808400_aarch64.deb",
-          "sha256": "aef3334a6f43b80579c13a322a744c6d7fa4e6f5b91100ac730dad61530a78ea",
-          "size": 293260,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/luajit_1:2.1.1785763465+g1edc3e5_aarch64.deb",
+          "sha256": "0478f84e598726eb4ce78f91a4d5a5fa513a80e957402bd810c29834e4f261fc",
+          "size": 292836,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/make_4.4.1-1_aarch64.deb": {
@@ -23490,11 +23442,11 @@
           "size": 240436,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-2_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-1_aarch64.deb",
-          "sha256": "c42e8a714302568aa1f286a0e13485a21fc422494335bb6b0c588f1bb9e33b19",
-          "size": 1818216,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/mesa-vulkan-icd-swrast_26.0.6-2_aarch64.deb",
+          "sha256": "f85143474a7235b178f56397ec81f655b6b4c473a45b57e563d4f957d6ed8f9c",
+          "size": 1544132,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/mpv_0.41.0-2_aarch64.deb": {
@@ -23539,11 +23491,11 @@
           "size": 1383276,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/nmap_7.99-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/nmap_7.991_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/nmap_7.99-1_aarch64.deb",
-          "sha256": "8c56e9b2d041e17018d9ceea0c6ab3c2d3b853c5b3726845a6d409e936a2878d",
-          "size": 5106648,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/nmap_7.991_aarch64.deb",
+          "sha256": "648203f6028bd8881755ada61982e4211886450e53bd8c46922e3e0ac3fa764c",
+          "size": 5152960,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/nodejs_26.4.0_aarch64.deb": {
@@ -23616,18 +23568,18 @@
           "size": 42588,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/p11-kit_0.26.4-1_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/p11-kit_0.26.5_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/p11-kit_0.26.4-1_aarch64.deb",
-          "sha256": "877fdca98fc811459bf3735b99ff362b4002759ee72ae39c39bb585dc02f8f12",
-          "size": 489888,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/p11-kit_0.26.5_aarch64.deb",
+          "sha256": "7911d7427e3c7182cf364e56a45a92307e5e7fddc105dc468f25ae39aa3e0ad7",
+          "size": 468204,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/pango_1.58.0_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/pango_1.58.2_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/pango_1.58.0_aarch64.deb",
-          "sha256": "a788d9dbe7c6dd92ffdde463a7424b05c2c14ee2cb63673de5a7bf8a48e88813",
-          "size": 364324,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/pango_1.58.2_aarch64.deb",
+          "sha256": "3089e2de505f3aed90b60235af7723bdc6e90bd0dd954bcd8083848a5d9c19e9",
+          "size": 364204,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/pcaudiolib_1.3-1_aarch64.deb": {
@@ -23679,11 +23631,11 @@
           "size": 848892,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/python-pip_26.2_all.deb": {
+        "Needs/Packages/Cache/aarch64/python-pip_26.2.1_all.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/python-pip_26.2_all.deb",
-          "sha256": "66065ee0955040cee6ba7f4471598ff9d138e2723970984a7b43bf00732d131a",
-          "size": 1190564,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/python-pip_26.2.1_all.deb",
+          "sha256": "92a9cb4b3c99dd20086f90fedc95c604eefc5bd0f88d1862690884474f82de44",
+          "size": 1190440,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/python_3.14.6-1_aarch64.deb": {
@@ -23889,11 +23841,11 @@
           "size": 720,
           "type": "file"
         },
-        "Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb": {
+        "Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.359_aarch64.deb": {
           "executable": false,
-          "remote_name": "mirror/Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.358_aarch64.deb",
-          "sha256": "2e3b0a27c090d45f1395c1b824f0caec7dfa5f36a6b16ae579acc8b1eb84ed6a",
-          "size": 129000,
+          "remote_name": "mirror/Needs/Packages/Cache/aarch64/vulkan-loader-generic_1.4.359_aarch64.deb",
+          "sha256": "ed6c8fe3cf01e5c1de8bfd8bd1ec73fa38114ba48594660883f9af44d2ca4054",
+          "size": 128664,
           "type": "file"
         },
         "Needs/Packages/Cache/aarch64/wget_1.25.0-1_aarch64.deb": {
@@ -23962,8 +23914,8 @@
         "Needs/Packages/Cache/cache-manifest.json": {
           "executable": false,
           "remote_name": "mirror/Needs/Packages/Cache/cache-manifest.json",
-          "sha256": "3a189f2b3ee6fb23e88997518c62dd5f185de84ec4c71d8c1042726988bd5d1f",
-          "size": 334294,
+          "sha256": "9ec89ea1e986db7f5c7b2668367ec84ccbb0910b75a04e1a11f1df1af6c9f323",
+          "size": 334321,
           "type": "file"
         },
         "Needs/Packages/Indexes/aarch64/index-manifest.json": {
@@ -24011,8 +23963,8 @@
         "Needs/Packages/download-plan-aarch64.tsv": {
           "executable": false,
           "remote_name": "mirror/Needs/Packages/download-plan-aarch64.tsv",
-          "sha256": "bbcc7bd26f1ff829611f4c30bc286d757e93f6ffb0b5f78a6ba98237a66f8e63",
-          "size": 48103,
+          "sha256": "5ec2c2455542460dd336c62c63b0519f8b2dae3e2f87c819b0e59abb707dd306",
+          "size": 48105,
           "type": "file"
         },
         "Needs/Packages/export_cache_lock.py": {
@@ -24032,8 +23984,8 @@
         "Needs/Packages/package-lock-aarch64.json": {
           "executable": false,
           "remote_name": "mirror/Needs/Packages/package-lock-aarch64.json",
-          "sha256": "bedd36a8d97174bdb3a1dc22655e1dacf1f396389a968e2c58f593625a821f56",
-          "size": 335283,
+          "sha256": "046cf6f5acbf07a61073e89a083f1314ba2bb540c4845930e334da72f14ddee8",
+          "size": 335310,
           "type": "file"
         },
         "Needs/Packages/reconstruct-package.sh": {
@@ -24088,8 +24040,8 @@
         "README.md": {
           "executable": false,
           "remote_name": "mirror/README.md",
-          "sha256": "9c13381f7c42662c3482666d3b470ac5a849efeaa8ea9c9106b59bc087bf6cb2",
-          "size": 202173,
+          "sha256": "22029a41d1f2901c0438013a860625dcb326c7e5a1981e056c2e5532947c2bf8",
+          "size": 271556,
           "type": "file"
         },
         "SECURITY.md": {
@@ -25228,7 +25180,7 @@
         "wayback_pending": 208
       },
       "schema_version": 5,
-      "state_updated_at_utc": "2026-08-07T06:06:20Z",
+      "state_updated_at_utc": "2026-08-09T05:48:40Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -25240,87 +25192,24 @@
         "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 335,
+        "completed": 387,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-05T08:57:18Z",
-          "remaining": 138,
-          "workflow_run_id": "30979559977"
+          "processed_at_utc": "2026-08-07T09:21:46Z",
+          "remaining": 81,
+          "workflow_run_id": "31152658474"
         },
-        "last_processed_at_utc": "2026-08-07T09:15:59Z",
+        "last_processed_at_utc": "2026-08-09T09:36:44Z",
         "last_queue_added": 8,
         "last_queue_update_at_utc": "2026-08-04T07:52:39Z",
-        "last_successful_at_utc": "2026-08-07T09:15:59Z",
-        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Mobile%20Developer%20Setup.py",
+        "last_successful_at_utc": "2026-08-09T09:36:44Z",
+        "last_successful_url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Microphone%20Page.py",
         "last_transient_error": {
-          "at_utc": "2026-07-31T01:21:40Z",
+          "at_utc": "2026-08-09T09:25:13Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
-          "url": "https://github.com/dedsec1121fk/DedSec/blob/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Extra%20Content/Unused%20Scripts/DedSec%27s%20Database.py"
+          "url": "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Page.py"
         },
         "pending": [
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Simple%20Websites%20Creator.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Smart%20Notes.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Developer%20Base/Tree%20Explorer.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Extra%20Content.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Apple%20iCloud%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Discord%20Nitro%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Epic%20Games%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Facebook%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Free%20Robux%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20GitHub%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Google%20Free%20Money%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Instagram%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20MetaMask%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Microsoft%20365%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20OnlyFans%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20PayPal%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Pinterest%20Pro%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20PlayStation%20Network%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Reddit%20Karma%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Snapchat%20Friends%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Steam%20Games%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Steam%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Tik%20Tok%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Trust%20Wallet%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Twitch%20Subs%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Twitter%20Followers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20What%27s%20Up%20Dude%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Xbox%20Live%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20YouTube%20Subscribers%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Buzz.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/CTF%20God.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Detective.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Pet%20Friends.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Tamagotchi.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Terminal%20Arcade.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Bug%20Hunter.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Connections.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Dark.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/DedSec%27s%20Network.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Digital%20Footprint%20Finder.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Link%20Shield.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Masker.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/QR%20Code%20Generator.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Sod.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Store%20Scrapper.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Android%20App%20Launcher.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Loading%20Screen.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Password%20Master.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Termux%20Backup%20Restore.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Other%20Tools/Termux%20Repair%20Wizard.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Back%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Back%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Card%20Details%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Chrome%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Data%20Grabber%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Discord%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Facebook%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Video%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Google%20Location%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Instagram%20Verification%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Location%20Page.py",
-          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Microphone%20Page.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20OnlyFans%20Verification%20Page.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Steam%20Verification%20Page.py",
           "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Twitch%20Verification%20Page.py",
@@ -25339,11 +25228,22 @@
           "https://github.com/dedsec1121fk/DedSec/tree/160a769d7c173da58ec9268c8263c0d947b01c31",
           "https://github.com/dedsec1121fk/DedSec/branches",
           "https://github.com/dedsec1121fk/DedSec/releases",
-          "https://github.com/dedsec1121fk/DedSec/tags"
+          "https://github.com/dedsec1121fk/DedSec/tags",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Facebook%20Friends%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20PlayStation%20Network%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20Tik%20Tok%20Followers%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20What%27s%20Up%20Dude%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Fake%20Pages/Fake%20YouTube%20Subscribers%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Games/Tamagotchi.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/DedSec%27s%20Network.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Network%20Tools/Sod.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Back%20Camera%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Discord%20Verification%20Page.py",
+          "https://raw.githubusercontent.com/dedsec1121fk/DedSec/c9de48df0a563bd682cb4bfe1fe187a647f0681b/Scripts/Personal%20Information%20Capture/Fake%20Front%20Camera%20Page.py"
         ],
         "permanent_failures": 0,
         "recent_failures": [],
-        "remaining": 82
+        "remaining": 30
       }
     },
     "dedsec-websites": {
