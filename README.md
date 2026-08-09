@@ -111,8 +111,8 @@ All groups run Wednesday, Friday and Sunday using `Europe/Athens`.
 **Current mirrored files:** 825  
 **Latest file update:** 0 uploaded, 0 deleted, 789 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 2680  
-**Wayback captures accepted:** 560  
+**Wayback queue remaining:** 2555  
+**Wayback captures accepted:** 685  
 **Scheduled window:** Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
