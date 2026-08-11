@@ -53,7 +53,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          python <<'PY'
+          python3 <<'PY'
           import json
           import os
 
@@ -237,12 +237,14 @@ jobs:
     name: Mirror ${{ matrix.title }}
     needs: prepare
     if: needs.prepare.outputs.target_count != '0'
+    # MAINTENANCE: Keep this on the standard ubuntu-latest runner.
+    # Do not replace it with a GitHub larger-runner label without reviewing billing.
     runs-on: ubuntu-latest
     timeout-minutes: ${{ matrix.timeout_minutes }}
 
     strategy:
       fail-fast: false
-      max-parallel: 4
+      max-parallel: 7
       matrix: ${{ fromJSON(needs.prepare.outputs.target_matrix) }}
 
     env:
@@ -255,6 +257,7 @@ jobs:
       TARGET_WINDOW: ${{ matrix.window }}
       IA_ITEM_IDENTIFIER: ${{ matrix.ia_item }}
       LEGACY_PREFIXES: ${{ matrix.legacy_prefixes }}
+      TARGET_COUNT: ${{ needs.prepare.outputs.target_count }}
 
       IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
       IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
@@ -264,7 +267,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: controller
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Check out target repository
         uses: actions/checkout@v4
@@ -275,11 +278,6 @@ jobs:
           lfs: true
           submodules: recursive
           persist-credentials: false
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.13"
 
       - name: Validate Internet Archive secrets
         shell: bash
@@ -309,19 +307,27 @@ jobs:
         run: |
           set -euo pipefail
 
-          delay="$(
-            TARGET_SLUG="$TARGET_SLUG" python - <<'PY'
+          if [[ "${TARGET_COUNT:-1}" -le 1 ]]; then
+            delay=0
+          else
+            delay="$(
+              TARGET_SLUG="$TARGET_SLUG" python3 - <<'PY'
           import hashlib
           import os
 
           slug = os.environ["TARGET_SLUG"]
           seed = int(hashlib.sha256(slug.encode()).hexdigest()[:8], 16)
-          print(5 + (seed % 36))
+          print(seed % 19)
           PY
-          )"
+            )"
+          fi
 
-          echo "Waiting ${delay}s before the first Internet Archive request."
-          sleep "$delay"
+          if [[ "$delay" -gt 0 ]]; then
+            echo "Waiting ${delay}s before the first Internet Archive request."
+            sleep "$delay"
+          else
+            echo "No startup delay is needed for this target."
+          fi
 
       - name: Incrementally synchronize Internet Archive files
         id: sync
@@ -332,9 +338,10 @@ jobs:
         run: |
           set -euo pipefail
 
-          python <<'PY'
+          python3 <<'PY'
           from __future__ import annotations
 
+          import concurrent.futures
           import hashlib
           import json
           import os
@@ -763,9 +770,70 @@ jobs:
                   include_item_metadata=first_item_write,
               )
 
-          def inventory_working_tree() -> tuple[dict[str, dict], list[str]]:
+          def changed_paths_since(
+              previous_commit: str | None,
+              current_commit: str,
+          ) -> set[str] | None:
+              if not previous_commit or previous_commit == current_commit:
+                  return set() if previous_commit == current_commit else None
+
+              try:
+                  subprocess.run(
+                      [
+                          "git",
+                          "-C",
+                          str(SOURCE_ROOT),
+                          "cat-file",
+                          "-e",
+                          f"{previous_commit}^{{commit}}",
+                      ],
+                      check=True,
+                      stdout=subprocess.DEVNULL,
+                      stderr=subprocess.DEVNULL,
+                  )
+                  output = subprocess.check_output(
+                      [
+                          "git",
+                          "-C",
+                          str(SOURCE_ROOT),
+                          "diff",
+                          "--name-only",
+                          "--no-renames",
+                          previous_commit,
+                          current_commit,
+                          "--",
+                      ],
+                      text=True,
+                  )
+              except (subprocess.CalledProcessError, OSError):
+                  return None
+
+              return {
+                  line.strip()
+                  for line in output.splitlines()
+                  if line.strip()
+              }
+
+          def path_was_touched(relative: str, changed_paths: set[str]) -> bool:
+              if relative in changed_paths:
+                  return True
+
+              # A changed gitlink marks the whole checked-out submodule tree changed.
+              return any(
+                  relative.startswith(path.rstrip("/") + "/")
+                  for path in changed_paths
+              )
+
+          def inventory_working_tree(
+              previous_files: dict[str, dict] | None = None,
+              changed_paths: set[str] | None = None,
+          ) -> tuple[dict[str, dict], list[str]]:
               files: dict[str, dict] = {}
               directories: set[str] = set()
+              pending_hashes: list[tuple[str, pathlib.Path, int, int]] = []
+              previous_files = previous_files or {}
+              can_reuse_hashes = changed_paths is not None
+              reused_hashes = 0
 
               for root, directory_names, filenames in os.walk(
                   SOURCE_ROOT,
@@ -792,14 +860,35 @@ jobs:
                       ):
                           continue
 
+                      previous = previous_files.get(relative)
+                      touched = (
+                          True
+                          if changed_paths is None
+                          else path_was_touched(relative, changed_paths)
+                      )
+
                       if path.is_symlink():
                           target = os.readlink(path)
-                          digest = hashlib.sha256(
-                              ("SYMLINK\0" + target).encode("utf-8")
-                          ).hexdigest()
+                          target_size = len(target.encode("utf-8"))
+
+                          if (
+                              can_reuse_hashes
+                              and not touched
+                              and isinstance(previous, dict)
+                              and previous.get("type") == "symlink"
+                              and previous.get("link_target") == target
+                              and previous.get("sha256")
+                          ):
+                              digest = previous["sha256"]
+                              reused_hashes += 1
+                          else:
+                              digest = hashlib.sha256(
+                                  ("SYMLINK\0" + target).encode("utf-8")
+                              ).hexdigest()
+
                           files[relative] = {
                               "sha256": digest,
-                              "size": len(target.encode("utf-8")),
+                              "size": target_size,
                               "type": "symlink",
                               "link_target": target,
                               "remote_name": "mirror/" + relative,
@@ -807,22 +896,70 @@ jobs:
                           continue
 
                       try:
-                          mode = path.stat().st_mode
+                          stat_result = path.stat()
                       except OSError:
                           continue
 
+                      mode = stat_result.st_mode
                       if not stat.S_ISREG(mode):
                           continue
 
-                      files[relative] = {
-                          "sha256": sha256_file(path),
-                          "size": path.stat().st_size,
-                          "type": "file",
-                          "executable": bool(mode & stat.S_IXUSR),
-                          "remote_name": "mirror/" + relative,
+                      size = stat_result.st_size
+                      if (
+                          can_reuse_hashes
+                          and not touched
+                          and isinstance(previous, dict)
+                          and previous.get("type") == "file"
+                          and previous.get("size") == size
+                          and previous.get("sha256")
+                      ):
+                          files[relative] = {
+                              "sha256": previous["sha256"],
+                              "size": size,
+                              "type": "file",
+                              "executable": bool(mode & stat.S_IXUSR),
+                              "remote_name": "mirror/" + relative,
+                          }
+                          reused_hashes += 1
+                      else:
+                          pending_hashes.append((relative, path, mode, size))
+
+              if pending_hashes:
+                  worker_count = min(
+                      4,
+                      max(1, os.cpu_count() or 1),
+                      len(pending_hashes),
+                  )
+                  print(
+                      f"Hashing {len(pending_hashes)} changed/new files "
+                      f"with {worker_count} workers; reused {reused_hashes} hashes."
+                  )
+
+                  with concurrent.futures.ThreadPoolExecutor(
+                      max_workers=worker_count
+                  ) as executor:
+                      future_map = {
+                          executor.submit(sha256_file, path): (
+                              relative,
+                              mode,
+                              size,
+                          )
+                          for relative, path, mode, size in pending_hashes
                       }
 
-              return files, sorted(directories)
+                      for future in concurrent.futures.as_completed(future_map):
+                          relative, mode, size = future_map[future]
+                          files[relative] = {
+                              "sha256": future.result(),
+                              "size": size,
+                              "type": "file",
+                              "executable": bool(mode & stat.S_IXUSR),
+                              "remote_name": "mirror/" + relative,
+                          }
+              else:
+                  print(f"Reused {reused_hashes} existing file hashes.")
+
+              return dict(sorted(files.items())), sorted(directories)
 
           def local_payload(
               relative_path: str,
@@ -912,10 +1049,97 @@ jobs:
               text=True,
           ).strip()
 
-          current_files, current_directories = inventory_working_tree()
-          remote_metadata, metadata_reliable = fetch_metadata()
           old_files = state.get("files", {})
+          previous_commit = state.get("last_completed_commit")
           initial_sync = not state.get("initial_sync_completed", False)
+
+          # Fast path: when the commit is unchanged, verify the existing mirror
+          # with one metadata request and skip a full tree hash/bundle pass.
+          if (
+              not initial_sync
+              and previous_commit == current_commit
+              and isinstance(old_files, dict)
+          ):
+              unchanged_metadata, unchanged_metadata_reliable = fetch_metadata()
+              expected_unchanged = {
+                  metadata.get("remote_name")
+                  for metadata in old_files.values()
+                  if isinstance(metadata, dict) and metadata.get("remote_name")
+              }
+              expected_unchanged.update({
+                  IA_STATE_NAME,
+                  "git-history.bundle",
+                  "manifest.json",
+                  "SHA256SUMS.txt",
+              })
+
+              if (
+                  unchanged_metadata_reliable
+                  and expected_unchanged.issubset(unchanged_metadata)
+              ):
+                  state["current_run"] = {
+                      "run_id": RUN_ID,
+                      "run_attempt": RUN_ATTEMPT,
+                      "status": "no_changes",
+                      "state_source": state_source,
+                      "metadata_reliable_at_start": True,
+                      "started_at_utc": utc_now(),
+                      "completed_at_utc": utc_now(),
+                      "source_commit": current_commit,
+                      "initial_sync": False,
+                      "total_current_files": len(old_files),
+                      "planned_uploads": 0,
+                      "planned_repository_deletes": 0,
+                      "planned_orphan_deletes": 0,
+                  }
+                  state["last_result"] = {
+                      "initial_full_sync": False,
+                      "uploaded_new_or_changed": 0,
+                      "deleted_from_repository": 0,
+                      "deleted_orphan_remote_files": 0,
+                      "deleted_legacy_archives": 0,
+                      "unchanged_files": len(old_files),
+                      "mirror_verified": True,
+                      "wayback_pending": len(
+                          state.get("wayback", {}).get("pending", [])
+                      ),
+                  }
+                  write_local_state()
+                  print(
+                      "Source commit and verified Internet Archive mirror are "
+                      "unchanged; skipped full inventory, hashing and bundle work."
+                  )
+                  with open(
+                      os.environ["GITHUB_OUTPUT"],
+                      "a",
+                      encoding="utf-8",
+                  ) as output:
+                      output.write(f"slug={SLUG}\n")
+                      output.write("status=no_changes\n")
+                      output.write("uploaded=0\n")
+                      output.write(
+                          "wayback_pending="
+                          f"{len(state.get('wayback', {}).get('pending', []))}\n"
+                      )
+                  raise SystemExit(0)
+
+          changed_paths = changed_paths_since(previous_commit, current_commit)
+          if changed_paths is None:
+              print(
+                  "Previous commit is unavailable for diff-based reuse; "
+                  "hashing the full working tree."
+              )
+          else:
+              print(
+                  f"Git reports {len(changed_paths)} changed paths since the "
+                  "previous archived commit."
+              )
+
+          current_files, current_directories = inventory_working_tree(
+              old_files,
+              changed_paths,
+          )
+          remote_metadata, metadata_reliable = fetch_metadata()
 
           uploads: list[str] = []
           for relative, metadata in current_files.items():
@@ -1305,6 +1529,7 @@ jobs:
     if: |
       always() &&
       needs.prepare.outputs.target_count != '0'
+    # MAINTENANCE: Standard runner only; Wayback is network/rate-limit bound.
     runs-on: ubuntu-latest
     timeout-minutes: 240
 
@@ -1321,7 +1546,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          python <<'PY'
+          python3 <<'PY'
           from __future__ import annotations
 
           import json
@@ -1686,6 +1911,7 @@ jobs:
     if: |
       always() &&
       needs.prepare.outputs.target_count != '0'
+    # MAINTENANCE: Standard runner only.
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
@@ -1698,7 +1924,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           path: controller
-          fetch-depth: 0
+          fetch-depth: 1
 
       - name: Download local checkpoint artifacts
         uses: actions/download-artifact@v4
@@ -1713,7 +1939,7 @@ jobs:
         run: |
           set -euo pipefail
 
-          python <<'PY'
+          python3 <<'PY'
           from __future__ import annotations
 
           import json
