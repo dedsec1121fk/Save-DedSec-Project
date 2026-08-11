@@ -68,7 +68,7 @@ Example:
 "ia_item": "yourname-dedsec-project-repository-snapshots",
 ```
 
-Change all seven target identifiers:
+Change all nine target identifiers:
 
 - DedSec websites and website source
 - DedSec Project main repository
@@ -77,6 +77,8 @@ Change all seven target identifiers:
 - Corrupted Files Project
 - Pocket AI
 - Offline Survival Project
+- Hacking Guide Project
+- Save DedSec Project
 
 After any `ia_item` value changes, the **Permanent Internet Archive Links** section in `README.md` is regenerated automatically on the next workflow run. You do not need to edit those README links manually.
 
@@ -101,6 +103,10 @@ A successful run should:
 - Refresh the combined root `update.json`.
 - Refresh the generated archive links and status sections in `README.md`.
 - Commit the updated state and README back to your fork.
+
+## Scheduled Target Order
+
+Scheduled runs are intentionally serial. January, March, May, July, September and November use the target order defined in the workflow; February, April, June, August, October and December use the reverse order. Manual runs keep the normal listed order.
 
 ## Troubleshooting
 

@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-08-09T20:06:45Z",
+  "generated_at_utc": "2026-08-11T17:46:51Z",
   "resume_behavior": "File synchronization checkpoints after every successful file. Wayback captures use a separate serial resumable queue.",
   "schema_version": 5,
   "source_of_truth": "Each Internet Archive item stores archive-state/update.json. This file is the synchronized combined copy.",
@@ -12696,7 +12696,7 @@
         "sites": [],
         "slug": "corrupted-files-project",
         "title": "Corrupted Files Project",
-        "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
       },
       "wayback": {
         "completed": 278,
@@ -20105,7 +20105,7 @@
         "sites": [],
         "slug": "dedsec-backup",
         "title": "DedSec Project Backup Repository",
-        "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
+        "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
         "completed": 385,
@@ -25153,7 +25153,7 @@
         "sites": [],
         "slug": "dedsec-main",
         "title": "DedSec Project Main Repository",
-        "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens"
+        "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
         "completed": 387,
@@ -31213,7 +31213,7 @@
         ],
         "slug": "dedsec-websites",
         "title": "DedSec Websites and Website Source",
-        "window": "Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens"
+        "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
         "completed": 685,
@@ -33923,7 +33923,7 @@
         "sites": [],
         "slug": "github-profile",
         "title": "DedSec GitHub Profile Repository",
-        "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
       },
       "wayback": {
         "completed": 135,
@@ -33947,6 +33947,37 @@
         "permanent_failures": 0,
         "recent_failures": [],
         "remaining": 0
+      }
+    },
+    "hacking-guide-project": {
+      "current_run": {},
+      "directories": [],
+      "files": {},
+      "git_bundle": {},
+      "initial_sync_completed": false,
+      "last_completed_at_greece": null,
+      "last_completed_at_utc": null,
+      "last_completed_commit": null,
+      "last_result": {},
+      "schema_version": 5,
+      "state_updated_at_utc": "2026-08-11T17:46:51Z",
+      "target": {
+        "ia_item": "dedsec1121fk-hacking-guide-project-repository-snapshots",
+        "kind": "repository",
+        "marker": "HACKING_GUIDE_ARCHIVE_STATUS",
+        "repository": "dedsec1121fk/Hacking-Guide-Project",
+        "sites": [],
+        "slug": "hacking-guide-project",
+        "title": "Hacking Guide Project",
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
+      },
+      "wayback": {
+        "completed": 0,
+        "initial_queue_created": false,
+        "last_processed_at_utc": null,
+        "pending": [],
+        "permanent_failures": 0,
+        "recent_failures": []
       }
     },
     "offline-survival-project": {
@@ -44390,7 +44421,7 @@
         "sites": [],
         "slug": "offline-survival-project",
         "title": "Offline Survival Project",
-        "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
       },
       "wayback": {
         "completed": 302,
@@ -47911,7 +47942,7 @@
         "sites": [],
         "slug": "pocket-ai",
         "title": "Pocket AI",
-        "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens"
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
       },
       "wayback": {
         "completed": 274,
@@ -47935,6 +47966,37 @@
         "permanent_failures": 0,
         "recent_failures": [],
         "remaining": 0
+      }
+    },
+    "save-dedsec-project": {
+      "current_run": {},
+      "directories": [],
+      "files": {},
+      "git_bundle": {},
+      "initial_sync_completed": false,
+      "last_completed_at_greece": null,
+      "last_completed_at_utc": null,
+      "last_completed_commit": null,
+      "last_result": {},
+      "schema_version": 5,
+      "state_updated_at_utc": "2026-08-11T17:46:51Z",
+      "target": {
+        "ia_item": "dedsec1121fk-save-dedsec-project-repository-snapshots",
+        "kind": "repository",
+        "marker": "SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS",
+        "repository": "dedsec1121fk/Save-DedSec-Project",
+        "sites": [],
+        "slug": "save-dedsec-project",
+        "title": "Save DedSec Project",
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
+      },
+      "wayback": {
+        "completed": 0,
+        "initial_queue_created": false,
+        "last_processed_at_utc": null,
+        "pending": [],
+        "permanent_failures": 0,
+        "recent_failures": []
       }
     }
   }

@@ -2,12 +2,27 @@ name: Incrementally Archive Entire DedSec Ecosystem
 
 on:
   schedule:
-    # Wednesday, Friday and Sunday — Greece local time.
-    - cron: "0 8 * * 0,3,5"
+    # Core DedSec repositories + websites — Greece local time.
+    - cron: "11 11 * * 1"
       timezone: "Europe/Athens"
-    - cron: "50 13 * * 0,3,5"
+    - cron: "22 22 * * 3"
       timezone: "Europe/Athens"
-    - cron: "30 19 * * 0,3,5"
+    - cron: "0 0 * * 6"
+      timezone: "Europe/Athens"
+
+    # Other projects — Greece local time.
+    - cron: "5 5 * * 2"
+      timezone: "Europe/Athens"
+    - cron: "12 12 * * 5"
+      timezone: "Europe/Athens"
+
+    # GitHub cron cannot express 1st/3rd vs 2nd/4th Sunday directly.
+    # Both Sunday triggers start the lightweight prepare job; the plan below
+    # runs 03:33 only on the 1st/3rd Sunday and 03:00 only on the 2nd/4th.
+    # A 5th Sunday is intentionally skipped.
+    - cron: "33 3 * * 0"
+      timezone: "Europe/Athens"
+    - cron: "0 3 * * 0"
       timezone: "Europe/Athens"
 
   workflow_dispatch:
@@ -56,6 +71,8 @@ jobs:
           python3 <<'PY'
           import json
           import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
 
           dedsec_targets = [
               {
@@ -66,7 +83,7 @@ jobs:
                   "marker": "DEDSEC_MAIN_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
                   "timeout_minutes": 300,
-                  "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens",
+                  "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens",
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": (
@@ -86,7 +103,7 @@ jobs:
                   "marker": "DEDSEC_BACKUP_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
                   "timeout_minutes": 300,
-                  "window": "Wednesday, Friday and Sunday, 08:00–13:00 Europe/Athens",
+                  "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens",
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": (
@@ -105,7 +122,7 @@ jobs:
                   "marker": "WEBSITES_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-dedsec-website-snapshots",
                   "timeout_minutes": 300,
-                  "window": "Wednesday, Friday and Sunday, 13:50–18:50 Europe/Athens",
+                  "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens",
                   "kind": "website",
                   "sites": "https://ded-sec.space|https://ded-sec.online",
                   "legacy_prefixes": (
@@ -126,7 +143,7 @@ jobs:
                   "marker": "GITHUB_PROFILE_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-github-profile-repository-snapshots",
                   "timeout_minutes": 240,
-                  "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens",
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": "github-profile-",
@@ -139,7 +156,7 @@ jobs:
                   "marker": "CORRUPTED_FILES_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-corrupted-files-project-repository-snapshots",
                   "timeout_minutes": 240,
-                  "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens",
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": "corrupted-files-project-",
@@ -152,7 +169,7 @@ jobs:
                   "marker": "POCKET_AI_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-pocket-ai-repository-snapshots",
                   "timeout_minutes": 240,
-                  "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens",
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": "pocket-ai-",
@@ -165,10 +182,36 @@ jobs:
                   "marker": "OFFLINE_SURVIVAL_ARCHIVE_STATUS",
                   "ia_item": "dedsec1121fk-offline-survival-project-repository-snapshots",
                   "timeout_minutes": 240,
-                  "window": "Wednesday, Friday and Sunday, 19:30–23:30 Europe/Athens",
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": "offline-survival-project-",
+              },
+              {
+                  "repository": "dedsec1121fk/Hacking-Guide-Project",
+                  "slug": "hacking-guide-project",
+                  "title": "Hacking Guide Project",
+                  "archive_label": "Hacking Guide Project",
+                  "marker": "HACKING_GUIDE_ARCHIVE_STATUS",
+                  "ia_item": "dedsec1121fk-hacking-guide-project-repository-snapshots",
+                  "timeout_minutes": 240,
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
+                  "kind": "repository",
+                  "sites": "",
+                  "legacy_prefixes": "hacking-guide-project-,hacking-guide-",
+              },
+              {
+                  "repository": "dedsec1121fk/Save-DedSec-Project",
+                  "slug": "save-dedsec-project",
+                  "title": "Save DedSec Project",
+                  "archive_label": "Save DedSec Project",
+                  "marker": "SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS",
+                  "ia_item": "dedsec1121fk-save-dedsec-project-repository-snapshots",
+                  "timeout_minutes": 240,
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
+                  "kind": "repository",
+                  "sites": "",
+                  "legacy_prefixes": "save-dedsec-project-",
               },
           ]
 
@@ -177,6 +220,7 @@ jobs:
           event_name = os.environ.get("EVENT_NAME", "")
           schedule = os.environ.get("EVENT_SCHEDULE", "")
           manual_group = os.environ.get("MANUAL_GROUP", "") or "all"
+          athens_now = datetime.now(ZoneInfo("Europe/Athens"))
 
           if event_name == "workflow_dispatch":
               group_name = manual_group
@@ -191,23 +235,56 @@ jobs:
               else:
                   raise SystemExit(f"Unknown manual group: {manual_group}")
 
-          elif schedule == "0 8 * * 0,3,5":
-              group_name = "dedsec-project"
-              targets = dedsec_targets
+          elif schedule in {
+              "11 11 * * 1",
+              "22 22 * * 3",
+              "0 0 * * 6",
+          }:
+              group_name = "dedsec-project-and-websites"
+              targets = dedsec_targets + website_targets
 
-          elif schedule == "50 13 * * 0,3,5":
-              group_name = "websites"
-              targets = website_targets
-
-          elif schedule == "30 19 * * 0,3,5":
+          elif schedule in {
+              "5 5 * * 2",
+              "12 12 * * 5",
+          }:
               group_name = "other-projects"
               targets = other_targets
+
+          elif schedule in {"33 3 * * 0", "0 3 * * 0"}:
+              # A cron expression cannot directly say 1st/3rd or 2nd/4th
+              # Sunday. Determine the Sunday ordinal in Europe/Athens and
+              # run only the matching trigger. A fifth Sunday is skipped.
+              sunday_number = ((athens_now.day - 1) // 7) + 1
+              should_run = (
+                  schedule == "33 3 * * 0" and sunday_number in {1, 3}
+              ) or (
+                  schedule == "0 3 * * 0" and sunday_number in {2, 4}
+              )
+
+              if should_run:
+                  group_name = "other-projects"
+                  targets = other_targets
+              else:
+                  group_name = "other-projects-sunday-skip"
+                  targets = []
 
           else:
               raise SystemExit(
                   f"Unrecognized trigger: event={event_name!r}, "
                   f"schedule={schedule!r}"
               )
+
+          # Scheduled runs deliberately rotate target priority across the year.
+          # Odd-numbered months (Jan, Mar, May, Jul, Sep, Nov) use the target
+          # lists exactly as defined above. Even-numbered months (Feb, Apr,
+          # Jun, Aug, Oct, Dec) reverse the selected list. Combined with
+          # max-parallel: 1 below, this makes the order deterministic and gives
+          # both ends of each target list equal first-run priority over 12 months.
+          # Manual workflow_dispatch runs always keep the listed order.
+          order_mode = "listed"
+          if event_name == "schedule" and targets and athens_now.month % 2 == 0:
+              targets = list(reversed(targets))
+              order_mode = "reverse"
 
           matrix = {"include": targets}
 
@@ -230,7 +307,10 @@ jobs:
               )
               output.write(f"group_name={group_name}\n")
 
-          print(f"Selected {len(targets)} targets for group {group_name!r}.")
+          print(
+              f"Selected {len(targets)} targets for group {group_name!r}; "
+              f"order={order_mode}, Greece month={athens_now.month}."
+          )
           PY
 
   sync-targets:
@@ -244,7 +324,8 @@ jobs:
 
     strategy:
       fail-fast: false
-      max-parallel: 7
+      # Keep target processing serial so the configured monthly order is real.
+      max-parallel: 1
       matrix: ${{ fromJSON(needs.prepare.outputs.target_matrix) }}
 
     env:
@@ -2204,7 +2285,7 @@ jobs:
                       f"{wayback.get('completed', 0)}  "
                   ),
                   (
-                      "**Scheduled window:** "
+                      "**Scheduled time(s):** "
                       f"{target['window']}  "
                   ),
                   (
