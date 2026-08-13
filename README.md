@@ -126,19 +126,19 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 <!-- WEBSITES_ARCHIVE_STATUS_START -->
 ### DedSec Websites and Website Source
 
-**Current file-sync status:** `in_progress`  
-**Last complete or attempted save:** 2026-08-04 10:51:33 EEST  
-**Current mirrored files:** 825  
-**Latest file update:** 0 uploaded, 0 deleted, 789 unchanged.  
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-08-13 00:39:12 EEST  
+**Current mirrored files:** 821  
+**Latest file update:** 659 uploaded, 4 deleted, 162 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 2555  
-**Wayback captures accepted:** 685  
+**Wayback queue remaining:** 4447  
+**Wayback captures accepted:** 697  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [Wayback Machine capture history](https://web.archive.org/web/*/https://github.com/dedsec1121fk/dedsec1121fk.github.io*)
-- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk.github.io/commit/243e2386e60a00133b257f1d8a593be737432077)
+- [Last archived commit](https://github.com/dedsec1121fk/dedsec1121fk.github.io/commit/ba106913ed5c976c1e23e5c0342c39c6f9843956)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
 - [https://ded-sec.online Wayback history](https://web.archive.org/web/*/https://ded-sec.online/*)
 
@@ -150,11 +150,11 @@ This section is generated from `update.json`.
 
 **Current file-sync status:** `in_progress`  
 **Last complete or attempted save:** 2026-08-04 10:52:40 EEST  
-**Current mirrored files:** 587  
+**Current mirrored files:** 589  
 **Latest file update:** 0 uploaded, 0 deleted, 587 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 30  
-**Wayback captures accepted:** 387  
+**Wayback queue remaining:** 19  
+**Wayback captures accepted:** 398  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
@@ -170,11 +170,11 @@ This section is generated from `update.json`.
 
 **Current file-sync status:** `in_progress`  
 **Last complete or attempted save:** 2026-08-07 09:05:38 EEST  
-**Current mirrored files:** 587  
+**Current mirrored files:** 588  
 **Latest file update:** 0 uploaded, 0 deleted, 587 unchanged.  
 **Mirror verification:** `True`  
-**Wayback queue remaining:** 819  
-**Wayback captures accepted:** 385  
+**Wayback queue remaining:** 811  
+**Wayback captures accepted:** 393  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Resume mode:** File uploads and Wayback URLs are checkpointed separately.
 
