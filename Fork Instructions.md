@@ -68,7 +68,7 @@ Example:
 "ia_item": "yourname-dedsec-project-repository-snapshots",
 ```
 
-Change all nine target identifiers:
+Change all ten target identifiers:
 
 - DedSec websites and website source
 - DedSec Project main repository
@@ -76,6 +76,7 @@ Change all nine target identifiers:
 - GitHub profile repository
 - Corrupted Files Project
 - Pocket AI
+- Praying Project
 - Offline Survival Project
 - Hacking Guide Project
 - Save DedSec Project
@@ -133,3 +134,7 @@ GitHub does not pass normal Actions secrets to workflows triggered from another 
 - Never print either key in workflow output.
 - Rotate both Internet Archive keys immediately if either value is exposed.
 - Review workflow changes before running them, because a modified workflow can access configured repository secrets.
+
+## Working-Tree-Only Security Model
+
+This controller intentionally archives only the files and directories present in each repository's current checked-out working tree. It does not upload `.git`, create Git bundles, archive commit pages, or queue repository history in Wayback. If a secret existed only in an older Git commit and is no longer present in the current working tree, this controller will not newly back up that old commit. Secrets still present in current files can still be archived and must be removed before a backup run.

@@ -162,7 +162,7 @@ jobs:
                   "legacy_prefixes": "corrupted-files-project-",
               },
               {
-                  "repository": "dedsec1121fk/Pocket-AI",
+                  "repository": "dedsec1121fk/Pocket-AI-Project",
                   "slug": "pocket-ai",
                   "title": "Pocket AI",
                   "archive_label": "Pocket AI",
@@ -173,6 +173,19 @@ jobs:
                   "kind": "repository",
                   "sites": "",
                   "legacy_prefixes": "pocket-ai-",
+              },
+              {
+                  "repository": "dedsec1121fk/Praying-Project",
+                  "slug": "praying-project",
+                  "title": "Praying Project",
+                  "archive_label": "Praying Project",
+                  "marker": "PRAYING_PROJECT_ARCHIVE_STATUS",
+                  "ia_item": "dedsec1121fk-praying-project-repository-snapshots",
+                  "timeout_minutes": 240,
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
+                  "kind": "repository",
+                  "sites": "",
+                  "legacy_prefixes": "praying-project-",
               },
               {
                   "repository": "dedsec1121fk/Offline-Survival-Project",
@@ -350,12 +363,12 @@ jobs:
           path: controller
           fetch-depth: 1
 
-      - name: Check out target repository
+      - name: Check out target repository working tree only
         uses: actions/checkout@v4
         with:
           repository: ${{ matrix.repository }}
           path: source
-          fetch-depth: 0
+          fetch-depth: 1
           lfs: true
           submodules: recursive
           persist-credentials: false
@@ -439,7 +452,7 @@ jobs:
           from datetime import datetime, timezone
           from zoneinfo import ZoneInfo
 
-          SCHEMA_VERSION = 5
+          SCHEMA_VERSION = 6
           SOURCE_ROOT = pathlib.Path("source")
           CONTROLLER_STATE_PATH = (
               pathlib.Path("controller")
@@ -735,6 +748,7 @@ jobs:
           def default_state() -> dict:
               return {
                   "schema_version": SCHEMA_VERSION,
+                  "archive_mode": "working_tree_only",
                   "target": {
                       "repository": REPOSITORY,
                       "slug": SLUG,
@@ -748,7 +762,6 @@ jobs:
                   "initial_sync_completed": False,
                   "files": {},
                   "directories": [],
-                  "git_bundle": {},
                   "wayback": {
                       "pending": [],
                       "completed": 0,
@@ -757,12 +770,74 @@ jobs:
                       "initial_queue_created": False,
                       "last_processed_at_utc": None,
                   },
-                  "last_completed_commit": None,
+                  "last_completed_snapshot": None,
                   "last_completed_at_utc": None,
                   "last_completed_at_greece": None,
                   "last_result": {},
                   "current_run": {},
               }
+
+          def sanitize_wayback_state(wayback: dict) -> None:
+              # Repository history is never sent to Wayback. Only live website
+              # URLs are allowed to remain in the queue.
+              allowed_sites = tuple(site.rstrip("/") for site in SITES)
+
+              def allowed(url: object) -> bool:
+                  if KIND != "website" or not isinstance(url, str):
+                      return False
+                  return any(
+                      url == site or url.startswith(site + "/")
+                      for site in allowed_sites
+                  )
+
+              wayback["pending"] = [
+                  url for url in wayback.get("pending", []) if allowed(url)
+              ]
+              wayback["recent_failures"] = [
+                  entry
+                  for entry in wayback.get("recent_failures", [])
+                  if isinstance(entry, dict) and allowed(entry.get("url"))
+              ]
+
+              if not allowed(wayback.get("last_successful_url")):
+                  wayback.pop("last_successful_url", None)
+                  wayback.pop("last_successful_at_utc", None)
+
+              transient = wayback.get("last_transient_error")
+              if not (
+                  isinstance(transient, dict)
+                  and allowed(transient.get("url"))
+              ):
+                  wayback.pop("last_transient_error", None)
+
+              wayback["remaining"] = len(wayback["pending"])
+              if KIND != "website":
+                  wayback["completed"] = 0
+                  wayback["permanent_failures"] = 0
+                  wayback["recent_failures"] = []
+                  wayback["initial_queue_created"] = True
+                  wayback.pop("last_processed_at_utc", None)
+                  wayback.pop("last_batch", None)
+
+          def sanitize_state(state: dict) -> dict:
+              state.pop("git_bundle", None)
+              state.pop("last_completed_commit", None)
+              state["schema_version"] = SCHEMA_VERSION
+              state["archive_mode"] = "working_tree_only"
+
+              current_run = state.get("current_run")
+              if isinstance(current_run, dict):
+                  current_run.pop("source_commit", None)
+                  operation = current_run.get("last_successful_operation")
+                  if isinstance(operation, dict) and (
+                      operation.get("action") == "upload_git_bundle"
+                      or operation.get("remote_name") == "git-history.bundle"
+                  ):
+                      current_run["last_successful_operation"] = None
+
+              wayback = state.setdefault("wayback", {})
+              sanitize_wayback_state(wayback)
+              return state
 
           def load_controller_state() -> dict | None:
               if not CONTROLLER_STATE_PATH.exists():
@@ -800,29 +875,36 @@ jobs:
               )
 
           if state.get("schema_version") != SCHEMA_VERSION:
-              old_target = state.get("target", {})
               old_files = state.get("files", {})
               old_directories = state.get("directories", [])
-              old_bundle = state.get("git_bundle", {})
               old_wayback = state.get("wayback", {})
               migrated = default_state()
               if isinstance(old_files, dict):
                   migrated["files"] = old_files
               if isinstance(old_directories, list):
                   migrated["directories"] = old_directories
-              if isinstance(old_bundle, dict):
-                  migrated["git_bundle"] = old_bundle
               if isinstance(old_wayback, dict):
                   migrated["wayback"].update(old_wayback)
+              migrated["initial_sync_completed"] = bool(
+                  state.get("initial_sync_completed", False)
+              )
+              migrated["last_completed_at_utc"] = state.get(
+                  "last_completed_at_utc"
+              )
+              migrated["last_completed_at_greece"] = state.get(
+                  "last_completed_at_greece"
+              )
+              if isinstance(state.get("last_result"), dict):
+                  migrated["last_result"] = state["last_result"]
               state = migrated
 
           state["target"] = default_state()["target"]
           state.setdefault("files", {})
           state.setdefault("directories", [])
-          state.setdefault("git_bundle", {})
           state.setdefault("wayback", default_state()["wayback"])
           for key, value in default_state()["wayback"].items():
               state["wayback"].setdefault(key, value)
+          sanitize_state(state)
 
           first_item_write = not state.get("files") and not state.get(
               "initial_sync_completed",
@@ -851,76 +933,18 @@ jobs:
                   include_item_metadata=first_item_write,
               )
 
-          def changed_paths_since(
-              previous_commit: str | None,
-              current_commit: str,
-          ) -> set[str] | None:
-              if not previous_commit or previous_commit == current_commit:
-                  return set() if previous_commit == current_commit else None
-
-              try:
-                  subprocess.run(
-                      [
-                          "git",
-                          "-C",
-                          str(SOURCE_ROOT),
-                          "cat-file",
-                          "-e",
-                          f"{previous_commit}^{{commit}}",
-                      ],
-                      check=True,
-                      stdout=subprocess.DEVNULL,
-                      stderr=subprocess.DEVNULL,
-                  )
-                  output = subprocess.check_output(
-                      [
-                          "git",
-                          "-C",
-                          str(SOURCE_ROOT),
-                          "diff",
-                          "--name-only",
-                          "--no-renames",
-                          previous_commit,
-                          current_commit,
-                          "--",
-                      ],
-                      text=True,
-                  )
-              except (subprocess.CalledProcessError, OSError):
-                  return None
-
-              return {
-                  line.strip()
-                  for line in output.splitlines()
-                  if line.strip()
-              }
-
-          def path_was_touched(relative: str, changed_paths: set[str]) -> bool:
-              if relative in changed_paths:
-                  return True
-
-              # A changed gitlink marks the whole checked-out submodule tree changed.
-              return any(
-                  relative.startswith(path.rstrip("/") + "/")
-                  for path in changed_paths
-              )
-
-          def inventory_working_tree(
-              previous_files: dict[str, dict] | None = None,
-              changed_paths: set[str] | None = None,
-          ) -> tuple[dict[str, dict], list[str]]:
+          def inventory_working_tree() -> tuple[dict[str, dict], list[str]]:
               files: dict[str, dict] = {}
               directories: set[str] = set()
               pending_hashes: list[tuple[str, pathlib.Path, int, int]] = []
-              previous_files = previous_files or {}
-              can_reuse_hashes = changed_paths is not None
-              reused_hashes = 0
 
               for root, directory_names, filenames in os.walk(
                   SOURCE_ROOT,
                   topdown=True,
                   followlinks=False,
               ):
+                  # .git is never inventoried, hashed, uploaded, or represented
+                  # in the archive manifest.
                   directory_names[:] = sorted(
                       name for name in directory_names if name != ".git"
                   )
@@ -941,35 +965,13 @@ jobs:
                       ):
                           continue
 
-                      previous = previous_files.get(relative)
-                      touched = (
-                          True
-                          if changed_paths is None
-                          else path_was_touched(relative, changed_paths)
-                      )
-
                       if path.is_symlink():
                           target = os.readlink(path)
-                          target_size = len(target.encode("utf-8"))
-
-                          if (
-                              can_reuse_hashes
-                              and not touched
-                              and isinstance(previous, dict)
-                              and previous.get("type") == "symlink"
-                              and previous.get("link_target") == target
-                              and previous.get("sha256")
-                          ):
-                              digest = previous["sha256"]
-                              reused_hashes += 1
-                          else:
-                              digest = hashlib.sha256(
-                                  ("SYMLINK\0" + target).encode("utf-8")
-                              ).hexdigest()
-
                           files[relative] = {
-                              "sha256": digest,
-                              "size": target_size,
+                              "sha256": hashlib.sha256(
+                                  ("SYMLINK\0" + target).encode("utf-8")
+                              ).hexdigest(),
+                              "size": len(target.encode("utf-8")),
                               "type": "symlink",
                               "link_target": target,
                               "remote_name": "mirror/" + relative,
@@ -985,25 +987,9 @@ jobs:
                       if not stat.S_ISREG(mode):
                           continue
 
-                      size = stat_result.st_size
-                      if (
-                          can_reuse_hashes
-                          and not touched
-                          and isinstance(previous, dict)
-                          and previous.get("type") == "file"
-                          and previous.get("size") == size
-                          and previous.get("sha256")
-                      ):
-                          files[relative] = {
-                              "sha256": previous["sha256"],
-                              "size": size,
-                              "type": "file",
-                              "executable": bool(mode & stat.S_IXUSR),
-                              "remote_name": "mirror/" + relative,
-                          }
-                          reused_hashes += 1
-                      else:
-                          pending_hashes.append((relative, path, mode, size))
+                      pending_hashes.append(
+                          (relative, path, mode, stat_result.st_size)
+                      )
 
               if pending_hashes:
                   worker_count = min(
@@ -1012,8 +998,8 @@ jobs:
                       len(pending_hashes),
                   )
                   print(
-                      f"Hashing {len(pending_hashes)} changed/new files "
-                      f"with {worker_count} workers; reused {reused_hashes} hashes."
+                      f"Hashing {len(pending_hashes)} current working-tree files "
+                      f"with {worker_count} workers."
                   )
 
                   with concurrent.futures.ThreadPoolExecutor(
@@ -1037,8 +1023,6 @@ jobs:
                               "executable": bool(mode & stat.S_IXUSR),
                               "remote_name": "mirror/" + relative,
                           }
-              else:
-                  print(f"Reused {reused_hashes} existing file hashes.")
 
               return dict(sorted(files.items())), sorted(directories)
 
@@ -1064,24 +1048,12 @@ jobs:
               paths: list[str],
               *,
               include_all: bool,
-              commit: str,
           ) -> list[str]:
-              github = f"https://github.com/{REPOSITORY}"
-              raw_github = f"https://raw.githubusercontent.com/{REPOSITORY}"
+              if KIND != "website":
+                  return []
 
-              urls = {
-                  github,
-                  f"{github}/commit/{commit}",
-                  f"{github}/tree/{commit}",
-                  f"{github}/branches",
-                  f"{github}/tags",
-                  f"{github}/releases",
-                  f"{github}/archive/{commit}.zip",
-                  f"{github}/archive/{commit}.tar.gz",
-              }
-
+              urls: set[str] = set()
               selected_paths = sorted(current_files) if include_all else sorted(paths)
-
               excluded_prefixes = (".git/", ".github/")
               excluded_names = {
                   ".gitignore",
@@ -1096,18 +1068,10 @@ jobs:
                   "SECURITY.md",
               }
 
-              if KIND == "website":
-                  for site in SITES:
-                      urls.add(site + "/")
+              for site in SITES:
+                  urls.add(site + "/")
 
               for relative in selected_paths:
-                  encoded = urllib.parse.quote(relative, safe="/~._-()")
-                  urls.add(f"{github}/blob/{commit}/{encoded}")
-                  urls.add(f"{raw_github}/{commit}/{encoded}")
-
-                  if KIND != "website":
-                      continue
-
                   if (
                       relative.startswith(excluded_prefixes)
                       or relative in excluded_names
@@ -1115,6 +1079,7 @@ jobs:
                   ):
                       continue
 
+                  encoded = urllib.parse.quote(relative, safe="/~._-()")
                   for site in SITES:
                       urls.add(f"{site}/{encoded}")
                       lower = relative.lower()
@@ -1125,102 +1090,31 @@ jobs:
 
               return sorted(urls)
 
-          current_commit = subprocess.check_output(
-              ["git", "-C", str(SOURCE_ROOT), "rev-parse", "HEAD"],
-              text=True,
-          ).strip()
-
           old_files = state.get("files", {})
-          previous_commit = state.get("last_completed_commit")
           initial_sync = not state.get("initial_sync_completed", False)
 
-          # Fast path: when the commit is unchanged, verify the existing mirror
-          # with one metadata request and skip a full tree hash/bundle pass.
-          if (
-              not initial_sync
-              and previous_commit == current_commit
-              and isinstance(old_files, dict)
-          ):
-              unchanged_metadata, unchanged_metadata_reliable = fetch_metadata()
-              expected_unchanged = {
-                  metadata.get("remote_name")
-                  for metadata in old_files.values()
-                  if isinstance(metadata, dict) and metadata.get("remote_name")
-              }
-              expected_unchanged.update({
-                  IA_STATE_NAME,
-                  "git-history.bundle",
-                  "manifest.json",
-                  "SHA256SUMS.txt",
-              })
+          current_files, current_directories = inventory_working_tree()
+          snapshot_payload = json.dumps(
+              {
+                  "directories": current_directories,
+                  "files": current_files,
+              },
+              ensure_ascii=False,
+              sort_keys=True,
+              separators=(",", ":"),
+          ).encode("utf-8")
+          current_snapshot = hashlib.sha256(snapshot_payload).hexdigest()
 
-              if (
-                  unchanged_metadata_reliable
-                  and expected_unchanged.issubset(unchanged_metadata)
-              ):
-                  state["current_run"] = {
-                      "run_id": RUN_ID,
-                      "run_attempt": RUN_ATTEMPT,
-                      "status": "no_changes",
-                      "state_source": state_source,
-                      "metadata_reliable_at_start": True,
-                      "started_at_utc": utc_now(),
-                      "completed_at_utc": utc_now(),
-                      "source_commit": current_commit,
-                      "initial_sync": False,
-                      "total_current_files": len(old_files),
-                      "planned_uploads": 0,
-                      "planned_repository_deletes": 0,
-                      "planned_orphan_deletes": 0,
-                  }
-                  state["last_result"] = {
-                      "initial_full_sync": False,
-                      "uploaded_new_or_changed": 0,
-                      "deleted_from_repository": 0,
-                      "deleted_orphan_remote_files": 0,
-                      "deleted_legacy_archives": 0,
-                      "unchanged_files": len(old_files),
-                      "mirror_verified": True,
-                      "wayback_pending": len(
-                          state.get("wayback", {}).get("pending", [])
-                      ),
-                  }
-                  write_local_state()
-                  print(
-                      "Source commit and verified Internet Archive mirror are "
-                      "unchanged; skipped full inventory, hashing and bundle work."
-                  )
-                  with open(
-                      os.environ["GITHUB_OUTPUT"],
-                      "a",
-                      encoding="utf-8",
-                  ) as output:
-                      output.write(f"slug={SLUG}\n")
-                      output.write("status=no_changes\n")
-                      output.write("uploaded=0\n")
-                      output.write(
-                          "wayback_pending="
-                          f"{len(state.get('wayback', {}).get('pending', []))}\n"
-                      )
-                  raise SystemExit(0)
-
-          changed_paths = changed_paths_since(previous_commit, current_commit)
-          if changed_paths is None:
-              print(
-                  "Previous commit is unavailable for diff-based reuse; "
-                  "hashing the full working tree."
-              )
-          else:
-              print(
-                  f"Git reports {len(changed_paths)} changed paths since the "
-                  "previous archived commit."
-              )
-
-          current_files, current_directories = inventory_working_tree(
-              old_files,
-              changed_paths,
-          )
           remote_metadata, metadata_reliable = fetch_metadata()
+          obsolete_history_names = (
+              sorted(
+                  name
+                  for name in ("git-history.bundle",)
+                  if name in remote_metadata
+              )
+              if metadata_reliable
+              else []
+          )
 
           uploads: list[str] = []
           for relative, metadata in current_files.items():
@@ -1280,18 +1174,21 @@ jobs:
               "state_source": state_source,
               "metadata_reliable_at_start": metadata_reliable,
               "started_at_utc": utc_now(),
-              "source_commit": current_commit,
+              "source_snapshot": current_snapshot,
               "initial_sync": initial_sync,
               "total_current_files": len(current_files),
               "planned_uploads": len(uploads),
               "planned_repository_deletes": len(removed_from_repository),
               "planned_orphan_deletes": len(orphan_remote_names),
+              "planned_history_deletes": len(obsolete_history_names),
               "completed_uploads": 0,
               "completed_deletes": 0,
               "last_successful_operation": None,
               "remaining_uploads": list(uploads),
               "remaining_deletes": (
-                  list(removed_from_repository) + list(orphan_remote_names)
+                  list(removed_from_repository)
+                  + list(orphan_remote_names)
+                  + list(obsolete_history_names)
               ),
           }
           write_local_state()
@@ -1350,6 +1247,15 @@ jobs:
                       for remote_name in orphan_remote_names
                   )
 
+                  delete_operations.extend(
+                      (
+                          remote_name,
+                          remote_name,
+                          "obsolete_git_history_archive",
+                      )
+                      for remote_name in obsolete_history_names
+                  )
+
               for index, (relative, remote_name, reason) in enumerate(
                   delete_operations,
                   start=1,
@@ -1372,43 +1278,6 @@ jobs:
                   ]
                   persist_state()
 
-              bundle_changed = (
-                  state.get("git_bundle", {}).get("commit") != current_commit
-                  or (
-                      metadata_reliable
-                      and "git-history.bundle" not in remote_metadata
-                  )
-              )
-
-              if bundle_changed:
-                  bundle_path = pathlib.Path("git-history.bundle")
-                  subprocess.run(
-                      [
-                          "git",
-                          "-C",
-                          str(SOURCE_ROOT),
-                          "bundle",
-                          "create",
-                          str(bundle_path.resolve()),
-                          "--all",
-                      ],
-                      check=True,
-                  )
-                  upload_file(bundle_path, "git-history.bundle")
-                  state["git_bundle"] = {
-                      "commit": current_commit,
-                      "sha256": sha256_file(bundle_path),
-                      "size": bundle_path.stat().st_size,
-                      "remote_name": "git-history.bundle",
-                      "uploaded_at_utc": utc_now(),
-                  }
-                  state["current_run"]["last_successful_operation"] = {
-                      "action": "upload_git_bundle",
-                      "remote_name": "git-history.bundle",
-                      "completed_at_utc": utc_now(),
-                  }
-                  persist_state()
-
               state["files"] = current_files
               state["directories"] = current_directories
 
@@ -1417,13 +1286,12 @@ jobs:
                   "generated_at_utc": utc_now(),
                   "repository": REPOSITORY,
                   "title": TITLE,
-                  "commit": current_commit,
+                  "snapshot_sha256": current_snapshot,
                   "kind": KIND,
                   "sites": SITES,
                   "directories": current_directories,
                   "file_count": len(current_files),
                   "files": current_files,
-                  "git_bundle": state.get("git_bundle", {}),
               }
               manifest_path = pathlib.Path("manifest.json")
               manifest_path.write_text(
@@ -1443,11 +1311,6 @@ jobs:
                   f"{metadata['sha256']}  {relative}\n"
                   for relative, metadata in sorted(current_files.items())
               ]
-              bundle_sha = state.get("git_bundle", {}).get("sha256")
-              if bundle_sha:
-                  checksum_lines.append(
-                      f"{bundle_sha}  git-history.bundle\n"
-                  )
               checksum_path.write_text(
                   "".join(checksum_lines),
                   encoding="utf-8",
@@ -1460,7 +1323,6 @@ jobs:
                       "initial_queue_created",
                       False,
                   ),
-                  commit=current_commit,
               )
 
               pending = list(state["wayback"].get("pending", []))
@@ -1480,7 +1342,6 @@ jobs:
               }
               expected.update({
                   IA_STATE_NAME,
-                  "git-history.bundle",
                   "manifest.json",
                   "SHA256SUMS.txt",
               })
@@ -1491,11 +1352,17 @@ jobs:
                   final_metadata, final_metadata_reliable = fetch_metadata()
                   if final_metadata_reliable:
                       missing = expected - set(final_metadata)
-                      if not missing:
+                      history_still_present = sorted(
+                          name
+                          for name in ("git-history.bundle",)
+                          if name in final_metadata
+                      )
+                      if not missing and not history_still_present:
                           break
                       print(
-                          f"Final verification waiting: "
-                          f"{len(missing)} current files not visible yet."
+                          "Final verification waiting: "
+                          f"{len(missing)} current files missing; "
+                          f"{len(history_still_present)} history artifacts still visible."
                       )
                   else:
                       print("Final metadata verification is temporarily unavailable.")
@@ -1524,7 +1391,7 @@ jobs:
                       print(f"Deleting legacy timestamped archive: {name}")
                       delete_remote(name)
 
-              state["last_completed_commit"] = current_commit
+              state["last_completed_snapshot"] = current_snapshot
               state["last_completed_at_utc"] = utc_now()
               state["last_completed_at_greece"] = greece_now()
               state["initial_sync_completed"] = final_metadata_reliable
@@ -1542,6 +1409,7 @@ jobs:
                       else 0
                   ),
                   "deleted_legacy_archives": len(legacy_files),
+                  "deleted_history_archives": len(obsolete_history_names),
                   "unchanged_files": len(current_files) - len(uploads),
                   "mirror_verified": final_metadata_reliable,
                   "wayback_pending": len(state["wayback"]["pending"]),
@@ -1721,7 +1589,7 @@ jobs:
                       headers={
                           "Accept": "application/json",
                           "Cache-Control": "no-cache",
-                          "User-Agent": "DedSec-Wayback-Queue/5.0",
+                          "User-Agent": "DedSec-Wayback-Queue/6.0",
                       },
                   )
 
@@ -1791,7 +1659,7 @@ jobs:
                       headers={
                           "Authorization": f"LOW {access}:{secret}",
                           "Accept": "application/json",
-                          "User-Agent": "DedSec-Wayback-Queue/5.0",
+                          "User-Agent": "DedSec-Wayback-Queue/6.0",
                       },
                   )
 
@@ -1844,16 +1712,75 @@ jobs:
 
               return "transient_failure", last_error
 
+          def allowed_live_site_url(target: dict, url: object) -> bool:
+              if target.get("kind") != "website" or not isinstance(url, str):
+                  return False
+              sites = [
+                  site.strip().rstrip("/")
+                  for site in str(target.get("sites", "")).split("|")
+                  if site.strip()
+              ]
+              return any(
+                  url == site or url.startswith(site + "/")
+                  for site in sites
+              )
+
           loaded: list[tuple[dict, dict]] = []
           for target in targets:
               state = fetch_state(target)
               if not isinstance(state, dict):
                   continue
+              state.pop("git_bundle", None)
+              state.pop("last_completed_commit", None)
+              state["schema_version"] = 6
+              state["archive_mode"] = "working_tree_only"
+              current_run = state.get("current_run")
+              if isinstance(current_run, dict):
+                  current_run.pop("source_commit", None)
               state.setdefault("wayback", {})
               state["wayback"].setdefault("pending", [])
               state["wayback"].setdefault("completed", 0)
               state["wayback"].setdefault("permanent_failures", 0)
               state["wayback"].setdefault("recent_failures", [])
+              state["wayback"]["pending"] = [
+                  url
+                  for url in state["wayback"]["pending"]
+                  if allowed_live_site_url(target, url)
+              ]
+              state["wayback"]["recent_failures"] = [
+                  entry
+                  for entry in state["wayback"]["recent_failures"]
+                  if isinstance(entry, dict)
+                  and allowed_live_site_url(target, entry.get("url"))
+              ]
+              if not allowed_live_site_url(
+                  target, state["wayback"].get("last_successful_url")
+              ):
+                  state["wayback"].pop("last_successful_url", None)
+                  state["wayback"].pop("last_successful_at_utc", None)
+              transient = state["wayback"].get("last_transient_error")
+              if not (
+                  isinstance(transient, dict)
+                  and allowed_live_site_url(target, transient.get("url"))
+              ):
+                  state["wayback"].pop("last_transient_error", None)
+              state["wayback"]["remaining"] = len(
+                  state["wayback"]["pending"]
+              )
+              if target.get("kind") != "website":
+                  state["wayback"]["completed"] = 0
+                  state["wayback"]["permanent_failures"] = 0
+                  state["wayback"]["recent_failures"] = []
+                  state["wayback"]["initial_queue_created"] = True
+                  state["wayback"].pop("last_processed_at_utc", None)
+                  state["wayback"].pop("last_batch", None)
+              if isinstance(current_run, dict):
+                  operation = current_run.get("last_successful_operation")
+                  if isinstance(operation, dict) and (
+                      operation.get("action") == "upload_git_bundle"
+                      or operation.get("remote_name") == "git-history.bundle"
+                  ):
+                      current_run["last_successful_operation"] = None
               loaded.append((target, state))
 
           if not loaded:
@@ -2033,7 +1960,7 @@ jobs:
           import urllib.request
           from datetime import datetime, timezone
 
-          SCHEMA_VERSION = 5
+          SCHEMA_VERSION = 6
           CONTROLLER = pathlib.Path("controller")
           UPDATE_PATH = CONTROLLER / "update.json"
           README_PATH = CONTROLLER / "README.md"
@@ -2060,7 +1987,7 @@ jobs:
                       headers={
                           "Accept": "application/json",
                           "Cache-Control": "no-cache",
-                          "User-Agent": "DedSec-Controller-State/5.0",
+                          "User-Agent": "DedSec-Controller-State/6.0",
                       },
                   )
 
@@ -2137,6 +2064,76 @@ jobs:
 
           refreshed: dict[str, dict] = {}
 
+          def sanitize_controller_state(target: dict, state: dict) -> dict:
+              state.pop("git_bundle", None)
+              state.pop("last_completed_commit", None)
+              state["schema_version"] = SCHEMA_VERSION
+              state["archive_mode"] = "working_tree_only"
+              state.setdefault("target", {})
+              state["target"].update({
+                  "repository": target["repository"],
+                  "slug": target["slug"],
+                  "title": target["title"],
+                  "marker": target["marker"],
+                  "kind": target["kind"],
+                  "ia_item": target["ia_item"],
+                  "window": target["window"],
+                  "sites": [
+                      site.strip().rstrip("/")
+                      for site in str(target.get("sites", "")).split("|")
+                      if site.strip()
+                  ],
+              })
+              current_run = state.get("current_run")
+              if isinstance(current_run, dict):
+                  current_run.pop("source_commit", None)
+              wayback = state.setdefault("wayback", {})
+              sites = state["target"]["sites"]
+              def allowed(url: object) -> bool:
+                  return target.get("kind") == "website" and isinstance(url, str) and any(
+                      url == site or url.startswith(site + "/") for site in sites
+                  )
+              wayback["pending"] = [
+                  url for url in wayback.get("pending", []) if allowed(url)
+              ]
+              wayback["recent_failures"] = [
+                  entry for entry in wayback.get("recent_failures", [])
+                  if isinstance(entry, dict) and allowed(entry.get("url"))
+              ]
+              if not allowed(wayback.get("last_successful_url")):
+                  wayback.pop("last_successful_url", None)
+                  wayback.pop("last_successful_at_utc", None)
+              transient = wayback.get("last_transient_error")
+              if not (isinstance(transient, dict) and allowed(transient.get("url"))):
+                  wayback.pop("last_transient_error", None)
+              wayback["remaining"] = len(wayback["pending"])
+              if target.get("kind") != "website":
+                  wayback["completed"] = 0
+                  wayback["permanent_failures"] = 0
+                  wayback["recent_failures"] = []
+                  wayback["initial_queue_created"] = True
+                  wayback.pop("last_processed_at_utc", None)
+                  wayback.pop("last_batch", None)
+              if isinstance(current_run, dict):
+                  operation = current_run.get("last_successful_operation")
+                  if isinstance(operation, dict) and (
+                      operation.get("action") == "upload_git_bundle"
+                      or operation.get("remote_name") == "git-history.bundle"
+                  ):
+                      current_run["last_successful_operation"] = None
+              return state
+
+          definitions_by_slug = {
+              target["slug"]: target for target in all_targets
+          }
+          for slug, existing in list(aggregate["targets"].items()):
+              definition = definitions_by_slug.get(slug)
+              if definition and isinstance(existing, dict):
+                  aggregate["targets"][slug] = sanitize_controller_state(
+                      definition,
+                      existing,
+                  )
+
           for target in targets:
               remote = fetch_remote_state(target)
               artifact = load_artifact_state(target["slug"])
@@ -2160,6 +2157,7 @@ jobs:
                   )
                   continue
 
+              state = sanitize_controller_state(target, state)
               aggregate["targets"][target["slug"]] = state
               refreshed[target["slug"]] = state
 
@@ -2168,9 +2166,11 @@ jobs:
               "Each Internet Archive item stores archive-state/update.json. "
               "This file is the synchronized combined copy."
           )
+          aggregate["archive_mode"] = "working_tree_only"
           aggregate["resume_behavior"] = (
-              "File synchronization checkpoints after every successful file. "
-              "Wayback captures use a separate serial resumable queue."
+              "Current working-tree file synchronization checkpoints after every "
+              "successful file. Git history is never archived. Wayback is limited "
+              "to live website URLs."
           )
 
           UPDATE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -2238,19 +2238,8 @@ jobs:
               current = state.get("current_run", {})
               result = state.get("last_result", {})
               wayback = state.get("wayback", {})
-              repository = target["repository"]
-              commit = state.get("last_completed_commit") or current.get(
-                  "source_commit",
-                  "",
-              )
               ia_url = (
                   "https://archive.org/details/" + target["ia_item"]
-              )
-              wayback_url = (
-                  "https://web.archive.org/web/*/"
-                  "https://github.com/"
-                  + repository
-                  + "*"
               )
 
               lines = [
@@ -2277,33 +2266,23 @@ jobs:
                       f"`{result.get('mirror_verified', False)}`  "
                   ),
                   (
-                      "**Wayback queue remaining:** "
-                      f"{len(wayback.get('pending', []))}  "
-                  ),
-                  (
-                      "**Wayback captures accepted:** "
-                      f"{wayback.get('completed', 0)}  "
-                  ),
-                  (
                       "**Scheduled time(s):** "
                       f"{target['window']}  "
                   ),
-                  (
-                      "**Resume mode:** File uploads and Wayback URLs "
-                      "are checkpointed separately."
-                  ),
+                  "**Archive mode:** Current working-tree files/directories only; no Git history.",
                   "",
                   f"- [Internet Archive current mirror]({ia_url})",
-                  f"- [Wayback Machine capture history]({wayback_url})",
               ]
 
-              if commit:
-                  lines.append(
-                      "- [Last archived commit]"
-                      f"(https://github.com/{repository}/commit/{commit})"
-                  )
-
               if target.get("kind") == "website":
+                  lines.insert(
+                      10,
+                      f"**Wayback queue remaining:** {len(wayback.get('pending', []))}  ",
+                  )
+                  lines.insert(
+                      11,
+                      f"**Wayback captures accepted:** {wayback.get('completed', 0)}  ",
+                  )
                   for site in target.get("sites", []):
                       lines.append(
                           f"- [{site} Wayback history]"
