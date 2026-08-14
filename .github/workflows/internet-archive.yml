@@ -423,7 +423,7 @@ jobs:
             echo "No startup delay is needed for this target."
           fi
 
-      - name: Incrementally synchronize Internet Archive files
+      - name: Synchronize compact working-tree archive
         id: sync
         shell: bash
         env:
@@ -436,6 +436,7 @@ jobs:
           from __future__ import annotations
 
           import concurrent.futures
+          import gzip
           import hashlib
           import json
           import os
@@ -443,7 +444,7 @@ jobs:
           import random
           import stat
           import subprocess
-          import tempfile
+          import tarfile
           import time
           import traceback
           import urllib.error
@@ -452,15 +453,17 @@ jobs:
           from datetime import datetime, timezone
           from zoneinfo import ZoneInfo
 
-          SCHEMA_VERSION = 6
+          SCHEMA_VERSION = 7
+          ARCHIVE_MODE = "single_current_working_tree_archive"
           SOURCE_ROOT = pathlib.Path("source")
-          CONTROLLER_STATE_PATH = (
-              pathlib.Path("controller")
-              / "update.json"
-          )
+          CONTROLLER_STATE_PATH = pathlib.Path("controller") / "update.json"
           LOCAL_STATE_DIR = pathlib.Path("archive-state")
           LOCAL_STATE_DIR.mkdir(parents=True, exist_ok=True)
           LOCAL_STATE_PATH = LOCAL_STATE_DIR / f"{os.environ['TARGET_SLUG']}.json"
+
+          ARCHIVE_NAME = "current-working-tree.tar.gz"
+          MANIFEST_NAME = "manifest.json"
+          CHECKSUM_NAME = "SHA256SUMS.txt"
           IA_STATE_NAME = "archive-state/update.json"
 
           REPOSITORY = os.environ["TARGET_REPOSITORY"]
@@ -491,14 +494,14 @@ jobs:
               return datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
           def greece_now() -> str:
-              return datetime.now(
-                  ZoneInfo("Europe/Athens")
-              ).strftime("%Y-%m-%d %H:%M:%S %Z")
+              return datetime.now(ZoneInfo("Europe/Athens")).strftime(
+                  "%Y-%m-%d %H:%M:%S %Z"
+              )
 
           def delay_for(attempt: int, retry_after: str | None = None) -> int:
               if retry_after and retry_after.isdigit():
                   return min(300, max(1, int(retry_after)))
-              return min(120, 10 * (2 ** min(attempt - 1, 4)))
+              return min(180, 15 * (2 ** min(attempt - 1, 4)))
 
           def sha256_file(path: pathlib.Path) -> str:
               digest = hashlib.sha256()
@@ -516,6 +519,93 @@ jobs:
                   + urllib.parse.quote(remote_name, safe="/~._-()")
               )
 
+          def get_json_with_retry(
+              url_factory,
+              *,
+              label: str,
+              not_found,
+              attempts: int = 8,
+              tolerate_unavailable: bool = False,
+          ):
+              last_error: BaseException | None = None
+              for attempt in range(1, attempts + 1):
+                  request = urllib.request.Request(
+                      url_factory(),
+                      headers={
+                          "Accept": "application/json",
+                          "Cache-Control": "no-cache",
+                          "User-Agent": "DedSec-Archive-Sync/7.0",
+                      },
+                  )
+                  try:
+                      with urllib.request.urlopen(request, timeout=120) as response:
+                          return json.load(response)
+                  except urllib.error.HTTPError as error:
+                      if error.code == 404:
+                          return not_found
+                      last_error = error
+                      if error.code not in RETRYABLE_HTTP:
+                          if tolerate_unavailable:
+                              break
+                          raise
+                      wait = delay_for(attempt, error.headers.get("Retry-After"))
+                      print(f"{label}: HTTP {error.code}; retry in {wait}s.")
+                      time.sleep(wait)
+                  except (
+                      urllib.error.URLError,
+                      TimeoutError,
+                      json.JSONDecodeError,
+                      UnicodeDecodeError,
+                  ) as error:
+                      last_error = error
+                      wait = delay_for(attempt)
+                      print(f"{label}: temporary error; retry in {wait}s.")
+                      time.sleep(wait)
+
+              if tolerate_unavailable:
+                  print(
+                      f"::warning title={label} unavailable::"
+                      f"Continuing safely without it: {last_error!r}"
+                  )
+                  return not_found
+              raise RuntimeError(f"{label} unavailable: {last_error!r}")
+
+          def check_s3_capacity() -> tuple[bool, str]:
+              query = urllib.parse.urlencode({
+                  "check_limit": "1",
+                  "accesskey": ACCESS_KEY,
+                  "bucket": ITEM,
+              })
+              request = urllib.request.Request(
+                  f"https://s3.us.archive.org/?{query}",
+                  headers={"User-Agent": "DedSec-Archive-Sync/7.0"},
+              )
+              try:
+                  with urllib.request.urlopen(request, timeout=60) as response:
+                      payload = json.load(response)
+                  over_limit = str(payload.get("over_limit", "0")) == "1"
+                  return (not over_limit), str(payload.get("detail", ""))
+              except Exception as error:
+                  # Capacity probing is advisory. Upload curl still has its own
+                  # robust retry policy if the probe endpoint is unavailable.
+                  return True, f"capacity check unavailable: {error!r}"
+
+          def wait_for_s3_capacity(max_waits: int = 12) -> None:
+              for attempt in range(1, max_waits + 1):
+                  ready, detail = check_s3_capacity()
+                  if ready:
+                      return
+                  wait = min(180, 20 + (attempt * 10))
+                  print(
+                      f"Internet Archive queue is over limit; waiting {wait}s "
+                      f"before request ({attempt}/{max_waits}). {detail[:300]}"
+                  )
+                  time.sleep(wait)
+              print(
+                  "::warning title=Internet Archive queue still busy::"
+                  "Proceeding with curl retries after the capacity wait window."
+              )
+
           def run_curl(arguments: list[str]) -> None:
               subprocess.run(
                   [
@@ -524,13 +614,14 @@ jobs:
                       "--show-error",
                       "--fail-with-body",
                       "--location",
+                      "--location-trusted",
                       "--retry",
-                      "8",
+                      "12",
                       "--retry-all-errors",
                       "--retry-delay",
-                      "10",
+                      "30",
                       "--retry-max-time",
-                      "1200",
+                      "2400",
                       "--connect-timeout",
                       "45",
                       *arguments,
@@ -544,211 +635,134 @@ jobs:
               *,
               include_item_metadata: bool = False,
           ) -> None:
+              wait_for_s3_capacity()
               headers = [
-                  "--header",
-                  f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
-                  "--header",
-                  "x-amz-auto-make-bucket:1",
-                  "--header",
-                  "x-archive-ignore-preexisting-bucket:1",
-                  "--header",
-                  "x-archive-keep-old-version:0",
-                  "--header",
-                  "x-archive-queue-derive:0",
+                  "--header", f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
+                  "--header", "x-amz-auto-make-bucket:1",
+                  "--header", "x-archive-ignore-preexisting-bucket:1",
+                  # Critical privacy behavior: replacing the current archive or
+                  # state must not create history/files/* backup copies.
+                  "--header", "x-archive-keep-old-version:0",
+                  "--header", "x-archive-queue-derive:0",
               ]
-
               if include_item_metadata:
                   headers.extend([
-                      "--header",
-                      f"x-archive-meta-title:{TITLE}",
-                      "--header",
-                      "x-archive-meta-creator:DedSec Project",
-                      "--header",
-                      "x-archive-meta-mediatype:software",
+                      "--header", f"x-archive-meta-title:{TITLE}",
+                      "--header", "x-archive-meta-creator:DedSec Project",
+                      "--header", "x-archive-meta-mediatype:software",
                       "--header",
                       (
-                          "x-archive-meta-description:"
-                          "Incrementally synchronized current files and "
-                          f"Git history for {REPOSITORY}."
+                          "x-archive-meta-description:Current working-tree-only "
+                          f"archive for {REPOSITORY}. Git history is intentionally excluded."
                       ),
                       "--header",
                       (
-                          "x-archive-meta-subject:"
-                          "DedSec Project; source code; Git history; "
-                          "software preservation"
+                          "x-archive-meta-subject:DedSec Project; source code; "
+                          "working tree; software preservation"
                       ),
                   ])
-
               run_curl([
                   *headers,
-                  "--upload-file",
-                  str(local_path),
+                  "--upload-file", str(local_path),
                   remote_url("https://s3.us.archive.org", remote_name),
               ])
 
           def delete_remote(remote_name: str) -> None:
-              response_path = pathlib.Path("delete-response.txt")
+              wait_for_s3_capacity()
               result = subprocess.run(
                   [
                       "curl",
                       "--silent",
                       "--show-error",
                       "--location",
-                      "--request",
-                      "DELETE",
-                      "--retry",
-                      "8",
+                      "--location-trusted",
+                      "--request", "DELETE",
+                      "--retry", "12",
                       "--retry-all-errors",
-                      "--retry-delay",
-                      "10",
-                      "--retry-max-time",
-                      "1200",
-                      "--header",
-                      f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
-                      "--header",
-                      "x-archive-cascade-delete:1",
-                      "--header",
-                      "x-archive-keep-old-version:0",
-                      "--write-out",
-                      "%{http_code}",
-                      "--output",
-                      str(response_path),
+                      "--retry-delay", "30",
+                      "--retry-max-time", "2400",
+                      "--header", f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
+                      "--header", "x-archive-cascade-delete:1",
+                      # Do not preserve the deleted object under history/files/.
+                      "--header", "x-archive-keep-old-version:0",
+                      "--write-out", "%{http_code}",
+                      "--output", "delete-response.txt",
                       remote_url("https://s3.us.archive.org", remote_name),
                   ],
                   check=True,
                   text=True,
                   capture_output=True,
               )
-
-              status_code = result.stdout.strip()
-              if status_code not in {"200", "202", "204", "404"}:
-                  body = response_path.read_text(
-                      encoding="utf-8",
-                      errors="replace",
+              code = result.stdout.strip()
+              if code not in {"200", "202", "204", "404"}:
+                  body = pathlib.Path("delete-response.txt").read_text(
+                      encoding="utf-8", errors="replace"
                   )
                   raise RuntimeError(
-                      f"Delete failed for {remote_name!r}: "
-                      f"HTTP {status_code}: {body[:1000]}"
+                      f"Delete failed for {remote_name!r}: HTTP {code}: {body[:1000]}"
                   )
 
-          def get_json_with_retry(
-              url_factory,
-              *,
-              label: str,
-              not_found,
-              attempts: int = 8,
-              tolerate_unavailable: bool = False,
-          ):
-              last_error: BaseException | None = None
-
-              for attempt in range(1, attempts + 1):
-                  request = urllib.request.Request(
-                      url_factory(),
-                      headers={
-                          "Accept": "application/json",
-                          "Cache-Control": "no-cache",
-                          "User-Agent": "DedSec-Archive-Sync/5.0",
-                      },
-                  )
-
-                  try:
-                      with urllib.request.urlopen(request, timeout=120) as response:
-                          return json.load(response)
-
-                  except urllib.error.HTTPError as error:
-                      if error.code == 404:
-                          return not_found
-
-                      last_error = error
-                      if error.code not in RETRYABLE_HTTP:
-                          raise
-
-                      delay = delay_for(
-                          attempt,
-                          error.headers.get("Retry-After"),
-                      )
-                      print(
-                          f"{label}: HTTP {error.code}; "
-                          f"retry {attempt}/{attempts} in {delay}s."
-                      )
-                      time.sleep(delay)
-
-                  except (
-                      urllib.error.URLError,
-                      TimeoutError,
-                      json.JSONDecodeError,
-                      UnicodeDecodeError,
-                  ) as error:
-                      last_error = error
-                      delay = delay_for(attempt)
-                      print(
-                          f"{label}: temporary error {error!r}; "
-                          f"retry {attempt}/{attempts} in {delay}s."
-                      )
-                      time.sleep(delay)
-
-              if tolerate_unavailable:
-                  print(
-                      f"::warning title={label} unavailable::"
-                      f"Continuing safely without it: {last_error!r}"
-                  )
-                  return not_found
-
-              raise RuntimeError(
-                  f"{label} remained unavailable after {attempts} attempts: "
-                  f"{last_error!r}"
+          def fetch_item() -> tuple[dict[str, dict], dict, bool]:
+              encoded_item = urllib.parse.quote(ITEM, safe="")
+              payload = get_json_with_retry(
+                  lambda: (
+                      f"https://archive.org/metadata/{encoded_item}"
+                      f"?metadata_read={int(time.time())}-{random.random()}"
+                  ),
+                  label=f"Metadata read for {ITEM}",
+                  not_found=None,
+                  attempts=8,
+                  tolerate_unavailable=True,
               )
+              if not isinstance(payload, dict) or "files" not in payload:
+                  return {}, {}, False
+              files = {
+                  entry["name"]: entry
+                  for entry in payload.get("files", [])
+                  if isinstance(entry, dict) and isinstance(entry.get("name"), str)
+              }
+              metadata = payload.get("metadata")
+              return files, metadata if isinstance(metadata, dict) else {}, True
 
           def download_remote_state() -> dict | None:
-              def url_factory() -> str:
-                  return (
+              payload = get_json_with_retry(
+                  lambda: (
                       remote_url("https://archive.org/download", IA_STATE_NAME)
                       + f"?state_read={int(time.time())}-{random.random()}"
-                  )
-
-              payload = get_json_with_retry(
-                  url_factory,
+                  ),
                   label=f"Checkpoint download for {ITEM}",
                   not_found=None,
-                  attempts=6,
+                  attempts=5,
                   tolerate_unavailable=True,
               )
               return payload if isinstance(payload, dict) else None
 
-          def fetch_metadata() -> tuple[dict[str, dict], bool]:
-              encoded_item = urllib.parse.quote(ITEM, safe="")
-
-              def url_factory() -> str:
-                  return (
-                      f"https://archive.org/metadata/{encoded_item}"
-                      f"?metadata_read={int(time.time())}-{random.random()}"
+          def load_controller_state() -> dict | None:
+              if not CONTROLLER_STATE_PATH.exists():
+                  return None
+              try:
+                  aggregate = json.loads(
+                      CONTROLLER_STATE_PATH.read_text(encoding="utf-8")
                   )
+              except (OSError, json.JSONDecodeError):
+                  return None
+              candidate = aggregate.get("targets", {}).get(SLUG)
+              return candidate if isinstance(candidate, dict) else None
 
-              payload = get_json_with_retry(
-                  url_factory,
-                  label=f"Metadata read for {ITEM}",
-                  not_found={},
-                  attempts=8,
-                  tolerate_unavailable=True,
-              )
-
-              if not isinstance(payload, dict) or "files" not in payload:
-                  return {}, False
-
-              files: dict[str, dict] = {}
-              for entry in payload.get("files", []):
-                  if not isinstance(entry, dict):
-                      continue
-                  name = entry.get("name")
-                  if isinstance(name, str):
-                      files[name] = entry
-
-              return files, True
+          def default_wayback() -> dict:
+              return {
+                  "pending": [],
+                  "completed": 0,
+                  "permanent_failures": 0,
+                  "recent_failures": [],
+                  "initial_queue_created": False,
+                  "last_processed_at_utc": None,
+              }
 
           def default_state() -> dict:
               return {
                   "schema_version": SCHEMA_VERSION,
-                  "archive_mode": "working_tree_only",
+                  "archive_mode": ARCHIVE_MODE,
                   "target": {
                       "repository": REPOSITORY,
                       "slug": SLUG,
@@ -762,14 +776,8 @@ jobs:
                   "initial_sync_completed": False,
                   "files": {},
                   "directories": [],
-                  "wayback": {
-                      "pending": [],
-                      "completed": 0,
-                      "permanent_failures": 0,
-                      "recent_failures": [],
-                      "initial_queue_created": False,
-                      "last_processed_at_utc": None,
-                  },
+                  "archive": {},
+                  "wayback": default_wayback(),
                   "last_completed_snapshot": None,
                   "last_completed_at_utc": None,
                   "last_completed_at_greece": None,
@@ -777,139 +785,114 @@ jobs:
                   "current_run": {},
               }
 
-          def sanitize_wayback_state(wayback: dict) -> None:
-              # Repository history is never sent to Wayback. Only live website
-              # URLs are allowed to remain in the queue.
-              allowed_sites = tuple(site.rstrip("/") for site in SITES)
+          def allowed_live_url(url: object) -> bool:
+              if KIND != "website" or not isinstance(url, str):
+                  return False
+              return any(
+                  url == site or url.startswith(site + "/") for site in SITES
+              )
 
-              def allowed(url: object) -> bool:
-                  if KIND != "website" or not isinstance(url, str):
-                      return False
-                  return any(
-                      url == site or url.startswith(site + "/")
-                      for site in allowed_sites
-                  )
-
+          def sanitize_wayback(wayback: dict) -> None:
+              wayback.setdefault("pending", [])
+              wayback.setdefault("completed", 0)
+              wayback.setdefault("permanent_failures", 0)
+              wayback.setdefault("recent_failures", [])
+              wayback.setdefault("initial_queue_created", False)
               wayback["pending"] = [
-                  url for url in wayback.get("pending", []) if allowed(url)
+                  url for url in wayback["pending"] if allowed_live_url(url)
               ]
               wayback["recent_failures"] = [
-                  entry
-                  for entry in wayback.get("recent_failures", [])
-                  if isinstance(entry, dict) and allowed(entry.get("url"))
+                  entry for entry in wayback["recent_failures"]
+                  if isinstance(entry, dict) and allowed_live_url(entry.get("url"))
               ]
-
-              if not allowed(wayback.get("last_successful_url")):
+              if not allowed_live_url(wayback.get("last_successful_url")):
                   wayback.pop("last_successful_url", None)
                   wayback.pop("last_successful_at_utc", None)
-
               transient = wayback.get("last_transient_error")
               if not (
                   isinstance(transient, dict)
-                  and allowed(transient.get("url"))
+                  and allowed_live_url(transient.get("url"))
               ):
                   wayback.pop("last_transient_error", None)
-
               wayback["remaining"] = len(wayback["pending"])
               if KIND != "website":
-                  wayback["completed"] = 0
-                  wayback["permanent_failures"] = 0
-                  wayback["recent_failures"] = []
-                  wayback["initial_queue_created"] = True
+                  wayback.update({
+                      "pending": [],
+                      "completed": 0,
+                      "permanent_failures": 0,
+                      "recent_failures": [],
+                      "initial_queue_created": True,
+                      "remaining": 0,
+                  })
                   wayback.pop("last_processed_at_utc", None)
                   wayback.pop("last_batch", None)
 
-          def sanitize_state(state: dict) -> dict:
-              state.pop("git_bundle", None)
-              state.pop("last_completed_commit", None)
-              state["schema_version"] = SCHEMA_VERSION
-              state["archive_mode"] = "working_tree_only"
+          def sanitize_state(candidate: dict | None) -> dict:
+              base = default_state()
+              if not isinstance(candidate, dict):
+                  return base
 
-              current_run = state.get("current_run")
-              if isinstance(current_run, dict):
-                  current_run.pop("source_commit", None)
-                  operation = current_run.get("last_successful_operation")
-                  if isinstance(operation, dict) and (
-                      operation.get("action") == "upload_git_bundle"
-                      or operation.get("remote_name") == "git-history.bundle"
-                  ):
-                      current_run["last_successful_operation"] = None
+              old_files = candidate.get("files")
+              if isinstance(old_files, dict):
+                  # Strip old per-file Internet Archive object names. State now
+                  # describes the working tree, not a remote mirror layout.
+                  cleaned: dict[str, dict] = {}
+                  for path, metadata in old_files.items():
+                      if not isinstance(path, str) or not isinstance(metadata, dict):
+                          continue
+                      metadata = dict(metadata)
+                      metadata.pop("remote_name", None)
+                      cleaned[path] = metadata
+                  base["files"] = cleaned
 
-              wayback = state.setdefault("wayback", {})
-              sanitize_wayback_state(wayback)
-              return state
+              if isinstance(candidate.get("directories"), list):
+                  base["directories"] = candidate["directories"]
+              if isinstance(candidate.get("archive"), dict):
+                  base["archive"] = candidate["archive"]
+              if isinstance(candidate.get("wayback"), dict):
+                  base["wayback"].update(candidate["wayback"])
+              for key in (
+                  "initial_sync_completed",
+                  "last_completed_snapshot",
+                  "last_completed_at_utc",
+                  "last_completed_at_greece",
+              ):
+                  if key in candidate:
+                      base[key] = candidate[key]
+              if isinstance(candidate.get("last_result"), dict):
+                  base["last_result"] = candidate["last_result"]
 
-          def load_controller_state() -> dict | None:
-              if not CONTROLLER_STATE_PATH.exists():
-                  return None
-
-              try:
-                  aggregate = json.loads(
-                      CONTROLLER_STATE_PATH.read_text(encoding="utf-8")
-                  )
-              except (OSError, json.JSONDecodeError):
-                  return None
-
-              candidate = aggregate.get("targets", {}).get(SLUG)
-              return candidate if isinstance(candidate, dict) else None
+              sanitize_wayback(base["wayback"])
+              base["schema_version"] = SCHEMA_VERSION
+              base["archive_mode"] = ARCHIVE_MODE
+              base.pop("git_bundle", None)
+              base.pop("last_completed_commit", None)
+              return base
 
           remote_state = download_remote_state()
           controller_state = load_controller_state()
 
-          if isinstance(remote_state, dict):
-              state = remote_state
-              state_source = "internet_archive"
-          elif isinstance(controller_state, dict):
-              state = controller_state
-              state_source = "github_update_json"
-              print(
-                  "Internet Archive checkpoint was unavailable; "
-                  "resuming from update.json."
+          def state_timestamp(candidate: dict | None) -> str:
+              if not isinstance(candidate, dict):
+                  return ""
+              return str(
+                  candidate.get("state_updated_at_utc")
+                  or candidate.get("last_completed_at_utc")
+                  or ""
               )
+
+          candidates = []
+          if isinstance(remote_state, dict):
+              candidates.append((state_timestamp(remote_state), "internet_archive", remote_state))
+          if isinstance(controller_state, dict):
+              candidates.append((state_timestamp(controller_state), "github_update_json", controller_state))
+
+          if candidates:
+              _, state_source, selected_state = max(candidates, key=lambda item: item[0])
+              state = sanitize_state(selected_state)
           else:
               state = default_state()
               state_source = "new_initial_sync"
-              print(
-                  "No usable checkpoint exists. "
-                  "Starting a safe initial synchronization."
-              )
-
-          if state.get("schema_version") != SCHEMA_VERSION:
-              old_files = state.get("files", {})
-              old_directories = state.get("directories", [])
-              old_wayback = state.get("wayback", {})
-              migrated = default_state()
-              if isinstance(old_files, dict):
-                  migrated["files"] = old_files
-              if isinstance(old_directories, list):
-                  migrated["directories"] = old_directories
-              if isinstance(old_wayback, dict):
-                  migrated["wayback"].update(old_wayback)
-              migrated["initial_sync_completed"] = bool(
-                  state.get("initial_sync_completed", False)
-              )
-              migrated["last_completed_at_utc"] = state.get(
-                  "last_completed_at_utc"
-              )
-              migrated["last_completed_at_greece"] = state.get(
-                  "last_completed_at_greece"
-              )
-              if isinstance(state.get("last_result"), dict):
-                  migrated["last_result"] = state["last_result"]
-              state = migrated
-
-          state["target"] = default_state()["target"]
-          state.setdefault("files", {})
-          state.setdefault("directories", [])
-          state.setdefault("wayback", default_state()["wayback"])
-          for key, value in default_state()["wayback"].items():
-              state["wayback"].setdefault(key, value)
-          sanitize_state(state)
-
-          first_item_write = not state.get("files") and not state.get(
-              "initial_sync_completed",
-              False,
-          )
 
           def write_local_state() -> None:
               LOCAL_STATE_PATH.write_text(
@@ -918,51 +901,32 @@ jobs:
                       indent=2,
                       ensure_ascii=False,
                       sort_keys=True,
-                  )
-                  + "\n",
+                  ) + "\n",
                   encoding="utf-8",
-              )
-
-          def persist_state() -> None:
-              nonlocal_first = False
-              state["state_updated_at_utc"] = utc_now()
-              write_local_state()
-              upload_file(
-                  LOCAL_STATE_PATH,
-                  IA_STATE_NAME,
-                  include_item_metadata=first_item_write,
               )
 
           def inventory_working_tree() -> tuple[dict[str, dict], list[str]]:
               files: dict[str, dict] = {}
               directories: set[str] = set()
-              pending_hashes: list[tuple[str, pathlib.Path, int, int]] = []
+              pending: list[tuple[str, pathlib.Path, int, int]] = []
 
               for root, directory_names, filenames in os.walk(
-                  SOURCE_ROOT,
-                  topdown=True,
-                  followlinks=False,
+                  SOURCE_ROOT, topdown=True, followlinks=False
               ):
-                  # .git is never inventoried, hashed, uploaded, or represented
-                  # in the archive manifest.
                   directory_names[:] = sorted(
                       name for name in directory_names if name != ".git"
                   )
-
                   root_path = pathlib.Path(root)
                   relative_root = root_path.relative_to(SOURCE_ROOT)
                   if str(relative_root) != ".":
                       directories.add(relative_root.as_posix())
 
                   for name in sorted(filenames):
+                      if name == ".git":
+                          continue
                       path = root_path / name
                       relative = path.relative_to(SOURCE_ROOT).as_posix()
-
-                      if (
-                          relative == ".git"
-                          or relative.startswith(".git/")
-                          or "/.git/" in relative
-                      ):
+                      if ".git" in pathlib.PurePosixPath(relative).parts:
                           continue
 
                       if path.is_symlink():
@@ -974,111 +938,96 @@ jobs:
                               "size": len(target.encode("utf-8")),
                               "type": "symlink",
                               "link_target": target,
-                              "remote_name": "mirror/" + relative,
+                              "mode": "0777",
                           }
                           continue
 
                       try:
-                          stat_result = path.stat()
+                          st = path.stat()
                       except OSError:
                           continue
-
-                      mode = stat_result.st_mode
-                      if not stat.S_ISREG(mode):
+                      if not stat.S_ISREG(st.st_mode):
                           continue
+                      pending.append((relative, path, st.st_mode & 0o777, st.st_size))
 
-                      pending_hashes.append(
-                          (relative, path, mode, stat_result.st_size)
-                      )
-
-              if pending_hashes:
-                  worker_count = min(
-                      4,
-                      max(1, os.cpu_count() or 1),
-                      len(pending_hashes),
-                  )
-                  print(
-                      f"Hashing {len(pending_hashes)} current working-tree files "
-                      f"with {worker_count} workers."
-                  )
-
-                  with concurrent.futures.ThreadPoolExecutor(
-                      max_workers=worker_count
-                  ) as executor:
-                      future_map = {
-                          executor.submit(sha256_file, path): (
-                              relative,
-                              mode,
-                              size,
-                          )
-                          for relative, path, mode, size in pending_hashes
+              if pending:
+                  workers = min(4, max(1, os.cpu_count() or 1), len(pending))
+                  print(f"Hashing {len(pending)} working-tree files with {workers} workers.")
+                  with concurrent.futures.ThreadPoolExecutor(max_workers=workers) as pool:
+                      futures = {
+                          pool.submit(sha256_file, path): (relative, mode, size)
+                          for relative, path, mode, size in pending
                       }
-
-                      for future in concurrent.futures.as_completed(future_map):
-                          relative, mode, size = future_map[future]
+                      for future in concurrent.futures.as_completed(futures):
+                          relative, mode, size = futures[future]
                           files[relative] = {
                               "sha256": future.result(),
                               "size": size,
                               "type": "file",
+                              "mode": f"{mode:04o}",
                               "executable": bool(mode & stat.S_IXUSR),
-                              "remote_name": "mirror/" + relative,
                           }
 
               return dict(sorted(files.items())), sorted(directories)
 
-          def local_payload(
-              relative_path: str,
-              metadata: dict,
-          ) -> tuple[pathlib.Path, pathlib.Path | None]:
-              source_path = SOURCE_ROOT / pathlib.PurePosixPath(relative_path)
-              if metadata["type"] == "file":
-                  return source_path, None
+          def make_deterministic_archive(
+              files: dict[str, dict], directories: list[str]
+          ) -> pathlib.Path:
+              output = pathlib.Path(ARCHIVE_NAME)
+              with output.open("wb") as raw:
+                  with gzip.GzipFile(
+                      filename="", mode="wb", fileobj=raw, mtime=0, compresslevel=9
+                  ) as compressed:
+                      with tarfile.open(
+                          fileobj=compressed,
+                          mode="w",
+                          format=tarfile.PAX_FORMAT,
+                      ) as archive:
+                          for relative in directories:
+                              info = tarfile.TarInfo(relative.rstrip("/") + "/")
+                              info.type = tarfile.DIRTYPE
+                              info.mode = 0o755
+                              info.uid = info.gid = 0
+                              info.uname = info.gname = ""
+                              info.mtime = 0
+                              archive.addfile(info)
 
-              temporary = tempfile.NamedTemporaryFile(
-                  prefix="dedsec-symlink-",
-                  suffix=".txt",
-                  delete=False,
-              )
-              temporary_path = pathlib.Path(temporary.name)
-              with temporary:
-                  temporary.write(metadata["link_target"].encode("utf-8"))
-              return temporary_path, temporary_path
+                          for relative, metadata in files.items():
+                              info = tarfile.TarInfo(relative)
+                              info.uid = info.gid = 0
+                              info.uname = info.gname = ""
+                              info.mtime = 0
+                              info.mode = int(metadata.get("mode", "0644"), 8)
+                              if metadata["type"] == "symlink":
+                                  info.type = tarfile.SYMTYPE
+                                  info.linkname = metadata["link_target"]
+                                  info.size = 0
+                                  archive.addfile(info)
+                              else:
+                                  source_path = SOURCE_ROOT / pathlib.PurePosixPath(relative)
+                                  info.size = metadata["size"]
+                                  with source_path.open("rb") as stream:
+                                      archive.addfile(info, stream)
+              return output
 
-          def build_wayback_urls(
-              paths: list[str],
-              *,
-              include_all: bool,
-          ) -> list[str]:
+          def build_wayback_urls(paths: list[str], include_all: bool) -> list[str]:
               if KIND != "website":
                   return []
-
-              urls: set[str] = set()
-              selected_paths = sorted(current_files) if include_all else sorted(paths)
+              selected = sorted(current_files) if include_all else sorted(paths)
               excluded_prefixes = (".git/", ".github/")
               excluded_names = {
-                  ".gitignore",
-                  ".gitattributes",
-                  ".nojekyll",
-                  "README",
-                  "README.md",
-                  "README.txt",
-                  "LICENSE",
-                  "LICENSE.md",
-                  "LICENSE.txt",
-                  "SECURITY.md",
+                  ".gitignore", ".gitattributes", ".nojekyll",
+                  "README", "README.md", "README.txt",
+                  "LICENSE", "LICENSE.md", "LICENSE.txt", "SECURITY.md",
               }
-
-              for site in SITES:
-                  urls.add(site + "/")
-
-              for relative in selected_paths:
+              urls: set[str] = {site + "/" for site in SITES}
+              for relative in selected:
                   if (
                       relative.startswith(excluded_prefixes)
                       or relative in excluded_names
                       or "/." in relative
                   ):
                       continue
-
                   encoded = urllib.parse.quote(relative, safe="/~._-()")
                   for site in SITES:
                       urls.add(f"{site}/{encoded}")
@@ -1087,377 +1036,318 @@ jobs:
                           urls.add(site + "/")
                       elif lower.endswith("/index.html"):
                           urls.add(f"{site}/{encoded[:-len('index.html')]}")
-
               return sorted(urls)
 
-          old_files = state.get("files", {})
-          initial_sync = not state.get("initial_sync_completed", False)
+          def patch_item_metadata(current: dict) -> None:
+              desired = {
+                  "description": (
+                      f"Current working-tree-only archive for {REPOSITORY}. "
+                      "Git history, commit history and push history are intentionally excluded."
+                  ),
+                  "subject": (
+                      "DedSec Project; source code; working tree; software preservation"
+                  ),
+              }
+              patch = []
+              for key, value in desired.items():
+                  if current.get(key) == value:
+                      continue
+                  patch.append({
+                      "op": "replace" if key in current else "add",
+                      "path": f"/{key}",
+                      "value": value,
+                  })
+              if not patch:
+                  return
 
+              payload = urllib.parse.urlencode({
+                  "-target": "metadata",
+                  "-patch": json.dumps(patch, separators=(",", ":")),
+              }).encode("utf-8")
+              request = urllib.request.Request(
+                  f"https://archive.org/metadata/{urllib.parse.quote(ITEM, safe='')}",
+                  data=payload,
+                  method="POST",
+                  headers={
+                      "Authorization": f"LOW {ACCESS_KEY}:{SECRET_KEY}",
+                      "Content-Type": "application/x-www-form-urlencoded",
+                      "Accept": "application/json",
+                      "X-Accept-Reduced-Priority": "1",
+                      "User-Agent": "DedSec-Archive-Sync/7.0",
+                  },
+              )
+              try:
+                  with urllib.request.urlopen(request, timeout=120) as response:
+                      result = json.load(response)
+                  if not result.get("success", False):
+                      print(
+                          "::warning title=Metadata update rejected::"
+                          f"{result.get('error', result)!r}"
+                      )
+              except Exception as error:
+                  print(
+                      "::warning title=Metadata update deferred::"
+                      f"{error!r}. The archive content is unaffected."
+                  )
+
+          old_files = state.get("files", {}) if isinstance(state.get("files"), dict) else {}
+          old_snapshot = state.get("last_completed_snapshot")
           current_files, current_directories = inventory_working_tree()
           snapshot_payload = json.dumps(
-              {
-                  "directories": current_directories,
-                  "files": current_files,
-              },
+              {"directories": current_directories, "files": current_files},
               ensure_ascii=False,
               sort_keys=True,
               separators=(",", ":"),
           ).encode("utf-8")
           current_snapshot = hashlib.sha256(snapshot_payload).hexdigest()
 
-          remote_metadata, metadata_reliable = fetch_metadata()
-          obsolete_history_names = (
-              sorted(
-                  name
-                  for name in ("git-history.bundle",)
-                  if name in remote_metadata
-              )
-              if metadata_reliable
-              else []
+          changed_paths = sorted(
+              path
+              for path, metadata in current_files.items()
+              if old_files.get(path) != metadata
           )
+          removed_paths = sorted(set(old_files) - set(current_files))
+          unchanged_count = len(current_files) - len(changed_paths)
 
-          uploads: list[str] = []
-          for relative, metadata in current_files.items():
-              previous = old_files.get(relative)
-              remote_entry = remote_metadata.get(metadata["remote_name"])
-
-              remote_size = None
-              if isinstance(remote_entry, dict):
-                  try:
-                      remote_size = int(remote_entry.get("size"))
-                  except (TypeError, ValueError):
-                      remote_size = None
-
-              state_matches = (
-                  isinstance(previous, dict)
-                  and previous.get("sha256") == metadata["sha256"]
-                  and previous.get("type") == metadata["type"]
-              )
-
-              remote_matches = (
-                  not metadata_reliable
-                  or (
-                      remote_entry is not None
-                      and (
-                          metadata["type"] != "file"
-                          or remote_size is None
-                          or remote_size == metadata["size"]
-                      )
-                  )
-              )
-
-              if not state_matches or not remote_matches:
-                  uploads.append(relative)
-
-          removed_from_repository = sorted(set(old_files) - set(current_files))
-
-          expected_remote_names = {
-              metadata["remote_name"] for metadata in current_files.values()
-          }
-
-          orphan_remote_names = (
-              sorted(
-                  name
-                  for name in remote_metadata
-                  if name.startswith("mirror/")
-                  and name not in expected_remote_names
-                  and not name.startswith(".~~")
-              )
-              if metadata_reliable
-              else []
+          remote_files, item_metadata, metadata_reliable = fetch_item()
+          archive_present = ARCHIVE_NAME in remote_files
+          manifest_present = MANIFEST_NAME in remote_files
+          checksums_present = CHECKSUM_NAME in remote_files
+          snapshot_changed = old_snapshot != current_snapshot
+          must_upload_snapshot = (
+              snapshot_changed
+              or not archive_present
+              or not manifest_present
+              or not checksums_present
           )
 
           state["current_run"] = {
+              "status": "running",
               "run_id": RUN_ID,
               "run_attempt": RUN_ATTEMPT,
-              "status": "in_progress",
-              "state_source": state_source,
-              "metadata_reliable_at_start": metadata_reliable,
               "started_at_utc": utc_now(),
-              "source_snapshot": current_snapshot,
-              "initial_sync": initial_sync,
+              "state_source": state_source,
               "total_current_files": len(current_files),
-              "planned_uploads": len(uploads),
-              "planned_repository_deletes": len(removed_from_repository),
-              "planned_orphan_deletes": len(orphan_remote_names),
-              "planned_history_deletes": len(obsolete_history_names),
-              "completed_uploads": 0,
-              "completed_deletes": 0,
-              "last_successful_operation": None,
-              "remaining_uploads": list(uploads),
-              "remaining_deletes": (
-                  list(removed_from_repository)
-                  + list(orphan_remote_names)
-                  + list(obsolete_history_names)
-              ),
+              "snapshot_changed": snapshot_changed,
+              "compact_archive_upload_required": must_upload_snapshot,
           }
           write_local_state()
 
-          changed_paths = list(uploads)
+          archive_path = pathlib.Path(ARCHIVE_NAME)
+          manifest_path = pathlib.Path(MANIFEST_NAME)
+          checksum_path = pathlib.Path(CHECKSUM_NAME)
 
           try:
-              for index, relative in enumerate(uploads, start=1):
-                  metadata = current_files[relative]
-                  local_path, temporary_path = local_payload(relative, metadata)
-
-                  try:
-                      print(f"[Upload {index}/{len(uploads)}] {relative}")
-                      upload_file(local_path, metadata["remote_name"])
-                  finally:
-                      if temporary_path is not None:
-                          temporary_path.unlink(missing_ok=True)
-
-                  state["files"][relative] = metadata
-                  state["directories"] = current_directories
-                  state["current_run"]["completed_uploads"] += 1
-                  state["current_run"]["last_successful_operation"] = {
-                      "action": "upload",
-                      "path": relative,
-                      "remote_name": metadata["remote_name"],
-                      "completed_at_utc": utc_now(),
-                  }
-                  state["current_run"]["remaining_uploads"] = uploads[index:]
-
-                  # Persist after every successful file. If this checkpoint
-                  # itself fails, only the just-finished file may be retried.
-                  persist_state()
-
-              can_delete_from_state = state_source != "new_initial_sync"
-              delete_operations: list[tuple[str, str, str]] = []
-
-              if can_delete_from_state:
-                  delete_operations.extend(
-                      (
-                          relative,
-                          old_files[relative]["remote_name"],
-                          "repository_deleted",
-                      )
-                      for relative in removed_from_repository
-                      if isinstance(old_files.get(relative), dict)
-                      and old_files[relative].get("remote_name")
-                  )
-
-              if metadata_reliable:
-                  delete_operations.extend(
-                      (
-                          remote_name.removeprefix("mirror/"),
-                          remote_name,
-                          "orphan_remote",
-                      )
-                      for remote_name in orphan_remote_names
-                  )
-
-                  delete_operations.extend(
-                      (
-                          remote_name,
-                          remote_name,
-                          "obsolete_git_history_archive",
-                      )
-                      for remote_name in obsolete_history_names
-                  )
-
-              for index, (relative, remote_name, reason) in enumerate(
-                  delete_operations,
-                  start=1,
-              ):
+              archive_uploaded = False
+              if must_upload_snapshot:
                   print(
-                      f"[Delete {index}/{len(delete_operations)}] {remote_name}"
+                      f"Creating one compact archive for {len(current_files)} files "
+                      f"and {len(current_directories)} directories."
                   )
-                  delete_remote(remote_name)
-                  state["files"].pop(relative, None)
-                  state["current_run"]["completed_deletes"] += 1
-                  state["current_run"]["last_successful_operation"] = {
-                      "action": "delete",
-                      "path": relative,
-                      "remote_name": remote_name,
-                      "reason": reason,
-                      "completed_at_utc": utc_now(),
+                  archive_path = make_deterministic_archive(
+                      current_files, current_directories
+                  )
+                  archive_sha256 = sha256_file(archive_path)
+
+                  manifest = {
+                      "schema_version": SCHEMA_VERSION,
+                      "archive_mode": ARCHIVE_MODE,
+                      "generated_at_utc": utc_now(),
+                      "repository": REPOSITORY,
+                      "title": TITLE,
+                      "kind": KIND,
+                      "sites": SITES,
+                      "snapshot_sha256": current_snapshot,
+                      "archive_file": ARCHIVE_NAME,
+                      "archive_sha256": archive_sha256,
+                      "archive_size": archive_path.stat().st_size,
+                      "directories": current_directories,
+                      "file_count": len(current_files),
+                      "files": current_files,
                   }
-                  state["current_run"]["remaining_deletes"] = [
-                      operation[1] for operation in delete_operations[index:]
-                  ]
-                  persist_state()
-
-              state["files"] = current_files
-              state["directories"] = current_directories
-
-              manifest = {
-                  "schema_version": SCHEMA_VERSION,
-                  "generated_at_utc": utc_now(),
-                  "repository": REPOSITORY,
-                  "title": TITLE,
-                  "snapshot_sha256": current_snapshot,
-                  "kind": KIND,
-                  "sites": SITES,
-                  "directories": current_directories,
-                  "file_count": len(current_files),
-                  "files": current_files,
-              }
-              manifest_path = pathlib.Path("manifest.json")
-              manifest_path.write_text(
-                  json.dumps(
-                      manifest,
-                      indent=2,
-                      ensure_ascii=False,
-                      sort_keys=True,
+                  manifest_path.write_text(
+                      json.dumps(
+                          manifest,
+                          indent=2,
+                          ensure_ascii=False,
+                          sort_keys=True,
+                      ) + "\n",
+                      encoding="utf-8",
                   )
-                  + "\n",
-                  encoding="utf-8",
-              )
-              upload_file(manifest_path, "manifest.json")
+                  checksum_path.write_text(
+                      "".join(
+                          f"{metadata['sha256']}  {relative}\n"
+                          for relative, metadata in sorted(current_files.items())
+                      ) + f"{archive_sha256}  {ARCHIVE_NAME}\n",
+                      encoding="utf-8",
+                  )
 
-              checksum_path = pathlib.Path("SHA256SUMS.txt")
-              checksum_lines = [
-                  f"{metadata['sha256']}  {relative}\n"
-                  for relative, metadata in sorted(current_files.items())
-              ]
-              checksum_path.write_text(
-                  "".join(checksum_lines),
-                  encoding="utf-8",
-              )
-              upload_file(checksum_path, "SHA256SUMS.txt")
+                  first_item_write = not metadata_reliable
+                  upload_file(
+                      archive_path,
+                      ARCHIVE_NAME,
+                      include_item_metadata=first_item_write,
+                  )
+                  upload_file(manifest_path, MANIFEST_NAME)
+                  upload_file(checksum_path, CHECKSUM_NAME)
+                  archive_uploaded = True
+                  state["archive"] = {
+                      "remote_name": ARCHIVE_NAME,
+                      "sha256": archive_sha256,
+                      "size": archive_path.stat().st_size,
+                      "snapshot_sha256": current_snapshot,
+                      "updated_at_utc": utc_now(),
+                  }
+              else:
+                  print("Working-tree snapshot is unchanged; compact archive upload skipped.")
 
+              # Only live websites are queued for Wayback. No repository, commit,
+              # branch, tag, raw/blob or commit-pinned GitHub URLs are ever queued.
               wayback_urls = build_wayback_urls(
                   changed_paths,
                   include_all=not state["wayback"].get(
-                      "initial_queue_created",
-                      False,
+                      "initial_queue_created", False
                   ),
               )
-
               pending = list(state["wayback"].get("pending", []))
               pending_set = set(pending)
               for url in wayback_urls:
                   if url not in pending_set:
                       pending.append(url)
                       pending_set.add(url)
-
               state["wayback"]["pending"] = pending
+              state["wayback"]["remaining"] = len(pending)
               state["wayback"]["initial_queue_created"] = True
               state["wayback"]["last_queue_update_at_utc"] = utc_now()
               state["wayback"]["last_queue_added"] = len(wayback_urls)
+              sanitize_wayback(state["wayback"])
 
-              expected = {
-                  metadata["remote_name"] for metadata in current_files.values()
-              }
-              expected.update({
-                  IA_STATE_NAME,
-                  "manifest.json",
-                  "SHA256SUMS.txt",
-              })
-
-              final_metadata: dict[str, dict] = {}
-              final_metadata_reliable = False
-              for attempt in range(1, 7):
-                  final_metadata, final_metadata_reliable = fetch_metadata()
-                  if final_metadata_reliable:
-                      missing = expected - set(final_metadata)
-                      history_still_present = sorted(
-                          name
-                          for name in ("git-history.bundle",)
-                          if name in final_metadata
-                      )
-                      if not missing and not history_still_present:
-                          break
-                      print(
-                          "Final verification waiting: "
-                          f"{len(missing)} current files missing; "
-                          f"{len(history_still_present)} history artifacts still visible."
-                      )
-                  else:
-                      print("Final metadata verification is temporarily unavailable.")
-                  time.sleep(delay_for(attempt))
-              else:
-                  final_metadata_reliable = False
-
-              legacy_files: list[str] = []
-              if final_metadata_reliable:
-                  legacy_files = sorted(
-                      name
-                      for name in final_metadata
-                      if (
-                          name.startswith(LEGACY_PREFIXES)
+              # Purge only explicitly historical artifacts from the old design.
+              # Old mirror/* working-tree objects are intentionally not mass-deleted
+              # here because thousands of DELETE tasks reproduce the IA SlowDown
+              # failure. They are no longer updated and cannot capture future pushes.
+              history_candidates: list[str] = []
+              if metadata_reliable:
+                  for name in remote_files:
+                      lowered = name.lower()
+                      legacy_archive = any(
+                          name.startswith(prefix)
                           or (
                               name.startswith(".~~")
-                              and name.removeprefix(".~~").startswith(
-                                  LEGACY_PREFIXES
-                              )
+                              and name.removeprefix(".~~").startswith(prefix)
                           )
+                          for prefix in LEGACY_PREFIXES
                       )
-                      and name not in expected
-                  )
+                      history_object = (
+                          "git-history" in lowered
+                          or lowered.startswith("history/files/")
+                          or legacy_archive
+                      )
+                      if history_object and name not in {
+                          ARCHIVE_NAME, MANIFEST_NAME, CHECKSUM_NAME, IA_STATE_NAME
+                      }:
+                          history_candidates.append(name)
 
-                  for name in legacy_files:
-                      print(f"Deleting legacy timestamped archive: {name}")
+              deleted_history = 0
+              cleanup_pending = list(sorted(set(history_candidates)))
+              # Keep cleanup bounded so it can never recreate the old hundreds-of-
+              # requests failure. Remaining historical objects are retried next run.
+              for name in cleanup_pending[:5]:
+                  try:
+                      print(f"Deleting historical archive object: {name}")
                       delete_remote(name)
+                      deleted_history += 1
+                  except Exception as error:
+                      print(
+                          "::warning title=Historical cleanup deferred::"
+                          f"{name}: {error!r}"
+                      )
+                      break
 
+              # Correct old item metadata that mentioned Git history. This uses the
+              # official Metadata API and accepts reduced priority to avoid 429s.
+              if metadata_reliable:
+                  patch_item_metadata(item_metadata)
+
+              verified = False
+              final_files: dict[str, dict] = {}
+              for attempt in range(1, 7):
+                  final_files, _, reliable = fetch_item()
+                  if reliable and {
+                      ARCHIVE_NAME, MANIFEST_NAME, CHECKSUM_NAME
+                  }.issubset(final_files):
+                      verified = True
+                      break
+                  wait = delay_for(attempt)
+                  print(f"Compact archive verification waiting {wait}s.")
+                  time.sleep(wait)
+
+              state["files"] = current_files
+              state["directories"] = current_directories
               state["last_completed_snapshot"] = current_snapshot
               state["last_completed_at_utc"] = utc_now()
               state["last_completed_at_greece"] = greece_now()
-              state["initial_sync_completed"] = final_metadata_reliable
+              state["initial_sync_completed"] = verified
               state["last_result"] = {
-                  "initial_full_sync": initial_sync,
-                  "uploaded_new_or_changed": len(uploads),
-                  "deleted_from_repository": (
-                      len(removed_from_repository)
-                      if can_delete_from_state
-                      else 0
+                  "snapshot_changed": snapshot_changed,
+                  "archive_uploaded": archive_uploaded,
+                  "changed_or_added_files": len(changed_paths),
+                  "deleted_from_repository": len(removed_paths),
+                  "unchanged_files": unchanged_count,
+                  "mirror_verified": verified,
+                  "deleted_history_archives": deleted_history,
+                  "history_cleanup_pending": max(
+                      0, len(cleanup_pending) - deleted_history
                   ),
-                  "deleted_orphan_remote_files": (
-                      len(orphan_remote_names)
-                      if metadata_reliable
-                      else 0
+                  "legacy_mirror_objects_visible": (
+                      sum(1 for name in final_files if name.startswith("mirror/"))
+                      if verified else None
                   ),
-                  "deleted_legacy_archives": len(legacy_files),
-                  "deleted_history_archives": len(obsolete_history_names),
-                  "unchanged_files": len(current_files) - len(uploads),
-                  "mirror_verified": final_metadata_reliable,
-                  "wayback_pending": len(state["wayback"]["pending"]),
+                  "wayback_pending": len(state["wayback"].get("pending", [])),
               }
               state["current_run"].update({
-                  "status": (
-                      "complete"
-                      if final_metadata_reliable
-                      else "uploaded_unverified"
-                  ),
+                  "status": "complete" if verified else "uploaded_unverified",
                   "completed_at_utc": utc_now(),
-                  "remaining_uploads": [],
-                  "remaining_deletes": [],
               })
-              persist_state()
+
+              # One remote checkpoint per target run, not one per source file.
+              # If IA is still overloaded after the long retry window, the local
+              # GitHub artifact remains authoritative and the next run selects the
+              # newest state by timestamp instead of blindly preferring remote state.
+              state["state_updated_at_utc"] = utc_now()
+              state["last_result"]["remote_state_checkpoint_uploaded"] = False
+              write_local_state()
+              try:
+                  upload_file(LOCAL_STATE_PATH, IA_STATE_NAME)
+                  state["last_result"]["remote_state_checkpoint_uploaded"] = True
+                  state["state_updated_at_utc"] = utc_now()
+                  write_local_state()
+              except Exception as checkpoint_error:
+                  print(
+                      "::warning title=Remote checkpoint deferred::"
+                      f"{checkpoint_error!r}. Local GitHub state will be used next run."
+                  )
 
           except BaseException as error:
               state["current_run"]["status"] = "failed"
               state["current_run"]["failed_at_utc"] = utc_now()
-              state["current_run"]["error"] = (
-                  f"{type(error).__name__}: {error}"
-              )
+              state["current_run"]["error"] = f"{type(error).__name__}: {error}"
               state["current_run"]["traceback"] = traceback.format_exc()[-8000:]
+              state["state_updated_at_utc"] = utc_now()
               write_local_state()
-
-              try:
-                  upload_file(
-                      LOCAL_STATE_PATH,
-                      IA_STATE_NAME,
-                      include_item_metadata=first_item_write,
-                  )
-              except Exception as checkpoint_error:
-                  print(
-                      "::warning title=Remote checkpoint failed::"
-                      f"{checkpoint_error!r}. "
-                      "The local checkpoint artifact will still be saved."
-                  )
-
+              # Do not perform an additional remote checkpoint upload on failure;
+              # that was a major source of 503 SlowDown amplification. The local
+              # GitHub artifact below preserves enough state for diagnostics.
               raise
 
           with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8") as output:
               output.write(f"slug={SLUG}\n")
               output.write(f"status={state['current_run']['status']}\n")
               output.write(
-                  f"uploaded={state['last_result']['uploaded_new_or_changed']}\n"
+                  f"uploaded={int(bool(state['last_result'].get('archive_uploaded')))}\n"
               )
               output.write(
-                  f"wayback_pending={len(state['wayback']['pending'])}\n"
+                  f"wayback_pending={len(state['wayback'].get('pending', []))}\n"
               )
           PY
 
@@ -1486,7 +1376,7 @@ jobs:
       SELECTED_TARGETS: ${{ needs.prepare.outputs.selected_targets }}
       IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
       IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
-      MAX_URLS_PER_RUN: "360"
+      MAX_URLS_PER_RUN: "120"
       MAX_SECONDS_PER_RUN: "10800"
 
     steps:
@@ -1509,7 +1399,11 @@ jobs:
           import urllib.request
           from datetime import datetime, timezone
 
-          targets = json.loads(os.environ["SELECTED_TARGETS"])
+          targets = [
+              target
+              for target in json.loads(os.environ["SELECTED_TARGETS"])
+              if target.get("kind") == "website"
+          ]
           access = os.environ["IA_ACCESS_KEY"]
           secret = os.environ["IA_SECRET_KEY"]
           max_urls = int(os.environ["MAX_URLS_PER_RUN"])
@@ -1529,6 +1423,7 @@ jobs:
               )
 
           def upload_state(target: dict, state: dict) -> None:
+              state["state_updated_at_utc"] = utc_now()
               path = pathlib.Path(f"state-{target['slug']}.json")
               path.write_text(
                   json.dumps(
@@ -1550,13 +1445,14 @@ jobs:
                       "--show-error",
                       "--fail-with-body",
                       "--location",
+                      "--location-trusted",
                       "--retry",
-                      "8",
+                      "12",
                       "--retry-all-errors",
                       "--retry-delay",
-                      "10",
+                      "30",
                       "--retry-max-time",
-                      "1200",
+                      "2400",
                       "--header",
                       f"Authorization: LOW {access}:{secret}",
                       "--header",
@@ -1589,7 +1485,7 @@ jobs:
                       headers={
                           "Accept": "application/json",
                           "Cache-Control": "no-cache",
-                          "User-Agent": "DedSec-Wayback-Queue/6.0",
+                          "User-Agent": "DedSec-Wayback-Queue/7.0",
                       },
                   )
 
@@ -1659,7 +1555,7 @@ jobs:
                       headers={
                           "Authorization": f"LOW {access}:{secret}",
                           "Accept": "application/json",
-                          "User-Agent": "DedSec-Wayback-Queue/6.0",
+                          "User-Agent": "DedSec-Wayback-Queue/7.0",
                       },
                   )
 
@@ -1732,8 +1628,8 @@ jobs:
                   continue
               state.pop("git_bundle", None)
               state.pop("last_completed_commit", None)
-              state["schema_version"] = 6
-              state["archive_mode"] = "working_tree_only"
+              state["schema_version"] = 7
+              state["archive_mode"] = "single_current_working_tree_archive"
               current_run = state.get("current_run")
               if isinstance(current_run, dict):
                   current_run.pop("source_commit", None)
@@ -1846,8 +1742,11 @@ jobs:
               state["wayback"]["last_processed_at_utc"] = utc_now()
               state["wayback"]["remaining"] = len(pending)
 
-              # Checkpoint after every processed URL.
-              upload_state(target, state)
+              # Persist in batches instead of after every URL. Reprocessing up to
+              # 19 accepted URLs after an interrupted job is preferable to creating
+              # hundreds of S3 writes and triggering Internet Archive SlowDown.
+              if processed % 20 == 0:
+                  upload_state(target, state)
 
               if result == "transient_failure":
                   time.sleep(20)
@@ -1960,7 +1859,8 @@ jobs:
           import urllib.request
           from datetime import datetime, timezone
 
-          SCHEMA_VERSION = 6
+          SCHEMA_VERSION = 7
+          ARCHIVE_MODE = "single_current_working_tree_archive"
           CONTROLLER = pathlib.Path("controller")
           UPDATE_PATH = CONTROLLER / "update.json"
           README_PATH = CONTROLLER / "README.md"
@@ -1987,7 +1887,7 @@ jobs:
                       headers={
                           "Accept": "application/json",
                           "Cache-Control": "no-cache",
-                          "User-Agent": "DedSec-Controller-State/6.0",
+                          "User-Agent": "DedSec-Controller-State/7.0",
                       },
                   )
 
@@ -2068,7 +1968,7 @@ jobs:
               state.pop("git_bundle", None)
               state.pop("last_completed_commit", None)
               state["schema_version"] = SCHEMA_VERSION
-              state["archive_mode"] = "working_tree_only"
+              state["archive_mode"] = ARCHIVE_MODE
               state.setdefault("target", {})
               state["target"].update({
                   "repository": target["repository"],
@@ -2084,6 +1984,11 @@ jobs:
                       if site.strip()
                   ],
               })
+              files = state.get("files")
+              if isinstance(files, dict):
+                  for metadata in files.values():
+                      if isinstance(metadata, dict):
+                          metadata.pop("remote_name", None)
               current_run = state.get("current_run")
               if isinstance(current_run, dict):
                   current_run.pop("source_commit", None)
@@ -2139,17 +2044,22 @@ jobs:
               artifact = load_artifact_state(target["slug"])
               previous = aggregate["targets"].get(target["slug"])
 
-              # Prefer remote state because Wayback updates it after sync.
-              # Fall back to the local artifact, then the previous controller copy.
-              state = (
-                  remote
-                  if isinstance(remote, dict)
-                  else artifact
-                  if isinstance(artifact, dict)
-                  else previous
-                  if isinstance(previous, dict)
-                  else None
-              )
+              # Choose the newest available state. Wayback normally makes remote
+              # state newest; if an IA checkpoint was rate-limited, the local sync
+              # artifact can safely win instead of losing the completed snapshot.
+              candidates = [
+                  candidate
+                  for candidate in (remote, artifact, previous)
+                  if isinstance(candidate, dict)
+              ]
+              state = max(
+                  candidates,
+                  key=lambda candidate: str(
+                      candidate.get("state_updated_at_utc")
+                      or candidate.get("last_completed_at_utc")
+                      or ""
+                  ),
+              ) if candidates else None
 
               if state is None:
                   print(
@@ -2166,11 +2076,11 @@ jobs:
               "Each Internet Archive item stores archive-state/update.json. "
               "This file is the synchronized combined copy."
           )
-          aggregate["archive_mode"] = "working_tree_only"
+          aggregate["archive_mode"] = ARCHIVE_MODE
           aggregate["resume_behavior"] = (
-              "Current working-tree file synchronization checkpoints after every "
-              "successful file. Git history is never archived. Wayback is limited "
-              "to live website URLs."
+              "Each target stores one current-working-tree TAR.GZ plus a manifest, "
+              "checksums and one compact state checkpoint. Git/commit/push history "
+              "is never archived. Wayback is limited to live website URLs."
           )
 
           UPDATE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -2238,51 +2148,75 @@ jobs:
               current = state.get("current_run", {})
               result = state.get("last_result", {})
               wayback = state.get("wayback", {})
-              ia_url = (
-                  "https://archive.org/details/" + target["ia_item"]
-              )
+              ia_url = "https://archive.org/details/" + target["ia_item"]
 
+              changed = result.get(
+                  "changed_or_added_files",
+                  result.get("uploaded_new_or_changed", 0),
+              )
               lines = [
                   start,
                   f"### {target['title']}",
                   "",
                   (
-                      "**Current file-sync status:** "
+                      "**Current archive status:** "
                       f"`{current.get('status', 'not_started')}`  "
                   ),
                   (
                       "**Last complete or attempted save:** "
                       f"{state.get('last_completed_at_greece') or 'Not completed yet'}  "
                   ),
-                  f"**Current mirrored files:** {len(state.get('files', {}))}  ",
+                  f"**Current working-tree files:** {len(state.get('files', {}))}  ",
                   (
-                      "**Latest file update:** "
-                      f"{result.get('uploaded_new_or_changed', 0)} uploaded, "
+                      "**Latest working-tree change:** "
+                      f"{changed} changed/added, "
                       f"{result.get('deleted_from_repository', 0)} deleted, "
                       f"{result.get('unchanged_files', 0)} unchanged.  "
                   ),
                   (
-                      "**Mirror verification:** "
+                      "**Compact archive uploaded this run:** "
+                      f"`{result.get('archive_uploaded', False)}`  "
+                  ),
+                  (
+                      "**Archive verification:** "
                       f"`{result.get('mirror_verified', False)}`  "
                   ),
                   (
                       "**Scheduled time(s):** "
                       f"{target['window']}  "
                   ),
-                  "**Archive mode:** Current working-tree files/directories only; no Git history.",
-                  "",
-                  f"- [Internet Archive current mirror]({ia_url})",
+                  (
+                      "**Archive mode:** One current `current-working-tree.tar.gz` "
+                      "plus manifest/checksums/state; `.git`, commits and push history "
+                      "are excluded."
+                  ),
               ]
 
+              cleanup_pending = result.get("history_cleanup_pending", 0)
+              if cleanup_pending:
+                  lines.append(
+                      f"**Historical cleanup still pending:** {cleanup_pending} object(s).  "
+                  )
+
+              legacy_mirrors = result.get("legacy_mirror_objects_visible")
+              if isinstance(legacy_mirrors, int) and legacy_mirrors > 0:
+                  lines.append(
+                      f"**Legacy pre-migration mirror objects still visible:** {legacy_mirrors}. "
+                      "They are frozen and are not used for future backups.  "
+                  )
+
               if target.get("kind") == "website":
-                  lines.insert(
-                      10,
+                  lines.extend([
                       f"**Wayback queue remaining:** {len(wayback.get('pending', []))}  ",
-                  )
-                  lines.insert(
-                      11,
                       f"**Wayback captures accepted:** {wayback.get('completed', 0)}  ",
-                  )
+                  ])
+
+              lines.extend([
+                  "",
+                  f"- [Internet Archive working-tree archive]({ia_url})",
+              ])
+
+              if target.get("kind") == "website":
                   for site in target.get("sites", []):
                       lines.append(
                           f"- [{site} Wayback history]"
@@ -2291,10 +2225,7 @@ jobs:
 
               lines.extend([
                   "",
-                  (
-                      "This section is generated from "
-                      "`update.json`."
-                  ),
+                  "This section is generated from `update.json`.",
                   end,
               ])
               return "\n".join(lines)
