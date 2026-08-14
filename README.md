@@ -183,13 +183,13 @@ This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 ### DedSec GitHub Profile Repository
 
-**Current file-sync status:** `complete`  
+**Current file-sync status:** `in_progress`  
 **Last complete or attempted save:** 2026-08-09 20:04:20 EEST  
-**Current mirrored files:** 9  
+**Current mirrored files:** 8  
 **Latest file update:** 3 uploaded, 0 deleted, 6 unchanged.  
 **Mirror verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
 
@@ -199,13 +199,13 @@ This section is generated from `update.json`.
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 ### Corrupted Files Project
 
-**Current file-sync status:** `complete`  
+**Current file-sync status:** `failed`  
 **Last complete or attempted save:** 2026-08-09 20:03:59 EEST  
-**Current mirrored files:** 1721  
+**Current mirrored files:** 2141  
 **Latest file update:** 0 uploaded, 0 deleted, 1721 unchanged.  
 **Mirror verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots)
 
@@ -215,13 +215,13 @@ This section is generated from `update.json`.
 <!-- POCKET_AI_ARCHIVE_STATUS_START -->
 ### Pocket AI
 
-**Current file-sync status:** `complete`  
-**Last complete or attempted save:** 2026-08-09 20:03:39 EEST  
+**Current file-sync status:** `uploaded_unverified`  
+**Last complete or attempted save:** 2026-08-14 14:55:20 EEST  
 **Current mirrored files:** 128  
-**Latest file update:** 0 uploaded, 0 deleted, 128 unchanged.  
-**Mirror verification:** `True`  
+**Latest file update:** 54 uploaded, 1 deleted, 74 unchanged.  
+**Mirror verification:** `False`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots)
 
@@ -231,13 +231,13 @@ This section is generated from `update.json`.
 <!-- PRAYING_PROJECT_ARCHIVE_STATUS_START -->
 ### Praying Project
 
-**Current file-sync status:** `not_started`  
-**Last complete or attempted save:** Not completed yet  
-**Current mirrored files:** 0  
-**Latest file update:** 0 uploaded, 0 deleted, 0 unchanged.  
-**Mirror verification:** `False`  
+**Current file-sync status:** `complete`  
+**Last complete or attempted save:** 2026-08-14 14:28:19 EEST  
+**Current mirrored files:** 74  
+**Latest file update:** 74 uploaded, 0 deleted, 0 unchanged.  
+**Mirror verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-praying-project-repository-snapshots)
 
@@ -247,13 +247,13 @@ This section is generated from `update.json`.
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 ### Offline Survival Project
 
-**Current file-sync status:** `complete`  
+**Current file-sync status:** `failed`  
 **Last complete or attempted save:** 2026-08-09 20:03:43 EEST  
-**Current mirrored files:** 1409  
+**Current mirrored files:** 1410  
 **Latest file update:** 0 uploaded, 0 deleted, 1409 unchanged.  
 **Mirror verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots)
 
@@ -263,13 +263,13 @@ This section is generated from `update.json`.
 <!-- HACKING_GUIDE_ARCHIVE_STATUS_START -->
 ### Hacking Guide Project
 
-**Current file-sync status:** `not_started`  
+**Current file-sync status:** `failed`  
 **Last complete or attempted save:** Not completed yet  
-**Current mirrored files:** 0  
+**Current mirrored files:** 6  
 **Latest file update:** 0 uploaded, 0 deleted, 0 unchanged.  
 **Mirror verification:** `False`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-hacking-guide-project-repository-snapshots)
 
@@ -279,13 +279,13 @@ This section is generated from `update.json`.
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 ### Save DedSec Project
 
-**Current file-sync status:** `not_started`  
-**Last complete or attempted save:** Not completed yet  
-**Current mirrored files:** 0  
-**Latest file update:** 0 uploaded, 0 deleted, 0 unchanged.  
+**Current file-sync status:** `failed`  
+**Last complete or attempted save:** 2026-08-14 13:36:42 EEST  
+**Current mirrored files:** 5  
+**Latest file update:** 5 uploaded, 0 deleted, 0 unchanged.  
 **Mirror verification:** `False`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** Current working-tree files/directories only; no Git history.  
+**Archive mode:** Current working-tree files/directories only; no Git history.
 
 - [Internet Archive current mirror](https://archive.org/details/dedsec1121fk-save-dedsec-project-repository-snapshots)
 
