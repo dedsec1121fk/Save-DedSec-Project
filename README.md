@@ -189,14 +189,15 @@ This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 ### DedSec GitHub Profile Repository
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 18:03:16 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:09:29 EEST  
 **Current working-tree files:** 8  
-**Latest working-tree change:** 8 changed/added, 0 deleted, 0 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 8 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 8. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
 
@@ -206,14 +207,15 @@ This section is generated from `update.json`.
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 ### Corrupted Files Project
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 18:15:47 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:08:58 EEST  
 **Current working-tree files:** 2148  
-**Latest working-tree change:** 2148 changed/added, 1 deleted, 0 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 2141. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots)
 
@@ -223,14 +225,15 @@ This section is generated from `update.json`.
 <!-- POCKET_AI_ARCHIVE_STATUS_START -->
 ### Pocket AI
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 18:34:32 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:08:29 EEST  
 **Current working-tree files:** 128  
-**Latest working-tree change:** 128 changed/added, 0 deleted, 0 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 128. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots)
 
@@ -240,14 +243,15 @@ This section is generated from `update.json`.
 <!-- PRAYING_PROJECT_ARCHIVE_STATUS_START -->
 ### Praying Project
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 18:45:02 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:07:51 EEST  
 **Current working-tree files:** 74  
-**Latest working-tree change:** 74 changed/added, 0 deleted, 0 unchanged.  
+**Latest working-tree change:** 1 changed/added, 0 deleted, 73 unchanged.  
 **Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 74. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-praying-project-repository-snapshots)
 
@@ -257,14 +261,15 @@ This section is generated from `update.json`.
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 ### Offline Survival Project
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 18:55:34 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:07:19 EEST  
 **Current working-tree files:** 807  
-**Latest working-tree change:** 807 changed/added, 1407 deleted, 0 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 807 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 1410. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots)
 
@@ -274,14 +279,15 @@ This section is generated from `update.json`.
 <!-- HACKING_GUIDE_ARCHIVE_STATUS_START -->
 ### Hacking Guide Project
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 19:06:04 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:06:49 EEST  
 **Current working-tree files:** 334  
-**Latest working-tree change:** 334 changed/added, 0 deleted, 0 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 6. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-hacking-guide-project-repository-snapshots)
 
@@ -291,14 +297,15 @@ This section is generated from `update.json`.
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 ### Save DedSec Project
 
-**Current archive status:** `uploaded_unverified`  
-**Last complete or attempted save:** 2026-08-14 19:16:19 EEST  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-16 05:06:11 EEST  
 **Current working-tree files:** 5  
-**Latest working-tree change:** 5 changed/added, 0 deleted, 0 unchanged.  
+**Latest working-tree change:** 2 changed/added, 0 deleted, 3 unchanged.  
 **Compact archive uploaded this run:** `True`  
-**Archive verification:** `False`  
+**Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 5. They are frozen and are not used for future backups.  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-save-dedsec-project-repository-snapshots)
 
