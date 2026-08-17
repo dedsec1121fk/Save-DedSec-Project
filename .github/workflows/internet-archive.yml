@@ -42,7 +42,9 @@ permissions:
   contents: write
 
 concurrency:
-  group: dedsec-incremental-archive-${{ github.event.schedule || inputs.group || github.run_id }}
+  # One global lock for the Internet Archive account. Manual and scheduled
+  # runs can no longer overlap and compete for the same remote rate limits.
+  group: dedsec-incremental-archive
   cancel-in-progress: false
 
 jobs:
@@ -396,32 +398,25 @@ jobs:
           echo "::add-mask::$IA_ACCESS_KEY"
           echo "::add-mask::$IA_SECRET_KEY"
 
-      - name: Stagger parallel Internet Archive requests
+      - name: Cool down before Internet Archive requests
         shell: bash
         run: |
           set -euo pipefail
 
-          if [[ "${TARGET_COUNT:-1}" -le 1 ]]; then
-            delay=0
-          else
-            delay="$(
-              TARGET_SLUG="$TARGET_SLUG" python3 - <<'PY'
+          delay="$(
+            TARGET_SLUG="$TARGET_SLUG" python3 - <<'PY'
           import hashlib
           import os
 
           slug = os.environ["TARGET_SLUG"]
           seed = int(hashlib.sha256(slug.encode()).hexdigest()[:8], 16)
-          print(seed % 19)
+          # 45-74 seconds of deterministic spacing between serial target jobs.
+          print(45 + (seed % 30))
           PY
-            )"
-          fi
+          )"
 
-          if [[ "$delay" -gt 0 ]]; then
-            echo "Waiting ${delay}s before the first Internet Archive request."
-            sleep "$delay"
-          else
-            echo "No startup delay is needed for this target."
-          fi
+          echo "Cooling down ${delay}s before this target touches Internet Archive."
+          sleep "$delay"
 
       - name: Synchronize compact working-tree archive
         id: sync
@@ -450,7 +445,7 @@ jobs:
           import urllib.error
           import urllib.parse
           import urllib.request
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
           from zoneinfo import ZoneInfo
 
           SCHEMA_VERSION = 7
@@ -498,10 +493,17 @@ jobs:
                   "%Y-%m-%d %H:%M:%S %Z"
               )
 
+          def redact_sensitive(value: object) -> str:
+              text = str(value)
+              for secret_value in (ACCESS_KEY, SECRET_KEY):
+                  if secret_value:
+                      text = text.replace(secret_value, "[REDACTED]")
+              return text
+
           def delay_for(attempt: int, retry_after: str | None = None) -> int:
               if retry_after and retry_after.isdigit():
-                  return min(300, max(1, int(retry_after)))
-              return min(180, 15 * (2 ** min(attempt - 1, 4)))
+                  return min(1800, max(1, int(retry_after)))
+              return min(600, 20 * (2 ** min(attempt - 1, 5)))
 
           def sha256_file(path: pathlib.Path) -> str:
               digest = hashlib.sha256()
@@ -586,11 +588,11 @@ jobs:
                   over_limit = str(payload.get("over_limit", "0")) == "1"
                   return (not over_limit), str(payload.get("detail", ""))
               except Exception as error:
-                  # Capacity probing is advisory. Upload curl still has its own
-                  # robust retry policy if the probe endpoint is unavailable.
-                  return True, f"capacity check unavailable: {error!r}"
+                  # Unknown capacity is treated conservatively. It is safer to
+                  # defer one archive run than to guess and trigger 429/SlowDown.
+                  return False, f"capacity check unavailable: {error!r}"
 
-          def wait_for_s3_capacity(max_waits: int = 12) -> None:
+          def wait_for_s3_capacity(max_waits: int = 6) -> None:
               for attempt in range(1, max_waits + 1):
                   ready, detail = check_s3_capacity()
                   if ready:
@@ -601,9 +603,9 @@ jobs:
                       f"before request ({attempt}/{max_waits}). {detail[:300]}"
                   )
                   time.sleep(wait)
-              print(
-                  "::warning title=Internet Archive queue still busy::"
-                  "Proceeding with curl retries after the capacity wait window."
+              raise RuntimeError(
+                  "Internet Archive capacity remained unavailable/over-limit; "
+                  "upload deferred instead of forcing a request."
               )
 
           def run_curl(arguments: list[str]) -> None:
@@ -616,12 +618,12 @@ jobs:
                       "--location",
                       "--location-trusted",
                       "--retry",
-                      "12",
-                      "--retry-all-errors",
+                      "8",
+                      "--retry-connrefused",
                       "--retry-delay",
-                      "30",
+                      "0",
                       "--retry-max-time",
-                      "2400",
+                      "3600",
                       "--connect-timeout",
                       "45",
                       *arguments,
@@ -666,6 +668,9 @@ jobs:
                   "--upload-file", str(local_path),
                   remote_url("https://s3.us.archive.org", remote_name),
               ])
+              # One successful PUT at a time, with breathing room before the
+              # next capacity probe/write on the same Internet Archive account.
+              time.sleep(30)
 
           def delete_remote(remote_name: str) -> None:
               wait_for_s3_capacity()
@@ -677,10 +682,10 @@ jobs:
                       "--location",
                       "--location-trusted",
                       "--request", "DELETE",
-                      "--retry", "12",
-                      "--retry-all-errors",
-                      "--retry-delay", "30",
-                      "--retry-max-time", "2400",
+                      "--retry", "8",
+                      "--retry-connrefused",
+                      "--retry-delay", "0",
+                      "--retry-max-time", "3600",
                       "--header", f"Authorization: LOW {ACCESS_KEY}:{SECRET_KEY}",
                       "--header", "x-archive-cascade-delete:1",
                       # Do not preserve the deleted object under history/files/.
@@ -1109,11 +1114,39 @@ jobs:
           removed_paths = sorted(set(old_files) - set(current_files))
           unchanged_count = len(current_files) - len(changed_paths)
 
-          remote_files, item_metadata, metadata_reliable = fetch_item()
-          archive_present = ARCHIVE_NAME in remote_files
-          manifest_present = MANIFEST_NAME in remote_files
-          checksums_present = CHECKSUM_NAME in remote_files
           snapshot_changed = old_snapshot != current_snapshot
+          archive_state = state.get("archive") if isinstance(state.get("archive"), dict) else {}
+          known_remote_complete = (
+              bool(state.get("initial_sync_completed"))
+              and archive_state.get("snapshot_sha256") == current_snapshot
+          )
+
+          # Do not hit Internet Archive on every scheduled run when nothing has
+          # changed. A known-good unchanged mirror is remotely rechecked at most
+          # once every seven days.
+          verification_due = True
+          last_verified = state.get("last_remote_verified_at_utc")
+          if known_remote_complete and isinstance(last_verified, str):
+              try:
+                  last_dt = datetime.fromisoformat(last_verified.replace("Z", "+00:00"))
+                  verification_due = (
+                      datetime.now(timezone.utc) - last_dt >= timedelta(days=7)
+                  )
+              except ValueError:
+                  verification_due = True
+
+          remote_files: dict[str, dict] = {}
+          item_metadata: dict = {}
+          metadata_reliable = False
+          if snapshot_changed or not known_remote_complete or verification_due:
+              remote_files, item_metadata, metadata_reliable = fetch_item()
+              archive_present = ARCHIVE_NAME in remote_files
+              manifest_present = MANIFEST_NAME in remote_files
+              checksums_present = CHECKSUM_NAME in remote_files
+          else:
+              archive_present = manifest_present = checksums_present = True
+              print("Unchanged known-good snapshot; remote metadata read skipped.")
+
           must_upload_snapshot = (
               snapshot_changed
               or not archive_present
@@ -1252,7 +1285,7 @@ jobs:
               cleanup_pending = list(sorted(set(history_candidates)))
               # Keep cleanup bounded so it can never recreate the old hundreds-of-
               # requests failure. Remaining historical objects are retried next run.
-              for name in cleanup_pending[:5]:
+              for name in cleanup_pending[:1]:
                   try:
                       print(f"Deleting historical archive object: {name}")
                       delete_remote(name)
@@ -1269,18 +1302,33 @@ jobs:
               if metadata_reliable:
                   patch_item_metadata(item_metadata)
 
-              verified = False
               final_files: dict[str, dict] = {}
-              for attempt in range(1, 7):
-                  final_files, _, reliable = fetch_item()
-                  if reliable and {
-                      ARCHIVE_NAME, MANIFEST_NAME, CHECKSUM_NAME
-                  }.issubset(final_files):
-                      verified = True
-                      break
-                  wait = delay_for(attempt)
-                  print(f"Compact archive verification waiting {wait}s.")
-                  time.sleep(wait)
+              required_remote_files = {ARCHIVE_NAME, MANIFEST_NAME, CHECKSUM_NAME}
+              if not must_upload_snapshot and known_remote_complete and not verification_due:
+                  verified = True
+              elif (
+                  not must_upload_snapshot
+                  and metadata_reliable
+                  and required_remote_files.issubset(remote_files)
+              ):
+                  # The weekly metadata read already proved the mirror is intact;
+                  # do not immediately read the exact same metadata a second time.
+                  verified = True
+                  final_files = remote_files
+                  state["last_remote_verified_at_utc"] = utc_now()
+              else:
+                  verified = False
+                  # One immediate verification plus at most two backed-off retries.
+                  # Six metadata polls per target caused unnecessary pressure.
+                  for attempt in range(1, 4):
+                      final_files, _, reliable = fetch_item()
+                      if reliable and required_remote_files.issubset(final_files):
+                          verified = True
+                          state["last_remote_verified_at_utc"] = utc_now()
+                          break
+                      wait = delay_for(attempt)
+                      print(f"Compact archive verification waiting {wait}s.")
+                      time.sleep(wait)
 
               state["files"] = current_files
               state["directories"] = current_directories
@@ -1317,22 +1365,35 @@ jobs:
               state["state_updated_at_utc"] = utc_now()
               state["last_result"]["remote_state_checkpoint_uploaded"] = False
               write_local_state()
-              try:
-                  upload_file(LOCAL_STATE_PATH, IA_STATE_NAME)
-                  state["last_result"]["remote_state_checkpoint_uploaded"] = True
-                  state["state_updated_at_utc"] = utc_now()
-                  write_local_state()
-              except Exception as checkpoint_error:
-                  print(
-                      "::warning title=Remote checkpoint deferred::"
-                      f"{checkpoint_error!r}. Local GitHub state will be used next run."
-                  )
+              remote_checkpoint_needed = (
+                  archive_uploaded
+                  or bool(wayback_urls)
+                  or deleted_history > 0
+                  or verification_due
+              )
+              if remote_checkpoint_needed:
+                  try:
+                      upload_file(LOCAL_STATE_PATH, IA_STATE_NAME)
+                      state["last_result"]["remote_state_checkpoint_uploaded"] = True
+                      state["state_updated_at_utc"] = utc_now()
+                      write_local_state()
+                  except Exception as checkpoint_error:
+                      print(
+                          "::warning title=Remote checkpoint deferred::"
+                          f"{redact_sensitive(checkpoint_error)}. Local GitHub state will be used next run."
+                      )
+              else:
+                  print("No remote changes; Internet Archive checkpoint upload skipped.")
 
           except BaseException as error:
               state["current_run"]["status"] = "failed"
               state["current_run"]["failed_at_utc"] = utc_now()
-              state["current_run"]["error"] = f"{type(error).__name__}: {error}"
-              state["current_run"]["traceback"] = traceback.format_exc()[-8000:]
+              state["current_run"]["error"] = redact_sensitive(
+                  f"{type(error).__name__}: {error}"
+              )
+              state["current_run"]["traceback"] = redact_sensitive(
+                  traceback.format_exc()[-8000:]
+              )
               state["state_updated_at_utc"] = utc_now()
               write_local_state()
               # Do not perform an additional remote checkpoint upload on failure;
@@ -1376,8 +1437,8 @@ jobs:
       SELECTED_TARGETS: ${{ needs.prepare.outputs.selected_targets }}
       IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
       IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
-      MAX_URLS_PER_RUN: "120"
-      MAX_SECONDS_PER_RUN: "10800"
+      MAX_URLS_PER_RUN: "24"
+      MAX_SECONDS_PER_RUN: "7200"
 
     steps:
       - name: Process URLs serially with checkpoints
@@ -1397,7 +1458,7 @@ jobs:
           import urllib.error
           import urllib.parse
           import urllib.request
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
 
           targets = [
               target
@@ -1447,12 +1508,12 @@ jobs:
                       "--location",
                       "--location-trusted",
                       "--retry",
-                      "12",
-                      "--retry-all-errors",
+                      "8",
+                      "--retry-connrefused",
                       "--retry-delay",
-                      "30",
+                      "0",
                       "--retry-max-time",
-                      "2400",
+                      "3600",
                       "--header",
                       f"Authorization: LOW {access}:{secret}",
                       "--header",
@@ -1507,7 +1568,7 @@ jobs:
 
                       retry_after = error.headers.get("Retry-After")
                       delay = (
-                          min(300, int(retry_after))
+                          min(900, int(retry_after))
                           if retry_after and retry_after.isdigit()
                           else min(120, 10 * (2 ** min(attempt - 1, 4)))
                       )
@@ -1584,12 +1645,17 @@ jobs:
                           or "active Save Page Now sessions" in body
                       )
 
-                      if error.code not in retryable and not session_limit:
+                      if error.code == 429 or session_limit:
+                          # Do not hammer Save Page Now after it explicitly asks us
+                          # to slow down. Requeue this URL and end the batch.
+                          return "rate_limited", last_error
+
+                      if error.code not in retryable:
                           return "permanent_failure", last_error
 
                       retry_after = error.headers.get("Retry-After")
                       delay = (
-                          min(300, int(retry_after))
+                          min(900, int(retry_after))
                           if retry_after and retry_after.isdigit()
                           else (65 if session_limit or error.code == 429 else 30)
                       )
@@ -1742,16 +1808,17 @@ jobs:
               state["wayback"]["last_processed_at_utc"] = utc_now()
               state["wayback"]["remaining"] = len(pending)
 
-              # Persist in batches instead of after every URL. Reprocessing up to
-              # 19 accepted URLs after an interrupted job is preferable to creating
-              # hundreds of S3 writes and triggering Internet Archive SlowDown.
-              if processed % 20 == 0:
-                  upload_state(target, state)
+              # Remote state is checkpointed once at the end of the batch.
+              # Avoid periodic S3 writes that compete with archive uploads.
 
+              if result == "rate_limited":
+                  print("Wayback rate limit detected; ending this batch and deferring the queue.")
+                  break
               if result == "transient_failure":
-                  time.sleep(20)
+                  time.sleep(60)
               else:
-                  time.sleep(4)
+                  # Keep Save Page Now requests serial and deliberately slow.
+                  time.sleep(20)
 
           for target, state in loaded:
               state["wayback"]["last_batch"] = {
@@ -1857,7 +1924,7 @@ jobs:
           import urllib.error
           import urllib.parse
           import urllib.request
-          from datetime import datetime, timezone
+          from datetime import datetime, timedelta, timezone
 
           SCHEMA_VERSION = 7
           ARCHIVE_MODE = "single_current_working_tree_archive"
@@ -1909,7 +1976,7 @@ jobs:
 
                       retry_after = error.headers.get("Retry-After")
                       delay = (
-                          min(300, int(retry_after))
+                          min(900, int(retry_after))
                           if retry_after and retry_after.isdigit()
                           else min(120, 10 * (2 ** min(attempt - 1, 4)))
                       )
