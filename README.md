@@ -132,7 +132,7 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 <!-- WEBSITES_ARCHIVE_STATUS_START -->
 ### DedSec Websites and Website Source
 
-**Current archive status:** `complete`  
+**Current archive status:** `failed`  
 **Last complete or attempted save:** 2026-08-13 00:39:12 EEST  
 **Current working-tree files:** 821  
 **Latest working-tree change:** 659 changed/added, 4 deleted, 162 unchanged.  
@@ -140,8 +140,8 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
-**Wayback queue remaining:** 1305  
-**Wayback captures accepted:** 929  
+**Wayback queue remaining:** 1286  
+**Wayback captures accepted:** 948  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -153,7 +153,7 @@ This section is generated from `update.json`.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 ### DedSec Project Main Repository
 
-**Current archive status:** `complete`  
+**Current archive status:** `failed`  
 **Last complete or attempted save:** 2026-08-15 00:15:48 EEST  
 **Current working-tree files:** 589  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 589 unchanged.  
@@ -171,7 +171,7 @@ This section is generated from `update.json`.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 ### DedSec Project Backup Repository
 
-**Current archive status:** `complete`  
+**Current archive status:** `failed`  
 **Last complete or attempted save:** 2026-08-15 00:15:06 EEST  
 **Current working-tree files:** 589  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 589 unchanged.  
