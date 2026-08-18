@@ -141,18 +141,20 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 
 Software Heritage Save Code Now requests are submitted during one workflow run, but their archive links are resolved only on later runs. This gives Software Heritage time to ingest each repository before a link is published here.
 
-- **DedSec main:** not checked yet
-- **DedSec backup:** not checked yet
-- **Websites:** not checked yet
-- **Website mirror:** not checked yet
-- **GitHub profile:** not checked yet
-- **Corrupted Files:** not checked yet
-- **Pocket AI:** not checked yet
-- **Praying Project:** not checked yet
-- **Offline Survival:** not checked yet
-- **Hacking Guide Project:** not checked yet
-- **Language Project:** not checked yet
-- **Save DedSec Project:** not checked yet
+- **DedSec main:** save requested; link will be checked on a later workflow run
+- **DedSec backup:** save requested; link will be checked on a later workflow run
+- **Websites:** save requested; link will be checked on a later workflow run
+- **Website mirror:** save requested; link will be checked on a later workflow run
+- **GitHub profile:** save requested; link will be checked on a later workflow run
+- **Corrupted Files:** save requested; link will be checked on a later workflow run
+- **Pocket AI:** save requested; link will be checked on a later workflow run
+- **Praying Project:** save requested; link will be checked on a later workflow run
+- **Offline Survival:** save requested; link will be checked on a later workflow run
+- **Hacking Guide Project:** save requested; link will be checked on a later workflow run
+- **Language Project:** no confirmed Software Heritage snapshot yet
+- **Save DedSec Project:** no confirmed Software Heritage snapshot yet
+
+Last checked: `2026-08-18T03:22:05Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -162,10 +164,12 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 The same four APK dependencies used by the local `Settings.py` Save DedSec Project backup are checked on every workflow run.
 
 - [Internet Archive APK collection](https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups)
-- **F-Droid.apk:** checked by the workflow
-- **Termux.apk:** checked by the workflow
-- **Termux_API.apk:** checked by the workflow
-- **Termux_Styling.apk:** checked by the workflow
+- **F-Droid.apk:** `985f5181d48bb6bafd54083a048b391271e0ab28385881cc41294fb01a222762` (12426276 bytes)
+- **Termux.apk:** `fdd476982cd74f2f00aac12d3683b1fa260a0b2d146411b94e09d773be3a7b56` (114920926 bytes)
+- **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
+- **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
+
+Last checked: `2026-08-18T04:16:58Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -174,16 +178,17 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 <!-- WEBSITES_ARCHIVE_STATUS_START -->
 ### DedSec Websites and Website Source
 
-**Current archive status:** `failed`  
-**Last complete or attempted save:** 2026-08-13 00:39:12 EEST  
-**Current working-tree files:** 821  
-**Latest working-tree change:** 659 changed/added, 4 deleted, 162 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-18 06:31:56 EEST  
+**Current working-tree files:** 822  
+**Latest working-tree change:** 5 changed/added, 0 deleted, 817 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
-**Wayback queue remaining:** 1286  
-**Wayback captures accepted:** 948  
+**Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
+**Wayback queue remaining:** 1686  
+**Wayback captures accepted:** 981  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -195,11 +200,11 @@ This section is generated from `update.json`.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 ### DedSec Project Main Repository
 
-**Current archive status:** `failed`  
-**Last complete or attempted save:** 2026-08-15 00:15:48 EEST  
-**Current working-tree files:** 589  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 589 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-18 06:25:03 EEST  
+**Current working-tree files:** 209  
+**Latest working-tree change:** 1 changed/added, 0 deleted, 208 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -213,11 +218,11 @@ This section is generated from `update.json`.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 ### DedSec Project Backup Repository
 
-**Current archive status:** `failed`  
-**Last complete or attempted save:** 2026-08-15 00:15:06 EEST  
-**Current working-tree files:** 589  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 589 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-18 06:28:30 EEST  
+**Current working-tree files:** 209  
+**Latest working-tree change:** 1 changed/added, 0 deleted, 208 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -232,9 +237,9 @@ This section is generated from `update.json`.
 ### DedSec GitHub Profile Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:09:29 EEST  
-**Current working-tree files:** 8  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 8 unchanged.  
+**Last complete or attempted save:** 2026-08-18 06:49:02 EEST  
+**Current working-tree files:** 17  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 17 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
@@ -250,7 +255,7 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:08:58 EEST  
+**Last complete or attempted save:** 2026-08-18 06:50:50 EEST  
 **Current working-tree files:** 2148  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -268,7 +273,7 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:08:29 EEST  
+**Last complete or attempted save:** 2026-08-18 06:52:39 EEST  
 **Current working-tree files:** 128  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -286,10 +291,10 @@ This section is generated from `update.json`.
 ### Praying Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:07:51 EEST  
+**Last complete or attempted save:** 2026-08-18 06:54:20 EEST  
 **Current working-tree files:** 74  
-**Latest working-tree change:** 1 changed/added, 0 deleted, 73 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 74 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -304,7 +309,7 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:07:19 EEST  
+**Last complete or attempted save:** 2026-08-18 06:56:11 EEST  
 **Current working-tree files:** 807  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 807 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -322,7 +327,7 @@ This section is generated from `update.json`.
 ### Hacking Guide Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:06:49 EEST  
+**Last complete or attempted save:** 2026-08-18 06:57:57 EEST  
 **Current working-tree files:** 334  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -340,9 +345,9 @@ This section is generated from `update.json`.
 ### Save DedSec Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-16 05:06:11 EEST  
-**Current working-tree files:** 5  
-**Latest working-tree change:** 2 changed/added, 0 deleted, 3 unchanged.  
+**Last complete or attempted save:** 2026-08-18 07:16:13 EEST  
+**Current working-tree files:** 7  
+**Latest working-tree change:** 6 changed/added, 0 deleted, 1 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
@@ -354,3 +359,36 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_END -->
 
+<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
+### DedSec Website Mirror Repository
+
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-18 06:47:27 EEST  
+**Current working-tree files:** 822  
+**Latest working-tree change:** 822 changed/added, 0 deleted, 0 unchanged.  
+**Compact archive uploaded this run:** `True`  
+**Archive verification:** `True`  
+**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+
+- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots)
+
+This section is generated from `update.json`.
+<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_END -->
+
+<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
+### Language Project
+
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-08-18 07:12:43 EEST  
+**Current working-tree files:** 10753  
+**Latest working-tree change:** 10753 changed/added, 0 deleted, 0 unchanged.  
+**Compact archive uploaded this run:** `True`  
+**Archive verification:** `True`  
+**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+
+- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-language-project-repository-snapshots)
+
+This section is generated from `update.json`.
+<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_END -->
