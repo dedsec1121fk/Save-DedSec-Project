@@ -1,6 +1,6 @@
 # Fork Instructions
 
-This repository can be forked and used as an independent archive controller for the DedSec Project ecosystem. Each fork must use its own Internet Archive credentials and archive item identifiers.
+This repository can be forked and used as an independent archive controller for the DedSec Project ecosystem. Each fork must use its own Internet Archive credentials and archive item identifiers. Software Heritage Save Code Now requests for public Git repositories do not require the Internet Archive credentials.
 
 ## 1. Fork The Repository
 
@@ -68,9 +68,10 @@ Example:
 "ia_item": "yourname-dedsec-project-repository-snapshots",
 ```
 
-Change all ten target identifiers:
+Change all twelve repository/website target identifiers:
 
 - DedSec websites and website source
+- DedSec website mirror repository
 - DedSec Project main repository
 - DedSec Project backup repository
 - GitHub profile repository
@@ -79,15 +80,26 @@ Change all ten target identifiers:
 - Praying Project
 - Offline Survival Project
 - Hacking Guide Project
+- Language Project
 - Save DedSec Project
 
 After any `ia_item` value changes, the **Permanent Internet Archive Links** section in `README.md` is regenerated automatically on the next workflow run. You do not need to edit those README links manually.
+
+The APK collection uses a separate identifier in the `sync-apks` job:
+
+```yaml
+APK_IA_ITEM_IDENTIFIER: dedsec1121fk-dedsec-project-apk-backups
+```
+
+Replace that value with another unique Internet Archive identifier owned by your account as well.
 
 ## 6. Optional: Change What The Fork Archives
 
 By default, the controller continues archiving the original DedSec Project repositories and websites. To archive your own repository copies instead, change the corresponding `repository` and `sites` values in the target definitions inside `.github/workflows/internet-archive.yml`.
 
 Do not change the marker values unless you also intentionally replace the matching generated status blocks in `README.md`.
+
+Software Heritage targets are derived from each configured `repository` value. A Save Code Now request made in the current workflow run is not turned into a README link immediately. A later workflow run checks whether Software Heritage has finished ingesting the repository and only then publishes the confirmed origin/snapshot links in `README.md`.
 
 ## 7. Run The First Archive
 
@@ -99,10 +111,11 @@ Do not change the marker values unless you also intentionally replace the matchi
 
 A successful run should:
 
-- Upload or synchronize the configured Internet Archive items.
+- Upload or synchronize the configured Internet Archive repository/website items and the APK collection.
+- Resolve Software Heritage links only for requests already recorded by an earlier workflow run, then request Save Code Now for the selected current-run targets when appropriate.
 - Store each target checkpoint as `archive-state/update.json`.
 - Refresh the combined root `update.json`.
-- Refresh the generated archive links and status sections in `README.md`.
+- Refresh the generated Internet Archive, Software Heritage, APK and status sections in `README.md`.
 - Commit the updated state and README back to your fork.
 
 ## Scheduled Target Order
@@ -134,6 +147,7 @@ GitHub does not pass normal Actions secrets to workflows triggered from another 
 - Never print either key in workflow output.
 - Rotate both Internet Archive keys immediately if either value is exposed.
 - Review workflow changes before running them, because a modified workflow can access configured repository secrets.
+- Keep private Sponsors-Only repositories out of public archive target lists unless you intentionally want their contents published. The provided workflow archives only public repositories and APK dependencies.
 
 ## Working-Tree-Only Security Model
 

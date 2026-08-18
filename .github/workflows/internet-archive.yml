@@ -136,6 +136,22 @@ jobs:
               },
           ]
 
+          website_mirror_targets = [
+              {
+                  "repository": "sal-scar/ded-sec",
+                  "slug": "dedsec-website-mirror",
+                  "title": "DedSec Website Mirror Repository",
+                  "archive_label": "Website mirror",
+                  "marker": "DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS",
+                  "ia_item": "dedsec1121fk-dedsec-website-mirror-repository-snapshots",
+                  "timeout_minutes": 240,
+                  "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens",
+                  "kind": "repository",
+                  "sites": "",
+                  "legacy_prefixes": "dedsec-website-mirror-,ded-sec-mirror-",
+              },
+          ]
+
           other_targets = [
               {
                   "repository": "dedsec1121fk/dedsec1121fk",
@@ -216,6 +232,19 @@ jobs:
                   "legacy_prefixes": "hacking-guide-project-,hacking-guide-",
               },
               {
+                  "repository": "dedsec1121fk/Language-Project",
+                  "slug": "language-project",
+                  "title": "Language Project",
+                  "archive_label": "Language Project",
+                  "marker": "LANGUAGE_PROJECT_ARCHIVE_STATUS",
+                  "ia_item": "dedsec1121fk-language-project-repository-snapshots",
+                  "timeout_minutes": 240,
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
+                  "kind": "repository",
+                  "sites": "",
+                  "legacy_prefixes": "language-project-",
+              },
+              {
                   "repository": "dedsec1121fk/Save-DedSec-Project",
                   "slug": "save-dedsec-project",
                   "title": "Save DedSec Project",
@@ -230,7 +259,7 @@ jobs:
               },
           ]
 
-          all_targets = dedsec_targets + website_targets + other_targets
+          all_targets = dedsec_targets + website_targets + website_mirror_targets + other_targets
 
           event_name = os.environ.get("EVENT_NAME", "")
           schedule = os.environ.get("EVENT_SCHEDULE", "")
@@ -244,7 +273,7 @@ jobs:
               elif manual_group == "dedsec-project":
                   targets = dedsec_targets
               elif manual_group == "websites":
-                  targets = website_targets
+                  targets = website_targets + website_mirror_targets
               elif manual_group == "other-projects":
                   targets = other_targets
               else:
@@ -256,7 +285,7 @@ jobs:
               "0 0 * * 6",
           }:
               group_name = "dedsec-project-and-websites"
-              targets = dedsec_targets + website_targets
+              targets = dedsec_targets + website_targets + website_mirror_targets
 
           elif schedule in {
               "5 5 * * 2",
@@ -1421,11 +1450,84 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
+  software-heritage:
+    name: Preserve repositories in Software Heritage
+    needs: prepare
+    if: needs.prepare.outputs.target_count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      SELECTED_TARGETS: ${{ needs.prepare.outputs.selected_targets }}
+      ALL_TARGETS: ${{ needs.prepare.outputs.all_targets }}
+      SWH_STATE_PATH: software-heritage.json
+      SWH_PREVIOUS_STATE_PATH: controller/update.json
+
+    steps:
+      - name: Check out archive controller
+        uses: actions/checkout@v4
+        with:
+          path: controller
+          fetch-depth: 1
+
+      - name: Resolve previous requests and submit current Software Heritage preservation
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 controller/.github/scripts/software_heritage.py
+
+      - name: Upload Software Heritage state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preservation-software-heritage-${{ github.run_id }}
+          path: software-heritage.json
+          if-no-files-found: ignore
+          retention-days: 30
+
+  sync-apks:
+    name: Preserve current APK dependencies
+    needs:
+      - prepare
+      - sync-targets
+    if: |
+      always() &&
+      needs.prepare.outputs.target_count != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      IA_ACCESS_KEY: ${{ secrets.Internet_Archive_1 }}
+      IA_SECRET_KEY: ${{ secrets.Internet_Archive_2 }}
+      APK_IA_ITEM_IDENTIFIER: dedsec1121fk-dedsec-project-apk-backups
+      APK_STATE_PATH: apks.json
+
+    steps:
+      - name: Check out archive controller
+        uses: actions/checkout@v4
+        with:
+          path: controller
+          fetch-depth: 1
+
+      - name: Download and synchronize APKs
+        shell: bash
+        run: |
+          set -euo pipefail
+          python3 controller/.github/scripts/archive_apks.py
+
+      - name: Upload APK preservation state
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: preservation-apks-${{ github.run_id }}
+          path: apks.json
+          if-no-files-found: ignore
+          retention-days: 30
+
   process-wayback:
     name: Process resumable Wayback queue
     needs:
       - prepare
       - sync-targets
+      - sync-apks
     if: |
       always() &&
       needs.prepare.outputs.target_count != '0'
@@ -1882,6 +1984,8 @@ jobs:
       - prepare
       - sync-targets
       - process-wayback
+      - software-heritage
+      - sync-apks
     if: |
       always() &&
       needs.prepare.outputs.target_count != '0'
@@ -1905,6 +2009,14 @@ jobs:
         with:
           pattern: archive-checkpoint-*-${{ github.run_id }}
           path: checkpoint-artifacts
+          merge-multiple: true
+        continue-on-error: true
+
+      - name: Download preservation state artifacts
+        uses: actions/download-artifact@v4
+        with:
+          pattern: preservation-*-${{ github.run_id }}
+          path: preservation-artifacts
           merge-multiple: true
         continue-on-error: true
 
@@ -1932,6 +2044,7 @@ jobs:
           UPDATE_PATH = CONTROLLER / "update.json"
           README_PATH = CONTROLLER / "README.md"
           ARTIFACT_DIR = pathlib.Path("checkpoint-artifacts")
+          PRESERVATION_DIR = pathlib.Path("preservation-artifacts")
           targets = json.loads(os.environ["SELECTED_TARGETS"])
           all_targets = json.loads(os.environ["ALL_TARGETS"])
           retryable = {408, 425, 429, 500, 502, 503, 504}
@@ -2009,6 +2122,16 @@ jobs:
           def load_artifact_state(slug: str) -> dict | None:
               candidates = list(ARTIFACT_DIR.rglob(f"{slug}.json"))
               for path in candidates:
+                  try:
+                      state = json.loads(path.read_text(encoding="utf-8"))
+                  except (OSError, json.JSONDecodeError):
+                      continue
+                  if isinstance(state, dict):
+                      return state
+              return None
+
+          def load_preservation_state(filename: str) -> dict | None:
+              for path in PRESERVATION_DIR.rglob(filename):
                   try:
                       state = json.loads(path.read_text(encoding="utf-8"))
                   except (OSError, json.JSONDecodeError):
@@ -2138,16 +2261,26 @@ jobs:
               aggregate["targets"][target["slug"]] = state
               refreshed[target["slug"]] = state
 
+          software_heritage_state = load_preservation_state("software-heritage.json")
+          if software_heritage_state is not None:
+              aggregate["software_heritage"] = software_heritage_state
+
+          apk_state = load_preservation_state("apks.json")
+          if apk_state is not None:
+              aggregate["apks"] = apk_state
+
           aggregate["generated_at_utc"] = utc_now()
           aggregate["source_of_truth"] = (
-              "Each Internet Archive item stores archive-state/update.json. "
+              "Each Internet Archive repository/website item stores archive-state/update.json. "
+              "Software Heritage and APK preservation checks are merged from this workflow run. "
               "This file is the synchronized combined copy."
           )
           aggregate["archive_mode"] = ARCHIVE_MODE
           aggregate["resume_behavior"] = (
-              "Each target stores one current-working-tree TAR.GZ plus a manifest, "
-              "checksums and one compact state checkpoint. Git/commit/push history "
-              "is never archived. Wayback is limited to live website URLs."
+              "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, "
+              "checksums and one compact state checkpoint. The APK item stores the current four APK "
+              "dependencies with hashes. Git/commit/push history is never archived by Internet Archive. "
+              "Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage."
           )
 
           UPDATE_PATH.parent.mkdir(parents=True, exist_ok=True)
@@ -2196,6 +2329,11 @@ jobs:
                   )
                   lines.append(f"- **{label}:** {ia_url}")
 
+              lines.append(
+                  "- **APK dependencies:** "
+                  "https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups"
+              )
+
               lines.extend([
                   "",
                   (
@@ -2205,6 +2343,102 @@ jobs:
                   ),
                   end,
               ])
+              return "\n".join(lines)
+
+          def software_heritage_links_block(
+              software_state: dict | None,
+              all_target_definitions: list[dict],
+          ) -> str:
+              marker = "SOFTWARE_HERITAGE_LINKS"
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              records = (software_state or {}).get("repositories", {})
+              lines = [
+                  start,
+                  "## Software Heritage Links",
+                  "",
+                  (
+                      "Software Heritage Save Code Now requests are submitted during one "
+                      "workflow run, but their archive links are resolved only on later runs. "
+                      "This gives Software Heritage time to ingest each repository before a "
+                      "link is published here."
+                  ),
+                  "",
+              ]
+              seen: set[str] = set()
+              for target in all_target_definitions:
+                  repository = str(target.get("repository") or "").strip().strip("/")
+                  if not repository or repository in seen:
+                      continue
+                  seen.add(repository)
+                  label = target.get("archive_label") or target.get("title") or repository
+                  record = records.get(repository, {}) if isinstance(records, dict) else {}
+                  origin = f"https://github.com/{repository}"
+                  swhid = str(record.get("snapshot_swhid") or "").strip()
+                  if swhid:
+                      browse = record.get("browse_url") or (
+                          "https://archive.softwareheritage.org/browse/origin/?"
+                          + urllib.parse.urlencode({"origin_url": origin})
+                      )
+                      snapshot_url = str(record.get("snapshot_url") or "").strip() or (
+                          f"https://archive.softwareheritage.org/{swhid}/"
+                      )
+                      line = (
+                          f"- **{label}:** [Software Heritage archive]({browse})"
+                          f" · [latest snapshot]({snapshot_url})"
+                      )
+                      visit_status = str(record.get("latest_visit_status") or "").strip()
+                      if visit_status:
+                          line += f" · `{visit_status}`"
+                  elif record.get("save_requested_this_run"):
+                      line = (
+                          f"- **{label}:** save requested; link will be checked "
+                          "on a later workflow run"
+                      )
+                  elif record.get("awaiting_link_check"):
+                      line = f"- **{label}:** waiting for a later Software Heritage link check"
+                  elif record:
+                      line = f"- **{label}:** no confirmed Software Heritage snapshot yet"
+                  else:
+                      line = f"- **{label}:** not checked yet"
+                  lines.append(line)
+
+              checked = str((software_state or {}).get("checked_at_utc") or "").strip()
+              if checked:
+                  lines.extend(["", f"Last checked: `{checked}`."])
+              lines.extend(["", end])
+              return "\n".join(lines)
+
+          def apk_archive_block(apk_state: dict | None) -> str:
+              marker = "APK_ARCHIVE_STATUS"
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              state = apk_state or {}
+              files = state.get("files", {}) if isinstance(state.get("files"), dict) else {}
+              lines = [
+                  start,
+                  "## APK Preservation",
+                  "",
+                  (
+                      "The same four APK dependencies used by the local `Settings.py` "
+                      "Save DedSec Project backup are checked on every workflow run."
+                  ),
+                  "",
+                  "- [Internet Archive APK collection](https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups)",
+              ]
+              for filename in ("F-Droid.apk", "Termux.apk", "Termux_API.apk", "Termux_Styling.apk"):
+                  metadata = files.get(filename, {}) if isinstance(files, dict) else {}
+                  if metadata:
+                      lines.append(
+                          f"- **{filename}:** `{metadata.get('sha256', 'unknown')}` "
+                          f"({metadata.get('size', 0)} bytes)"
+                      )
+                  else:
+                      lines.append(f"- **{filename}:** checked by the workflow")
+              checked = str(state.get("checked_at_utc") or "").strip()
+              if checked:
+                  lines.extend(["", f"Last checked: `{checked}`."])
+              lines.extend(["", end])
               return "\n".join(lines)
 
           def status_block(state: dict) -> str:
@@ -2301,6 +2535,19 @@ jobs:
               readme,
               "PERMANENT_ARCHIVE_LINKS",
               archive_links_block(all_targets),
+          )
+          readme = replace_block(
+              readme,
+              "SOFTWARE_HERITAGE_LINKS",
+              software_heritage_links_block(
+                  aggregate.get("software_heritage"),
+                  all_targets,
+              ),
+          )
+          readme = replace_block(
+              readme,
+              "APK_ARCHIVE_STATUS",
+              apk_archive_block(aggregate.get("apks")),
           )
 
           for state in refreshed.values():
