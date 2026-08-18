@@ -42,6 +42,28 @@ Fork owners can configure their own Internet Archive credentials and item identi
 This section is regenerated on every archive run from the target configuration in `.github/workflows/internet-archive.yml`.
 <!-- PERMANENT_ARCHIVE_LINKS_END -->
 
+<!-- SOFTWARE_HERITAGE_LINKS_START -->
+## Software Heritage Links
+
+Software Heritage Save Code Now requests are submitted during one workflow run, but their archive links are resolved only on later runs. This gives Software Heritage time to ingest each repository before a link is published here.
+
+- **DedSec main:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:54e16cd7a25ffa0da3028e5b0c81c35694c5427c/) · `full`
+- **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:0d625efd67975c035e0a12069210bed605cb96ad/) · `full`
+- **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:abe0b213712e972591816a232136fcecbf8fc07c/) · `full`
+- **Website mirror:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:9a09f98f2e7b1638643ead19fbec83854e321cde/) · `full`
+- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:be40a434d8ac4707837440f128dbfdd0332c7c1e/) · `full`
+- **Corrupted Files:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
+- **Pocket AI:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
+- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7dc407debccb07dda0ff1021b64ec55287bc21a1/) · `full`
+- **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/) · `full`
+- **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
+- **Language Project:** no confirmed Software Heritage snapshot yet
+- **Save DedSec Project:** no confirmed Software Heritage snapshot yet
+
+Last checked: `2026-08-18T18:11:31Z`.
+
+<!-- SOFTWARE_HERITAGE_LINKS_END -->
+
 ## Compact Internet Archive Working-Tree Archive
 
 The archive operates in **working-tree-only mode**. Git metadata and history are not preservation inputs. On every run the workflow inventories the current checkout, calculates SHA-256 hashes and compares the resulting working-tree snapshot with the previous state.
@@ -135,28 +157,6 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 - **Hacking Guide Project:** https://github.com/dedsec1121fk/Hacking-Guide-Project
 - **Language Project:** https://github.com/dedsec1121fk/Language-Project
 - **Save DedSec Project:** https://github.com/dedsec1121fk/Save-DedSec-Project
-
-<!-- SOFTWARE_HERITAGE_LINKS_START -->
-## Software Heritage Links
-
-Software Heritage Save Code Now requests are submitted during one workflow run, but their archive links are resolved only on later runs. This gives Software Heritage time to ingest each repository before a link is published here.
-
-- **DedSec main:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:54e16cd7a25ffa0da3028e5b0c81c35694c5427c/) · `full`
-- **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:0d625efd67975c035e0a12069210bed605cb96ad/) · `full`
-- **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:abe0b213712e972591816a232136fcecbf8fc07c/) · `full`
-- **Website mirror:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:9a09f98f2e7b1638643ead19fbec83854e321cde/) · `full`
-- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:be40a434d8ac4707837440f128dbfdd0332c7c1e/) · `full`
-- **Corrupted Files:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
-- **Pocket AI:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
-- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7dc407debccb07dda0ff1021b64ec55287bc21a1/) · `full`
-- **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/) · `full`
-- **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
-- **Language Project:** no confirmed Software Heritage snapshot yet
-- **Save DedSec Project:** no confirmed Software Heritage snapshot yet
-
-Last checked: `2026-08-18T18:11:31Z`.
-
-<!-- SOFTWARE_HERITAGE_LINKS_END -->
 
 <!-- APK_ARCHIVE_STATUS_START -->
 ## APK Preservation
