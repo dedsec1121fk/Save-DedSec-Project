@@ -141,20 +141,20 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 
 Software Heritage Save Code Now requests are submitted during one workflow run, but their archive links are resolved only on later runs. This gives Software Heritage time to ingest each repository before a link is published here.
 
-- **DedSec main:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:082d079963539326b36f5150feb8decbb6279635/) · `full`
-- **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:267a337986902e98b5e951202d294aaef794ace8/) · `full`
+- **DedSec main:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:54e16cd7a25ffa0da3028e5b0c81c35694c5427c/) · `full`
+- **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:0d625efd67975c035e0a12069210bed605cb96ad/) · `full`
 - **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:abe0b213712e972591816a232136fcecbf8fc07c/) · `full`
 - **Website mirror:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:9a09f98f2e7b1638643ead19fbec83854e321cde/) · `full`
-- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:99a982f18a6387fc2474a0885e93edbf468f3dc4/) · `full`
+- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:be40a434d8ac4707837440f128dbfdd0332c7c1e/) · `full`
 - **Corrupted Files:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
 - **Pocket AI:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
-- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:b0bc0f7e7e8ee4c43af99b209778a39b9e567b32/) · `full`
+- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7dc407debccb07dda0ff1021b64ec55287bc21a1/) · `full`
 - **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/) · `full`
 - **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
 - **Language Project:** no confirmed Software Heritage snapshot yet
 - **Save DedSec Project:** no confirmed Software Heritage snapshot yet
 
-Last checked: `2026-08-18T15:37:08Z`.
+Last checked: `2026-08-18T18:11:31Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -169,7 +169,7 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Last checked: `2026-08-18T16:09:13Z`.
+Last checked: `2026-08-18T18:37:12Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -179,7 +179,7 @@ Last checked: `2026-08-18T16:09:13Z`.
 ### DedSec Websites and Website Source
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:44:53 EEST  
+**Last complete or attempted save:** 2026-08-18 21:16:09 EEST  
 **Current working-tree files:** 822  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 822 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -201,10 +201,10 @@ This section is generated from `update.json`.
 ### DedSec Project Main Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:39:53 EEST  
+**Last complete or attempted save:** 2026-08-18 21:12:30 EEST  
 **Current working-tree files:** 209  
-**Latest working-tree change:** 1 changed/added, 0 deleted, 208 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -219,10 +219,10 @@ This section is generated from `update.json`.
 ### DedSec Project Backup Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:43:14 EEST  
+**Last complete or attempted save:** 2026-08-18 21:14:28 EEST  
 **Current working-tree files:** 209  
-**Latest working-tree change:** 1 changed/added, 0 deleted, 208 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -237,9 +237,9 @@ This section is generated from `update.json`.
 ### DedSec GitHub Profile Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:50:23 EEST  
-**Current working-tree files:** 17  
-**Latest working-tree change:** 5 changed/added, 0 deleted, 12 unchanged.  
+**Last complete or attempted save:** 2026-08-18 21:21:26 EEST  
+**Current working-tree files:** 20  
+**Latest working-tree change:** 13 changed/added, 0 deleted, 7 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
@@ -255,7 +255,7 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:54:01 EEST  
+**Last complete or attempted save:** 2026-08-18 21:23:21 EEST  
 **Current working-tree files:** 2148  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -273,7 +273,7 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:55:43 EEST  
+**Last complete or attempted save:** 2026-08-18 21:25:12 EEST  
 **Current working-tree files:** 128  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -291,10 +291,10 @@ This section is generated from `update.json`.
 ### Praying Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:59:05 EEST  
+**Last complete or attempted save:** 2026-08-18 21:26:59 EEST  
 **Current working-tree files:** 74  
-**Latest working-tree change:** 1 changed/added, 0 deleted, 73 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 74 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -309,7 +309,7 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 19:00:55 EEST  
+**Last complete or attempted save:** 2026-08-18 21:28:55 EEST  
 **Current working-tree files:** 807  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 807 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -327,7 +327,7 @@ This section is generated from `update.json`.
 ### Hacking Guide Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 19:02:45 EEST  
+**Last complete or attempted save:** 2026-08-18 21:30:49 EEST  
 **Current working-tree files:** 334  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -345,7 +345,7 @@ This section is generated from `update.json`.
 ### Save DedSec Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 19:08:22 EEST  
+**Last complete or attempted save:** 2026-08-18 21:36:24 EEST  
 **Current working-tree files:** 7  
 **Latest working-tree change:** 2 changed/added, 0 deleted, 5 unchanged.  
 **Compact archive uploaded this run:** `True`  
@@ -363,7 +363,7 @@ This section is generated from `update.json`.
 ### DedSec Website Mirror Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 18:46:54 EEST  
+**Last complete or attempted save:** 2026-08-18 21:18:10 EEST  
 **Current working-tree files:** 822  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 822 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -380,7 +380,7 @@ This section is generated from `update.json`.
 ### Language Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 19:04:44 EEST  
+**Last complete or attempted save:** 2026-08-18 21:32:45 EEST  
 **Current working-tree files:** 10753  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 10753 unchanged.  
 **Compact archive uploaded this run:** `False`  
