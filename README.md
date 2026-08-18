@@ -191,9 +191,9 @@ This section is generated from `update.json`.
 ### DedSec GitHub Profile Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:32:53 EEST  
-**Current working-tree files:** 14  
-**Latest working-tree change:** 13 changed/added, 0 deleted, 1 unchanged.  
+**Last complete or attempted save:** 2026-08-18 06:19:18 EEST  
+**Current working-tree files:** 17  
+**Latest working-tree change:** 15 changed/added, 0 deleted, 2 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
@@ -209,7 +209,7 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:34:51 EEST  
+**Last complete or attempted save:** 2026-08-18 06:15:54 EEST  
 **Current working-tree files:** 2148  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -227,7 +227,7 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:36:43 EEST  
+**Last complete or attempted save:** 2026-08-18 06:14:02 EEST  
 **Current working-tree files:** 128  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -245,10 +245,10 @@ This section is generated from `update.json`.
 ### Praying Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:40:09 EEST  
+**Last complete or attempted save:** 2026-08-18 06:12:17 EEST  
 **Current working-tree files:** 74  
-**Latest working-tree change:** 2 changed/added, 0 deleted, 72 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 74 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -263,7 +263,7 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:42:21 EEST  
+**Last complete or attempted save:** 2026-08-18 06:10:37 EEST  
 **Current working-tree files:** 807  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 807 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -281,7 +281,7 @@ This section is generated from `update.json`.
 ### Hacking Guide Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:44:08 EEST  
+**Last complete or attempted save:** 2026-08-18 06:08:48 EEST  
 **Current working-tree files:** 334  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -299,9 +299,9 @@ This section is generated from `update.json`.
 ### Save DedSec Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-17 22:47:37 EEST  
+**Last complete or attempted save:** 2026-08-18 06:07:04 EEST  
 **Current working-tree files:** 5  
-**Latest working-tree change:** 3 changed/added, 0 deleted, 2 unchanged.  
+**Latest working-tree change:** 2 changed/added, 0 deleted, 3 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
