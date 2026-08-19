@@ -60,7 +60,7 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 - **Language Project:** no confirmed Software Heritage snapshot yet
 - **Save DedSec Project:** no confirmed Software Heritage snapshot yet
 
-Last checked: `2026-08-18T20:19:56Z`.
+Last checked: `2026-08-19T19:42:39Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -169,7 +169,7 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Last checked: `2026-08-18T20:42:30Z`.
+Last checked: `2026-08-19T19:50:05Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -179,7 +179,7 @@ Last checked: `2026-08-18T20:42:30Z`.
 ### DedSec Websites and Website Source
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:24:07 EEST  
+**Last complete or attempted save:** 2026-08-19 22:45:34 EEST  
 **Current working-tree files:** 822  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 822 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -187,8 +187,8 @@ Last checked: `2026-08-18T20:42:30Z`.
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
-**Wayback queue remaining:** 1669  
-**Wayback captures accepted:** 998  
+**Wayback queue remaining:** 1654  
+**Wayback captures accepted:** 1013  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -201,7 +201,7 @@ This section is generated from `update.json`.
 ### DedSec Project Main Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:20:54 EEST  
+**Last complete or attempted save:** 2026-08-19 22:49:16 EEST  
 **Current working-tree files:** 209  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -219,7 +219,7 @@ This section is generated from `update.json`.
 ### DedSec Project Backup Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:22:29 EEST  
+**Last complete or attempted save:** 2026-08-19 22:47:29 EEST  
 **Current working-tree files:** 209  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -363,7 +363,7 @@ This section is generated from `update.json`.
 ### DedSec Website Mirror Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:26:03 EEST  
+**Last complete or attempted save:** 2026-08-19 22:43:54 EEST  
 **Current working-tree files:** 822  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 822 unchanged.  
 **Compact archive uploaded this run:** `False`  
