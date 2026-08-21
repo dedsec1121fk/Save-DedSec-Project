@@ -57,10 +57,10 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 - **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7dc407debccb07dda0ff1021b64ec55287bc21a1/) · `full`
 - **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/) · `full`
 - **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
-- **Language Project:** no confirmed Software Heritage snapshot yet
-- **Save DedSec Project:** no confirmed Software Heritage snapshot yet
+- **Language Project:** save requested; link will be checked on a later workflow run
+- **Save DedSec Project:** save requested; link will be checked on a later workflow run
 
-Last checked: `2026-08-19T19:42:39Z`.
+Last checked: `2026-08-21T09:51:59Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -169,7 +169,7 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Last checked: `2026-08-19T19:50:05Z`.
+Last checked: `2026-08-21T10:15:29Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -237,10 +237,10 @@ This section is generated from `update.json`.
 ### DedSec GitHub Profile Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:27:37 EEST  
+**Last complete or attempted save:** 2026-08-21 13:14:25 EEST  
 **Current working-tree files:** 20  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 20 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Latest working-tree change:** 6 changed/added, 0 deleted, 14 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -255,7 +255,7 @@ This section is generated from `update.json`.
 ### Corrupted Files Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:29:23 EEST  
+**Last complete or attempted save:** 2026-08-21 13:09:46 EEST  
 **Current working-tree files:** 2148  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -273,7 +273,7 @@ This section is generated from `update.json`.
 ### Pocket AI
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:31:08 EEST  
+**Last complete or attempted save:** 2026-08-21 13:06:56 EEST  
 **Current working-tree files:** 128  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -291,10 +291,10 @@ This section is generated from `update.json`.
 ### Praying Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:32:52 EEST  
+**Last complete or attempted save:** 2026-08-21 13:05:03 EEST  
 **Current working-tree files:** 74  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 74 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Latest working-tree change:** 1 changed/added, 0 deleted, 73 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -309,7 +309,7 @@ This section is generated from `update.json`.
 ### Offline Survival Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:34:41 EEST  
+**Last complete or attempted save:** 2026-08-21 13:01:12 EEST  
 **Current working-tree files:** 807  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 807 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -327,7 +327,7 @@ This section is generated from `update.json`.
 ### Hacking Guide Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:36:23 EEST  
+**Last complete or attempted save:** 2026-08-21 12:59:09 EEST  
 **Current working-tree files:** 334  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -345,7 +345,7 @@ This section is generated from `update.json`.
 ### Save DedSec Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:41:41 EEST  
+**Last complete or attempted save:** 2026-08-21 12:54:58 EEST  
 **Current working-tree files:** 7  
 **Latest working-tree change:** 2 changed/added, 0 deleted, 5 unchanged.  
 **Compact archive uploaded this run:** `True`  
@@ -380,7 +380,7 @@ This section is generated from `update.json`.
 ### Language Project
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-18 23:38:19 EEST  
+**Last complete or attempted save:** 2026-08-21 12:57:16 EEST  
 **Current working-tree files:** 10753  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 10753 unchanged.  
 **Compact archive uploaded this run:** `False`  
