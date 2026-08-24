@@ -7,7 +7,7 @@
       "Termux_API.apk",
       "Termux_Styling.apk"
     ],
-    "checked_at_utc": "2026-08-23T01:36:47Z",
+    "checked_at_utc": "2026-08-24T09:16:46Z",
     "failures": [],
     "files": {
       "F-Droid.apk": {
@@ -37,18 +37,18 @@
     "uploaded": false
   },
   "archive_mode": "single_current_working_tree_archive",
-  "generated_at_utc": "2026-08-23T01:37:29Z",
+  "generated_at_utc": "2026-08-24T10:47:31Z",
   "resume_behavior": "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, checksums and one compact state checkpoint. The APK item stores the current four APK dependencies with hashes. Git/commit/push history is never archived by Internet Archive. Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage.",
   "schema_version": 7,
   "software_heritage": {
-    "checked_at_utc": "2026-08-23T01:17:22Z",
+    "checked_at_utc": "2026-08-24T09:02:31Z",
     "link_resolution_policy": "Save requests made in the current workflow run are not resolved into README links until a later workflow run.",
     "repositories": {
       "dedsec1121fk/Corrupted-Files-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:14.587000+00:00",
+        "latest_visit_date": "2026-08-23T01:17:39.833000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -56,15 +56,15 @@
         "repository": "dedsec1121fk/Corrupted-Files-Project",
         "save_request_date": "2026-08-23T01:17:34.817156+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/",
         "title": "Corrupted Files"
       },
       "dedsec1121fk/DedSec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec",
         "error": null,
         "latest_visit_date": "2026-08-21T21:12:22.776000+00:00",
@@ -73,20 +73,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/DedSec",
         "repository": "dedsec1121fk/DedSec",
-        "save_request_date": "2026-08-21T21:12:15.942954+00:00",
+        "save_request_date": "2026-08-24T09:02:33.726542+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:54e16cd7a25ffa0da3028e5b0c81c35694c5427c",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:54e16cd7a25ffa0da3028e5b0c81c35694c5427c/",
         "title": "DedSec main"
       },
       "dedsec1121fk/Hacking-Guide-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:35+00:00",
+        "latest_visit_date": "2026-08-23T01:18:00.267000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -94,18 +94,18 @@
         "repository": "dedsec1121fk/Hacking-Guide-Project",
         "save_request_date": "2026-08-23T01:17:51.097709+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/",
         "title": "Hacking Guide Project"
       },
       "dedsec1121fk/Language-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:35.177000+00:00",
+        "latest_visit_date": "2026-08-23T01:18:00.261000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -113,18 +113,18 @@
         "repository": "dedsec1121fk/Language-Project",
         "save_request_date": "2026-08-23T01:17:55.349797+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/",
         "title": "Language Project"
       },
       "dedsec1121fk/Offline-Survival-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:24.882000+00:00",
+        "latest_visit_date": "2026-08-23T01:17:50.030000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -132,18 +132,18 @@
         "repository": "dedsec1121fk/Offline-Survival-Project",
         "save_request_date": "2026-08-23T01:17:46.867662+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/",
         "title": "Offline Survival"
       },
       "dedsec1121fk/Pocket-AI-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:14.628000+00:00",
+        "latest_visit_date": "2026-08-23T01:17:39.829000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -151,18 +151,18 @@
         "repository": "dedsec1121fk/Pocket-AI-Project",
         "save_request_date": "2026-08-23T01:17:38.781112+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/",
         "title": "Pocket AI"
       },
       "dedsec1121fk/Praying-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:24.801000+00:00",
+        "latest_visit_date": "2026-08-23T01:17:50.026000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -170,18 +170,18 @@
         "repository": "dedsec1121fk/Praying-Project",
         "save_request_date": "2026-08-23T01:17:42.749526+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:301078f281c1ccf08bf69d578a890f62f9144e36",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:301078f281c1ccf08bf69d578a890f62f9144e36/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:e02371e7ee55132c4f79bd0330efcf62ab38938e",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:e02371e7ee55132c4f79bd0330efcf62ab38938e/",
         "title": "Praying Project"
       },
       "dedsec1121fk/Save-DedSec-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:35.008000+00:00",
+        "latest_visit_date": "2026-08-23T01:18:00.299000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -189,18 +189,18 @@
         "repository": "dedsec1121fk/Save-DedSec-Project",
         "save_request_date": "2026-08-23T01:17:59.386964+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:74dc4a0e55e099285a597e4c90abd63c493cf43e",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:74dc4a0e55e099285a597e4c90abd63c493cf43e/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:0e16b6792419158c5dd646d94f4c6cbe1ddfc665",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:0e16b6792419158c5dd646d94f4c6cbe1ddfc665/",
         "title": "Save DedSec Project"
       },
       "dedsec1121fk/dedsec1121fk": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk",
         "error": null,
-        "latest_visit_date": "2026-08-21T09:52:14.599000+00:00",
+        "latest_visit_date": "2026-08-23T01:17:39.798000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -208,15 +208,15 @@
         "repository": "dedsec1121fk/dedsec1121fk",
         "save_request_date": "2026-08-23T01:17:30.671302+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:76a55a75b3d3d5b5fead72c59cc9e7bfa9a6cb9b",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:76a55a75b3d3d5b5fead72c59cc9e7bfa9a6cb9b/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:fffaf29c526af7df9f512af5ccf499fa0e62ee8a",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:fffaf29c526af7df9f512af5ccf499fa0e62ee8a/",
         "title": "GitHub profile"
       },
       "dedsec1121fk/dedsec1121fk.github.io": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io",
         "error": null,
         "latest_visit_date": "2026-08-21T21:12:32.922000+00:00",
@@ -225,17 +225,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/dedsec1121fk.github.io",
         "repository": "dedsec1121fk/dedsec1121fk.github.io",
-        "save_request_date": "2026-08-21T21:12:24.709362+00:00",
+        "save_request_date": "2026-08-24T09:02:42.069229+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:abe0b213712e972591816a232136fcecbf8fc07c",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:abe0b213712e972591816a232136fcecbf8fc07c/",
         "title": "Websites"
       },
       "sal-scar/DedSec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec",
         "error": null,
         "latest_visit_date": "2026-08-21T21:12:22.785000+00:00",
@@ -244,17 +244,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/DedSec",
         "repository": "sal-scar/DedSec",
-        "save_request_date": "2026-08-21T21:12:20.009960+00:00",
+        "save_request_date": "2026-08-24T09:02:37.738884+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:0d625efd67975c035e0a12069210bed605cb96ad",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:0d625efd67975c035e0a12069210bed605cb96ad/",
         "title": "DedSec backup"
       },
       "sal-scar/ded-sec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec",
         "error": null,
         "latest_visit_date": "2026-08-21T21:12:32.914000+00:00",
@@ -263,11 +263,11 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/ded-sec",
         "repository": "sal-scar/ded-sec",
-        "save_request_date": "2026-08-21T21:12:28.865329+00:00",
+        "save_request_date": "2026-08-24T09:02:46.039898+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:9a09f98f2e7b1638643ead19fbec83854e321cde",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:9a09f98f2e7b1638643ead19fbec83854e321cde/",
         "title": "Website mirror"
@@ -16146,19 +16146,19 @@
     "dedsec-backup": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "06526b85f14d1a18aefd881a62bb04dbc9431b6217aa09c067a85bfc2bf08992",
-        "size": 19330948,
-        "snapshot_sha256": "b2c3a4278d2bc1ca5ede6af6a34c4d6ee18e46b19490250a4dec4a75c783d73d",
-        "updated_at_utc": "2026-08-18T15:43:13Z"
+        "sha256": "ab53e58f4dd41d3532562b529e644c927d0658b59bf63d58494890aa5ce68b20",
+        "size": 19332090,
+        "snapshot_sha256": "56883550abf0e287bd69937c84ef838703af0147f2dc864156d0ef40f1a8f733",
+        "updated_at_utc": "2026-08-24T09:12:26Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-21T21:17:39Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-08-24T09:12:27Z",
         "run_attempt": "1",
-        "run_id": "32527348306",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-08-21T21:17:39Z",
+        "run_id": "32709353939",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-08-24T09:10:39Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 209
@@ -16526,8 +16526,8 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "cc15e0c8fa14b7a71eeb4252a0d9ad4fbe4f06e627091493f3e8e8a354aa3dbe",
-          "size": 276648,
+          "sha256": "9bb17598ae62b814ae28567ee627b967f5499a7b8438497315b2b9becfea8d17",
+          "size": 279415,
           "type": "file"
         },
         "SECURITY.md": {
@@ -17086,8 +17086,8 @@
         "Scripts/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8194fe55d184f9eccf1a2719628be6f4f754285126bbf80ffb8779a1d61c50d2",
-          "size": 1341007,
+          "sha256": "c2ddc6f1e103076a51eaab15129f6fca1a34851db28779943be796aeff9f68e9",
+          "size": 1341673,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/ButSystem.py": {
@@ -17114,8 +17114,8 @@
         "Scripts/Ελληνική Έκδοση/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8194fe55d184f9eccf1a2719628be6f4f754285126bbf80ffb8779a1d61c50d2",
-          "size": 1341007,
+          "sha256": "c2ddc6f1e103076a51eaab15129f6fca1a34851db28779943be796aeff9f68e9",
+          "size": 1341673,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Άλλα Εργαλεία/Android App Launcher.py": {
@@ -17652,25 +17652,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-22 00:17:39 EEST",
-      "last_completed_at_utc": "2026-08-21T21:17:39Z",
-      "last_completed_snapshot": "b2c3a4278d2bc1ca5ede6af6a34c4d6ee18e46b19490250a4dec4a75c783d73d",
-      "last_remote_verified_at_utc": "2026-08-21T21:17:39Z",
+      "last_completed_at_greece": "2026-08-24 12:12:27 EEST",
+      "last_completed_at_utc": "2026-08-24T09:12:27Z",
+      "last_completed_snapshot": "56883550abf0e287bd69937c84ef838703af0147f2dc864156d0ef40f1a8f733",
+      "last_remote_verified_at_utc": "2026-08-24T09:12:27Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 3,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 588,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 209,
+        "snapshot_changed": true,
+        "unchanged_files": 206,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-21T21:18:35Z",
+      "state_updated_at_utc": "2026-08-24T09:13:04Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -17685,7 +17685,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-21T21:17:39Z",
+        "last_queue_update_at_utc": "2026-08-24T09:12:26Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -17695,19 +17695,19 @@
     "dedsec-main": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "06526b85f14d1a18aefd881a62bb04dbc9431b6217aa09c067a85bfc2bf08992",
-        "size": 19330948,
-        "snapshot_sha256": "b2c3a4278d2bc1ca5ede6af6a34c4d6ee18e46b19490250a4dec4a75c783d73d",
-        "updated_at_utc": "2026-08-18T15:39:52Z"
+        "sha256": "ab53e58f4dd41d3532562b529e644c927d0658b59bf63d58494890aa5ce68b20",
+        "size": 19332090,
+        "snapshot_sha256": "56883550abf0e287bd69937c84ef838703af0147f2dc864156d0ef40f1a8f733",
+        "updated_at_utc": "2026-08-24T09:16:01Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-21T21:20:43Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-08-24T09:16:02Z",
         "run_attempt": "1",
-        "run_id": "32527348306",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-08-21T21:20:43Z",
+        "run_id": "32709353939",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-08-24T09:14:11Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 209
@@ -18075,8 +18075,8 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "cc15e0c8fa14b7a71eeb4252a0d9ad4fbe4f06e627091493f3e8e8a354aa3dbe",
-          "size": 276648,
+          "sha256": "9bb17598ae62b814ae28567ee627b967f5499a7b8438497315b2b9becfea8d17",
+          "size": 279415,
           "type": "file"
         },
         "SECURITY.md": {
@@ -18635,8 +18635,8 @@
         "Scripts/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8194fe55d184f9eccf1a2719628be6f4f754285126bbf80ffb8779a1d61c50d2",
-          "size": 1341007,
+          "sha256": "c2ddc6f1e103076a51eaab15129f6fca1a34851db28779943be796aeff9f68e9",
+          "size": 1341673,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/ButSystem.py": {
@@ -18663,8 +18663,8 @@
         "Scripts/Ελληνική Έκδοση/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8194fe55d184f9eccf1a2719628be6f4f754285126bbf80ffb8779a1d61c50d2",
-          "size": 1341007,
+          "sha256": "c2ddc6f1e103076a51eaab15129f6fca1a34851db28779943be796aeff9f68e9",
+          "size": 1341673,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Άλλα Εργαλεία/Android App Launcher.py": {
@@ -19201,25 +19201,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-22 00:20:43 EEST",
-      "last_completed_at_utc": "2026-08-21T21:20:43Z",
-      "last_completed_snapshot": "b2c3a4278d2bc1ca5ede6af6a34c4d6ee18e46b19490250a4dec4a75c783d73d",
-      "last_remote_verified_at_utc": "2026-08-21T21:20:43Z",
+      "last_completed_at_greece": "2026-08-24 12:16:02 EEST",
+      "last_completed_at_utc": "2026-08-24T09:16:02Z",
+      "last_completed_snapshot": "56883550abf0e287bd69937c84ef838703af0147f2dc864156d0ef40f1a8f733",
+      "last_remote_verified_at_utc": "2026-08-24T09:16:02Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 3,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 589,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 209,
+        "snapshot_changed": true,
+        "unchanged_files": 206,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-21T21:21:30Z",
+      "state_updated_at_utc": "2026-08-24T09:16:35Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -19234,7 +19234,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-21T21:20:43Z",
+        "last_queue_update_at_utc": "2026-08-24T09:16:01Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -19244,22 +19244,22 @@
     "dedsec-website-mirror": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "bf859ecaf4188e852945468a88161b4f4401846994ffa5924b1e4e0ddb7f0050",
-        "size": 8814343,
-        "snapshot_sha256": "2dba95ace55a506db3f424a6a25839df9c3e13fbba25b30deccadacb7022238a",
-        "updated_at_utc": "2026-08-18T03:46:27Z"
+        "sha256": "353528a1b997cbc5f296bee6c9948ce7f4ffd761fed233bd2baace30a23a1115",
+        "size": 9323956,
+        "snapshot_sha256": "074414a1560bbc41c9df80fff7a15ac43a53e4a2c726c41c154d6d7339e98d09",
+        "updated_at_utc": "2026-08-24T09:05:28Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-21T21:13:30Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-08-24T09:05:28Z",
         "run_attempt": "1",
-        "run_id": "32527348306",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-08-21T21:13:30Z",
+        "run_id": "32709353939",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-08-24T09:03:45Z",
         "state_source": "github_update_json",
         "status": "complete",
-        "total_current_files": 822
+        "total_current_files": 829
       },
       "directories": [
         ".github",
@@ -19431,6 +19431,13 @@
           "size": 1832,
           "type": "file"
         },
+        ".gitignore": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f990a03911c5637a05c27e6d17a5f4d0cf794cb3edc15981904f92956346c7e0",
+          "size": 7,
+          "type": "file"
+        },
         ".nojekyll": {
           "executable": false,
           "mode": "0644",
@@ -19471,6 +19478,20 @@
           "mode": "0644",
           "sha256": "12235abb675c5735e5af2ff7adafe1db15048a5471e98c75d96a26878d5a1d25",
           "size": 145790,
+          "type": "file"
+        },
+        "Assets/Ebook-Previews/faith-digital-age-el-preview.pdf": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3bb92fd3bfcded672a0b35ee949a49d489099c4973f8f67bfebfe49c8e43326a",
+          "size": 255095,
+          "type": "file"
+        },
+        "Assets/Ebook-Previews/faith-digital-age-en-preview.pdf": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b251b3490fcee3613e3b06552ad4cbd669f8ae816c91c86d0d1ce5feaee578d4",
+          "size": 239100,
           "type": "file"
         },
         "Assets/Ebook-Previews/termux-handbook-el-preview.pdf": {
@@ -19571,6 +19592,20 @@
           "size": 21472,
           "type": "file"
         },
+        "Assets/Images/products/faith-digital-age-el.webp": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c192e40720c781f731a13fc3472aaa896d6d405156a0119be5ba4353ad76f029",
+          "size": 19416,
+          "type": "file"
+        },
+        "Assets/Images/products/faith-digital-age-en.webp": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "38d92639617d2026339af00984d2d07dd2536151adee0824e79a0e214de65351",
+          "size": 19786,
+          "type": "file"
+        },
         "Assets/Images/products/termux-troubleshooting-handbook-el.webp": {
           "executable": false,
           "mode": "0644",
@@ -19630,8 +19665,8 @@
         "Assets/search-index.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "aab47ff05cbeab674d90e3184c43981222e0f26d702dc22771487cd2d8907995",
-          "size": 755826,
+          "sha256": "b8f0bcf68f6f2f742a7d3131d8548cdc9dab2c91762174bc7897937d115c5f3c",
+          "size": 758561,
           "type": "file"
         },
         "Assets/vendor/fontawesome/LICENSE.txt": {
@@ -20428,7 +20463,7 @@
         "Other Files/deployment-info.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ac058a1ebe3997006c1859b24819dd6426f730d4bc5f7a2110870293b5cc6af3",
+          "sha256": "8fea760fccf0a6a387c27c198bbeb12150f5b65c99b1315a6e3e7ae3201d0387",
           "size": 247,
           "type": "file"
         },
@@ -20449,8 +20484,8 @@
         "Pages/about-founder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "69e1d9d2d30ae42ccd915c536e3a30df3b7c317b3771af985020a1f502bff918",
-          "size": 40902,
+          "sha256": "4ab1774552d66f5e26e57cb2aaaae82ae8ab55c68e2f6b8049a448064a1a4089",
+          "size": 40906,
           "type": "file"
         },
         "Pages/assistance.html": {
@@ -20477,8 +20512,8 @@
         "Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4136369d4c5095193c91ac52b4f6221ce41ce897c47a323765b27e227cb0d4d6",
-          "size": 92901,
+          "sha256": "ebf192d03a893264074efa543f519092efa1ef7aefa0abe8cee9b65331827bea",
+          "size": 94071,
           "type": "file"
         },
         "Pages/guide-for-installation.html": {
@@ -20491,8 +20526,8 @@
         "Pages/learn-about-the-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "73448c430064033b15c875ec823cd460beac67773d9621b9470153eff1fd2b04",
-          "size": 292916,
+          "sha256": "4af947b4527a2b439a76cddfe1f5ccb8cb012fc3cd61b1bdb4d2f3a838f5e28e",
+          "size": 292920,
           "type": "file"
         },
         "Pages/privacy-policy.html": {
@@ -20523,6 +20558,13 @@
           "size": 29865,
           "type": "file"
         },
+        "Pages/product-faith-digital-age.html": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "57b939afbd7c4df81049a82b2da253d3cefdd5995a49dd5ee17e2a95c25f586b",
+          "size": 29348,
+          "type": "file"
+        },
         "Pages/product-termux-troubleshooting-handbook.html": {
           "executable": false,
           "mode": "0644",
@@ -20533,8 +20575,8 @@
         "Pages/store.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0caa6c416de7df3c1a7c6b277db81d135bb2b9ed7f1c1f32e9a73eae86f40f8e",
-          "size": 42687,
+          "sha256": "65f5b14f82e658d7570e9918a0e9ea7bd7b2b24f91082ba87d58003843390239",
+          "size": 51741,
           "type": "file"
         },
         "README.md": {
@@ -23333,8 +23375,8 @@
         "el/Pages/about-founder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5e96d009202a546b0c26c66496da0ce67212abb61e2c95fc0c0b60ee44572253",
-          "size": 47766,
+          "sha256": "b37029e2e800b3ed86bc1e30d5ac1b0470f2d9f3d7921de3e22a64aafa7ca98b",
+          "size": 47777,
           "type": "file"
         },
         "el/Pages/assistance.html": {
@@ -23361,8 +23403,8 @@
         "el/Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0c65561a9213476c043cbd45d2ef65bbdc7b8b22d9c1a14c65245619738857ac",
-          "size": 109320,
+          "sha256": "22f640d6df5663a751ff9b3b3e179638a4b2252f519072094216c6432f624445",
+          "size": 110398,
           "type": "file"
         },
         "el/Pages/guide-for-installation.html": {
@@ -23375,8 +23417,8 @@
         "el/Pages/learn-about-the-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d8207a8b8c7e814809a5bd403c61c01190540965915f1a1c81cb4c9c45daa626",
-          "size": 345289,
+          "sha256": "4908da3ffdf10c27a54f937aefdf72a8fedb038d2e94ea6e83647f16a043008e",
+          "size": 345300,
           "type": "file"
         },
         "el/Pages/privacy-policy.html": {
@@ -23407,6 +23449,13 @@
           "size": 34550,
           "type": "file"
         },
+        "el/Pages/product-faith-digital-age.html": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "748f5eb532cdc5b7b936b598a16ca31d54fd5d9eec05f8662892c06b23f8dc1a",
+          "size": 34065,
+          "type": "file"
+        },
         "el/Pages/product-termux-troubleshooting-handbook.html": {
           "executable": false,
           "mode": "0644",
@@ -23417,8 +23466,8 @@
         "el/Pages/store.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "91f81959dbda924b56bd96247cfe9dd851225026cf4910dfb19cfb7572267e07",
-          "size": 49709,
+          "sha256": "9de9ab06aea647f4fd46144cc4a9ae36ea1c62707e2bf797d8446e8f3c4541f8",
+          "size": 59914,
           "type": "file"
         },
         "el/Smartphone-Academy/Home.html": {
@@ -25167,8 +25216,8 @@
         "sitemap.xml": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3a4d71b92af1e3159292523be7d6b607d3811e02da0651ef3957bebb13de5231",
-          "size": 423249,
+          "sha256": "ad7f0349ac11670b788c58bef407031449e1a68b1ff793b4aee9fffe9b34a9c2",
+          "size": 424336,
           "type": "file"
         },
         "style.css": {
@@ -25180,25 +25229,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-22 00:13:30 EEST",
-      "last_completed_at_utc": "2026-08-21T21:13:30Z",
-      "last_completed_snapshot": "2dba95ace55a506db3f424a6a25839df9c3e13fbba25b30deccadacb7022238a",
-      "last_remote_verified_at_utc": "2026-08-21T21:13:30Z",
+      "last_completed_at_greece": "2026-08-24 12:05:28 EEST",
+      "last_completed_at_utc": "2026-08-24T09:05:28Z",
+      "last_completed_snapshot": "074414a1560bbc41c9df80fff7a15ac43a53e4a2c726c41c154d6d7339e98d09",
+      "last_remote_verified_at_utc": "2026-08-24T09:05:28Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 18,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 0,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 822,
+        "snapshot_changed": true,
+        "unchanged_files": 811,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-21T21:14:17Z",
+      "state_updated_at_utc": "2026-08-24T09:06:08Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-mirror-repository-snapshots",
         "kind": "repository",
@@ -25213,7 +25262,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-21T21:13:30Z",
+        "last_queue_update_at_utc": "2026-08-24T09:05:28Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -25223,22 +25272,22 @@
     "dedsec-websites": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "114620a8d95cf300a4eb7c5fb5bd971e27ce44e98b86168230daad30b908b056",
-        "size": 8814343,
-        "snapshot_sha256": "7657e1ef5e3d0bede34884a89a9d7c841d4e3c88b0fbac5437b00c3d4fb306f5",
-        "updated_at_utc": "2026-08-18T03:31:56Z"
+        "sha256": "25c123ad69a4fc65f6280a04d3ef2459ce56ec6737577cae0b201ea2c0412101",
+        "size": 9323956,
+        "snapshot_sha256": "6949774f16ac662f148b22aae8d0ecce582472c301fadfc2ef797cdefd5b3b85",
+        "updated_at_utc": "2026-08-24T09:08:57Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-21T21:15:25Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-08-24T09:08:57Z",
         "run_attempt": "1",
-        "run_id": "32527348306",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-08-21T21:15:25Z",
+        "run_id": "32709353939",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-08-24T09:07:14Z",
         "state_source": "internet_archive",
         "status": "complete",
-        "total_current_files": 822
+        "total_current_files": 829
       },
       "directories": [
         ".github",
@@ -25410,6 +25459,13 @@
           "size": 1832,
           "type": "file"
         },
+        ".gitignore": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f990a03911c5637a05c27e6d17a5f4d0cf794cb3edc15981904f92956346c7e0",
+          "size": 7,
+          "type": "file"
+        },
         ".nojekyll": {
           "executable": false,
           "mode": "0644",
@@ -25450,6 +25506,20 @@
           "mode": "0644",
           "sha256": "12235abb675c5735e5af2ff7adafe1db15048a5471e98c75d96a26878d5a1d25",
           "size": 145790,
+          "type": "file"
+        },
+        "Assets/Ebook-Previews/faith-digital-age-el-preview.pdf": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3bb92fd3bfcded672a0b35ee949a49d489099c4973f8f67bfebfe49c8e43326a",
+          "size": 255095,
+          "type": "file"
+        },
+        "Assets/Ebook-Previews/faith-digital-age-en-preview.pdf": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b251b3490fcee3613e3b06552ad4cbd669f8ae816c91c86d0d1ce5feaee578d4",
+          "size": 239100,
           "type": "file"
         },
         "Assets/Ebook-Previews/termux-handbook-el-preview.pdf": {
@@ -25550,6 +25620,20 @@
           "size": 21472,
           "type": "file"
         },
+        "Assets/Images/products/faith-digital-age-el.webp": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c192e40720c781f731a13fc3472aaa896d6d405156a0119be5ba4353ad76f029",
+          "size": 19416,
+          "type": "file"
+        },
+        "Assets/Images/products/faith-digital-age-en.webp": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "38d92639617d2026339af00984d2d07dd2536151adee0824e79a0e214de65351",
+          "size": 19786,
+          "type": "file"
+        },
         "Assets/Images/products/termux-troubleshooting-handbook-el.webp": {
           "executable": false,
           "mode": "0644",
@@ -25609,8 +25693,8 @@
         "Assets/search-index.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "aab47ff05cbeab674d90e3184c43981222e0f26d702dc22771487cd2d8907995",
-          "size": 755826,
+          "sha256": "b8f0bcf68f6f2f742a7d3131d8548cdc9dab2c91762174bc7897937d115c5f3c",
+          "size": 758561,
           "type": "file"
         },
         "Assets/vendor/fontawesome/LICENSE.txt": {
@@ -26407,7 +26491,7 @@
         "Other Files/deployment-info.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ac058a1ebe3997006c1859b24819dd6426f730d4bc5f7a2110870293b5cc6af3",
+          "sha256": "8fea760fccf0a6a387c27c198bbeb12150f5b65c99b1315a6e3e7ae3201d0387",
           "size": 247,
           "type": "file"
         },
@@ -26428,8 +26512,8 @@
         "Pages/about-founder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "69e1d9d2d30ae42ccd915c536e3a30df3b7c317b3771af985020a1f502bff918",
-          "size": 40902,
+          "sha256": "4ab1774552d66f5e26e57cb2aaaae82ae8ab55c68e2f6b8049a448064a1a4089",
+          "size": 40906,
           "type": "file"
         },
         "Pages/assistance.html": {
@@ -26456,8 +26540,8 @@
         "Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4136369d4c5095193c91ac52b4f6221ce41ce897c47a323765b27e227cb0d4d6",
-          "size": 92901,
+          "sha256": "ebf192d03a893264074efa543f519092efa1ef7aefa0abe8cee9b65331827bea",
+          "size": 94071,
           "type": "file"
         },
         "Pages/guide-for-installation.html": {
@@ -26470,8 +26554,8 @@
         "Pages/learn-about-the-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "73448c430064033b15c875ec823cd460beac67773d9621b9470153eff1fd2b04",
-          "size": 292916,
+          "sha256": "4af947b4527a2b439a76cddfe1f5ccb8cb012fc3cd61b1bdb4d2f3a838f5e28e",
+          "size": 292920,
           "type": "file"
         },
         "Pages/privacy-policy.html": {
@@ -26502,6 +26586,13 @@
           "size": 29865,
           "type": "file"
         },
+        "Pages/product-faith-digital-age.html": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "57b939afbd7c4df81049a82b2da253d3cefdd5995a49dd5ee17e2a95c25f586b",
+          "size": 29348,
+          "type": "file"
+        },
         "Pages/product-termux-troubleshooting-handbook.html": {
           "executable": false,
           "mode": "0644",
@@ -26512,8 +26603,8 @@
         "Pages/store.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0caa6c416de7df3c1a7c6b277db81d135bb2b9ed7f1c1f32e9a73eae86f40f8e",
-          "size": 42687,
+          "sha256": "65f5b14f82e658d7570e9918a0e9ea7bd7b2b24f91082ba87d58003843390239",
+          "size": 51741,
           "type": "file"
         },
         "README.md": {
@@ -29312,8 +29403,8 @@
         "el/Pages/about-founder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5e96d009202a546b0c26c66496da0ce67212abb61e2c95fc0c0b60ee44572253",
-          "size": 47766,
+          "sha256": "b37029e2e800b3ed86bc1e30d5ac1b0470f2d9f3d7921de3e22a64aafa7ca98b",
+          "size": 47777,
           "type": "file"
         },
         "el/Pages/assistance.html": {
@@ -29340,8 +29431,8 @@
         "el/Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0c65561a9213476c043cbd45d2ef65bbdc7b8b22d9c1a14c65245619738857ac",
-          "size": 109320,
+          "sha256": "22f640d6df5663a751ff9b3b3e179638a4b2252f519072094216c6432f624445",
+          "size": 110398,
           "type": "file"
         },
         "el/Pages/guide-for-installation.html": {
@@ -29354,8 +29445,8 @@
         "el/Pages/learn-about-the-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d8207a8b8c7e814809a5bd403c61c01190540965915f1a1c81cb4c9c45daa626",
-          "size": 345289,
+          "sha256": "4908da3ffdf10c27a54f937aefdf72a8fedb038d2e94ea6e83647f16a043008e",
+          "size": 345300,
           "type": "file"
         },
         "el/Pages/privacy-policy.html": {
@@ -29386,6 +29477,13 @@
           "size": 34550,
           "type": "file"
         },
+        "el/Pages/product-faith-digital-age.html": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "748f5eb532cdc5b7b936b598a16ca31d54fd5d9eec05f8662892c06b23f8dc1a",
+          "size": 34065,
+          "type": "file"
+        },
         "el/Pages/product-termux-troubleshooting-handbook.html": {
           "executable": false,
           "mode": "0644",
@@ -29396,8 +29494,8 @@
         "el/Pages/store.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "91f81959dbda924b56bd96247cfe9dd851225026cf4910dfb19cfb7572267e07",
-          "size": 49709,
+          "sha256": "9de9ab06aea647f4fd46144cc4a9ae36ea1c62707e2bf797d8446e8f3c4541f8",
+          "size": 59914,
           "type": "file"
         },
         "el/Smartphone-Academy/Home.html": {
@@ -31146,8 +31244,8 @@
         "sitemap.xml": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3a4d71b92af1e3159292523be7d6b607d3811e02da0651ef3957bebb13de5231",
-          "size": 423249,
+          "sha256": "ad7f0349ac11670b788c58bef407031449e1a68b1ff793b4aee9fffe9b34a9c2",
+          "size": 424336,
           "type": "file"
         },
         "style.css": {
@@ -31159,25 +31257,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-22 00:15:25 EEST",
-      "last_completed_at_utc": "2026-08-21T21:15:25Z",
-      "last_completed_snapshot": "7657e1ef5e3d0bede34884a89a9d7c841d4e3c88b0fbac5437b00c3d4fb306f5",
-      "last_remote_verified_at_utc": "2026-08-21T21:15:25Z",
+      "last_completed_at_greece": "2026-08-24 12:08:57 EEST",
+      "last_completed_at_utc": "2026-08-24T09:08:57Z",
+      "last_completed_snapshot": "6949774f16ac662f148b22aae8d0ecce582472c301fadfc2ef797cdefd5b3b85",
+      "last_remote_verified_at_utc": "2026-08-24T09:08:57Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 18,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 821,
         "mirror_verified": true,
-        "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 822,
-        "wayback_pending": 1630
+        "remote_state_checkpoint_uploaded": false,
+        "snapshot_changed": true,
+        "unchanged_files": 811,
+        "wayback_pending": 1619
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-21T21:16:00Z",
+      "state_updated_at_utc": "2026-08-24T10:47:15Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-snapshots",
         "kind": "website",
@@ -31192,72 +31290,24 @@
         "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 1037,
+        "completed": 1082,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-19T21:32:36Z",
-          "remaining": 1630,
-          "workflow_run_id": "32294498413"
+          "processed_at_utc": "2026-08-24T10:47:15Z",
+          "remaining": 1595,
+          "workflow_run_id": "32709353939"
         },
-        "last_processed_at_utc": "2026-08-19T21:32:16Z",
-        "last_queue_added": 2,
-        "last_queue_update_at_utc": "2026-08-21T21:15:25Z",
-        "last_successful_at_utc": "2026-08-19T21:32:16Z",
-        "last_successful_url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Permission-Change-Journal.html",
+        "last_processed_at_utc": "2026-08-24T10:46:55Z",
+        "last_queue_added": 36,
+        "last_queue_update_at_utc": "2026-08-24T09:08:57Z",
+        "last_successful_at_utc": "2026-08-24T10:46:55Z",
+        "last_successful_url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Device-Spec-Profile.html",
         "last_transient_error": {
-          "at_utc": "2026-08-18T21:57:58Z",
-          "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
-          "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/App-Installation/Install-Failure-Triage.html"
+          "at_utc": "2026-08-21T22:01:51Z",
+          "error": "URLError(TimeoutError(110, 'Connection timed out'))",
+          "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Service-Exposure.html"
         },
         "pending": [
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Python-Config-Backup.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Python-Log-Normalizer.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Smartphone-Baseline-Assessment.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Storage-Permission-Recovery.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Usb-C-Data-Power-Validation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Web-Input-Output-Review.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Hardening-Plan.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Password-Policy.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Privilege-Audit.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Secret-Exposure-Scan.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Service-Exposure.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Local-Api.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Project-Release.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Python-Cli.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-SQLite-Project.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Phone-Static-Site.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Termux-Dev-Bootstrap.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Security/App-Provenance-Comparison.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Security/Patch-Exposure-Review.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Security/Permission-Risk-Review.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Security/Privacy-Timeline-Analysis.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Security/Special-Access-Audit.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Security/Suspicious-App-Casefile.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Change-Triage.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Detection-Rule.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Failed-Login-Analysis.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Incident-Timeline.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Ioc-Matching.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Log-Normalization.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Monitoring/Log-Retention-Alerting.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Connectivity-Change-Detection.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Dns-Observation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Http-Observation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Interface-Map.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Local-Ports.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Network-Baseline.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Packet-Reasoning.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Networking-Practical/Tls-Certificate-Audit.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Backup-Restore-Verification.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Battery-Baseline.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Crash-Background-Triage.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Migration-Readiness.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Storage-Usage-Analysis.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Maintenance/Thermal-Performance.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/App-Compatibility-Matrix.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Charging-Compatibility.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Connectivity-Profile.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Device-Spec-Profile.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Comparison.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Technology-Capstone.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Python-Automation/Cli-Arguments.html",
@@ -32839,9 +32889,22 @@
           "https://ded-sec.space/Smartphone-Academy/Pages/Phone-Technology/index.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Accessory-Labs/Otg-Storage-Benchmark.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Accessory-Labs/Usb-C-Capability-Matrix.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/App-Installation/Install-Failure-Triage.html"
+          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/App-Installation/Install-Failure-Triage.html",
+          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Hardening/Service-Exposure.html",
+          "https://ded-sec.online/Assets/Ebook-Previews/faith-digital-age-el-preview.pdf",
+          "https://ded-sec.online/Assets/Ebook-Previews/faith-digital-age-en-preview.pdf",
+          "https://ded-sec.online/Assets/Images/products/faith-digital-age-el.webp",
+          "https://ded-sec.online/Assets/Images/products/faith-digital-age-en.webp",
+          "https://ded-sec.online/Pages/product-faith-digital-age.html",
+          "https://ded-sec.online/el/Pages/product-faith-digital-age.html",
+          "https://ded-sec.space/Assets/Ebook-Previews/faith-digital-age-el-preview.pdf",
+          "https://ded-sec.space/Assets/Ebook-Previews/faith-digital-age-en-preview.pdf",
+          "https://ded-sec.space/Assets/Images/products/faith-digital-age-el.webp",
+          "https://ded-sec.space/Assets/Images/products/faith-digital-age-en.webp",
+          "https://ded-sec.space/Pages/product-faith-digital-age.html",
+          "https://ded-sec.space/el/Pages/product-faith-digital-age.html"
         ],
-        "permanent_failures": 4,
+        "permanent_failures": 6,
         "recent_failures": [
           {
             "at_utc": "2026-08-17T20:20:26Z",
@@ -32862,9 +32925,19 @@
             "at_utc": "2026-08-17T20:50:19Z",
             "error": "HTTP 401: {\"message\":\"You need to be logged in to use Save Page Now.\"}",
             "url": "https://ded-sec.space/Smartphone-Academy/Pages/Apps-Apks/Split-Apks-And-Bundles.html"
+          },
+          {
+            "at_utc": "2026-08-21T21:33:54Z",
+            "error": "HTTP 401: {\"message\":\"You need to be logged in to use Save Page Now.\"}",
+            "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Extended/Usb-C-Data-Power-Validation.html"
+          },
+          {
+            "at_utc": "2026-08-21T22:21:06Z",
+            "error": "HTTP 401: {\"message\":\"You need to be logged in to use Save Page Now.\"}",
+            "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Termux-Dev-Bootstrap.html"
           }
         ],
-        "remaining": 1630
+        "remaining": 1595
       }
     },
     "github-profile": {
