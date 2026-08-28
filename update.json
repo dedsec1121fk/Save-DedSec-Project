@@ -7,7 +7,7 @@
       "Termux_API.apk",
       "Termux_Styling.apk"
     ],
-    "checked_at_utc": "2026-08-26T22:23:57Z",
+    "checked_at_utc": "2026-08-28T21:11:10Z",
     "failures": [],
     "files": {
       "F-Droid.apk": {
@@ -37,15 +37,15 @@
     "uploaded": false
   },
   "archive_mode": "single_current_working_tree_archive",
-  "generated_at_utc": "2026-08-26T23:15:48Z",
+  "generated_at_utc": "2026-08-28T21:11:47Z",
   "resume_behavior": "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, checksums and one compact state checkpoint. The APK item stores the current four APK dependencies with hashes. Git/commit/push history is never archived by Internet Archive. Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage.",
   "schema_version": 7,
   "software_heritage": {
-    "checked_at_utc": "2026-08-26T22:16:47Z",
+    "checked_at_utc": "2026-08-28T20:50:03Z",
     "link_resolution_policy": "Save requests made in the current workflow run are not resolved into README links until a later workflow run.",
     "repositories": {
       "dedsec1121fk/Corrupted-Files-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:34.444000+00:00",
@@ -54,20 +54,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Corrupted-Files-Project",
         "repository": "dedsec1121fk/Corrupted-Files-Project",
-        "save_request_date": "2026-08-25T03:08:31.615571+00:00",
+        "save_request_date": "2026-08-28T20:50:13.926190+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/",
         "title": "Corrupted Files"
       },
       "dedsec1121fk/DedSec": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec",
         "error": null,
-        "latest_visit_date": "2026-08-24T09:02:36.376000+00:00",
+        "latest_visit_date": "2026-08-26T22:16:56.537000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -75,15 +75,15 @@
         "repository": "dedsec1121fk/DedSec",
         "save_request_date": "2026-08-26T22:16:50.033475+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:19fb93418982d1f79459a4afe75854c29c00839b",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:19fb93418982d1f79459a4afe75854c29c00839b/",
         "title": "DedSec main"
       },
       "dedsec1121fk/Hacking-Guide-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:54.850000+00:00",
@@ -92,17 +92,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Hacking-Guide-Project",
         "repository": "dedsec1121fk/Hacking-Guide-Project",
-        "save_request_date": "2026-08-25T03:08:46.676730+00:00",
+        "save_request_date": "2026-08-28T20:50:28.571655+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/",
         "title": "Hacking Guide Project"
       },
       "dedsec1121fk/Language-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:54.907000+00:00",
@@ -111,17 +111,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Language-Project",
         "repository": "dedsec1121fk/Language-Project",
-        "save_request_date": "2026-08-25T03:08:50.094240+00:00",
+        "save_request_date": "2026-08-28T20:50:32.016169+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/",
         "title": "Language Project"
       },
       "dedsec1121fk/Offline-Survival-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:44.601000+00:00",
@@ -130,17 +130,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Offline-Survival-Project",
         "repository": "dedsec1121fk/Offline-Survival-Project",
-        "save_request_date": "2026-08-25T03:08:43.040454+00:00",
+        "save_request_date": "2026-08-28T20:50:24.667616+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/",
         "title": "Offline Survival"
       },
       "dedsec1121fk/Pocket-AI-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:44.680000+00:00",
@@ -149,17 +149,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Pocket-AI-Project",
         "repository": "dedsec1121fk/Pocket-AI-Project",
-        "save_request_date": "2026-08-25T03:08:35.465222+00:00",
+        "save_request_date": "2026-08-28T20:50:17.437905+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/",
         "title": "Pocket AI"
       },
       "dedsec1121fk/Praying-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:44.670000+00:00",
@@ -168,17 +168,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Praying-Project",
         "repository": "dedsec1121fk/Praying-Project",
-        "save_request_date": "2026-08-25T03:08:39.357036+00:00",
+        "save_request_date": "2026-08-28T20:50:21.077450+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:bb6288e643bd92d660ec5084ae9ab238d39c440f",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:bb6288e643bd92d660ec5084ae9ab238d39c440f/",
         "title": "Praying Project"
       },
       "dedsec1121fk/Save-DedSec-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:55.047000+00:00",
@@ -187,17 +187,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Save-DedSec-Project",
         "repository": "dedsec1121fk/Save-DedSec-Project",
-        "save_request_date": "2026-08-25T03:08:53.955310+00:00",
+        "save_request_date": "2026-08-28T20:50:35.867924+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:7c49c1bde34d61a9c581e885550ebcf309f4ac5c",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7c49c1bde34d61a9c581e885550ebcf309f4ac5c/",
         "title": "Save DedSec Project"
       },
       "dedsec1121fk/dedsec1121fk": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk",
         "error": null,
         "latest_visit_date": "2026-08-25T03:08:34.477000+00:00",
@@ -206,20 +206,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/dedsec1121fk",
         "repository": "dedsec1121fk/dedsec1121fk",
-        "save_request_date": "2026-08-25T03:08:27.967342+00:00",
+        "save_request_date": "2026-08-28T20:50:10.294793+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:4953565d9ef28fa857af72a21f1cd8ec8aeca025",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:4953565d9ef28fa857af72a21f1cd8ec8aeca025/",
         "title": "GitHub profile"
       },
       "dedsec1121fk/dedsec1121fk.github.io": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io",
         "error": null,
-        "latest_visit_date": "2026-08-24T09:02:46.539000+00:00",
+        "latest_visit_date": "2026-08-26T22:17:06.830000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -227,18 +227,18 @@
         "repository": "dedsec1121fk/dedsec1121fk.github.io",
         "save_request_date": "2026-08-26T22:16:58.066744+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:c259b5c43362a6b775e92012d0fe762c566486c4",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:c259b5c43362a6b775e92012d0fe762c566486c4/",
         "title": "Websites"
       },
       "sal-scar/DedSec": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec",
         "error": null,
-        "latest_visit_date": "2026-08-24T09:02:46.949000+00:00",
+        "latest_visit_date": "2026-08-26T22:16:56.607000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -246,18 +246,18 @@
         "repository": "sal-scar/DedSec",
         "save_request_date": "2026-08-26T22:16:54.159760+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:6bacd1ebe8e09aff30f6e25784a3210784f887dc",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:6bacd1ebe8e09aff30f6e25784a3210784f887dc/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:1bfb8b499f7c43041ffb35b95d4549609c87fc71",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:1bfb8b499f7c43041ffb35b95d4549609c87fc71/",
         "title": "DedSec backup"
       },
       "sal-scar/ded-sec": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec",
         "error": null,
-        "latest_visit_date": "2026-08-24T09:02:46.563000+00:00",
+        "latest_visit_date": "2026-08-26T22:17:06.724000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -265,9 +265,9 @@
         "repository": "sal-scar/ded-sec",
         "save_request_date": "2026-08-26T22:17:02.087475+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:05e7ec480d81318c2466947d9ae8cb6744bf7751",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:05e7ec480d81318c2466947d9ae8cb6744bf7751/",
         "title": "Website mirror"
@@ -289,11 +289,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-25T03:23:36Z",
+        "completed_at_utc": "2026-08-28T21:07:11Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-25T03:23:36Z",
+        "started_at_utc": "2026-08-28T21:07:11Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 2148
@@ -16103,10 +16103,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:23:36 EEST",
-      "last_completed_at_utc": "2026-08-25T03:23:36Z",
+      "last_completed_at_greece": "2026-08-29 00:07:11 EEST",
+      "last_completed_at_utc": "2026-08-28T21:07:11Z",
       "last_completed_snapshot": "3c3784a49cdd7b01074aafef25b0ec28f9abdb845e82092d764d4c163846123e",
-      "last_remote_verified_at_utc": "2026-08-25T03:23:36Z",
+      "last_remote_verified_at_utc": "2026-08-28T21:07:11Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -16121,7 +16121,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:24:09Z",
+      "state_updated_at_utc": "2026-08-28T21:07:43Z",
       "target": {
         "ia_item": "dedsec1121fk-corrupted-files-project-repository-snapshots",
         "kind": "repository",
@@ -16136,7 +16136,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:23:36Z",
+        "last_queue_update_at_utc": "2026-08-28T21:07:11Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -32943,19 +32943,19 @@
     "github-profile": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "c934de83ec42d6ca17a90976339e1607e0de6fb8b335e6a0534e5700226d32d6",
-        "size": 50635,
-        "snapshot_sha256": "cbd90f9bbf93d669ecde981b7cccd77d77dab51b50efd203f87c79f6cc4fbab1",
-        "updated_at_utc": "2026-08-25T03:26:55Z"
+        "sha256": "7a1f9ef37007d8e1dd226121c20281f3cea6d3dfa28177a61933aabe4f960720",
+        "size": 50654,
+        "snapshot_sha256": "7cf3eb245ba40a7b06cdad9dd721dcd90af5efac9df790d5f89a38bfa6e87713",
+        "updated_at_utc": "2026-08-28T21:10:25Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-08-25T03:26:55Z",
+        "completed_at_utc": "2026-08-28T21:10:26Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": true,
-        "started_at_utc": "2026-08-25T03:25:09Z",
+        "started_at_utc": "2026-08-28T21:08:46Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 20
@@ -32978,8 +32978,8 @@
         ".github/profile-themes.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "17be970237d59ac77e0c6c5097e2c67198d439078fb6e368ca3516e0bb197163",
-          "size": 3079,
+          "sha256": "04e1416fa82f00de11abe2840a9f71f8c5cd6e182440e15fa3c90bcc80c4df56",
+          "size": 3080,
           "type": "file"
         },
         ".github/scripts/__pycache__/generate_profile_cards.cpython-313.pyc": {
@@ -33062,58 +33062,58 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "54ccd219bbe0942d1d7b2cde4cf3b56379b10d920da24e3a943c6f038bfb973f",
-          "size": 8104,
+          "sha256": "f39f11b9253e8767f07607008e3f18d32121baef103a1086e58e6500adc7f370",
+          "size": 8113,
           "type": "file"
         },
         "profile/profile-data.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "486f0f2724ae66b405dd995753babc6bff350d9bc813124c4734381d1a690e0d",
+          "sha256": "72f70f4c487591d47ece7d314ffd656d36df0210c0bfbe15689ccea306aea2f7",
           "size": 1671,
           "type": "file"
         },
         "profile/profile-views.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e878de13e24b42970b974a2b3ada7b30700d69e69cafb36bafbc21b66d920165",
+          "sha256": "aed4889124d1d25fbc9cb26feac42f45d2671535465b15807e41a52e158c6780",
           "size": 83,
           "type": "file"
         },
         "profile/stats.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "209624c834ab04bbe310a1f5303b0aaf494257f421fa7aab01d71777c2609375",
+          "sha256": "033716194e9dc42c378f3fd11732abf8520b9983119a3ec86b2b57788f400b68",
           "size": 3667,
           "type": "file"
         },
         "profile/streak.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "aeab61cd0cda0af5221157f09f1a81b1501f87374e360ed4fa76a016b781fa1d",
+          "sha256": "cba3db0ed78f31bb33e333975953e56ed03437085d28558602bdba52f6090fff",
           "size": 3316,
           "type": "file"
         },
         "profile/top-langs.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c0c2a90b93f854a2acc373a7975ba4e65898b6fe0ca3d50a58e5bcf07bc03680",
+          "sha256": "4923c1a71511584ae67d8b7b702978148a214cde1fd13c8c06a0a5266ba7472e",
           "size": 4760,
           "type": "file"
         },
         "profile/views.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "45091293a1d04ceb7323d5e3e80e139b1bcf6298520013d94f8342728685f57c",
+          "sha256": "fc4baddcaa3bfb10901fc0b5b5c58d19d7b7177477b1d0e5d061cd483de84d47",
           "size": 611,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:26:55 EEST",
-      "last_completed_at_utc": "2026-08-25T03:26:55Z",
-      "last_completed_snapshot": "cbd90f9bbf93d669ecde981b7cccd77d77dab51b50efd203f87c79f6cc4fbab1",
-      "last_remote_verified_at_utc": "2026-08-25T03:26:55Z",
+      "last_completed_at_greece": "2026-08-29 00:10:26 EEST",
+      "last_completed_at_utc": "2026-08-28T21:10:26Z",
+      "last_completed_snapshot": "7cf3eb245ba40a7b06cdad9dd721dcd90af5efac9df790d5f89a38bfa6e87713",
+      "last_remote_verified_at_utc": "2026-08-28T21:10:26Z",
       "last_result": {
         "archive_uploaded": true,
         "changed_or_added_files": 8,
@@ -33128,7 +33128,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:27:27Z",
+      "state_updated_at_utc": "2026-08-28T21:11:00Z",
       "target": {
         "ia_item": "dedsec1121fk-github-profile-repository-snapshots",
         "kind": "repository",
@@ -33143,7 +33143,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:26:55Z",
+        "last_queue_update_at_utc": "2026-08-28T21:10:25Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -33161,11 +33161,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-25T03:14:41Z",
+        "completed_at_utc": "2026-08-28T20:56:31Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-25T03:14:41Z",
+        "started_at_utc": "2026-08-28T20:56:31Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 334
@@ -35544,10 +35544,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:14:41 EEST",
-      "last_completed_at_utc": "2026-08-25T03:14:41Z",
+      "last_completed_at_greece": "2026-08-28 23:56:31 EEST",
+      "last_completed_at_utc": "2026-08-28T20:56:31Z",
       "last_completed_snapshot": "02c805a2e1cda73a85b383c1d4b69ec064af3b06355215f6cf3ebd4193109510",
-      "last_remote_verified_at_utc": "2026-08-25T03:14:41Z",
+      "last_remote_verified_at_utc": "2026-08-28T20:56:31Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -35562,7 +35562,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:15:19Z",
+      "state_updated_at_utc": "2026-08-28T20:57:05Z",
       "target": {
         "ia_item": "dedsec1121fk-hacking-guide-project-repository-snapshots",
         "kind": "repository",
@@ -35577,7 +35577,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:14:41Z",
+        "last_queue_update_at_utc": "2026-08-28T20:56:31Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -35595,11 +35595,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-25T03:12:56Z",
+        "completed_at_utc": "2026-08-28T20:54:45Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-25T03:12:56Z",
+        "started_at_utc": "2026-08-28T20:54:45Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 10753
@@ -111310,10 +111310,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:12:56 EEST",
-      "last_completed_at_utc": "2026-08-25T03:12:56Z",
+      "last_completed_at_greece": "2026-08-28 23:54:45 EEST",
+      "last_completed_at_utc": "2026-08-28T20:54:45Z",
       "last_completed_snapshot": "f5cd24c9af0b80c9cd28e801b73b36942dbb5abe5e8c032f063cdf9e8a78ef44",
-      "last_remote_verified_at_utc": "2026-08-25T03:12:56Z",
+      "last_remote_verified_at_utc": "2026-08-28T20:54:45Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -111328,7 +111328,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:13:29Z",
+      "state_updated_at_utc": "2026-08-28T20:55:19Z",
       "target": {
         "ia_item": "dedsec1121fk-language-project-repository-snapshots",
         "kind": "repository",
@@ -111343,7 +111343,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:12:56Z",
+        "last_queue_update_at_utc": "2026-08-28T20:54:45Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -111353,22 +111353,22 @@
     "offline-survival-project": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "bc8e33c76b48372218db375cd8f34511f8d3b1e842df5790a4c4e2d3c223d651",
-        "size": 5399771,
-        "snapshot_sha256": "4b13ed250cb4e6ec91df7af6bbeb0fefe1271795a94717613405a20cd4687007",
-        "updated_at_utc": "2026-08-14T15:45:41Z"
+        "sha256": "cc1ffb1aa57a0f5d484a33a4c414bf195cde91ae49a2b2b744922ed460d0f2e2",
+        "size": 5480172,
+        "snapshot_sha256": "9d5883e4709938a7523b9a31c55d6173ae6efbfffc419c9185f2bae12edf0b0c",
+        "updated_at_utc": "2026-08-28T21:00:07Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-25T03:16:33Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-08-28T21:00:07Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-08-25T03:16:33Z",
+        "run_id": "33209903585",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-08-28T20:58:20Z",
         "state_source": "github_update_json",
         "status": "complete",
-        "total_current_files": 807
+        "total_current_files": 921
       },
       "directories": [
         "Offline Library",
@@ -111378,6 +111378,9 @@
         "Offline Library/Detailed Manuals",
         "Offline Library/Detailed Manuals/EN",
         "Offline Library/Detailed Manuals/GR",
+        "Offline Library/Failure Modes",
+        "Offline Library/Failure Modes/EN",
+        "Offline Library/Failure Modes/GR",
         "Offline Library/Field Guides",
         "Offline Library/Field Guides/EN",
         "Offline Library/Field Guides/GR",
@@ -111399,6 +111402,9 @@
         "Offline Library/Printable Forms",
         "Offline Library/Printable Forms/EN",
         "Offline Library/Printable Forms/GR",
+        "Offline Library/Resilience Operations",
+        "Offline Library/Resilience Operations/EN",
+        "Offline Library/Resilience Operations/GR",
         "Offline Library/Scenario Drills",
         "Offline Library/Scenario Drills/EN",
         "Offline Library/Scenario Drills/GR",
@@ -111992,6 +111998,622 @@
           "mode": "0644",
           "sha256": "43e8bb282000f5ff59de443f8feb3ebd2e49acdd8e2bd1edc0a90dacb500dbb7",
           "size": 3571,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/01-grid-power-cascade.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f1611fb8c5dbb8283df93c8ce46b96e0dd0c4f94dad0fe7c9ebd6efe64ed073b",
+          "size": 1703,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/02-mobile-network-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "de2e101d9f7ac2d1d2a2958fa48eb9650f4638c1fc1a9a2307854366d1662f42",
+          "size": 1759,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/03-water-pressure-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "191c66763a9c50001900d8ff5e413c40bfdfe41212075658a6e17811fc6a05f3",
+          "size": 1835,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/04-refrigeration-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "99d57bc4d4fe87f2cdca6110089cc609bd60d2234391e6e3097c16e54036e3d8",
+          "size": 1778,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/05-elevator-access-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "d3aa096b872d51db57da73c9c90494ce7042fa6791fe9fee887640cdecc667d4",
+          "size": 1864,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/06-battery-reserve-exhaustion.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "80a184778d2e4d1145828b618707a929f0857c13b1c6b942ea1fcee5211ebd9a",
+          "size": 1794,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/07-generator-unavailable.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "68c4d2089f8bff9388f9735ba604ee722d2d93cf0c6d1b5f634f20dcce90988a",
+          "size": 1866,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/08-fuel-supply-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "1f8ecf4c469da1294b8ebf26ff9d34bf5ad518e9b805d15e3ee6afdeb8112653",
+          "size": 1779,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/09-primary-route-blocked.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e4d7f814b47233a61bc70dec78985a1377b74058898839cef6570a76d3c1cd5a",
+          "size": 1799,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/10-vehicle-disabled.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "6ab54d4d8c518b576fd92cb4226b936643df57e07e871222323f5a09deda0857",
+          "size": 1793,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/11-shelter-overcapacity.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ceb63830d21322a80900ed76f349349245300b00fb7216ffe12dbe782fe6dc0f",
+          "size": 1864,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/12-smoke-infiltration.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "475af528a5edd76ad4a67d0470a6beaa462ef57e67574e431cc5ba93f01d02cc",
+          "size": 1820,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/13-extreme-heat-shelter-failure.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7b4a06ffb9c68da5f82641a905a0f6e071268e82bc562e4742ba657fe1656e95",
+          "size": 1853,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/14-extreme-cold-heating-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e6ef808e4b9b842057d343dc9f5c269e313d3068428b5b334dd7732943c5f0a8",
+          "size": 1840,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/15-flood-isolation.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ae43cdde5ad0511bc422cd0c336b985f47e433954de282d0dc0992fe96c80704",
+          "size": 1783,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/16-aftershock-damage.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "5c1c36cb346d130cdc607e9ef3096c79285948f82b9c5a00d244ace7dd3fcee3",
+          "size": 1798,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/17-landslide-route-threat.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "6eda64743b5d85a6f3171e01cfdbfbad977a0c3df44a604e1330fa06dfe469d2",
+          "size": 1806,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/18-wildfire-route-shift.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "1a7d2e551815107ea14e3d0d734bc34c385aeeba372577cebf83a5686656182b",
+          "size": 1864,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/19-sewage-backup.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c614c851a6b9f6d82494e65436256759dad44a2cef45f73d1957a1a0eb63a969",
+          "size": 1818,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/20-toilet-system-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b19297de07ff105886e93577263ea56e4447a5202d75cc3b25d3d8472f366010",
+          "size": 1823,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/21-handwashing-water-shortage.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "fd934a159ff5d3c3f4377e2f646cd099cb65f7d3d7ed8ee272ece2e9c0d629b2",
+          "size": 1774,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/22-food-reserve-contamination.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4731f4e41584cdaf594af818f56d4c5b455523aa808f1afa215479c9d222bfc5",
+          "size": 1853,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/23-medication-storage-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "a02e2018434c94fc6ca8a2a160b0c73a3a5779261bc48957fc7a910ea53ea76e",
+          "size": 1878,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/24-caregiver-unavailable.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3cc5ca8b64ed1f8aa76b44569a89ae91f07a9d4aad5c8476d98efab94c6e437d",
+          "size": 1856,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/25-pet-supply-gap.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "fcb5a4124da029587b084c1abd4b14b37ab65e671c251795f820c841b918a1c1",
+          "size": 1769,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/26-cashless-payment-outage.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c6f94c4c8fd7aa1809be363117eefd5cf5732966e265a869b0c9280eae837c3e",
+          "size": 1784,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/27-atm-cash-access-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "258b60745d2b4f3b9015411606a8969853cabe7d977df59164079c2f3b854fe9",
+          "size": 1798,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/28-radio-equipment-failure.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "d66c60b9158027030ce4ff00efbede49199984b1aec694fdeefc59289113be92",
+          "size": 1783,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/29-offline-map-gap.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f29592c0d77de9102deebfdd55c98a40bd39d8418c4e57bf8d7be7e7901fc302",
+          "size": 1746,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/30-gps-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7fbee8694bcc50d1135470fa2ca25171bc08b2ec04cc69df4a72b48a955000cc",
+          "size": 1723,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/31-document-cache-inaccessible.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b6ceb0dd5f780e72f0020f7fc8461c10ead3ae8f993103d742bcf13d36923c70",
+          "size": 1860,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/32-backup-data-corrupt.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "29f2a316734f8e4b0adf77736bd7385e2a7c210d84a9f6a51d94808e9cbd465f",
+          "size": 1790,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/33-information-rumor-cascade.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "79b02b7d2fa0a913acbae2b1da409229390252dbfb138ab97a6f5ac1c65f4561",
+          "size": 1839,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/34-official-source-unreachable.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "a48b9e93096c7e69a098553771eaf60d9f4b4a761d795c23092c5a704b2b7749",
+          "size": 1879,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/35-mutual-aid-no-show.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "91987b795acb398b150c5efe7b92a3594ff2ae3fca0764f6560a456e55da955d",
+          "size": 1851,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/36-shared-equipment-conflict.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b126b5a64f15ca3fa12f1d49ab23f3468ff33b97a0cd9e07eef560cd613e3a62",
+          "size": 1780,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/37-single-person-knowledge-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "2768057cfcdf7904aaa40656868704acbcb4aada8d773eec093fe62315ac6909",
+          "size": 1828,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/38-key-access-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e3ab0a8550fa077d261a0bfb51d7cf002dba3e024f8dd1ccf06ac4910f645dc9",
+          "size": 1770,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/39-supply-cache-inaccessible.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "65770feed9fd428a73e32d31a1afd59383bdbf1d3b32c907217a3f454bf87ce3",
+          "size": 1809,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/40-resupply-delay.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "d7b76be01948a49ee8fb2a7060d9f2003c0e46517d901759b5b1143b7d1f0291",
+          "size": 1843,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/41-medical-transport-delay.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "5e7162bbfa304f891897d8da4a8521c1eaa99a244fbfd3e83d4bd204b80f8894",
+          "size": 1826,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/42-charging-cable-failure.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "afb73ead7240e7c11f395ef4427c7bd9847266dc179749de426611b05cdfa387",
+          "size": 1783,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/43-lighting-system-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b86ed6906510c5d0fcaed5e5e2a898091a8f4b0b073b088e6c872f99b7bd9ef0",
+          "size": 1760,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/EN/44-door-access-jam.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4959d5fc1a0f44765978528013aab85a659744a86efff938b45a09f7ea8e4e51",
+          "size": 1742,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/01-grid-power-cascade.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "a291935107f70ba375b8873c11fa1a1cae791f43395e0f1a46736d254a01c5c1",
+          "size": 3625,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/02-mobile-network-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "94913fe7729b5e865b837b194831bbbf64ab8570a55b1f51bae660a1285eee6e",
+          "size": 3705,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/03-water-pressure-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "73280d6efc6b78cdedf56a4c02937f64f165a8e5ef813ede96acf98df135fe52",
+          "size": 3663,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/04-refrigeration-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "66e2627ce6e89ff00b5625659567b1efa3d368471f83d1ab347c80e52a71a56e",
+          "size": 3649,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/05-elevator-access-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "872b016a9e673a588e7604a9e3db1ed600d3871d096cfaf6e1a6cc1550be36dc",
+          "size": 3894,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/06-battery-reserve-exhaustion.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "d1bd66a4df50f1afc138009ddcaf21785b4c06bd5904606eba87e6cc96796e1e",
+          "size": 3856,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/07-generator-unavailable.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f98d3c9f930211a4f7173b26f11548f1da48d70b3a778f9a8c37b5a64666ce71",
+          "size": 3852,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/08-fuel-supply-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "2c9e4c2993cee618dfa0171cbf84224a134f0626c8a17dcacabc23255da2eed0",
+          "size": 3756,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/09-primary-route-blocked.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b4041676e8f664b93c6512c48cb2d71d7252b3ffe9d0fb9696aef31709364410",
+          "size": 3749,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/10-vehicle-disabled.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4b8ddf08e9068f61cacf946fef12113a952fe596519b3ae36ab3384ac6c0f3a3",
+          "size": 3851,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/11-shelter-overcapacity.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ab43397627a8517755754695f5bda067d2c1e9126db8c774642ac3388604e8fc",
+          "size": 3790,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/12-smoke-infiltration.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4359362549f03fbd1e47227eee9406dbc7468c93027c9b42561e1f0d3efb9d13",
+          "size": 3765,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/13-extreme-heat-shelter-failure.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7e87383c6d91d4c8e68ce8e663040730b12ddf14a359864091a15fd0b74ff52a",
+          "size": 3801,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/14-extreme-cold-heating-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "36a1bca2dd4e461e42721b62e024ac1e88b103afb5968306a89f411e53fb9d83",
+          "size": 3749,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/15-flood-isolation.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ddb70f7cc65770bc794572f5ae62827f7b5f80f7f32dfa79516362bc86d49cab",
+          "size": 3616,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/16-aftershock-damage.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "1ad48cbdc12c1be6186cce6fd40a7a721d749dc85985cf5e49ddbc29aed21e2f",
+          "size": 3583,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/17-landslide-route-threat.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "689c4697acb8f9538c15dca216ee213ec2b105bec7aeaa01d98027d54fbe5f37",
+          "size": 3723,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/18-wildfire-route-shift.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ce1144fd035a0927eec8cd5536bc05b219e0e8acd335d713224031c171b22e68",
+          "size": 3783,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/19-sewage-backup.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "9458e4910d11c4c84ac7579adbeb9d3145f17a07a1e723bd9746b32afea8eb53",
+          "size": 3766,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/20-toilet-system-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "922995ed64a4a3b73fef0abb04ce30f3bdf24fc0060556ea462d3d1845c32133",
+          "size": 3793,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/21-handwashing-water-shortage.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "0ebe869c5755e0998364d750c97a86826089eaec4ee552fb93165bd5a7503b97",
+          "size": 3631,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/22-food-reserve-contamination.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f471e813c4d34553b8f720cbcee1a2a0200f97427066df5f79424e11e222201b",
+          "size": 3916,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/23-medication-storage-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3ac7c90896fefbe81c6dcf38532caa3741ff8df0d3c6fdf652f88d88a7b87f4d",
+          "size": 3792,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/24-caregiver-unavailable.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ee0d46b3afda869ec638f755caaa1cb0703c1b5adeee704f7b9a3ea7c78b1637",
+          "size": 3802,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/25-pet-supply-gap.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "39af71071ec870617f1d853ad97316d90ef6fb2c154dba15cf65bada0ab489ba",
+          "size": 3725,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/26-cashless-payment-outage.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b379b0925a28afdc0b042701e724c3716b45dfbb8ab998d9949d6be2c05bcdfa",
+          "size": 3852,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/27-atm-cash-access-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "5b3642fad85f16607dafa4ab88525ec87a33fe38499dbfe09ba5992b89aea144",
+          "size": 3851,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/28-radio-equipment-failure.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ab09f59b5165de6e69c89dfd064f400411bd28f3475ebacfc44a9670d1a9a194",
+          "size": 3737,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/29-offline-map-gap.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3faba75900b9c8393726e0b6c1bd3ac410707643b0684c133c9a0433e48f929f",
+          "size": 3522,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/30-gps-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7719f83e9e96ec6003df535d0a4a8996aecf34f575e55036b17b03de0457c38d",
+          "size": 3559,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/31-document-cache-inaccessible.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3ede222756e7faf3dbb4a78f94c0552a21506d338ad3e033b2bc7eda85817531",
+          "size": 3770,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/32-backup-data-corrupt.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7c1df1d8309fb94922b82fd1e4b164fd274856775eca09e74c0d24bba5225281",
+          "size": 3839,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/33-information-rumor-cascade.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "bbcf30db1debb235ef417bb7bdbdad4ecf8372ec3f9527639a9d22fed670fb1f",
+          "size": 3739,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/34-official-source-unreachable.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "1afb8dad269279ec9d4c65a3cebcab545324af11ebe2e9d65a2efc09445ca934",
+          "size": 3901,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/35-mutual-aid-no-show.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e845c22a05974c1c6c7e7020eaa3b9f5325789309998566c696085a61bb70377",
+          "size": 3783,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/36-shared-equipment-conflict.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e6b8da3d138005b9887f3e09646efbcc7eb25b6dd2e28802af6a0e86714b3d89",
+          "size": 3785,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/37-single-person-knowledge-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "11ce6c1386c791faaf37f56469224fbc329b7231b06068567140670709fc7e1c",
+          "size": 3810,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/38-key-access-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "45022c23f495232bf32fd42b0526e38d0050968649321a3fdd47a79ade52ce65",
+          "size": 3777,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/39-supply-cache-inaccessible.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "1a8b1677bae3c9314cee2c501b5db52242bb54c0e39669ae1b40a7556bf7cee5",
+          "size": 3750,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/40-resupply-delay.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4c57aaa40bc0ebe236b233f80ba5bda29e13b6533b29166e6efada601f2c2054",
+          "size": 3841,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/41-medical-transport-delay.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "125d0893f3a98e6e5fc3362094f1c3a3859bca8e42ae49e4af43804f671e11ba",
+          "size": 3852,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/42-charging-cable-failure.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "a3e1c9658d9c3c430a57cd52d5b56b2ba6ff1e963d33818e4e01e12c19d14e55",
+          "size": 3710,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/43-lighting-system-loss.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "12f6acc888095dd561963c977138b01c408b6773753898883e645b66fb571d0e",
+          "size": 3580,
+          "type": "file"
+        },
+        "Offline Library/Failure Modes/GR/44-door-access-jam.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "eed7a11ff47c6bfe8dfcb5c281a4bdd58f24d4a3ba5477ace7623a76e7fda494",
+          "size": 3661,
           "type": "file"
         },
         "Offline Library/Field Guides/EN/01-universal-safety-baseline.md": {
@@ -116771,8 +117393,176 @@
         "Offline Library/README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f2e172a88d962383577694c9001dbfcaab0a057dd5e8c70eda87f957835b26c0",
-          "size": 3328,
+          "sha256": "ab983c2ede166d0df9035fc56f5ee67137629b1d8cf853a1707a30b59401f27c",
+          "size": 3930,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/01-critical-dependency-mapping.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "ac734be8509d2bbf147eb8339685bad071477ce69bb6b183111ed46a6b43619b",
+          "size": 1444,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/02-action-trigger-matrix.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "d891379b1b4311b7228609e6259a32005d199d168216c1b010ee1b3ec6bcfefe",
+          "size": 1465,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/03-resource-movement-log.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4454ad4a4ce0340b457db8304dbbf48880013a0d4a7a55bcdf7d9e5e848ed3f8",
+          "size": 1440,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/04-mutual-aid-board.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "30b8d2f502c7df9156cd19cf8fcec30b6f6d3f2d1dd2a21754f5d4631a6ca06b",
+          "size": 1446,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/05-redundancy-audit.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "5eb26cfc5d692b49b269639f7294a3c90db7db4cd8de083b06ef2722202cc9af",
+          "size": 1479,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/06-service-restoration-priorities.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "0be4fc4020288590fb6fe6bb31bfb9d86fc385dbba6209b85e00cba824bac837",
+          "size": 1543,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/07-resource-substitution-map.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "267e91d3399f20371b259f6cb0012714e43dcb96cf81f5e78fd3a06b090282ab",
+          "size": 1497,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/08-shared-equipment-control.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "42c88972775cd1c6a4f4c93c392e8a7f696f002da7cae445541f6b641a522c26",
+          "size": 1360,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/09-neighborhood-information-board.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "a3144d3363ebecadace6b8dd0a9e902462b3f676d8a7fffff165b449ef280586",
+          "size": 1412,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/10-staged-recovery-checkpoints.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f50be77f0b9aa9c37a2becd0c81dc626223ebf04f1977cd90651beee942bc428",
+          "size": 1348,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/11-resilience-drill-cycle.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "d354cc925a870961b12c4736b422b1ee7cec6557e158d40b236fbca7c22a03e0",
+          "size": 1483,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/EN/12-continuity-assumptions-review.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "036d5100cb6be87246d44ae13dc04df72070f2445e9d9516a3b36f6002380eff",
+          "size": 1544,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/01-critical-dependency-mapping.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c848031ec0e8c5c67fde697e72aba3ebfb916935c09f9a2ace7b257c4a85729d",
+          "size": 2952,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/02-action-trigger-matrix.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c6931055d235dba0870c599a34afaa889fb319a192d8dc44ef3238e9c3775340",
+          "size": 2810,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/03-resource-movement-log.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "529f7558c041f53ece569e0e3852a8d862ac54e465f3b42f9e6c1c35b18fc6c3",
+          "size": 2685,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/04-mutual-aid-board.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "0667bd2e5d40329fa661fbb51bd3862acea9e4811b64e688f67559c229a9c83d",
+          "size": 3077,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/05-redundancy-audit.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "2d5f524c9671ef09f751945736c0b637aac3bc987168b0824390fa62d3ea67fd",
+          "size": 2889,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/06-service-restoration-priorities.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "734585ffbe6c9f447d7fe0d1b94d0e9b1fdddc9c01e62e4dcba4d12902d597e1",
+          "size": 3195,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/07-resource-substitution-map.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f4f38d43ba19500c1b4c220b508af204c794492eabf9f530cd27765394469237",
+          "size": 2911,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/08-shared-equipment-control.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "3c12d5519755b7dc1d36e03afc317bbf1b895004993fdca58293bf0a7f3c0a31",
+          "size": 2760,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/09-neighborhood-information-board.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "5f6dfb1e0be6c68c67d4f184cee5756f50a0836c3316ac76947562dc2ff0b652",
+          "size": 2793,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/10-staged-recovery-checkpoints.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "a038fbc3e5ec1c84acd1c0fc8647e0f96fabfa5ecf0b8e6a935ca28c4ad11897",
+          "size": 2756,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/11-resilience-drill-cycle.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "6f2dd2d7d63f4a24011632439f35e1328e31eb31c9b51a260ad35c3ba4e6a7e1",
+          "size": 2927,
+          "type": "file"
+        },
+        "Offline Library/Resilience Operations/GR/12-continuity-assumptions-review.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c80e3e560c19830e54efa90ee32599d7d106dc455c9854bd9a39e4aeb7f11252",
+          "size": 2938,
           "type": "file"
         },
         "Offline Library/Scenario Drills/EN/01-earthquake.md": {
@@ -116953,8 +117743,8 @@
         "Offline Survival Database.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ccdce10471e45ef0feaef55d44d10a442c687923a4485b2f7ceb066a8764877e",
-          "size": 4325282,
+          "sha256": "bd7f0180203305f6d4937f8c48a365c74eedad6459c191dbd448dfbc7e6f22ab",
+          "size": 4412109,
           "type": "file"
         },
         "Offline Survival Reader.html": {
@@ -116967,15 +117757,15 @@
         "Offline Survival.py": {
           "executable": true,
           "mode": "0755",
-          "sha256": "b04f1502e738d5756a0bc2e8997523a8df75c4453cb34dc6fb0847152881a2d8",
-          "size": 277821,
+          "sha256": "1b826d4c8d8e98a89df98b392c501450f27b6a7aa3dd6aa4c86837687d82e7b8",
+          "size": 309269,
           "type": "file"
         },
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "167cbe63124e01e38f0957716d91633df8578e0f4203b6bdb53d34dbe54f4e6d",
-          "size": 50777,
+          "sha256": "a5eaf16dce3dd5d1ae661d3b1a5d863b756ec5ae7b81a4f226a78b297fb27ea4",
+          "size": 56253,
           "type": "file"
         },
         "SECURITY.md": {
@@ -116988,8 +117778,8 @@
         "web/app.js": {
           "executable": false,
           "mode": "0644",
-          "sha256": "48b42e8045306b3132f074a7776767b8256b90a85e76b34af3e938407ebaf165",
-          "size": 145611,
+          "sha256": "6b089352a36c9097a6f49225d7dccefa40298918c6656efe00fd86702dfa7e89",
+          "size": 145679,
           "type": "file"
         },
         "web/continuity-operations.js": {
@@ -116997,6 +117787,13 @@
           "mode": "0644",
           "sha256": "7ef06d9b09c4e9308fe2c7106b630a31bf55ce82d4762d52c298b6cece2f43de",
           "size": 57427,
+          "type": "file"
+        },
+        "web/decision-support.js": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7c17abe96d97dac609f72fdf65a3f75f642d197f47d2d891f1c4394925d7fe53",
+          "size": 19379,
           "type": "file"
         },
         "web/field-operations.js": {
@@ -117009,8 +117806,8 @@
         "web/index.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "53bb02a7c18132d57802b8ab5391a8c197d3992666ba9bf92666afe354a0f437",
-          "size": 78368,
+          "sha256": "bd2ad7e70a0d1100c7c102c2c60529aaf9f4fc472ac97211f3553945bf847c67",
+          "size": 91605,
           "type": "file"
         },
         "web/knowledge-atlas.js": {
@@ -117041,6 +117838,13 @@
           "size": 11242,
           "type": "file"
         },
+        "web/resilience-operations.js": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "7887aba07a2d2cd007e461eec033a7b44297dbdf73002c0954b47a10a2685d47",
+          "size": 29889,
+          "type": "file"
+        },
         "web/styles.css": {
           "executable": false,
           "mode": "0644",
@@ -117051,31 +117855,31 @@
         "web/sw.js": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e934c45c394f736a5c3387c9aa27bf2746ec8b59571d91d897c03e188a7ec658",
-          "size": 1324,
+          "sha256": "3596e8c3f0cb2a2e3b5983c8c439c3fc286f1d86204cd9fea4aa603c0cf44bba",
+          "size": 1375,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:16:33 EEST",
-      "last_completed_at_utc": "2026-08-25T03:16:33Z",
-      "last_completed_snapshot": "4b13ed250cb4e6ec91df7af6bbeb0fefe1271795a94717613405a20cd4687007",
-      "last_remote_verified_at_utc": "2026-08-25T03:16:33Z",
+      "last_completed_at_greece": "2026-08-29 00:00:07 EEST",
+      "last_completed_at_utc": "2026-08-28T21:00:07Z",
+      "last_completed_snapshot": "9d5883e4709938a7523b9a31c55d6173ae6efbfffc419c9185f2bae12edf0b0c",
+      "last_remote_verified_at_utc": "2026-08-28T21:00:07Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 121,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 1410,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 807,
+        "snapshot_changed": true,
+        "unchanged_files": 800,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:17:06Z",
+      "state_updated_at_utc": "2026-08-28T21:00:40Z",
       "target": {
         "ia_item": "dedsec1121fk-offline-survival-project-repository-snapshots",
         "kind": "repository",
@@ -117090,7 +117894,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:16:33Z",
+        "last_queue_update_at_utc": "2026-08-28T21:00:07Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -117108,11 +117912,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-25T03:21:47Z",
+        "completed_at_utc": "2026-08-28T21:05:20Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-25T03:21:47Z",
+        "started_at_utc": "2026-08-28T21:05:20Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 128
@@ -118033,10 +118837,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:21:47 EEST",
-      "last_completed_at_utc": "2026-08-25T03:21:47Z",
+      "last_completed_at_greece": "2026-08-29 00:05:20 EEST",
+      "last_completed_at_utc": "2026-08-28T21:05:20Z",
       "last_completed_snapshot": "b6db71a7e095fb752dafce7c213d6180e6aa49f7960ebc07a83abbdfe20cd880",
-      "last_remote_verified_at_utc": "2026-08-25T03:21:47Z",
+      "last_remote_verified_at_utc": "2026-08-28T21:05:20Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -118051,7 +118855,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:22:20Z",
+      "state_updated_at_utc": "2026-08-28T21:05:53Z",
       "target": {
         "ia_item": "dedsec1121fk-pocket-ai-repository-snapshots",
         "kind": "repository",
@@ -118066,7 +118870,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:21:47Z",
+        "last_queue_update_at_utc": "2026-08-28T21:05:20Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -118076,19 +118880,19 @@
     "praying-project": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "09217edb92e37b2f0d7802deeb624ccb292c5872cc71c54cd89d461f25819398",
-        "size": 2081645,
-        "snapshot_sha256": "8be4482c6c8b56f3d3c3a30bbfc1911181c1e62877aa27916ab0d991ec6327e4",
-        "updated_at_utc": "2026-08-25T03:19:55Z"
+        "sha256": "d554fe01eba1e35de7a2bd38b1ed2b83c169d24268c73f4883be46fa1197336a",
+        "size": 2081621,
+        "snapshot_sha256": "48a09ae1b931ca0613640f7c89f80e8e1e083a32ada155715a906aeb69b22a4a",
+        "updated_at_utc": "2026-08-28T21:03:34Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-08-25T03:19:55Z",
+        "completed_at_utc": "2026-08-28T21:03:34Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": true,
-        "started_at_utc": "2026-08-25T03:18:16Z",
+        "started_at_utc": "2026-08-28T21:01:49Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 74
@@ -118119,8 +118923,8 @@
         ".prayer-country-state.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d9bfc512b18a73e1f2030a0c452a8db33e8377c46103edbad3941345e6e5e0bc",
-          "size": 2127,
+          "sha256": "2085f68fd6577f0313f254697581cc8e34dbc5151d1c2fe3a4390ab2b9fa0e86",
+          "size": 2095,
           "type": "file"
         },
         "English/part_01.befunge": {
@@ -118622,10 +119426,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:19:55 EEST",
-      "last_completed_at_utc": "2026-08-25T03:19:55Z",
-      "last_completed_snapshot": "8be4482c6c8b56f3d3c3a30bbfc1911181c1e62877aa27916ab0d991ec6327e4",
-      "last_remote_verified_at_utc": "2026-08-25T03:19:55Z",
+      "last_completed_at_greece": "2026-08-29 00:03:34 EEST",
+      "last_completed_at_utc": "2026-08-28T21:03:34Z",
+      "last_completed_snapshot": "48a09ae1b931ca0613640f7c89f80e8e1e083a32ada155715a906aeb69b22a4a",
+      "last_remote_verified_at_utc": "2026-08-28T21:03:34Z",
       "last_result": {
         "archive_uploaded": true,
         "changed_or_added_files": 1,
@@ -118640,7 +119444,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:20:30Z",
+      "state_updated_at_utc": "2026-08-28T21:04:07Z",
       "target": {
         "ia_item": "dedsec1121fk-praying-project-repository-snapshots",
         "kind": "repository",
@@ -118655,7 +119459,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:19:55Z",
+        "last_queue_update_at_utc": "2026-08-28T21:03:34Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -118665,19 +119469,19 @@
     "save-dedsec-project": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "d34b4a3c89daff9e00aa7fb7e76b5c530ecf8c26836b9d3c1e8b8617093053cf",
-        "size": 921113,
-        "snapshot_sha256": "46a1d5704f9c35251e05de883a5b41dec55ce2b7bf9ac4700a6d7d666dfb442a",
-        "updated_at_utc": "2026-08-25T03:11:01Z"
+        "sha256": "4faa5bd34a57dfb4dcd079a408a220aa3d7f503bfd9ab10372cd74928a7ee572",
+        "size": 921102,
+        "snapshot_sha256": "1b716c5e6c35c96ef62510bda37b735643c1662df06ba9f52d92c0cdea45e37f",
+        "updated_at_utc": "2026-08-28T20:52:51Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-08-25T03:11:02Z",
+        "completed_at_utc": "2026-08-28T20:52:51Z",
         "run_attempt": "1",
-        "run_id": "32804025203",
+        "run_id": "33209903585",
         "snapshot_changed": true,
-        "started_at_utc": "2026-08-25T03:09:24Z",
+        "started_at_utc": "2026-08-28T20:51:05Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 7
@@ -118726,23 +119530,23 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "125dde2ee8a912715f78b5d924ca1172cb6a71b5df5345ee0d377eb0a8df0460",
-          "size": 25847,
+          "sha256": "e8253aa0402c4efee925a14e95bcc6f1b9faff63e960f9765f645db9a5b2a2f5",
+          "size": 25849,
           "type": "file"
         },
         "update.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ee0a0a1ca0dbc167570baf95e87223fb634759c5584933e121ee471500a1a353",
-          "size": 4712671,
+          "sha256": "226b740fa0e27068226ca367793b455fda47321e980d8d352cec2eb07f4eccbf",
+          "size": 4712683,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-25 06:11:02 EEST",
-      "last_completed_at_utc": "2026-08-25T03:11:02Z",
-      "last_completed_snapshot": "46a1d5704f9c35251e05de883a5b41dec55ce2b7bf9ac4700a6d7d666dfb442a",
-      "last_remote_verified_at_utc": "2026-08-25T03:11:02Z",
+      "last_completed_at_greece": "2026-08-28 23:52:51 EEST",
+      "last_completed_at_utc": "2026-08-28T20:52:51Z",
+      "last_completed_snapshot": "1b716c5e6c35c96ef62510bda37b735643c1662df06ba9f52d92c0cdea45e37f",
+      "last_remote_verified_at_utc": "2026-08-28T20:52:51Z",
       "last_result": {
         "archive_uploaded": true,
         "changed_or_added_files": 2,
@@ -118757,7 +119561,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-25T03:11:34Z",
+      "state_updated_at_utc": "2026-08-28T20:53:23Z",
       "target": {
         "ia_item": "dedsec1121fk-save-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -118772,7 +119576,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-25T03:11:01Z",
+        "last_queue_update_at_utc": "2026-08-28T20:52:51Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
