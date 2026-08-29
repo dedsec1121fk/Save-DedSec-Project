@@ -51,16 +51,16 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 - **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:1bfb8b499f7c43041ffb35b95d4549609c87fc71/) · `full`
 - **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:c259b5c43362a6b775e92012d0fe762c566486c4/) · `full`
 - **Website mirror:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:05e7ec480d81318c2466947d9ae8cb6744bf7751/) · `full`
-- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:4953565d9ef28fa857af72a21f1cd8ec8aeca025/) · `full`
+- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:c517f1e6f68a6518818d5c1336db887f54772118/) · `full`
 - **Corrupted Files:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
 - **Pocket AI:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
-- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:bb6288e643bd92d660ec5084ae9ab238d39c440f/) · `full`
-- **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:2e09b6077bc459898406430982d83b9ebcf8369b/) · `full`
+- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:37c3da894a854cd36255bdb55c6b8d3048693949/) · `full`
+- **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/) · `full`
 - **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
 - **Language Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/) · `full`
-- **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7c49c1bde34d61a9c581e885550ebcf309f4ac5c/) · `full`
+- **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:0ab4c3457905491155125ec0a8b319f5ba63f954/) · `full`
 
-Last checked: `2026-08-28T20:50:03Z`.
+Last checked: `2026-08-29T02:55:51Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -169,7 +169,7 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Last checked: `2026-08-28T21:11:10Z`.
+Last checked: `2026-08-29T03:02:46Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -179,7 +179,7 @@ Last checked: `2026-08-28T21:11:10Z`.
 ### DedSec Websites and Website Source
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-27 01:19:51 EEST  
+**Last complete or attempted save:** 2026-08-29 05:58:45 EEST  
 **Current working-tree files:** 829  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 829 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -187,8 +187,8 @@ Last checked: `2026-08-28T21:11:10Z`.
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
-**Wayback queue remaining:** 1595  
-**Wayback captures accepted:** 1082  
+**Wayback queue remaining:** 1572  
+**Wayback captures accepted:** 1105  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -201,7 +201,7 @@ This section is generated from `update.json`.
 ### DedSec Project Main Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-27 01:23:11 EEST  
+**Last complete or attempted save:** 2026-08-29 06:02:03 EEST  
 **Current working-tree files:** 209  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -219,7 +219,7 @@ This section is generated from `update.json`.
 ### DedSec Project Backup Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-27 01:21:29 EEST  
+**Last complete or attempted save:** 2026-08-29 06:00:18 EEST  
 **Current working-tree files:** 209  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -363,7 +363,7 @@ This section is generated from `update.json`.
 ### DedSec Website Mirror Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-08-27 01:18:06 EEST  
+**Last complete or attempted save:** 2026-08-29 05:57:06 EEST  
 **Current working-tree files:** 829  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 829 unchanged.  
 **Compact archive uploaded this run:** `False`  
