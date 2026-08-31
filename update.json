@@ -7,7 +7,7 @@
       "Termux_API.apk",
       "Termux_Styling.apk"
     ],
-    "checked_at_utc": "2026-08-29T03:02:46Z",
+    "checked_at_utc": "2026-08-31T16:15:15Z",
     "failures": [],
     "files": {
       "F-Droid.apk": {
@@ -37,11 +37,11 @@
     "uploaded": false
   },
   "archive_mode": "single_current_working_tree_archive",
-  "generated_at_utc": "2026-08-29T04:04:04Z",
+  "generated_at_utc": "2026-08-31T17:44:25Z",
   "resume_behavior": "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, checksums and one compact state checkpoint. The APK item stores the current four APK dependencies with hashes. Git/commit/push history is never archived by Internet Archive. Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage.",
   "schema_version": 7,
   "software_heritage": {
-    "checked_at_utc": "2026-08-29T02:55:51Z",
+    "checked_at_utc": "2026-08-31T16:08:15Z",
     "link_resolution_policy": "Save requests made in the current workflow run are not resolved into README links until a later workflow run.",
     "repositories": {
       "dedsec1121fk/Corrupted-Files-Project": {
@@ -67,13 +67,13 @@
         "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec",
         "error": null,
-        "latest_visit_date": "2026-08-26T22:16:56.537000+00:00",
+        "latest_visit_date": "2026-08-29T02:55:58.516000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/DedSec",
         "repository": "dedsec1121fk/DedSec",
-        "save_request_date": "2026-08-29T02:55:53.560052+00:00",
+        "save_request_date": "2026-08-31T16:08:17.867045+00:00",
         "save_request_status": "accepted",
         "save_requested_this_run": true,
         "save_task_status": "pending",
@@ -219,13 +219,13 @@
         "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io",
         "error": null,
-        "latest_visit_date": "2026-08-26T22:17:06.830000+00:00",
+        "latest_visit_date": "2026-08-29T02:56:08.703000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/dedsec1121fk.github.io",
         "repository": "dedsec1121fk/dedsec1121fk.github.io",
-        "save_request_date": "2026-08-29T02:56:02.106388+00:00",
+        "save_request_date": "2026-08-31T16:08:26.424109+00:00",
         "save_request_status": "accepted",
         "save_requested_this_run": true,
         "save_task_status": "pending",
@@ -238,13 +238,13 @@
         "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec",
         "error": null,
-        "latest_visit_date": "2026-08-26T22:16:56.607000+00:00",
+        "latest_visit_date": "2026-08-29T02:55:58.479000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/DedSec",
         "repository": "sal-scar/DedSec",
-        "save_request_date": "2026-08-29T02:55:57.871254+00:00",
+        "save_request_date": "2026-08-31T16:08:22.175927+00:00",
         "save_request_status": "accepted",
         "save_requested_this_run": true,
         "save_task_status": "pending",
@@ -257,13 +257,13 @@
         "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec",
         "error": null,
-        "latest_visit_date": "2026-08-26T22:17:06.724000+00:00",
+        "latest_visit_date": "2026-08-29T02:56:08.648000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/ded-sec",
         "repository": "sal-scar/ded-sec",
-        "save_request_date": "2026-08-29T02:56:06.002533+00:00",
+        "save_request_date": "2026-08-31T16:08:30.550666+00:00",
         "save_request_status": "accepted",
         "save_requested_this_run": true,
         "save_task_status": "pending",
@@ -16154,11 +16154,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-29T03:00:18Z",
+        "completed_at_utc": "2026-08-31T16:12:50Z",
         "run_attempt": "1",
-        "run_id": "33230130056",
+        "run_id": "33412386151",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-29T03:00:18Z",
+        "started_at_utc": "2026-08-31T16:12:50Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 209
@@ -17652,10 +17652,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-29 06:00:18 EEST",
-      "last_completed_at_utc": "2026-08-29T03:00:18Z",
+      "last_completed_at_greece": "2026-08-31 19:12:50 EEST",
+      "last_completed_at_utc": "2026-08-31T16:12:50Z",
       "last_completed_snapshot": "56883550abf0e287bd69937c84ef838703af0147f2dc864156d0ef40f1a8f733",
-      "last_remote_verified_at_utc": "2026-08-29T03:00:18Z",
+      "last_remote_verified_at_utc": "2026-08-31T16:12:50Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -17670,7 +17670,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-29T03:00:53Z",
+      "state_updated_at_utc": "2026-08-31T16:13:24Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -17685,7 +17685,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-29T03:00:18Z",
+        "last_queue_update_at_utc": "2026-08-31T16:12:50Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -17703,11 +17703,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-29T03:02:03Z",
+        "completed_at_utc": "2026-08-31T16:14:33Z",
         "run_attempt": "1",
-        "run_id": "33230130056",
+        "run_id": "33412386151",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-29T03:02:03Z",
+        "started_at_utc": "2026-08-31T16:14:33Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 209
@@ -19201,10 +19201,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-29 06:02:03 EEST",
-      "last_completed_at_utc": "2026-08-29T03:02:03Z",
+      "last_completed_at_greece": "2026-08-31 19:14:33 EEST",
+      "last_completed_at_utc": "2026-08-31T16:14:33Z",
       "last_completed_snapshot": "56883550abf0e287bd69937c84ef838703af0147f2dc864156d0ef40f1a8f733",
-      "last_remote_verified_at_utc": "2026-08-29T03:02:03Z",
+      "last_remote_verified_at_utc": "2026-08-31T16:14:33Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -19219,7 +19219,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-29T03:02:35Z",
+      "state_updated_at_utc": "2026-08-31T16:15:05Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -19234,7 +19234,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-29T03:02:03Z",
+        "last_queue_update_at_utc": "2026-08-31T16:14:33Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -19252,11 +19252,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-29T02:57:06Z",
+        "completed_at_utc": "2026-08-31T16:09:31Z",
         "run_attempt": "1",
-        "run_id": "33230130056",
+        "run_id": "33412386151",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-29T02:57:06Z",
+        "started_at_utc": "2026-08-31T16:09:31Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 829
@@ -25229,10 +25229,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-29 05:57:06 EEST",
-      "last_completed_at_utc": "2026-08-29T02:57:06Z",
+      "last_completed_at_greece": "2026-08-31 19:09:31 EEST",
+      "last_completed_at_utc": "2026-08-31T16:09:31Z",
       "last_completed_snapshot": "074414a1560bbc41c9df80fff7a15ac43a53e4a2c726c41c154d6d7339e98d09",
-      "last_remote_verified_at_utc": "2026-08-29T02:57:06Z",
+      "last_remote_verified_at_utc": "2026-08-31T16:09:31Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -25247,7 +25247,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-29T02:57:39Z",
+      "state_updated_at_utc": "2026-08-31T16:10:03Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-mirror-repository-snapshots",
         "kind": "repository",
@@ -25262,7 +25262,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-08-29T02:57:06Z",
+        "last_queue_update_at_utc": "2026-08-31T16:09:31Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -25280,11 +25280,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-08-29T02:58:45Z",
+        "completed_at_utc": "2026-08-31T16:11:10Z",
         "run_attempt": "1",
-        "run_id": "33230130056",
+        "run_id": "33412386151",
         "snapshot_changed": false,
-        "started_at_utc": "2026-08-29T02:58:45Z",
+        "started_at_utc": "2026-08-31T16:11:10Z",
         "state_source": "internet_archive",
         "status": "complete",
         "total_current_files": 829
@@ -31257,10 +31257,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-08-29 05:58:45 EEST",
-      "last_completed_at_utc": "2026-08-29T02:58:45Z",
+      "last_completed_at_greece": "2026-08-31 19:11:10 EEST",
+      "last_completed_at_utc": "2026-08-31T16:11:10Z",
       "last_completed_snapshot": "6949774f16ac662f148b22aae8d0ecce582472c301fadfc2ef797cdefd5b3b85",
-      "last_remote_verified_at_utc": "2026-08-29T02:58:45Z",
+      "last_remote_verified_at_utc": "2026-08-31T16:11:10Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -31272,10 +31272,10 @@
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": false,
         "unchanged_files": 829,
-        "wayback_pending": 1572
+        "wayback_pending": 1548
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-08-29T02:59:18Z",
+      "state_updated_at_utc": "2026-08-31T16:11:48Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-snapshots",
         "kind": "website",
@@ -31290,48 +31290,24 @@
         "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 1105,
+        "completed": 1129,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-08-26T23:15:30Z",
-          "remaining": 1572,
-          "workflow_run_id": "33019052300"
+          "processed_at_utc": "2026-08-29T04:03:48Z",
+          "remaining": 1548,
+          "workflow_run_id": "33230130056"
         },
-        "last_processed_at_utc": "2026-08-26T23:15:10Z",
+        "last_processed_at_utc": "2026-08-29T04:03:28Z",
         "last_queue_added": 2,
-        "last_queue_update_at_utc": "2026-08-29T02:58:45Z",
-        "last_successful_at_utc": "2026-08-26T23:15:10Z",
-        "last_successful_url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/File-Discovery.html",
+        "last_queue_update_at_utc": "2026-08-31T16:11:10Z",
+        "last_successful_at_utc": "2026-08-29T04:03:28Z",
+        "last_successful_url": "https://ded-sec.space/Smartphone-Academy/Pages/Privacy-Permissions/Accounts-Sessions-And-Device-Trust.html",
         "last_transient_error": {
           "at_utc": "2026-08-26T22:38:40Z",
           "error": "URLError(ConnectionRefusedError(111, 'Connection refused'))",
           "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Phone-Technology-Labs/Smartphone-Technology-Capstone.html"
         },
         "pending": [
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/Path-Navigation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/Pipeline-Builder.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/Process-Observation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/Safe-Batch-Operations.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/Shell-Session-Journal.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Terminal/Text-Triage.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Csp-Review.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Input-Validation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Local-Code-Review.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Local-Form-Validation.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Request-Anatomy.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Security-Headers.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Session-Model.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Web-Defence/Threat-Model.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Analyst-Notebook.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Archive-Evidence.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Environment-Inventory.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Hash-Baseline.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Package-Integrity-Baseline.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Permission-Map.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Workspace/Safe-Workspace.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Practical/index.html",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Privacy-Permissions/",
-          "https://ded-sec.space/Smartphone-Academy/Pages/Privacy-Permissions/Accounts-Sessions-And-Device-Trust.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Privacy-Permissions/Mobile-Network-Privacy.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Privacy-Permissions/Use-The-Privacy-Dashboard.html",
           "https://ded-sec.space/Smartphone-Academy/Pages/Privacy-Permissions/index.html",
@@ -32914,7 +32890,7 @@
             "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Termux-Dev-Bootstrap.html"
           }
         ],
-        "remaining": 1572
+        "remaining": 1548
       }
     },
     "github-profile": {
