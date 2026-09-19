@@ -51,16 +51,16 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 - **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a4185f5487b9f54a85989033e5f1d9daa214f84a/) · `full`
 - **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:f7b9610cecd0b570f8292daf91c5d898eb072d60/) · `full`
 - **Website mirror:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:9874bbc8c0ec2ea0fb2d613274664e384a393cdf/) · `full`
-- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:be9cc850f2718542cb058d8220e9fad95bf8b961/) · `full`
+- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:f566be5bc7522c9be7859126a2b99e1d5e49a6ae/) · `full`
 - **Corrupted Files:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
 - **Pocket AI:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
-- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:965c3840514f32228f9bcf2211c572ecb3a9cf00/) · `full`
+- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:c7c654d0702a1b23f5ff033f4d5c7b6a085aca63/) · `full`
 - **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/) · `full`
 - **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
 - **Language Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/) · `full`
-- **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:d7cb1d89ae46990a3cd37ebce3b7f7555483f562/) · `full`
+- **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ffff282558d90aca4bb3c62faa429363d766e3cb/) · `full`
 
-Last checked: `2026-09-18T13:35:43Z`.
+Last checked: `2026-09-18T22:53:36Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -169,7 +169,7 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Last checked: `2026-09-18T13:55:40Z`.
+Last checked: `2026-09-18T23:04:08Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -179,16 +179,16 @@ Last checked: `2026-09-18T13:55:40Z`.
 ### DedSec Websites and Website Source
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-17 01:21:21 EEST  
-**Current working-tree files:** 829  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 829 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Last complete or attempted save:** 2026-09-19 01:59:40 EEST  
+**Current working-tree files:** 801  
+**Latest working-tree change:** 662 changed/added, 30 deleted, 139 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
-**Wayback queue remaining:** 1391  
-**Wayback captures accepted:** 1286  
+**Wayback queue remaining:** 1689  
+**Wayback captures accepted:** 1310  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -201,10 +201,10 @@ This section is generated from `update.json`.
 ### DedSec Project Main Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-17 01:15:52 EEST  
+**Last complete or attempted save:** 2026-09-19 01:54:35 EEST  
 **Current working-tree files:** 209  
-**Latest working-tree change:** 2 changed/added, 0 deleted, 207 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -219,10 +219,10 @@ This section is generated from `update.json`.
 ### DedSec Project Backup Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-17 01:19:44 EEST  
+**Last complete or attempted save:** 2026-09-19 01:56:09 EEST  
 **Current working-tree files:** 209  
-**Latest working-tree change:** 2 changed/added, 0 deleted, 207 unchanged.  
-**Compact archive uploaded this run:** `True`  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 209 unchanged.  
+**Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
@@ -363,10 +363,10 @@ This section is generated from `update.json`.
 ### DedSec Website Mirror Repository
 
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-17 01:23:20 EEST  
-**Current working-tree files:** 829  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 829 unchanged.  
-**Compact archive uploaded this run:** `False`  
+**Last complete or attempted save:** 2026-09-19 02:03:22 EEST  
+**Current working-tree files:** 801  
+**Latest working-tree change:** 662 changed/added, 30 deleted, 139 unchanged.  
+**Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
