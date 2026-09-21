@@ -245,6 +245,19 @@ jobs:
                   "legacy_prefixes": "language-project-",
               },
               {
+                  "repository": "dedsec1121fk/Ghost-Project",
+                  "slug": "ghost-project",
+                  "title": "Ghost Project",
+                  "archive_label": "Ghost Project",
+                  "marker": "GHOST_PROJECT_ARCHIVE_STATUS",
+                  "ia_item": "dedsec1121fk-ghost-project-repository-snapshots",
+                  "timeout_minutes": 240,
+                  "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens",
+                  "kind": "repository",
+                  "sites": "",
+                  "legacy_prefixes": "ghost-project-",
+              },
+              {
                   "repository": "dedsec1121fk/Save-DedSec-Project",
                   "slug": "save-dedsec-project",
                   "title": "Save DedSec Project",
@@ -2409,6 +2422,100 @@ jobs:
               lines.extend(["", end])
               return "\n".join(lines)
 
+          def archive_links_block_el(all_target_definitions: list[dict]) -> str:
+              marker = "PERMANENT_ARCHIVE_LINKS_EL"
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              lines = [
+                  start,
+                  "## Μόνιμοι Σύνδεσμοι Internet Archive",
+                  "",
+              ]
+
+              for target in all_target_definitions:
+                  label = target.get("archive_label") or target["title"]
+                  ia_url = "https://archive.org/details/" + target["ia_item"]
+                  lines.append(f"- **{label}:** {ia_url}")
+
+              lines.append(
+                  "- **APK dependencies:** "
+                  "https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups"
+              )
+              lines.extend([
+                  "",
+                  (
+                      "Αυτή η ενότητα δημιουργείται ξανά σε κάθε archive run από "
+                      "τη ρύθμιση στόχων στο "
+                      "`.github/workflows/internet-archive.yml`."
+                  ),
+                  end,
+              ])
+              return "\n".join(lines)
+
+          def software_heritage_links_block_el(
+              software_state: dict | None,
+              all_target_definitions: list[dict],
+          ) -> str:
+              marker = "SOFTWARE_HERITAGE_LINKS_EL"
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              records = (software_state or {}).get("repositories", {})
+              lines = [
+                  start,
+                  "## Σύνδεσμοι Software Heritage",
+                  "",
+                  (
+                      "Τα αιτήματα Software Heritage Save Code Now υποβάλλονται σε ένα "
+                      "workflow run, αλλά οι σύνδεσμοι του archive επιβεβαιώνονται μόνο "
+                      "σε επόμενα runs. Έτσι δίνεται χρόνος στο Software Heritage να "
+                      "εισάγει κάθε repository πριν δημοσιευτεί εδώ ο σύνδεσμος."
+                  ),
+                  "",
+              ]
+              seen: set[str] = set()
+              for target in all_target_definitions:
+                  repository = str(target.get("repository") or "").strip().strip("/")
+                  if not repository or repository in seen:
+                      continue
+                  seen.add(repository)
+                  label = target.get("archive_label") or target.get("title") or repository
+                  record = records.get(repository, {}) if isinstance(records, dict) else {}
+                  origin = f"https://github.com/{repository}"
+                  swhid = str(record.get("snapshot_swhid") or "").strip()
+                  if swhid:
+                      browse = record.get("browse_url") or (
+                          "https://archive.softwareheritage.org/browse/origin/?"
+                          + urllib.parse.urlencode({"origin_url": origin})
+                      )
+                      snapshot_url = str(record.get("snapshot_url") or "").strip() or (
+                          f"https://archive.softwareheritage.org/{swhid}/"
+                      )
+                      line = (
+                          f"- **{label}:** [archive στο Software Heritage]({browse})"
+                          f" · [τελευταίο snapshot]({snapshot_url})"
+                      )
+                      visit_status = str(record.get("latest_visit_status") or "").strip()
+                      if visit_status:
+                          line += f" · `{visit_status}`"
+                  elif record.get("save_requested_this_run"):
+                      line = (
+                          f"- **{label}:** ζητήθηκε αποθήκευση· ο σύνδεσμος θα "
+                          "ελεγχθεί σε επόμενο workflow run"
+                      )
+                  elif record.get("awaiting_link_check"):
+                      line = f"- **{label}:** αναμονή για επόμενο έλεγχο συνδέσμου Software Heritage"
+                  elif record:
+                      line = f"- **{label}:** δεν υπάρχει ακόμη επιβεβαιωμένο snapshot στο Software Heritage"
+                  else:
+                      line = f"- **{label}:** δεν έχει ελεγχθεί ακόμη"
+                  lines.append(line)
+
+              checked = str((software_state or {}).get("checked_at_utc") or "").strip()
+              if checked:
+                  lines.extend(["", f"Τελευταίος έλεγχος: `{checked}`."])
+              lines.extend(["", end])
+              return "\n".join(lines)
+
           def apk_archive_block(apk_state: dict | None) -> str:
               marker = "APK_ARCHIVE_STATUS"
               start = f"<!-- {marker}_START -->"
@@ -2438,6 +2545,39 @@ jobs:
               checked = str(state.get("checked_at_utc") or "").strip()
               if checked:
                   lines.extend(["", f"Last checked: `{checked}`."])
+              lines.extend(["", end])
+              return "\n".join(lines)
+
+          def apk_archive_block_el(apk_state: dict | None) -> str:
+              marker = "APK_ARCHIVE_STATUS_EL"
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              state = apk_state or {}
+              files = state.get("files", {}) if isinstance(state.get("files"), dict) else {}
+              lines = [
+                  start,
+                  "## Διατήρηση APK",
+                  "",
+                  (
+                      "Τα ίδια τέσσερα APK dependencies που χρησιμοποιεί το τοπικό "
+                      "backup του Save DedSec Project μέσω `Settings.py` ελέγχονται σε "
+                      "κάθε workflow run."
+                  ),
+                  "",
+                  "- [Συλλογή APK στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups)",
+              ]
+              for filename in ("F-Droid.apk", "Termux.apk", "Termux_API.apk", "Termux_Styling.apk"):
+                  metadata = files.get(filename, {}) if isinstance(files, dict) else {}
+                  if metadata:
+                      lines.append(
+                          f"- **{filename}:** `{metadata.get('sha256', 'unknown')}` "
+                          f"({metadata.get('size', 0)} bytes)"
+                      )
+                  else:
+                      lines.append(f"- **{filename}:** ελέγχεται από το workflow")
+              checked = str(state.get("checked_at_utc") or "").strip()
+              if checked:
+                  lines.extend(["", f"Τελευταίος έλεγχος: `{checked}`."])
               lines.extend(["", end])
               return "\n".join(lines)
 
@@ -2531,6 +2671,96 @@ jobs:
               ])
               return "\n".join(lines)
 
+          def status_block_el(state: dict) -> str:
+              target = state["target"]
+              marker = "GREEK_" + target["marker"]
+              start = f"<!-- {marker}_START -->"
+              end = f"<!-- {marker}_END -->"
+              current = state.get("current_run", {})
+              result = state.get("last_result", {})
+              wayback = state.get("wayback", {})
+              ia_url = "https://archive.org/details/" + target["ia_item"]
+
+              changed = result.get(
+                  "changed_or_added_files",
+                  result.get("uploaded_new_or_changed", 0),
+              )
+              lines = [
+                  start,
+                  f"### {target['title']}",
+                  "",
+                  (
+                      "**Τρέχουσα κατάσταση αρχειοθέτησης:** "
+                      f"`{current.get('status', 'not_started')}`  "
+                  ),
+                  (
+                      "**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** "
+                      f"{state.get('last_completed_at_greece') or 'Δεν έχει ολοκληρωθεί ακόμη'}  "
+                  ),
+                  f"**Αρχεία τρέχοντος working tree:** {len(state.get('files', {}))}  ",
+                  (
+                      "**Τελευταία αλλαγή working tree:** "
+                      f"{changed} αλλαγμένα/προστέθηκαν, "
+                      f"{result.get('deleted_from_repository', 0)} διαγράφηκαν, "
+                      f"{result.get('unchanged_files', 0)} αμετάβλητα.  "
+                  ),
+                  (
+                      "**Ανέβηκε compact archive σε αυτό το run:** "
+                      f"`{result.get('archive_uploaded', False)}`  "
+                  ),
+                  (
+                      "**Επαλήθευση archive:** "
+                      f"`{result.get('mirror_verified', False)}`  "
+                  ),
+                  (
+                      "**Προγραμματισμένες ώρες:** "
+                      f"{target['window']}  "
+                  ),
+                  (
+                      "**Λειτουργία αρχειοθέτησης:** Ένα τρέχον "
+                      "`current-working-tree.tar.gz` μαζί με manifest/checksums/state· "
+                      "τα `.git`, commits και push history εξαιρούνται."
+                  ),
+              ]
+
+              cleanup_pending = result.get("history_cleanup_pending", 0)
+              if cleanup_pending:
+                  lines.append(
+                      f"**Εκκαθάριση παλιού ιστορικού που εκκρεμεί:** {cleanup_pending} object(s).  "
+                  )
+
+              legacy_mirrors = result.get("legacy_mirror_objects_visible")
+              if isinstance(legacy_mirrors, int) and legacy_mirrors > 0:
+                  lines.append(
+                      f"**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** {legacy_mirrors}. "
+                      "Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  "
+                  )
+
+              if target.get("kind") == "website":
+                  lines.extend([
+                      f"**Υπόλοιπο Wayback queue:** {len(wayback.get('pending', []))}  ",
+                      f"**Wayback captures που έγιναν δεκτά:** {wayback.get('completed', 0)}  ",
+                  ])
+
+              lines.extend([
+                  "",
+                  f"- [Working-tree archive στο Internet Archive]({ia_url})",
+              ])
+
+              if target.get("kind") == "website":
+                  for site in target.get("sites", []):
+                      lines.append(
+                          f"- [Ιστορικό Wayback για {site}]"
+                          f"(https://web.archive.org/web/*/{site}/*)"
+                      )
+
+              lines.extend([
+                  "",
+                  "Αυτή η ενότητα δημιουργείται από το `update.json`.",
+                  end,
+              ])
+              return "\n".join(lines)
+
           readme = replace_block(
               readme,
               "PERMANENT_ARCHIVE_LINKS",
@@ -2549,6 +2779,24 @@ jobs:
               "APK_ARCHIVE_STATUS",
               apk_archive_block(aggregate.get("apks")),
           )
+          readme = replace_block(
+              readme,
+              "PERMANENT_ARCHIVE_LINKS_EL",
+              archive_links_block_el(all_targets),
+          )
+          readme = replace_block(
+              readme,
+              "SOFTWARE_HERITAGE_LINKS_EL",
+              software_heritage_links_block_el(
+                  aggregate.get("software_heritage"),
+                  all_targets,
+              ),
+          )
+          readme = replace_block(
+              readme,
+              "APK_ARCHIVE_STATUS_EL",
+              apk_archive_block_el(aggregate.get("apks")),
+          )
 
           for state in refreshed.values():
               marker = state.get("target", {}).get("marker")
@@ -2557,6 +2805,11 @@ jobs:
                       readme,
                       marker,
                       status_block(state),
+                  )
+                  readme = replace_block(
+                      readme,
+                      "GREEK_" + marker,
+                      status_block_el(state),
                   )
 
           README_PATH.write_text(readme, encoding="utf-8")

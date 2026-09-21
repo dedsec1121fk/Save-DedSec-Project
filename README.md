@@ -1,5 +1,13 @@
 # Save DedSec Project
 
+> Save DedSec Project keeps the public DedSec Project ecosystem synchronized with Internet Archive and Software Heritage, preserves its APK dependencies, and captures the live DedSec websites with the Wayback Machine.
+>
+> Το Save DedSec Project συγχρονίζει το δημόσιο οικοσύστημα DedSec Project με το Internet Archive και το Software Heritage, διατηρεί τα APK dependencies του και αποθηκεύει σταδιακά τους live ιστοτόπους DedSec μέσω του Wayback Machine.
+
+---
+
+🇬🇧 **English**
+
 This repository keeps the current DedSec Project ecosystem synchronized with Internet Archive and Software Heritage, preserves the APK dependencies used by the local Save DedSec Project backup, and progressively captures the live DedSec websites with the Wayback Machine.
 
 ## Fixed Architecture
@@ -15,12 +23,11 @@ Internet Archive working-tree synchronization, Software Heritage source preserva
 7. Repository archive files are replaced with `x-archive-keep-old-version:0`, so Internet Archive is instructed not to create `history/files/` copies when current objects are overwritten.
 8. Repository targets are never submitted to Wayback. Only the two live DedSec websites use the resumable Wayback queue.
 
-
 This design removes the per-file request burst that caused Internet Archive `503 SlowDown` errors and also prevents malformed individual PDFs from being rejected during upload: files such as PDFs are preserved byte-for-byte inside the TAR.GZ rather than uploaded as standalone Internet Archive objects.
 
 ## Forking This Archive Controller
 
-Fork owners can configure their own Internet Archive credentials and item identifiers by following [Fork Instructions](Fork%20Instructions.md).
+Fork owners can configure their own Internet Archive credentials and item identifiers by following [Fork Instructions](Fork%20Instructions.md). The fork guide is bilingual in English and Greek.
 
 <!-- PERMANENT_ARCHIVE_LINKS_START -->
 ## Permanent Internet Archive Links
@@ -36,6 +43,7 @@ Fork owners can configure their own Internet Archive credentials and item identi
 - **Offline Survival:** https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots
 - **Hacking Guide Project:** https://archive.org/details/dedsec1121fk-hacking-guide-project-repository-snapshots
 - **Language Project:** https://archive.org/details/dedsec1121fk-language-project-repository-snapshots
+- **Ghost Project:** https://archive.org/details/dedsec1121fk-ghost-project-repository-snapshots
 - **Save DedSec Project:** https://archive.org/details/dedsec1121fk-save-dedsec-project-repository-snapshots
 - **APK dependencies:** https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups
 
@@ -58,6 +66,7 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 - **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/) · `full`
 - **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
 - **Language Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/) · `full`
+- **Ghost Project:** not checked yet
 - **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ffff282558d90aca4bb3c62faa429363d766e3cb/) · `full`
 
 Last checked: `2026-09-20T05:12:43Z`.
@@ -119,12 +128,12 @@ All scheduled times use `Europe/Athens`.
 | Day | Greece time | Archive targets |
 |---|---:|---|
 | Monday | 11:11 | DedSec Project main/backup + website source + website mirror + both live websites |
-| Tuesday | 05:05 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project and Save DedSec Project |
+| Tuesday | 05:05 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
 | Wednesday | 22:22 | DedSec Project main/backup + website source + website mirror + both live websites |
-| Friday | 12:12 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project and Save DedSec Project |
+| Friday | 12:12 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
 | Saturday | 00:00 | DedSec Project main/backup + website source + website mirror + both live websites |
-| 1st & 3rd Sunday | 03:33 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project and Save DedSec Project |
-| 2nd & 4th Sunday | 03:00 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project and Save DedSec Project |
+| 1st & 3rd Sunday | 03:33 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+| 2nd & 4th Sunday | 03:00 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
 
 If a month has a fifth Sunday, no Sunday backup is scheduled for that fifth occurrence.
 
@@ -136,7 +145,7 @@ Scheduled repository backups run one target at a time so the configured order is
 - **February, April, June, August, October and December:** the same target list runs in reverse order.
 - **Manual runs:** keep the normal listed order.
 
-For the DedSec/website group, the normal repository order is DedSec main → DedSec backup → website source/live websites → website mirror; the reverse order starts with the website mirror. For the other-projects group, the normal order is GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Save DedSec Project, and even-numbered months reverse that sequence.
+For the DedSec/website group, the normal repository order is DedSec main → DedSec backup → website source/live websites → website mirror; the reverse order starts with the website mirror. For the other-projects group, the normal order is GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, and even-numbered months reverse that sequence.
 
 ## Official Websites
 
@@ -156,6 +165,7 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 - **Offline Survival Project:** https://github.com/dedsec1121fk/Offline-Survival-Project
 - **Hacking Guide Project:** https://github.com/dedsec1121fk/Hacking-Guide-Project
 - **Language Project:** https://github.com/dedsec1121fk/Language-Project
+- **Ghost Project:** https://github.com/dedsec1121fk/Ghost-Project
 - **Save DedSec Project:** https://github.com/dedsec1121fk/Save-DedSec-Project
 
 <!-- APK_ARCHIVE_STATUS_START -->
@@ -174,28 +184,6 @@ Last checked: `2026-09-20T05:34:04Z`.
 <!-- APK_ARCHIVE_STATUS_END -->
 
 ## Automatic Archive Status
-
-<!-- WEBSITES_ARCHIVE_STATUS_START -->
-### DedSec Websites and Website Source
-
-**Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-19 01:59:40 EEST  
-**Current working-tree files:** 801  
-**Latest working-tree change:** 662 changed/added, 30 deleted, 139 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `True`  
-**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
-**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
-**Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
-**Wayback queue remaining:** 1689  
-**Wayback captures accepted:** 1310  
-
-- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
-- [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
-- [https://ded-sec.online Wayback history](https://web.archive.org/web/*/https://ded-sec.online/*)
-
-This section is generated from `update.json`.
-<!-- WEBSITES_ARCHIVE_STATUS_END -->
 
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 ### DedSec Project Main Repository
@@ -232,6 +220,45 @@ This section is generated from `update.json`.
 
 This section is generated from `update.json`.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_END -->
+
+<!-- WEBSITES_ARCHIVE_STATUS_START -->
+### DedSec Websites and Website Source
+
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-09-19 01:59:40 EEST  
+**Current working-tree files:** 801  
+**Latest working-tree change:** 662 changed/added, 30 deleted, 139 unchanged.  
+**Compact archive uploaded this run:** `True`  
+**Archive verification:** `True`  
+**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
+**Wayback queue remaining:** 1689  
+**Wayback captures accepted:** 1310  
+
+- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
+- [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
+- [https://ded-sec.online Wayback history](https://web.archive.org/web/*/https://ded-sec.online/*)
+
+This section is generated from `update.json`.
+<!-- WEBSITES_ARCHIVE_STATUS_END -->
+
+<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
+### DedSec Website Mirror Repository
+
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-09-19 02:03:22 EEST  
+**Current working-tree files:** 801  
+**Latest working-tree change:** 662 changed/added, 30 deleted, 139 unchanged.  
+**Compact archive uploaded this run:** `True`  
+**Archive verification:** `True`  
+**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+
+- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots)
+
+This section is generated from `update.json`.
+<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_END -->
 
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 ### DedSec GitHub Profile Repository
@@ -341,6 +368,40 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- HACKING_GUIDE_ARCHIVE_STATUS_END -->
 
+<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
+### Language Project
+
+**Current archive status:** `complete`  
+**Last complete or attempted save:** 2026-09-20 08:30:01 EEST  
+**Current working-tree files:** 10753  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 10753 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `True`  
+**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+
+- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-language-project-repository-snapshots)
+
+This section is generated from `update.json`.
+<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_END -->
+
+<!-- GHOST_PROJECT_ARCHIVE_STATUS_START -->
+### Ghost Project
+
+**Current archive status:** `not_started`  
+**Last complete or attempted save:** Not completed yet  
+**Current working-tree files:** 0  
+**Latest working-tree change:** 0 changed/added, 0 deleted, 0 unchanged.  
+**Compact archive uploaded this run:** `False`  
+**Archive verification:** `False`  
+**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+
+- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-ghost-project-repository-snapshots)
+
+This section is generated from `update.json`.
+<!-- GHOST_PROJECT_ARCHIVE_STATUS_END -->
+
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 ### Save DedSec Project
 
@@ -359,36 +420,418 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
+---
+
+🇬🇷 **Ελληνικά**
+
+Αυτό το repository διατηρεί το τρέχον οικοσύστημα DedSec Project συγχρονισμένο με το Internet Archive και το Software Heritage, διατηρεί τα APK dependencies που χρησιμοποιεί το τοπικό backup του Save DedSec Project και αποθηκεύει σταδιακά τους live ιστοτόπους DedSec μέσω του Wayback Machine.
+
+## Σταθερή Αρχιτεκτονική
+
+Ο συγχρονισμός του working tree στο Internet Archive, η διατήρηση του source code στο Software Heritage, η διατήρηση των APK και η επεξεργασία των Wayback captures για τους live ιστοτόπους είναι ξεχωριστές διαδικασίες:
+
+1. Κάθε repository γίνεται checkout με `fetch-depth: 1`· το πλήρες Git history δεν γίνεται ποτέ fetch από αυτόν τον controller.
+2. Το `.git` εξαιρείται από inventory, manifests, checksums και δημιουργία archive στο Internet Archive.
+3. Ολόκληρο το τρέχον working tree πακετάρεται σε ένα deterministic `current-working-tree.tar.gz` για κάθε repository target του Internet Archive.
+4. Το Internet Archive λαμβάνει το πολύ το compact TAR.GZ, `manifest.json`, `SHA256SUMS.txt` και ένα state checkpoint για κάθε repository target, αντί για εκατοντάδες ή χιλιάδες uploads ανά αρχείο.
+5. Τα τέσσερα APK dependencies που ορίζονται από την τρέχουσα ρουτίνα `Settings.py` του Save DedSec Project κατεβαίνουν ξεχωριστά και συγχρονίζονται σε ένα dedicated software item στο Internet Archive μόνο όταν αλλάζουν τα hashes τους.
+6. Κάθε δημόσιο Git repository παρακολουθείται από το Software Heritage. Τα repositories που επιλέγονται για ένα run λαμβάνουν Save Code Now request, εκτός αν υπάρχει ήδη ενεργό ή πολύ πρόσφατο request· οι σύνδεσμοι ελέγχονται και δημοσιεύονται σκόπιμα μόνο σε επόμενα workflow runs.
+7. Τα repository archive files αντικαθίστανται με `x-archive-keep-old-version:0`, ώστε το Internet Archive να μην δημιουργεί αντίγραφα `history/files/` όταν γίνεται overwrite των τρεχόντων objects.
+8. Τα repository targets δεν υποβάλλονται ποτέ στο Wayback. Μόνο οι δύο live ιστοσελίδες DedSec χρησιμοποιούν το resumable Wayback queue.
+
+Αυτός ο σχεδιασμός αφαιρεί το burst από requests ανά αρχείο που προκαλούσε σφάλματα Internet Archive `503 SlowDown` και αποτρέπει επίσης την απόρριψη μεμονωμένων προβληματικών PDF κατά το upload: αρχεία όπως τα PDF διατηρούνται byte-for-byte μέσα στο TAR.GZ αντί να ανεβαίνουν ως ανεξάρτητα objects στο Internet Archive.
+
+## Fork αυτού του Archive Controller
+
+Οι ιδιοκτήτες forks μπορούν να ρυθμίσουν τα δικά τους Internet Archive credentials και item identifiers ακολουθώντας τις [Οδηγίες Fork](Fork%20Instructions.md). Το αρχείο οδηγιών είναι πλήρως δίγλωσσο σε Αγγλικά και Ελληνικά.
+
+<!-- PERMANENT_ARCHIVE_LINKS_EL_START -->
+## Μόνιμοι Σύνδεσμοι Internet Archive
+
+- **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
+- **DedSec backup:** https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots
+- **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
+- **Website mirror:** https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots
+- **GitHub profile:** https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots
+- **Corrupted Files:** https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots
+- **Pocket AI:** https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots
+- **Praying Project:** https://archive.org/details/dedsec1121fk-praying-project-repository-snapshots
+- **Offline Survival:** https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots
+- **Hacking Guide Project:** https://archive.org/details/dedsec1121fk-hacking-guide-project-repository-snapshots
+- **Language Project:** https://archive.org/details/dedsec1121fk-language-project-repository-snapshots
+- **Ghost Project:** https://archive.org/details/dedsec1121fk-ghost-project-repository-snapshots
+- **Save DedSec Project:** https://archive.org/details/dedsec1121fk-save-dedsec-project-repository-snapshots
+- **APK dependencies:** https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups
+
+Αυτή η ενότητα δημιουργείται ξανά σε κάθε archive run από τη ρύθμιση στόχων στο `.github/workflows/internet-archive.yml`.
+<!-- PERMANENT_ARCHIVE_LINKS_EL_END -->
+
+<!-- SOFTWARE_HERITAGE_LINKS_EL_START -->
+## Σύνδεσμοι Software Heritage
+
+Τα αιτήματα Software Heritage Save Code Now υποβάλλονται σε ένα workflow run, αλλά οι σύνδεσμοι του archive επιβεβαιώνονται μόνο σε επόμενα runs. Έτσι δίνεται χρόνος στο Software Heritage να εισάγει κάθε repository πριν δημοσιευτεί εδώ ο σύνδεσμος.
+
+- **DedSec main:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:9398c186b5c5727ca1b2acbe482010bffeb45d94/) · `full`
+- **DedSec backup:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:a4185f5487b9f54a85989033e5f1d9daa214f84a/) · `full`
+- **Websites:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:0fdf2bb2c142cdb402cb4fbe9f55bebb9386a24b/) · `full`
+- **Website mirror:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:29edba7c972de18149294255d58688b6951daa20/) · `full`
+- **GitHub profile:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:f566be5bc7522c9be7859126a2b99e1d5e49a6ae/) · `full`
+- **Corrupted Files:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
+- **Pocket AI:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
+- **Praying Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:c7c654d0702a1b23f5ff033f4d5c7b6a085aca63/) · `full`
+- **Offline Survival:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/) · `full`
+- **Hacking Guide Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
+- **Language Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/) · `full`
+- **Ghost Project:** δεν έχει ελεγχθεί ακόμη
+- **Save DedSec Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:ffff282558d90aca4bb3c62faa429363d766e3cb/) · `full`
+
+Τελευταίος έλεγχος: `2026-09-20T05:12:43Z`.
+
+<!-- SOFTWARE_HERITAGE_LINKS_EL_END -->
+
+## Compact Archive του Working Tree στο Internet Archive
+
+Το archive λειτουργεί σε **working-tree-only mode**. Τα Git metadata και το history δεν αποτελούν inputs διατήρησης. Σε κάθε run, το workflow κάνει inventory του τρέχοντος checkout, υπολογίζει SHA-256 hashes και συγκρίνει το snapshot του working tree με την προηγούμενη κατάσταση.
+
+Όταν αλλάζει το snapshot, ενημερώνεται το target item με:
+
+```text
+current-working-tree.tar.gz
+manifest.json
+SHA256SUMS.txt
+archive-state/update.json
+```
+
+Όταν το snapshot δεν έχει αλλάξει, το μεγάλο TAR.GZ δεν ανεβαίνει ξανά· ανανεώνεται μόνο το compact state που χρειάζεται το workflow. Το archive είναι deterministic, άρα ίδιο περιεχόμενο working tree παράγει ίδια archive bytes.
+
+Ιδιότητες ασφάλειας και ιδιωτικότητας:
+
+- Οι φάκελοι και τα αρχεία `.git` εξαιρούνται σε κάθε βάθος, μαζί με nested submodules.
+- Git commits, branches, reflogs, push history, Git bundles, commit pages και commit-pinned GitHub archives δεν αρχειοθετούνται.
+- Η αντικατάσταση ή διαγραφή objects στο Internet Archive χρησιμοποιεί ρητά `x-archive-keep-old-version:0`.
+- Υπάρχοντα `git-history.bundle`, `history/files/` objects και παλιά timestamped history archives καθαρίζονται σε μικρά περιορισμένα batches ώστε η εκκαθάριση να μην ξαναδημιουργήσει το παλιό request storm.
+- Παλιά `mirror/` objects από τον προηγούμενο σχεδιασμό δεν ενημερώνονται πλέον. Δεν μπορούν να καταγράψουν μελλοντικά pushes και αναφέρονται ως legacy objects μέχρι να αφαιρεθούν ξεχωριστά.
+- Τα item metadata διορθώνονται μέσω του Internet Archive Metadata API ώστε να μην ισχυρίζονται πλέον ότι διατηρείται Git history.
+- Private Sponsors-Only repositories δεν δημοσιεύονται από αυτόν τον public archive controller· μόνο public repository targets στέλνονται στο Internet Archive και στο Software Heritage.
+
+Ένα συγχρονισμένο συνδυασμένο αντίγραφο κατάστασης αποθηκεύεται σε αυτό το repository ως:
+
+```text
+update.json
+```
+
+Πριν από S3 writes, το workflow ελέγχει το queue-capacity endpoint του Internet Archive και περιμένει όταν το item/account είναι πάνω από το όριο. Τα uploads χρησιμοποιούν επίσης μεγαλύτερα retry windows για προσωρινές καταστάσεις `429`/`503`.
+
+## Resumable Wayback Queue
+
+Η επεξεργασία Wayback περιορίζεται στους live ιστοτόπους DedSec. URLs από GitHub repositories, commits, branches, tags, releases και source history δεν μπαίνουν στο queue.
+
+Ένα σειριακό Wayback job:
+
+- Επεξεργάζεται το πολύ 120 URLs ανά workflow run.
+- Τρέχει για έως τρεις ώρες.
+- Γράφει Internet Archive state checkpoint κάθε 20 επεξεργασμένα URLs αντί μετά από κάθε URL.
+- Γράφει ένα τελικό checkpoint στο τέλος του batch.
+- Αντιμετωπίζει active-session limits και HTTP 429/500/502/503/504 ως προσωρινά.
+- Αφήνει τα μη ολοκληρωμένα URLs στο queue για το επόμενο run.
+- Παραλείπεται εσωτερικά όταν το επιλεγμένο backup group δεν περιέχει website target.
+- Δεν αποτυγχάνει τη διατήρηση repository files απλώς επειδή το Wayback είναι απασχολημένο.
+
+## Πρόγραμμα Backup
+
+Όλες οι προγραμματισμένες ώρες χρησιμοποιούν `Europe/Athens`.
+
+| Ημέρα | Ώρα Ελλάδας | Archive targets |
+|---|---:|---|
+| Δευτέρα | 11:11 | DedSec Project main/backup + website source + website mirror + και οι δύο live ιστοσελίδες |
+| Τρίτη | 05:05 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+| Τετάρτη | 22:22 | DedSec Project main/backup + website source + website mirror + και οι δύο live ιστοσελίδες |
+| Παρασκευή | 12:12 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+| Σάββατο | 00:00 | DedSec Project main/backup + website source + website mirror + και οι δύο live ιστοσελίδες |
+| 1η & 3η Κυριακή | 03:33 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+| 2η & 4η Κυριακή | 03:00 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+
+Αν ένας μήνας έχει πέμπτη Κυριακή, δεν προγραμματίζεται Sunday backup για αυτή την πέμπτη εμφάνιση.
+
+### Μηνιαία Εναλλαγή Σειράς Backup
+
+Τα προγραμματισμένα repository backups τρέχουν ένα target τη φορά, ώστε η ρυθμισμένη σειρά να έχει σημασία.
+
+- **Ιανουάριος, Μάρτιος, Μάιος, Ιούλιος, Σεπτέμβριος και Νοέμβριος:** τα targets τρέχουν με την ακριβή σειρά του παραπάνω προγράμματος.
+- **Φεβρουάριος, Απρίλιος, Ιούνιος, Αύγουστος, Οκτώβριος και Δεκέμβριος:** η ίδια λίστα targets τρέχει με αντίστροφη σειρά.
+- **Manual runs:** κρατούν την κανονική σειρά.
+
+Για το DedSec/website group, η κανονική σειρά repositories είναι DedSec main → DedSec backup → website source/live websites → website mirror· η αντίστροφη σειρά ξεκινά από το website mirror. Για το other-projects group, η κανονική σειρά είναι GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, και οι ζυγοί μήνες αντιστρέφουν αυτή τη σειρά.
+
+## Επίσημοι Ιστότοποι
+
+- **Κύριος ιστότοπος:** https://ded-sec.space/
+- **Backup ιστότοπος:** https://ded-sec.online/
+
+## Repositories
+
+- **Website source:** https://github.com/dedsec1121fk/dedsec1121fk.github.io
+- **Website mirror:** https://github.com/sal-scar/ded-sec
+- **DedSec Project main:** https://github.com/dedsec1121fk/DedSec
+- **DedSec Project backup:** https://github.com/sal-scar/DedSec
+- **GitHub profile:** https://github.com/dedsec1121fk/dedsec1121fk
+- **Corrupted Files Project:** https://github.com/dedsec1121fk/Corrupted-Files-Project
+- **Pocket AI:** https://github.com/dedsec1121fk/Pocket-AI-Project
+- **Praying Project:** https://github.com/dedsec1121fk/Praying-Project
+- **Offline Survival Project:** https://github.com/dedsec1121fk/Offline-Survival-Project
+- **Hacking Guide Project:** https://github.com/dedsec1121fk/Hacking-Guide-Project
+- **Language Project:** https://github.com/dedsec1121fk/Language-Project
+- **Ghost Project:** https://github.com/dedsec1121fk/Ghost-Project
+- **Save DedSec Project:** https://github.com/dedsec1121fk/Save-DedSec-Project
+
+<!-- APK_ARCHIVE_STATUS_EL_START -->
+## Διατήρηση APK
+
+Τα ίδια τέσσερα APK dependencies που χρησιμοποιεί το τοπικό backup του Save DedSec Project μέσω `Settings.py` ελέγχονται σε κάθε workflow run.
+
+- [Συλλογή APK στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups)
+- **F-Droid.apk:** `985f5181d48bb6bafd54083a048b391271e0ab28385881cc41294fb01a222762` (12426276 bytes)
+- **Termux.apk:** `fdd476982cd74f2f00aac12d3683b1fa260a0b2d146411b94e09d773be3a7b56` (114920926 bytes)
+- **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
+- **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
+
+Τελευταίος έλεγχος: `2026-09-20T05:34:04Z`.
+
+<!-- APK_ARCHIVE_STATUS_EL_END -->
+
+## Αυτόματη Κατάσταση Archive
+
+<!-- GREEK_DEDSEC_MAIN_ARCHIVE_STATUS_START -->
+### DedSec Project Main Repository
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 01:54:35 EEST  
+**Αρχεία τρέχοντος working tree:** 209  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 209 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 589. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_DEDSEC_MAIN_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
+### DedSec Project Backup Repository
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 01:56:09 EEST  
+**Αρχεία τρέχοντος working tree:** 209  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 209 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 588. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_DEDSEC_BACKUP_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_WEBSITES_ARCHIVE_STATUS_START -->
+### DedSec Websites and Website Source
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 01:59:40 EEST  
+**Αρχεία τρέχοντος working tree:** 801  
+**Τελευταία αλλαγή working tree:** 662 αλλαγμένα/προστέθηκαν, 30 διαγράφηκαν, 139 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `True`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 821. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+**Υπόλοιπο Wayback queue:** 1689  
+**Wayback captures που έγιναν δεκτά:** 1310  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
+- [Ιστορικό Wayback για https://ded-sec.space](https://web.archive.org/web/*/https://ded-sec.space/*)
+- [Ιστορικό Wayback για https://ded-sec.online](https://web.archive.org/web/*/https://ded-sec.online/*)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_WEBSITES_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
 ### DedSec Website Mirror Repository
 
-**Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-19 02:03:22 EEST  
-**Current working-tree files:** 801  
-**Latest working-tree change:** 662 changed/added, 30 deleted, 139 unchanged.  
-**Compact archive uploaded this run:** `True`  
-**Archive verification:** `True`  
-**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
-**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 02:03:22 EEST  
+**Αρχεία τρέχοντος working tree:** 801  
+**Τελευταία αλλαγή working tree:** 662 αλλαγμένα/προστέθηκαν, 30 διαγράφηκαν, 139 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `True`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 
-- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots)
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots)
 
-This section is generated from `update.json`.
-<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_END -->
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_END -->
 
-<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
+<!-- GREEK_GITHUB_PROFILE_ARCHIVE_STATUS_START -->
+### DedSec GitHub Profile Repository
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:15:50 EEST  
+**Αρχεία τρέχοντος working tree:** 54  
+**Τελευταία αλλαγή working tree:** 39 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 15 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `True`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 8. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-github-profile-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_GITHUB_PROFILE_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_CORRUPTED_FILES_ARCHIVE_STATUS_START -->
+### Corrupted Files Project
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:18:11 EEST  
+**Αρχεία τρέχοντος working tree:** 2148  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 2148 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 2141. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-corrupted-files-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_CORRUPTED_FILES_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_POCKET_AI_ARCHIVE_STATUS_START -->
+### Pocket AI
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:19:57 EEST  
+**Αρχεία τρέχοντος working tree:** 128  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 128 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 128. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-pocket-ai-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_POCKET_AI_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_PRAYING_PROJECT_ARCHIVE_STATUS_START -->
+### Praying Project
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:24:31 EEST  
+**Αρχεία τρέχοντος working tree:** 1502  
+**Τελευταία αλλαγή working tree:** 1 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 1501 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `True`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 74. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-praying-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_PRAYING_PROJECT_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
+### Offline Survival Project
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:26:22 EEST  
+**Αρχεία τρέχοντος working tree:** 921  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 921 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 1410. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-offline-survival-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_OFFLINE_SURVIVAL_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_HACKING_GUIDE_ARCHIVE_STATUS_START -->
+### Hacking Guide Project
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:28:06 EEST  
+**Αρχεία τρέχοντος working tree:** 334  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 334 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 6. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-hacking-guide-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_HACKING_GUIDE_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
 ### Language Project
 
-**Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-09-20 08:30:01 EEST  
-**Current working-tree files:** 10753  
-**Latest working-tree change:** 0 changed/added, 0 deleted, 10753 unchanged.  
-**Compact archive uploaded this run:** `False`  
-**Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
-**Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:30:01 EEST  
+**Αρχεία τρέχοντος working tree:** 10753  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 10753 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 
-- [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-language-project-repository-snapshots)
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-language-project-repository-snapshots)
 
-This section is generated from `update.json`.
-<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_END -->
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_LANGUAGE_PROJECT_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_GHOST_PROJECT_ARCHIVE_STATUS_START -->
+### Ghost Project
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `not_started`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** Δεν έχει ολοκληρωθεί ακόμη  
+**Αρχεία τρέχοντος working tree:** 0  
+**Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 0 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `False`  
+**Επαλήθευση archive:** `False`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-ghost-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_GHOST_PROJECT_ARCHIVE_STATUS_END -->
+
+<!-- GREEK_SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
+### Save DedSec Project
+
+**Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:33:20 EEST  
+**Αρχεία τρέχοντος working tree:** 7  
+**Τελευταία αλλαγή working tree:** 2 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 5 αμετάβλητα.  
+**Ανέβηκε compact archive σε αυτό το run:** `True`  
+**Επαλήθευση archive:** `True`  
+**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
+**Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 5. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
+
+- [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-save-dedsec-project-repository-snapshots)
+
+Αυτή η ενότητα δημιουργείται από το `update.json`.
+<!-- GREEK_SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_END -->

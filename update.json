@@ -32640,6 +32640,62 @@
         "remaining": 1689
       }
     },
+    "ghost-project": {
+      "archive_mode": "single_current_working_tree_archive",
+      "current_run": {
+        "compact_archive_upload_required": false,
+        "completed_at_utc": null,
+        "run_attempt": null,
+        "run_id": null,
+        "snapshot_changed": false,
+        "started_at_utc": null,
+        "state_source": "controller_placeholder",
+        "status": "not_started",
+        "total_current_files": 0
+      },
+      "directories": [],
+      "files": {},
+      "initial_sync_completed": false,
+      "last_completed_at_greece": null,
+      "last_completed_at_utc": null,
+      "last_completed_snapshot": null,
+      "last_remote_verified_at_utc": null,
+      "last_result": {
+        "archive_uploaded": false,
+        "changed_or_added_files": 0,
+        "deleted_from_repository": 0,
+        "deleted_history_archives": 0,
+        "history_cleanup_pending": 0,
+        "legacy_mirror_objects_visible": 0,
+        "mirror_verified": false,
+        "remote_state_checkpoint_uploaded": false,
+        "snapshot_changed": false,
+        "unchanged_files": 0,
+        "wayback_pending": 0
+      },
+      "schema_version": 7,
+      "state_updated_at_utc": null,
+      "target": {
+        "ia_item": "dedsec1121fk-ghost-project-repository-snapshots",
+        "kind": "repository",
+        "marker": "GHOST_PROJECT_ARCHIVE_STATUS",
+        "repository": "dedsec1121fk/Ghost-Project",
+        "sites": [],
+        "slug": "ghost-project",
+        "title": "Ghost Project",
+        "window": "Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens"
+      },
+      "wayback": {
+        "completed": 0,
+        "initial_queue_created": true,
+        "last_queue_added": 0,
+        "last_queue_update_at_utc": null,
+        "pending": [],
+        "permanent_failures": 0,
+        "recent_failures": [],
+        "remaining": 0
+      }
+    },
     "github-profile": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
