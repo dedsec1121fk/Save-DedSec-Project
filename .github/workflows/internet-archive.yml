@@ -2331,8 +2331,6 @@ jobs:
               end = f"<!-- {marker}_END -->"
               lines = [
                   start,
-                  "## Permanent Internet Archive Links",
-                  "",
               ]
 
               for target in all_target_definitions:
@@ -2368,8 +2366,6 @@ jobs:
               records = (software_state or {}).get("repositories", {})
               lines = [
                   start,
-                  "## Software Heritage Links",
-                  "",
                   (
                       "Software Heritage Save Code Now requests are submitted during one "
                       "workflow run, but their archive links are resolved only on later runs. "
@@ -2428,8 +2424,6 @@ jobs:
               end = f"<!-- {marker}_END -->"
               lines = [
                   start,
-                  "## Μόνιμοι Σύνδεσμοι Internet Archive",
-                  "",
               ]
 
               for target in all_target_definitions:
@@ -2462,8 +2456,6 @@ jobs:
               records = (software_state or {}).get("repositories", {})
               lines = [
                   start,
-                  "## Σύνδεσμοι Software Heritage",
-                  "",
                   (
                       "Τα αιτήματα Software Heritage Save Code Now υποβάλλονται σε ένα "
                       "workflow run, αλλά οι σύνδεσμοι του archive επιβεβαιώνονται μόνο "
@@ -2524,8 +2516,6 @@ jobs:
               files = state.get("files", {}) if isinstance(state.get("files"), dict) else {}
               lines = [
                   start,
-                  "## APK Preservation",
-                  "",
                   (
                       "The same four APK dependencies used by the local `Settings.py` "
                       "Save DedSec Project backup are checked on every workflow run."
@@ -2556,8 +2546,6 @@ jobs:
               files = state.get("files", {}) if isinstance(state.get("files"), dict) else {}
               lines = [
                   start,
-                  "## Διατήρηση APK",
-                  "",
                   (
                       "Τα ίδια τέσσερα APK dependencies που χρησιμοποιεί το τοπικό "
                       "backup του Save DedSec Project μέσω `Settings.py` ελέγχονται σε "
@@ -2597,8 +2585,6 @@ jobs:
               )
               lines = [
                   start,
-                  f"### {target['title']}",
-                  "",
                   (
                       "**Current archive status:** "
                       f"`{current.get('status', 'not_started')}`  "
@@ -2687,8 +2673,6 @@ jobs:
               )
               lines = [
                   start,
-                  f"### {target['title']}",
-                  "",
                   (
                       "**Τρέχουσα κατάσταση αρχειοθέτησης:** "
                       f"`{current.get('status', 'not_started')}`  "

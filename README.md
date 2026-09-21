@@ -1,16 +1,32 @@
-# Save DedSec Project
-
-> Save DedSec Project keeps the public DedSec Project ecosystem synchronized with Internet Archive and Software Heritage, preserves its APK dependencies, and captures the live DedSec websites with the Wayback Machine.
->
-> Το Save DedSec Project συγχρονίζει το δημόσιο οικοσύστημα DedSec Project με το Internet Archive και το Software Heritage, διατηρεί τα APK dependencies του και αποθηκεύει σταδιακά τους live ιστοτόπους DedSec μέσω του Wayback Machine.
+<div align="center">
+  <h1>Save DedSec Project</h1>
+  <p><strong>Internet Archive · Software Heritage · Wayback preservation controller</strong></p>
+</div>
 
 ---
+<a id="english-readme"></a>
+# Save DedSec Project
 
-🇬🇧 **English**
+> **Για να μεταβείτε στην πλήρη Ελληνική έκδοση, συνεχίστε [Πατώντας Εδώ](#greek-readme).**
 
 This repository keeps the current DedSec Project ecosystem synchronized with Internet Archive and Software Heritage, preserves the APK dependencies used by the local Save DedSec Project backup, and progressively captures the live DedSec websites with the Wayback Machine.
 
-## Fixed Architecture
+<h2>Table of Contents</h2>
+* Fixed Architecture
+* Forking This Archive Controller
+* Permanent Internet Archive Links
+* Software Heritage Links
+* Compact Internet Archive Working-Tree Archive
+* Resumable Wayback Queue
+* Backup Schedule
+* Official Websites
+* Repositories
+* APK Preservation
+* Automatic Archive Status
+
+<details>
+<summary><strong>Fixed Architecture</strong></summary>
+
 
 Internet Archive working-tree synchronization, Software Heritage source preservation, APK preservation and live-website Wayback capture processing are separate:
 
@@ -25,13 +41,18 @@ Internet Archive working-tree synchronization, Software Heritage source preserva
 
 This design removes the per-file request burst that caused Internet Archive `503 SlowDown` errors and also prevents malformed individual PDFs from being rejected during upload: files such as PDFs are preserved byte-for-byte inside the TAR.GZ rather than uploaded as standalone Internet Archive objects.
 
-## Forking This Archive Controller
+</details>
+<details>
+<summary><strong>Forking This Archive Controller</strong></summary>
+
 
 Fork owners can configure their own Internet Archive credentials and item identifiers by following [Fork Instructions](Fork%20Instructions.md). The fork guide is bilingual in English and Greek.
 
-<!-- PERMANENT_ARCHIVE_LINKS_START -->
-## Permanent Internet Archive Links
+</details>
+<details>
+<summary><strong>Permanent Internet Archive Links</strong></summary>
 
+<!-- PERMANENT_ARCHIVE_LINKS_START -->
 - **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
 - **DedSec backup:** https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots
 - **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
@@ -50,9 +71,12 @@ Fork owners can configure their own Internet Archive credentials and item identi
 This section is regenerated on every archive run from the target configuration in `.github/workflows/internet-archive.yml`.
 <!-- PERMANENT_ARCHIVE_LINKS_END -->
 
-<!-- SOFTWARE_HERITAGE_LINKS_START -->
-## Software Heritage Links
+</details>
 
+<details>
+<summary><strong>Software Heritage Links</strong></summary>
+
+<!-- SOFTWARE_HERITAGE_LINKS_START -->
 Software Heritage Save Code Now requests are submitted during one workflow run, but their archive links are resolved only on later runs. This gives Software Heritage time to ingest each repository before a link is published here.
 
 - **DedSec main:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:9398c186b5c5727ca1b2acbe482010bffeb45d94/) · `full`
@@ -70,10 +94,12 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 - **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ffff282558d90aca4bb3c62faa429363d766e3cb/) · `full`
 
 Last checked: `2026-09-20T05:12:43Z`.
-
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
-## Compact Internet Archive Working-Tree Archive
+</details>
+<details>
+<summary><strong>Compact Internet Archive Working-Tree Archive</strong></summary>
+
 
 The archive operates in **working-tree-only mode**. Git metadata and history are not preservation inputs. On every run the workflow inventories the current checkout, calculates SHA-256 hashes and compares the resulting working-tree snapshot with the previous state.
 
@@ -106,7 +132,10 @@ update.json
 
 Before S3 writes, the workflow checks Internet Archive's queue-capacity endpoint and waits when the item/account is over limit. Uploads also use extended retry windows for temporary `429`/`503` conditions.
 
-## Resumable Wayback Queue
+</details>
+<details>
+<summary><strong>Resumable Wayback Queue</strong></summary>
+
 
 Wayback processing is restricted to the live DedSec websites. GitHub repository, commit, branch, tag, release and source-history URLs are not queued.
 
@@ -121,7 +150,10 @@ A single serial Wayback job:
 - Is skipped internally when the selected backup group contains no website target.
 - Does not fail repository file preservation merely because Wayback is busy.
 
-## Backup Schedule
+</details>
+<details>
+<summary><strong>Backup Schedule</strong></summary>
+
 
 All scheduled times use `Europe/Athens`.
 
@@ -147,12 +179,18 @@ Scheduled repository backups run one target at a time so the configured order is
 
 For the DedSec/website group, the normal repository order is DedSec main → DedSec backup → website source/live websites → website mirror; the reverse order starts with the website mirror. For the other-projects group, the normal order is GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, and even-numbered months reverse that sequence.
 
-## Official Websites
+</details>
+<details>
+<summary><strong>Official Websites</strong></summary>
+
 
 - **Main website:** https://ded-sec.space/
 - **Backup website:** https://ded-sec.online/
 
-## Repositories
+</details>
+<details>
+<summary><strong>Repositories</strong></summary>
+
 
 - **Website source:** https://github.com/dedsec1121fk/dedsec1121fk.github.io
 - **Website mirror:** https://github.com/sal-scar/ded-sec
@@ -168,9 +206,11 @@ For the DedSec/website group, the normal repository order is DedSec main → Ded
 - **Ghost Project:** https://github.com/dedsec1121fk/Ghost-Project
 - **Save DedSec Project:** https://github.com/dedsec1121fk/Save-DedSec-Project
 
-<!-- APK_ARCHIVE_STATUS_START -->
-## APK Preservation
+</details>
+<details>
+<summary><strong>APK Preservation</strong></summary>
 
+<!-- APK_ARCHIVE_STATUS_START -->
 The same four APK dependencies used by the local `Settings.py` Save DedSec Project backup are checked on every workflow run.
 
 - [Internet Archive APK collection](https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups)
@@ -180,14 +220,17 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
 Last checked: `2026-09-20T05:34:04Z`.
-
 <!-- APK_ARCHIVE_STATUS_END -->
 
-## Automatic Archive Status
+</details>
+<details>
+<summary><strong>Automatic Archive Status</strong></summary>
+
+
+<details>
+<summary><strong>DedSec Project Main Repository</strong></summary>
 
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
-### DedSec Project Main Repository
-
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-19 01:54:35 EEST  
 **Current working-tree files:** 209  
@@ -203,9 +246,12 @@ Last checked: `2026-09-20T05:34:04Z`.
 This section is generated from `update.json`.
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_END -->
 
-<!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
-### DedSec Project Backup Repository
+</details>
 
+<details>
+<summary><strong>DedSec Project Backup Repository</strong></summary>
+
+<!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-19 01:56:09 EEST  
 **Current working-tree files:** 209  
@@ -221,9 +267,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_END -->
 
-<!-- WEBSITES_ARCHIVE_STATUS_START -->
-### DedSec Websites and Website Source
+</details>
 
+<details>
+<summary><strong>DedSec Websites and Website Source</strong></summary>
+
+<!-- WEBSITES_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-19 01:59:40 EEST  
 **Current working-tree files:** 801  
@@ -243,9 +292,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- WEBSITES_ARCHIVE_STATUS_END -->
 
-<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
-### DedSec Website Mirror Repository
+</details>
 
+<details>
+<summary><strong>DedSec Website Mirror Repository</strong></summary>
+
+<!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-19 02:03:22 EEST  
 **Current working-tree files:** 801  
@@ -260,9 +312,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_END -->
 
-<!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
-### DedSec GitHub Profile Repository
+</details>
 
+<details>
+<summary><strong>DedSec GitHub Profile Repository</strong></summary>
+
+<!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:15:50 EEST  
 **Current working-tree files:** 54  
@@ -278,9 +333,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_END -->
 
-<!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
-### Corrupted Files Project
+</details>
 
+<details>
+<summary><strong>Corrupted Files Project</strong></summary>
+
+<!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:18:11 EEST  
 **Current working-tree files:** 2148  
@@ -296,9 +354,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_END -->
 
-<!-- POCKET_AI_ARCHIVE_STATUS_START -->
-### Pocket AI
+</details>
 
+<details>
+<summary><strong>Pocket AI</strong></summary>
+
+<!-- POCKET_AI_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:19:57 EEST  
 **Current working-tree files:** 128  
@@ -314,9 +375,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- POCKET_AI_ARCHIVE_STATUS_END -->
 
-<!-- PRAYING_PROJECT_ARCHIVE_STATUS_START -->
-### Praying Project
+</details>
 
+<details>
+<summary><strong>Praying Project</strong></summary>
+
+<!-- PRAYING_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:24:31 EEST  
 **Current working-tree files:** 1502  
@@ -332,9 +396,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- PRAYING_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
-### Offline Survival Project
+</details>
 
+<details>
+<summary><strong>Offline Survival Project</strong></summary>
+
+<!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:26:22 EEST  
 **Current working-tree files:** 921  
@@ -350,9 +417,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_END -->
 
-<!-- HACKING_GUIDE_ARCHIVE_STATUS_START -->
-### Hacking Guide Project
+</details>
 
+<details>
+<summary><strong>Hacking Guide Project</strong></summary>
+
+<!-- HACKING_GUIDE_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:28:06 EEST  
 **Current working-tree files:** 334  
@@ -368,9 +438,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- HACKING_GUIDE_ARCHIVE_STATUS_END -->
 
-<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
-### Language Project
+</details>
 
+<details>
+<summary><strong>Language Project</strong></summary>
+
+<!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:30:01 EEST  
 **Current working-tree files:** 10753  
@@ -385,9 +458,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- GHOST_PROJECT_ARCHIVE_STATUS_START -->
-### Ghost Project
+</details>
 
+<details>
+<summary><strong>Ghost Project</strong></summary>
+
+<!-- GHOST_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `not_started`  
 **Last complete or attempted save:** Not completed yet  
 **Current working-tree files:** 0  
@@ -402,9 +478,12 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- GHOST_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
-### Save DedSec Project
+</details>
 
+<details>
+<summary><strong>Save DedSec Project</strong></summary>
+
+<!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
 **Last complete or attempted save:** 2026-09-20 08:33:20 EEST  
 **Current working-tree files:** 7  
@@ -420,13 +499,34 @@ This section is generated from `update.json`.
 This section is generated from `update.json`.
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_END -->
 
----
+</details>
 
-🇬🇷 **Ελληνικά**
+</details>
+
+---
+<a id="greek-readme"></a>
+# Save DedSec Project — Ελληνικά
+
+> **Για να επιστρέψετε στην πλήρη Αγγλική έκδοση, συνεχίστε [Πατώντας Εδώ](#english-readme).**
 
 Αυτό το repository διατηρεί το τρέχον οικοσύστημα DedSec Project συγχρονισμένο με το Internet Archive και το Software Heritage, διατηρεί τα APK dependencies που χρησιμοποιεί το τοπικό backup του Save DedSec Project και αποθηκεύει σταδιακά τους live ιστοτόπους DedSec μέσω του Wayback Machine.
 
-## Σταθερή Αρχιτεκτονική
+<h2>Περιεχόμενα</h2>
+* Σταθερή Αρχιτεκτονική
+* Fork αυτού του Archive Controller
+* Μόνιμοι Σύνδεσμοι Internet Archive
+* Σύνδεσμοι Software Heritage
+* Compact Archive του Working Tree στο Internet Archive
+* Resumable Wayback Queue
+* Πρόγραμμα Backup
+* Επίσημοι Ιστότοποι
+* Repositories
+* Διατήρηση APK
+* Αυτόματη Κατάσταση Archive
+
+<details>
+<summary><strong>Σταθερή Αρχιτεκτονική</strong></summary>
+
 
 Ο συγχρονισμός του working tree στο Internet Archive, η διατήρηση του source code στο Software Heritage, η διατήρηση των APK και η επεξεργασία των Wayback captures για τους live ιστοτόπους είναι ξεχωριστές διαδικασίες:
 
@@ -441,13 +541,18 @@ This section is generated from `update.json`.
 
 Αυτός ο σχεδιασμός αφαιρεί το burst από requests ανά αρχείο που προκαλούσε σφάλματα Internet Archive `503 SlowDown` και αποτρέπει επίσης την απόρριψη μεμονωμένων προβληματικών PDF κατά το upload: αρχεία όπως τα PDF διατηρούνται byte-for-byte μέσα στο TAR.GZ αντί να ανεβαίνουν ως ανεξάρτητα objects στο Internet Archive.
 
-## Fork αυτού του Archive Controller
+</details>
+<details>
+<summary><strong>Fork αυτού του Archive Controller</strong></summary>
+
 
 Οι ιδιοκτήτες forks μπορούν να ρυθμίσουν τα δικά τους Internet Archive credentials και item identifiers ακολουθώντας τις [Οδηγίες Fork](Fork%20Instructions.md). Το αρχείο οδηγιών είναι πλήρως δίγλωσσο σε Αγγλικά και Ελληνικά.
 
-<!-- PERMANENT_ARCHIVE_LINKS_EL_START -->
-## Μόνιμοι Σύνδεσμοι Internet Archive
+</details>
+<details>
+<summary><strong>Μόνιμοι Σύνδεσμοι Internet Archive</strong></summary>
 
+<!-- PERMANENT_ARCHIVE_LINKS_EL_START -->
 - **DedSec main:** https://archive.org/details/dedsec1121fk-dedsec-project-repository-snapshots
 - **DedSec backup:** https://archive.org/details/dedsec1121fk-dedsec-project-backup-repository-snapshots
 - **Websites:** https://archive.org/details/dedsec1121fk-dedsec-website-snapshots
@@ -466,9 +571,12 @@ This section is generated from `update.json`.
 Αυτή η ενότητα δημιουργείται ξανά σε κάθε archive run από τη ρύθμιση στόχων στο `.github/workflows/internet-archive.yml`.
 <!-- PERMANENT_ARCHIVE_LINKS_EL_END -->
 
-<!-- SOFTWARE_HERITAGE_LINKS_EL_START -->
-## Σύνδεσμοι Software Heritage
+</details>
 
+<details>
+<summary><strong>Σύνδεσμοι Software Heritage</strong></summary>
+
+<!-- SOFTWARE_HERITAGE_LINKS_EL_START -->
 Τα αιτήματα Software Heritage Save Code Now υποβάλλονται σε ένα workflow run, αλλά οι σύνδεσμοι του archive επιβεβαιώνονται μόνο σε επόμενα runs. Έτσι δίνεται χρόνος στο Software Heritage να εισάγει κάθε repository πριν δημοσιευτεί εδώ ο σύνδεσμος.
 
 - **DedSec main:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:9398c186b5c5727ca1b2acbe482010bffeb45d94/) · `full`
@@ -486,10 +594,12 @@ This section is generated from `update.json`.
 - **Save DedSec Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:ffff282558d90aca4bb3c62faa429363d766e3cb/) · `full`
 
 Τελευταίος έλεγχος: `2026-09-20T05:12:43Z`.
-
 <!-- SOFTWARE_HERITAGE_LINKS_EL_END -->
 
-## Compact Archive του Working Tree στο Internet Archive
+</details>
+<details>
+<summary><strong>Compact Archive του Working Tree στο Internet Archive</strong></summary>
+
 
 Το archive λειτουργεί σε **working-tree-only mode**. Τα Git metadata και το history δεν αποτελούν inputs διατήρησης. Σε κάθε run, το workflow κάνει inventory του τρέχοντος checkout, υπολογίζει SHA-256 hashes και συγκρίνει το snapshot του working tree με την προηγούμενη κατάσταση.
 
@@ -522,7 +632,10 @@ update.json
 
 Πριν από S3 writes, το workflow ελέγχει το queue-capacity endpoint του Internet Archive και περιμένει όταν το item/account είναι πάνω από το όριο. Τα uploads χρησιμοποιούν επίσης μεγαλύτερα retry windows για προσωρινές καταστάσεις `429`/`503`.
 
-## Resumable Wayback Queue
+</details>
+<details>
+<summary><strong>Resumable Wayback Queue</strong></summary>
+
 
 Η επεξεργασία Wayback περιορίζεται στους live ιστοτόπους DedSec. URLs από GitHub repositories, commits, branches, tags, releases και source history δεν μπαίνουν στο queue.
 
@@ -537,7 +650,10 @@ update.json
 - Παραλείπεται εσωτερικά όταν το επιλεγμένο backup group δεν περιέχει website target.
 - Δεν αποτυγχάνει τη διατήρηση repository files απλώς επειδή το Wayback είναι απασχολημένο.
 
-## Πρόγραμμα Backup
+</details>
+<details>
+<summary><strong>Πρόγραμμα Backup</strong></summary>
+
 
 Όλες οι προγραμματισμένες ώρες χρησιμοποιούν `Europe/Athens`.
 
@@ -563,12 +679,18 @@ update.json
 
 Για το DedSec/website group, η κανονική σειρά repositories είναι DedSec main → DedSec backup → website source/live websites → website mirror· η αντίστροφη σειρά ξεκινά από το website mirror. Για το other-projects group, η κανονική σειρά είναι GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, και οι ζυγοί μήνες αντιστρέφουν αυτή τη σειρά.
 
-## Επίσημοι Ιστότοποι
+</details>
+<details>
+<summary><strong>Επίσημοι Ιστότοποι</strong></summary>
+
 
 - **Κύριος ιστότοπος:** https://ded-sec.space/
 - **Backup ιστότοπος:** https://ded-sec.online/
 
-## Repositories
+</details>
+<details>
+<summary><strong>Repositories</strong></summary>
+
 
 - **Website source:** https://github.com/dedsec1121fk/dedsec1121fk.github.io
 - **Website mirror:** https://github.com/sal-scar/ded-sec
@@ -584,9 +706,11 @@ update.json
 - **Ghost Project:** https://github.com/dedsec1121fk/Ghost-Project
 - **Save DedSec Project:** https://github.com/dedsec1121fk/Save-DedSec-Project
 
-<!-- APK_ARCHIVE_STATUS_EL_START -->
-## Διατήρηση APK
+</details>
+<details>
+<summary><strong>Διατήρηση APK</strong></summary>
 
+<!-- APK_ARCHIVE_STATUS_EL_START -->
 Τα ίδια τέσσερα APK dependencies που χρησιμοποιεί το τοπικό backup του Save DedSec Project μέσω `Settings.py` ελέγχονται σε κάθε workflow run.
 
 - [Συλλογή APK στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-project-apk-backups)
@@ -596,14 +720,17 @@ update.json
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
 Τελευταίος έλεγχος: `2026-09-20T05:34:04Z`.
-
 <!-- APK_ARCHIVE_STATUS_EL_END -->
 
-## Αυτόματη Κατάσταση Archive
+</details>
+<details>
+<summary><strong>Αυτόματη Κατάσταση Archive</strong></summary>
+
+
+<details>
+<summary><strong>DedSec Project Main Repository</strong></summary>
 
 <!-- GREEK_DEDSEC_MAIN_ARCHIVE_STATUS_START -->
-### DedSec Project Main Repository
-
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 01:54:35 EEST  
 **Αρχεία τρέχοντος working tree:** 209  
@@ -619,9 +746,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_DEDSEC_MAIN_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
-### DedSec Project Backup Repository
+</details>
 
+<details>
+<summary><strong>DedSec Project Backup Repository</strong></summary>
+
+<!-- GREEK_DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 01:56:09 EEST  
 **Αρχεία τρέχοντος working tree:** 209  
@@ -637,9 +767,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_DEDSEC_BACKUP_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_WEBSITES_ARCHIVE_STATUS_START -->
-### DedSec Websites and Website Source
+</details>
 
+<details>
+<summary><strong>DedSec Websites and Website Source</strong></summary>
+
+<!-- GREEK_WEBSITES_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 01:59:40 EEST  
 **Αρχεία τρέχοντος working tree:** 801  
@@ -659,9 +792,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_WEBSITES_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
-### DedSec Website Mirror Repository
+</details>
 
+<details>
+<summary><strong>DedSec Website Mirror Repository</strong></summary>
+
+<!-- GREEK_DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-19 02:03:22 EEST  
 **Αρχεία τρέχοντος working tree:** 801  
@@ -676,9 +812,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_GITHUB_PROFILE_ARCHIVE_STATUS_START -->
-### DedSec GitHub Profile Repository
+</details>
 
+<details>
+<summary><strong>DedSec GitHub Profile Repository</strong></summary>
+
+<!-- GREEK_GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:15:50 EEST  
 **Αρχεία τρέχοντος working tree:** 54  
@@ -694,9 +833,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_GITHUB_PROFILE_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_CORRUPTED_FILES_ARCHIVE_STATUS_START -->
-### Corrupted Files Project
+</details>
 
+<details>
+<summary><strong>Corrupted Files Project</strong></summary>
+
+<!-- GREEK_CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:18:11 EEST  
 **Αρχεία τρέχοντος working tree:** 2148  
@@ -712,9 +854,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_CORRUPTED_FILES_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_POCKET_AI_ARCHIVE_STATUS_START -->
-### Pocket AI
+</details>
 
+<details>
+<summary><strong>Pocket AI</strong></summary>
+
+<!-- GREEK_POCKET_AI_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:19:57 EEST  
 **Αρχεία τρέχοντος working tree:** 128  
@@ -730,9 +875,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_POCKET_AI_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_PRAYING_PROJECT_ARCHIVE_STATUS_START -->
-### Praying Project
+</details>
 
+<details>
+<summary><strong>Praying Project</strong></summary>
+
+<!-- GREEK_PRAYING_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:24:31 EEST  
 **Αρχεία τρέχοντος working tree:** 1502  
@@ -748,9 +896,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_PRAYING_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
-### Offline Survival Project
+</details>
 
+<details>
+<summary><strong>Offline Survival Project</strong></summary>
+
+<!-- GREEK_OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:26:22 EEST  
 **Αρχεία τρέχοντος working tree:** 921  
@@ -766,9 +917,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_OFFLINE_SURVIVAL_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_HACKING_GUIDE_ARCHIVE_STATUS_START -->
-### Hacking Guide Project
+</details>
 
+<details>
+<summary><strong>Hacking Guide Project</strong></summary>
+
+<!-- GREEK_HACKING_GUIDE_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:28:06 EEST  
 **Αρχεία τρέχοντος working tree:** 334  
@@ -784,9 +938,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_HACKING_GUIDE_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
-### Language Project
+</details>
 
+<details>
+<summary><strong>Language Project</strong></summary>
+
+<!-- GREEK_LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:30:01 EEST  
 **Αρχεία τρέχοντος working tree:** 10753  
@@ -801,9 +958,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_LANGUAGE_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_GHOST_PROJECT_ARCHIVE_STATUS_START -->
-### Ghost Project
+</details>
 
+<details>
+<summary><strong>Ghost Project</strong></summary>
+
+<!-- GREEK_GHOST_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `not_started`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** Δεν έχει ολοκληρωθεί ακόμη  
 **Αρχεία τρέχοντος working tree:** 0  
@@ -818,9 +978,12 @@ update.json
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_GHOST_PROJECT_ARCHIVE_STATUS_END -->
 
-<!-- GREEK_SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
-### Save DedSec Project
+</details>
 
+<details>
+<summary><strong>Save DedSec Project</strong></summary>
+
+<!-- GREEK_SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
 **Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-09-20 08:33:20 EEST  
 **Αρχεία τρέχοντος working tree:** 7  
@@ -835,3 +998,7 @@ update.json
 
 Αυτή η ενότητα δημιουργείται από το `update.json`.
 <!-- GREEK_SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_END -->
+
+</details>
+
+</details>
