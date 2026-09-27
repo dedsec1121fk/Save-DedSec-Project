@@ -7,7 +7,7 @@
       "Termux_API.apk",
       "Termux_Styling.apk"
     ],
-    "checked_at_utc": "2026-09-25T21:10:33Z",
+    "checked_at_utc": "2026-09-27T01:01:43Z",
     "failures": [],
     "files": {
       "F-Droid.apk": {
@@ -37,15 +37,15 @@
     "uploaded": false
   },
   "archive_mode": "single_current_working_tree_archive",
-  "generated_at_utc": "2026-09-25T22:43:10Z",
+  "generated_at_utc": "2026-09-27T01:02:39Z",
   "resume_behavior": "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, checksums and one compact state checkpoint. The APK item stores the current four APK dependencies with hashes. Git/commit/push history is never archived by Internet Archive. Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage.",
   "schema_version": 7,
   "software_heritage": {
-    "checked_at_utc": "2026-09-25T21:01:43Z",
+    "checked_at_utc": "2026-09-27T00:38:06Z",
     "link_resolution_policy": "Save requests made in the current workflow run are not resolved into README links until a later workflow run.",
     "repositories": {
       "dedsec1121fk/Corrupted-Files-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:27:51.271000+00:00",
@@ -54,20 +54,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Corrupted-Files-Project",
         "repository": "dedsec1121fk/Corrupted-Files-Project",
-        "save_request_date": "2026-09-25T09:27:41.033265+00:00",
+        "save_request_date": "2026-09-27T00:38:18.681734+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/",
         "title": "Corrupted Files"
       },
       "dedsec1121fk/DedSec": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec",
         "error": null,
-        "latest_visit_date": "2026-09-23T19:27:37.225000+00:00",
+        "latest_visit_date": "2026-09-25T21:01:51.510000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -75,15 +75,15 @@
         "repository": "dedsec1121fk/DedSec",
         "save_request_date": "2026-09-25T21:01:45.571109+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:373cf2314af6a1830e9ca12b3a123f04528448bb",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:373cf2314af6a1830e9ca12b3a123f04528448bb/",
         "title": "DedSec main"
       },
       "dedsec1121fk/Ghost-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FGhost-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:28:12.025000+00:00",
@@ -92,17 +92,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Ghost-Project",
         "repository": "dedsec1121fk/Ghost-Project",
-        "save_request_date": "2026-09-25T09:28:07.919281+00:00",
+        "save_request_date": "2026-09-27T00:38:43.593712+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:82520808e2fc213c96aaddbb314f70647967bb25",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:82520808e2fc213c96aaddbb314f70647967bb25/",
         "title": "Ghost Project"
       },
       "dedsec1121fk/Hacking-Guide-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:28:01.576000+00:00",
@@ -111,17 +111,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Hacking-Guide-Project",
         "repository": "dedsec1121fk/Hacking-Guide-Project",
-        "save_request_date": "2026-09-25T09:27:59.744989+00:00",
+        "save_request_date": "2026-09-27T00:38:35.154919+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/",
         "title": "Hacking Guide Project"
       },
       "dedsec1121fk/Language-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:28:11.907000+00:00",
@@ -130,17 +130,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Language-Project",
         "repository": "dedsec1121fk/Language-Project",
-        "save_request_date": "2026-09-25T09:28:03.840368+00:00",
+        "save_request_date": "2026-09-27T00:38:39.283528+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/",
         "title": "Language Project"
       },
       "dedsec1121fk/Offline-Survival-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:28:01.645000+00:00",
@@ -149,17 +149,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Offline-Survival-Project",
         "repository": "dedsec1121fk/Offline-Survival-Project",
-        "save_request_date": "2026-09-25T09:27:55.379332+00:00",
+        "save_request_date": "2026-09-27T00:38:30.955240+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/",
         "title": "Offline Survival"
       },
       "dedsec1121fk/Pocket-AI-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:27:51.498000+00:00",
@@ -168,17 +168,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Pocket-AI-Project",
         "repository": "dedsec1121fk/Pocket-AI-Project",
-        "save_request_date": "2026-09-25T09:27:45.911565+00:00",
+        "save_request_date": "2026-09-27T00:38:23.069904+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/",
         "title": "Pocket AI"
       },
       "dedsec1121fk/Praying-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:27:51.466000+00:00",
@@ -187,17 +187,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Praying-Project",
         "repository": "dedsec1121fk/Praying-Project",
-        "save_request_date": "2026-09-25T09:27:50.723184+00:00",
+        "save_request_date": "2026-09-27T00:38:26.989505+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:6dc044e198952be7c142f0a5217fd8c7f90d213d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:6dc044e198952be7c142f0a5217fd8c7f90d213d/",
         "title": "Praying Project"
       },
       "dedsec1121fk/Save-DedSec-Project": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project",
         "error": null,
         "latest_visit_date": "2026-09-25T09:28:12.167000+00:00",
@@ -206,17 +206,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/Save-DedSec-Project",
         "repository": "dedsec1121fk/Save-DedSec-Project",
-        "save_request_date": "2026-09-25T09:28:11.830017+00:00",
+        "save_request_date": "2026-09-27T00:38:47.511558+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:519d206b02e3c55a346d6ef986c442d76f094c0b",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:519d206b02e3c55a346d6ef986c442d76f094c0b/",
         "title": "Save DedSec Project"
       },
       "dedsec1121fk/dedsec1121fk": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk",
         "error": null,
         "latest_visit_date": "2026-09-25T09:27:41.007000+00:00",
@@ -225,20 +225,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/dedsec1121fk",
         "repository": "dedsec1121fk/dedsec1121fk",
-        "save_request_date": "2026-09-25T09:27:37.031267+00:00",
+        "save_request_date": "2026-09-27T00:38:14.371522+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:7a3c0854dcd11965b7823ea313ba3856b9e41ae1",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7a3c0854dcd11965b7823ea313ba3856b9e41ae1/",
         "title": "GitHub profile"
       },
       "dedsec1121fk/dedsec1121fk.github.io": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io",
         "error": null,
-        "latest_visit_date": "2026-09-23T19:27:47.553000+00:00",
+        "latest_visit_date": "2026-09-25T21:02:01.738000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -246,18 +246,18 @@
         "repository": "dedsec1121fk/dedsec1121fk.github.io",
         "save_request_date": "2026-09-25T21:01:53.957098+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:9e7186c87231520d93cdfb38c04578abb5f70e45",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:9e7186c87231520d93cdfb38c04578abb5f70e45/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:7808f6d7fa01227816784aad0059c899de30e086",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7808f6d7fa01227816784aad0059c899de30e086/",
         "title": "Websites"
       },
       "sal-scar/DedSec": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec",
         "error": null,
-        "latest_visit_date": "2026-09-23T19:27:37.230000+00:00",
+        "latest_visit_date": "2026-09-25T21:01:51.579000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -265,18 +265,18 @@
         "repository": "sal-scar/DedSec",
         "save_request_date": "2026-09-25T21:01:49.808153+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:a5c743836cda764de276bd4b0dde81a7270cb192",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a5c743836cda764de276bd4b0dde81a7270cb192/",
         "title": "DedSec backup"
       },
       "sal-scar/ded-sec": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec",
         "error": null,
-        "latest_visit_date": "2026-09-23T19:27:47.604000+00:00",
+        "latest_visit_date": "2026-09-25T21:02:01.764000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -284,9 +284,9 @@
         "repository": "sal-scar/ded-sec",
         "save_request_date": "2026-09-25T21:01:57.623747+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:61ad0fcdc10cd6522342e6afe3c03185d57406cd",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:61ad0fcdc10cd6522342e6afe3c03185d57406cd/",
         "title": "Website mirror"
@@ -308,11 +308,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-09-25T09:32:04Z",
+        "completed_at_utc": "2026-09-27T00:42:34Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": false,
-        "started_at_utc": "2026-09-25T09:32:04Z",
+        "started_at_utc": "2026-09-27T00:42:34Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 2148
@@ -16122,10 +16122,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:32:04 EEST",
-      "last_completed_at_utc": "2026-09-25T09:32:04Z",
+      "last_completed_at_greece": "2026-09-27 03:42:34 EEST",
+      "last_completed_at_utc": "2026-09-27T00:42:34Z",
       "last_completed_snapshot": "3c3784a49cdd7b01074aafef25b0ec28f9abdb845e82092d764d4c163846123e",
-      "last_remote_verified_at_utc": "2026-09-25T09:32:04Z",
+      "last_remote_verified_at_utc": "2026-09-27T00:42:34Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -16140,7 +16140,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:32:37Z",
+      "state_updated_at_utc": "2026-09-27T00:43:14Z",
       "target": {
         "ia_item": "dedsec1121fk-corrupted-files-project-repository-snapshots",
         "kind": "repository",
@@ -16155,7 +16155,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:32:04Z",
+        "last_queue_update_at_utc": "2026-09-27T00:42:34Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -32710,24 +32710,31 @@
     "ghost-project": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "00b3043b425fe0a38364b9ffcf070c172b05f5f17bb3419523c0d9c2e087c53d",
-        "size": 24357020,
-        "snapshot_sha256": "f37e9da82a7269a4636726f5890fe76229549ef46ca306add869e557541f9246",
-        "updated_at_utc": "2026-09-21T10:23:16Z"
+        "sha256": "b67732a8095c6e62bbf546b60eab9695111eb0a0bda1f4d73ea7bdef5f9b19b6",
+        "size": 24406428,
+        "snapshot_sha256": "77ab9b916ca296b74ef6988c92993db692407f63218866edf4187c24951f8a83",
+        "updated_at_utc": "2026-09-27T00:57:22Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-09-25T09:45:01Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-09-27T00:57:22Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-09-25T09:45:01Z",
+        "run_id": "36283079935",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-09-27T00:55:39Z",
         "state_source": "github_update_json",
         "status": "complete",
-        "total_current_files": 372
+        "total_current_files": 386
       },
       "directories": [
+        ".github",
+        ".github/workflows",
+        "Map Assets",
+        "Map Assets/Greek Map",
+        "Map Assets/Greek Map/runtime",
+        "Map Assets/Greek Map/runtime/http-cache",
+        "Map Assets/Greek Map/runtime/vendor",
         "audio",
         "audio/narration",
         "audio/narration/extinction",
@@ -32752,11 +32759,32 @@
         "tools"
       ],
       "files": {
+        ".github/workflows/build-greek-map-full.yml": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b7ded5dcb5c91d0d0548e99f398e3ddbcdaca8d56e5e0f4fa59f5fa975d0fc61",
+          "size": 4246,
+          "type": "file"
+        },
+        ".github/workflows/publish-greek-map-package.yml": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "034206c590f9f5dfd19c0bd226ecc72ffba263d43f2325ca312c6e3f804dfd51",
+          "size": 3332,
+          "type": "file"
+        },
+        ".github/workflows/refresh-greek-map-assets.yml": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "197780485346e0193f81a23fb7a4bbccaf8ea8cc04ebbeafb172fa5191278f77",
+          "size": 1451,
+          "type": "file"
+        },
         ".gitignore": {
           "executable": false,
           "mode": "0644",
-          "sha256": "cac0dcff630767a451262fd87543690bb52d14791b24c152e9ca94c878d69a18",
-          "size": 65,
+          "sha256": "2a63e3ebc10c8aa71139bcf3a2529c3c253a28c53fdb0bc93be2056bbd8690dc",
+          "size": 548,
           "type": "file"
         },
         "CONTENT_NOTICE.md": {
@@ -32769,15 +32797,71 @@
         "Ghost Project.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b38ee303bcd62b89562bb4db2b621d24b0203a076b7ddd3fa0eff3c7b022694f",
-          "size": 16106,
+          "sha256": "67506bf458e4125ec3120e5bcbfa5b884971389292f1eaaf687dd5ce31564225",
+          "size": 16359,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/GreekOS.py": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "0a98585e8d778ef739b942f980f6e379a9196fe1a94eaf42a74453599fa6a416",
+          "size": 121998,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/README.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e619d076304bcf19402066dd732bcf96bd7773d05d6da86f8e887f95243ec869",
+          "size": 4685,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/asset_manifest.json": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "c0fdedd3ef1440e0120ab61d6d747004ca3b6a52a22326d5759677aa77176ab7",
+          "size": 539,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/full_map_source.json": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "2ece975733c9b77214e11734ccaae101ec5a5789e95aa81c2328677e4e97da48",
+          "size": 202,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/map_packages.json": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "bb3b2223b805676e2018b0e11cc704d68010a3a573fa3a48a790575a7517afee",
+          "size": 1237,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/runtime/greekos.sqlite3": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "8ffe5f247ee163275f9fcf6eb42380849dd07cc113bbdb648c58d9342b9da11b",
+          "size": 49152,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/runtime/http-cache/.gitkeep": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0,
+          "type": "file"
+        },
+        "Map Assets/Greek Map/runtime/vendor/.gitkeep": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "size": 0,
           "type": "file"
         },
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b45b1bdf85be1b8243d07725421dffdb76d3c6f8d29fcf087287e363647ad142",
-          "size": 14152,
+          "sha256": "0dad7efb7044c277d4f9a5ec2e4de526459e654eff5c5e607d99093a76cca968",
+          "size": 16063,
           "type": "file"
         },
         "audio/README.md": {
@@ -35307,6 +35391,13 @@
           "size": 7922,
           "type": "file"
         },
+        "modules/greek_map.py": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "79b4ca976f78a8ff7f5d635e010da7285c54d8cf4dfa4f33103e096b6de85a57",
+          "size": 2156,
+          "type": "file"
+        },
         "modules/loadouts.py": {
           "executable": false,
           "mode": "0644",
@@ -35324,8 +35415,8 @@
         "modules/ui.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9e90755abea3e1aaeb4d875f3cceb115a1789804c1e479649dc35d750aaf04c3",
-          "size": 6790,
+          "sha256": "0351f2f02b48834043474d38efb8b709e6288d0618b6c3f4d7e4ceef643d042f",
+          "size": 6929,
           "type": "file"
         },
         "modules/weapon_stats.py": {
@@ -35349,6 +35440,20 @@
           "size": 0,
           "type": "file"
         },
+        "tools/chunk_greek_map_package.py": {
+          "executable": true,
+          "mode": "0755",
+          "sha256": "64b0035814d3329cf64d86db92711287e7242c1b23caa33dd163d19db1062ea2",
+          "size": 2969,
+          "type": "file"
+        },
+        "tools/update_greek_map_assets.py": {
+          "executable": true,
+          "mode": "0755",
+          "sha256": "08240632a8e029e79da5b656899fb5dd0e5ec36ccb16fe8a3c8500c45df47b2b",
+          "size": 2874,
+          "type": "file"
+        },
         "tools/validate_data.py": {
           "executable": false,
           "mode": "0644",
@@ -35358,25 +35463,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:45:01 EEST",
-      "last_completed_at_utc": "2026-09-25T09:45:01Z",
-      "last_completed_snapshot": "f37e9da82a7269a4636726f5890fe76229549ef46ca306add869e557541f9246",
-      "last_remote_verified_at_utc": "2026-09-25T09:45:01Z",
+      "last_completed_at_greece": "2026-09-27 03:57:22 EEST",
+      "last_completed_at_utc": "2026-09-27T00:57:22Z",
+      "last_completed_snapshot": "77ab9b916ca296b74ef6988c92993db692407f63218866edf4187c24951f8a83",
+      "last_remote_verified_at_utc": "2026-09-27T00:57:22Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 18,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 0,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 372,
+        "snapshot_changed": true,
+        "unchanged_files": 368,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:45:34Z",
+      "state_updated_at_utc": "2026-09-27T00:57:56Z",
       "target": {
         "ia_item": "dedsec1121fk-ghost-project-repository-snapshots",
         "kind": "repository",
@@ -35391,7 +35496,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:45:01Z",
+        "last_queue_update_at_utc": "2026-09-27T00:57:22Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -35401,19 +35506,19 @@
     "github-profile": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "e9ab3d01ad909e50c791fc07015f8c7ab520e3fbaa605f126d166d7a099376bf",
-        "size": 64462,
-        "snapshot_sha256": "623fde03699c793d5efda3f32913125d549432008dbbcd1e4ad80510d518bd92",
-        "updated_at_utc": "2026-09-25T09:30:10Z"
+        "sha256": "5a0de93267e2144bbaec21add4023f40f9224ed4a06f1fee69791362392be5d2",
+        "size": 64305,
+        "snapshot_sha256": "873002dfb581fe077304a6af1b56e8aa195005791c2324ddfd5ec810164b5816",
+        "updated_at_utc": "2026-09-27T00:40:46Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-09-25T09:30:10Z",
+        "completed_at_utc": "2026-09-27T00:40:46Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": true,
-        "started_at_utc": "2026-09-25T09:28:20Z",
+        "started_at_utc": "2026-09-27T00:38:58Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 54
@@ -35436,7 +35541,7 @@
         ".github/profile-themes.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a89da3f44426c487958fa776a231b2cf5d644aae11035d4cb0e816f6b53ae2f1",
+          "sha256": "b649bd4d973a6af54cc4c0f59676e881477daae1a6907329b742ca31f7764d92",
           "size": 3076,
           "type": "file"
         },
@@ -35534,154 +35639,154 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "2b0aed3fe55fed0780b7de82462e16ea44085ba2edc3ea4b2ee7a03759583de8",
+          "sha256": "99d4fcce5ff8cf3acab42c9f1800306120eef0868a908f697b9a40abc020a4b2",
           "size": 7895,
           "type": "file"
         },
         "profile/profile-data.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "45d8d27af7d9aa14b9922c5d99f8204da897537e160a3d10319b97d60da974f9",
+          "sha256": "73fcdd19f9289bb52e3872851b4cc6f8c6b18fbe4ed38e84570a4c494c0f23c5",
           "size": 1671,
           "type": "file"
         },
         "profile/profile-views.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6af027ecd06e27c21cd2cfd5fc3516446f2aec9f955762ad10f8bcdee61d8178",
+          "sha256": "ffc883b2b9b23a051995a27f4b6b45c56ca64184cc6eff6fdb01aec2c7a7c940",
           "size": 83,
           "type": "file"
         },
         "profile/stats-dracula.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f4648c45b67487344ed3181911b7c370184b83205329387d073d0373e5128946",
+          "sha256": "43a78a457331581f1a5c542cc652f48712ef351b26f0c24f2bc2aef4a0dd0656",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-github_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "86b5d1f738b7843f84a5f20a02e845d95da9a498925af6bfbcc6f874997eefe7",
+          "sha256": "d216061b172c33bd37fc6ea8b528f1ff55b4275b3dc31d0d277a13f942d18546",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-gruvbox.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "952328ec5df73afe90dcaf162db59c1db56bcfbb792694f1260dc57744b14bd2",
+          "sha256": "66a562e6e80cf9a8de5b863f0121613a8fa1b55c97b5e9ef4a1cf334e05bba54",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-monokai.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0a35a7a9bd101d01c9736e0a14490bf50acbeb0c09e6e510ff4b5f7f9f536d1b",
+          "sha256": "17f744e53cc55482b6bd677f5b39f513ed8bcd658a7f9079ae097bd00473ee61",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-nord_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6e0034a5ba81769834880d6eb2a85cdd448357fb3e22302bc9485235674a8bce",
+          "sha256": "928ed4b5a93fc42f0e37505d7070e4d16284589948effc99c4dc11e7f51597ee",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-radical.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c386dcbaa67aa003430542af74922a2d87c8862a14596df0406a01c26b167ef5",
+          "sha256": "c77155290aafd14beacba2d60463a166b1f74f943b30986c1b0a6e55e9fc5575",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-solarized_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0056b1351e4ac9f5de91c4688f97ae77029a5e765459feaa86b8691dbdbbf039",
+          "sha256": "634e2da6170dd0f210b9bd67a88ea586d33ea54a2b070e56278c1118c2ea3630",
           "size": 3712,
           "type": "file"
         },
         "profile/stats-tokyonight.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6f184bfeca78293af430675fca61161b30b5731d2944a6e6f283d14cc4d4787d",
+          "sha256": "639f0577f5c1cf4b2111d9ac30df313f6d4fd029eeed0d836fca35a42cc5c118",
           "size": 3712,
           "type": "file"
         },
         "profile/stats.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f4648c45b67487344ed3181911b7c370184b83205329387d073d0373e5128946",
+          "sha256": "17f744e53cc55482b6bd677f5b39f513ed8bcd658a7f9079ae097bd00473ee61",
           "size": 3712,
           "type": "file"
         },
         "profile/streak-dracula.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6f9ffbd48e878571e7956c08f40e4ed55200a51a4beaa992216b66eb5540c45e",
+          "sha256": "7fda7b290a5064339336ba9fb38e4c27f7bb9115cf4a5cac8316ff9e5aef9b12",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-github_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "625806866024f3d012fe6faaf3ad44d49f60210176d111f8c512c6a2e22d53c4",
+          "sha256": "0b07133e3cd8226991b372094c4b561b365ff802d87fc7ded6ae0ce5b5a7dc65",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-gruvbox.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "08a7fbf11ed05f106bea88784b7e3df122bf9d2ae7bf6829cdb1d24e29a5c682",
+          "sha256": "b6f649f4e314a2a7a5c64c055429be392a10851d049b5341cfbddabf6600e44a",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-monokai.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d5955f368ead6660e5f85ff5baedd9c10dde13e8ed5e66820c2b486f85510bde",
+          "sha256": "a20f2bc6e3a1854721c5ed246fd2241a5b6066a46f1fc6023f35ea74ad3934f9",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-nord_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fc75e03dd72f0d92cbdb099da1e436dfeae1f578a2c1c08b565fb6d721cb0dde",
+          "sha256": "54a02695bda800202c8d04996219b8f19739889e44e81ee18c052813cd2b8d81",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-radical.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5ecc4c5812be32ee869d8a8daca3667ea39370ee59a0c2904a77775783b69e40",
+          "sha256": "ccf729d91e0af91130b11ce21296aea896a4d97d783cbb598fd50debae58e1cb",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-solarized_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4992e620ac42555436579ad029169f78cc45234e797faf49aff71e9fb18a97ea",
+          "sha256": "0427fe7ff922866121cc4bbcfdb2d9f9e6587ea39a634e047efb8e38ac76a8d7",
           "size": 3316,
           "type": "file"
         },
         "profile/streak-tokyonight.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b714522d1cbba717b32eadcc0088b2e9d43ebc90f17fb54858653e7357b12f88",
+          "sha256": "a3a5067aac3c5fa166f0144a211db234e6977f742db14541d7cdc9887052fda8",
           "size": 3316,
           "type": "file"
         },
         "profile/streak.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6f9ffbd48e878571e7956c08f40e4ed55200a51a4beaa992216b66eb5540c45e",
+          "sha256": "a20f2bc6e3a1854721c5ed246fd2241a5b6066a46f1fc6023f35ea74ad3934f9",
           "size": 3316,
           "type": "file"
         },
         "profile/top-langs-dracula.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0e4d2feae236ec3cd5d3ecca5fb644d5cb8d2d9d864400bb5b8ff6d2f772c70e",
+          "sha256": "d955aa4012753202dbbeb904c20871ee4fe2ba1c9427e4e24a44068cd8f68692",
           "size": 4760,
           "type": "file"
         },
@@ -35695,14 +35800,14 @@
         "profile/top-langs-gruvbox.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ab9fb71baf6187ab3d378bce479c3d1b2c5b0dbdc9a7fdb8875fcf5fd77edbc2",
+          "sha256": "aad2f3f2975f72cf57b3f83c9afb0b2cba8c85e71b64176188377d4aca56c4d1",
           "size": 4760,
           "type": "file"
         },
         "profile/top-langs-monokai.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9d65b1c958dcf49347060c3d20841b6f943c3abd82daea47535ad7b58d0adedd",
+          "sha256": "f444a57dcee48c47ba44cfec6f835a53eafb225379c8c824c57edb544753eded",
           "size": 4760,
           "type": "file"
         },
@@ -35716,103 +35821,103 @@
         "profile/top-langs-radical.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9b97a8fa8fd2038752081441c5ec6db57a6c975a07a347230f36ceeaa6aed861",
+          "sha256": "f76538a878ff688e45ca4ee946823b63725073e748ab00309212ccb17541d4cc",
           "size": 4760,
           "type": "file"
         },
         "profile/top-langs-solarized_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ed688be24c4780436afb342badf6b3551654aa949b22ef5f6ec39ffb77232f3b",
+          "sha256": "6c94af48e6793ccba37f176c7897aa8aafbe866d778657a357694be1879339b7",
           "size": 4760,
           "type": "file"
         },
         "profile/top-langs-tokyonight.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b4f0633f77eedf0047bad00d031fcabbd91cb7e148774fecd53bd20863ba143f",
+          "sha256": "e4708494801a5247ea1461e6c5055148f649c65828d031579337ecfa7999dd09",
           "size": 4760,
           "type": "file"
         },
         "profile/top-langs.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0e4d2feae236ec3cd5d3ecca5fb644d5cb8d2d9d864400bb5b8ff6d2f772c70e",
+          "sha256": "f444a57dcee48c47ba44cfec6f835a53eafb225379c8c824c57edb544753eded",
           "size": 4760,
           "type": "file"
         },
         "profile/views-dracula.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5159b3de70156d54a9ab2f47410e7e80cfcf36e2352539c8dd5f41d569c58940",
+          "sha256": "213d40ba90d45140ce21068ad3d7d623291deff78b97c22b57ec0680fec17dd8",
           "size": 611,
           "type": "file"
         },
         "profile/views-github_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "1cd50395b241b4bbcd982f59d9d8b9f226f2309b4aff7f5033e37297362694fa",
+          "sha256": "1f62bea91177926bb20bfc91e5f6f7c93c410ec6e3a3b505c99beb09c3ea8581",
           "size": 611,
           "type": "file"
         },
         "profile/views-gruvbox.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6e6a6e61eeee6dc12a3e22298bdaa3d6dae1ca9d780698355107c322d0fecb68",
+          "sha256": "3a315236ca0aae546435d763e34a75824103437b0737df4ad189ffd08cdb924a",
           "size": 611,
           "type": "file"
         },
         "profile/views-monokai.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b35157c557b92e65e84b679a42569edd2ec0cc890d6583f8796520b2fa3a4027",
+          "sha256": "2b9ef21907e7089cabe0d4219a355f4a02fda5e47a06595d981b3c7ccf98e668",
           "size": 611,
           "type": "file"
         },
         "profile/views-nord_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d878be070bdd71d9961acc3272ac41bb51633e29ac062c503406bf867a817e48",
+          "sha256": "ad83767c92e25a3cbb480a94707f8595dc055c64c0886200a44266e1029197a3",
           "size": 611,
           "type": "file"
         },
         "profile/views-radical.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "86c8142cec6190d921457abe91ddc69a389e14dad777b66afc89eeafbc837d75",
+          "sha256": "31c3fef3dd07dd5e8227182bcb66bb556967ea5bebda1ea7a723a876c2113dc6",
           "size": 611,
           "type": "file"
         },
         "profile/views-solarized_dark.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "58e5d1851fa35cf99c72bd684201799613cb50284499320302e56838ed87e0ea",
+          "sha256": "b8435b868ee1f4f1f82f033a1dfc93fcc815988d982ce5f1c60d5fcd7bc4d8c3",
           "size": 611,
           "type": "file"
         },
         "profile/views-tokyonight.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "85c3a668c43797d6d09d5cf46d39dd8aff0b96d7c6acd47808f44c5b6e0213c0",
+          "sha256": "b5ca7e9c288bcc80b24efadbb636f4e281e3ea52d83ca68b549d085c571605cb",
           "size": 611,
           "type": "file"
         },
         "profile/views.svg": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5159b3de70156d54a9ab2f47410e7e80cfcf36e2352539c8dd5f41d569c58940",
+          "sha256": "2b9ef21907e7089cabe0d4219a355f4a02fda5e47a06595d981b3c7ccf98e668",
           "size": 611,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:30:10 EEST",
-      "last_completed_at_utc": "2026-09-25T09:30:10Z",
-      "last_completed_snapshot": "623fde03699c793d5efda3f32913125d549432008dbbcd1e4ad80510d518bd92",
-      "last_remote_verified_at_utc": "2026-09-25T09:30:10Z",
+      "last_completed_at_greece": "2026-09-27 03:40:46 EEST",
+      "last_completed_at_utc": "2026-09-27T00:40:46Z",
+      "last_completed_snapshot": "873002dfb581fe077304a6af1b56e8aa195005791c2324ddfd5ec810164b5816",
+      "last_remote_verified_at_utc": "2026-09-27T00:40:46Z",
       "last_result": {
         "archive_uploaded": true,
-        "changed_or_added_files": 40,
+        "changed_or_added_files": 38,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
@@ -35820,11 +35925,11 @@
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": true,
-        "unchanged_files": 14,
+        "unchanged_files": 16,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:30:49Z",
+      "state_updated_at_utc": "2026-09-27T00:41:20Z",
       "target": {
         "ia_item": "dedsec1121fk-github-profile-repository-snapshots",
         "kind": "repository",
@@ -35839,7 +35944,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:30:10Z",
+        "last_queue_update_at_utc": "2026-09-27T00:40:46Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -35857,11 +35962,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-09-25T09:41:02Z",
+        "completed_at_utc": "2026-09-27T00:51:46Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": false,
-        "started_at_utc": "2026-09-25T09:41:02Z",
+        "started_at_utc": "2026-09-27T00:51:46Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 334
@@ -38240,10 +38345,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:41:02 EEST",
-      "last_completed_at_utc": "2026-09-25T09:41:02Z",
+      "last_completed_at_greece": "2026-09-27 03:51:46 EEST",
+      "last_completed_at_utc": "2026-09-27T00:51:46Z",
       "last_completed_snapshot": "02c805a2e1cda73a85b383c1d4b69ec064af3b06355215f6cf3ebd4193109510",
-      "last_remote_verified_at_utc": "2026-09-25T09:41:02Z",
+      "last_remote_verified_at_utc": "2026-09-27T00:51:46Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -38258,7 +38363,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:41:35Z",
+      "state_updated_at_utc": "2026-09-27T00:52:19Z",
       "target": {
         "ia_item": "dedsec1121fk-hacking-guide-project-repository-snapshots",
         "kind": "repository",
@@ -38273,7 +38378,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:41:02Z",
+        "last_queue_update_at_utc": "2026-09-27T00:51:46Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -38291,11 +38396,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-09-25T09:43:00Z",
+        "completed_at_utc": "2026-09-27T00:53:40Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": false,
-        "started_at_utc": "2026-09-25T09:43:00Z",
+        "started_at_utc": "2026-09-27T00:53:40Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 10753
@@ -114006,10 +114111,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:43:00 EEST",
-      "last_completed_at_utc": "2026-09-25T09:43:00Z",
+      "last_completed_at_greece": "2026-09-27 03:53:40 EEST",
+      "last_completed_at_utc": "2026-09-27T00:53:40Z",
       "last_completed_snapshot": "f5cd24c9af0b80c9cd28e801b73b36942dbb5abe5e8c032f063cdf9e8a78ef44",
-      "last_remote_verified_at_utc": "2026-09-25T09:43:00Z",
+      "last_remote_verified_at_utc": "2026-09-27T00:53:40Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -114024,7 +114129,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:43:35Z",
+      "state_updated_at_utc": "2026-09-27T00:54:14Z",
       "target": {
         "ia_item": "dedsec1121fk-language-project-repository-snapshots",
         "kind": "repository",
@@ -114039,7 +114144,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:43:00Z",
+        "last_queue_update_at_utc": "2026-09-27T00:53:40Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -114057,11 +114162,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-09-25T09:39:17Z",
+        "completed_at_utc": "2026-09-27T00:49:55Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": false,
-        "started_at_utc": "2026-09-25T09:39:17Z",
+        "started_at_utc": "2026-09-27T00:49:55Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 921
@@ -120557,10 +120662,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:39:17 EEST",
-      "last_completed_at_utc": "2026-09-25T09:39:17Z",
+      "last_completed_at_greece": "2026-09-27 03:49:55 EEST",
+      "last_completed_at_utc": "2026-09-27T00:49:55Z",
       "last_completed_snapshot": "9d5883e4709938a7523b9a31c55d6173ae6efbfffc419c9185f2bae12edf0b0c",
-      "last_remote_verified_at_utc": "2026-09-25T09:39:17Z",
+      "last_remote_verified_at_utc": "2026-09-27T00:49:55Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -120575,7 +120680,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:39:50Z",
+      "state_updated_at_utc": "2026-09-27T00:50:33Z",
       "target": {
         "ia_item": "dedsec1121fk-offline-survival-project-repository-snapshots",
         "kind": "repository",
@@ -120590,7 +120695,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:39:17Z",
+        "last_queue_update_at_utc": "2026-09-27T00:49:55Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -120608,11 +120713,11 @@
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-09-25T09:33:50Z",
+        "completed_at_utc": "2026-09-27T00:44:21Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": false,
-        "started_at_utc": "2026-09-25T09:33:50Z",
+        "started_at_utc": "2026-09-27T00:44:21Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 128
@@ -121533,10 +121638,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:33:50 EEST",
-      "last_completed_at_utc": "2026-09-25T09:33:50Z",
+      "last_completed_at_greece": "2026-09-27 03:44:21 EEST",
+      "last_completed_at_utc": "2026-09-27T00:44:21Z",
       "last_completed_snapshot": "b6db71a7e095fb752dafce7c213d6180e6aa49f7960ebc07a83abbdfe20cd880",
-      "last_remote_verified_at_utc": "2026-09-25T09:33:50Z",
+      "last_remote_verified_at_utc": "2026-09-27T00:44:21Z",
       "last_result": {
         "archive_uploaded": false,
         "changed_or_added_files": 0,
@@ -121551,7 +121656,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:34:36Z",
+      "state_updated_at_utc": "2026-09-27T00:44:56Z",
       "target": {
         "ia_item": "dedsec1121fk-pocket-ai-repository-snapshots",
         "kind": "repository",
@@ -121566,7 +121671,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:33:50Z",
+        "last_queue_update_at_utc": "2026-09-27T00:44:21Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -121576,19 +121681,19 @@
     "praying-project": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "fb020fb8b4a55d59780c17c3fed5d61ebc778b806ff7834420f355f3482c4c7c",
-        "size": 31185894,
-        "snapshot_sha256": "983afa0f3cce9deee367c7392b7cd0e93679f37bebcd10f1a385966e76fb6d0a",
-        "updated_at_utc": "2026-09-25T09:37:26Z"
+        "sha256": "a24c77a15bb324729d51d55f841a30e880f18c59bf8ed5448a89e70ae76ffcae",
+        "size": 31185888,
+        "snapshot_sha256": "d4ce1867a99054dc6ed12e09824816ebb02d269111816d0322409f4b354f9204",
+        "updated_at_utc": "2026-09-27T00:48:05Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-09-25T09:37:27Z",
+        "completed_at_utc": "2026-09-27T00:48:06Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": true,
-        "started_at_utc": "2026-09-25T09:35:45Z",
+        "started_at_utc": "2026-09-27T00:46:07Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 1502
@@ -121643,8 +121748,8 @@
         ".prayer-country-state.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5e993ec326cb9454dca2ca27443e190c497d819cb19b9350fc92f42a1ef9ba68",
-          "size": 1832,
+          "sha256": "79b6525a700de4788f923a91719845f6231c8f46904ba5395641d1eb3f9e647d",
+          "size": 1817,
           "type": "file"
         },
         "404.html": {
@@ -132128,10 +132233,10 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:37:27 EEST",
-      "last_completed_at_utc": "2026-09-25T09:37:27Z",
-      "last_completed_snapshot": "983afa0f3cce9deee367c7392b7cd0e93679f37bebcd10f1a385966e76fb6d0a",
-      "last_remote_verified_at_utc": "2026-09-25T09:37:27Z",
+      "last_completed_at_greece": "2026-09-27 03:48:06 EEST",
+      "last_completed_at_utc": "2026-09-27T00:48:06Z",
+      "last_completed_snapshot": "d4ce1867a99054dc6ed12e09824816ebb02d269111816d0322409f4b354f9204",
+      "last_remote_verified_at_utc": "2026-09-27T00:48:06Z",
       "last_result": {
         "archive_uploaded": true,
         "changed_or_added_files": 1,
@@ -132146,7 +132251,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:38:03Z",
+      "state_updated_at_utc": "2026-09-27T00:48:39Z",
       "target": {
         "ia_item": "dedsec1121fk-praying-project-repository-snapshots",
         "kind": "repository",
@@ -132161,7 +132266,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:37:26Z",
+        "last_queue_update_at_utc": "2026-09-27T00:48:05Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -132171,19 +132276,19 @@
     "save-dedsec-project": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "f6cbfaf3db6e36942e32382ea7cfcbccb54f3eb79028d3cc0c173b5dc2dd0f71",
-        "size": 1035655,
-        "snapshot_sha256": "40f641df18df32e2a34b17fc2954656e765b4881c5ac6d1ee0e4bab62bebf40c",
-        "updated_at_utc": "2026-09-25T09:48:28Z"
+        "sha256": "00664f02bba358faa1390cc86217ae7d400e31b4a5ff187b4a1280778c31ae71",
+        "size": 1035343,
+        "snapshot_sha256": "5623d6ed0793c38a40d4f0839da7e54e74547f026d28dca0be2995c23d81b6d9",
+        "updated_at_utc": "2026-09-27T01:00:56Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-09-25T09:48:28Z",
+        "completed_at_utc": "2026-09-27T01:00:56Z",
         "run_attempt": "1",
-        "run_id": "36118522621",
+        "run_id": "36283079935",
         "snapshot_changed": true,
-        "started_at_utc": "2026-09-25T09:46:44Z",
+        "started_at_utc": "2026-09-27T00:59:06Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 7
@@ -132232,23 +132337,23 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "730ac6e293456b2ab3d36311003eb8da50af80d943d9ab4d618ca7d34563cb0b",
+          "sha256": "9809acc5180c9a4f98c1ff9e6967cd082ba66563bf297f0619aa1d21dc247f82",
           "size": 68800,
           "type": "file"
         },
         "update.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4b152eeba47ecb4bde6b6c0c329d87281d07e35da5701fe10a194e451583df35",
-          "size": 5208892,
+          "sha256": "5fe7dd8ec05f3f0b1efbaff82f8d45d755e84ea02a07e542bbda42595bc81655",
+          "size": 5206523,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-09-25 12:48:28 EEST",
-      "last_completed_at_utc": "2026-09-25T09:48:28Z",
-      "last_completed_snapshot": "40f641df18df32e2a34b17fc2954656e765b4881c5ac6d1ee0e4bab62bebf40c",
-      "last_remote_verified_at_utc": "2026-09-25T09:48:28Z",
+      "last_completed_at_greece": "2026-09-27 04:00:56 EEST",
+      "last_completed_at_utc": "2026-09-27T01:00:56Z",
+      "last_completed_snapshot": "5623d6ed0793c38a40d4f0839da7e54e74547f026d28dca0be2995c23d81b6d9",
+      "last_remote_verified_at_utc": "2026-09-27T01:00:56Z",
       "last_result": {
         "archive_uploaded": true,
         "changed_or_added_files": 2,
@@ -132263,7 +132368,7 @@
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-09-25T09:49:02Z",
+      "state_updated_at_utc": "2026-09-27T01:01:32Z",
       "target": {
         "ia_item": "dedsec1121fk-save-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -132278,7 +132383,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-09-25T09:48:28Z",
+        "last_queue_update_at_utc": "2026-09-27T01:00:56Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
