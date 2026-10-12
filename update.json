@@ -7,7 +7,7 @@
       "Termux_API.apk",
       "Termux_Styling.apk"
     ],
-    "checked_at_utc": "2026-10-11T01:00:56Z",
+    "checked_at_utc": "2026-10-12T09:06:27Z",
     "failures": [],
     "files": {
       "F-Droid.apk": {
@@ -37,18 +37,18 @@
     "uploaded": false
   },
   "archive_mode": "single_current_working_tree_archive",
-  "generated_at_utc": "2026-10-11T01:01:42Z",
+  "generated_at_utc": "2026-10-12T10:17:51Z",
   "resume_behavior": "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, checksums and one compact state checkpoint. The APK item stores the current four APK dependencies with hashes. Git/commit/push history is never archived by Internet Archive. Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage.",
   "schema_version": 7,
   "software_heritage": {
-    "checked_at_utc": "2026-10-11T00:39:32Z",
+    "checked_at_utc": "2026-10-12T08:47:39Z",
     "link_resolution_policy": "Save requests made in the current workflow run are not resolved into README links until a later workflow run.",
     "repositories": {
       "dedsec1121fk/Corrupted-Files-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:38.979000+00:00",
+        "latest_visit_date": "2026-10-11T00:39:52.360000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -56,15 +56,15 @@
         "repository": "dedsec1121fk/Corrupted-Files-Project",
         "save_request_date": "2026-10-11T00:39:44.323802+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/",
         "title": "Corrupted Files"
       },
       "dedsec1121fk/DedSec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec",
         "error": null,
         "latest_visit_date": "2026-10-09T21:01:48.702000+00:00",
@@ -73,20 +73,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/DedSec",
         "repository": "dedsec1121fk/DedSec",
-        "save_request_date": "2026-10-09T21:01:42.360945+00:00",
+        "save_request_date": "2026-10-12T08:47:42.572575+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:dc0f11e3eaa188a5b0012554cc73a17362102450",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:dc0f11e3eaa188a5b0012554cc73a17362102450/",
         "title": "DedSec main"
       },
       "dedsec1121fk/Ghost-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FGhost-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:59.746000+00:00",
+        "latest_visit_date": "2026-10-11T00:40:13.663000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -94,18 +94,18 @@
         "repository": "dedsec1121fk/Ghost-Project",
         "save_request_date": "2026-10-11T00:40:12.941713+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:1b3ad21ec12228ae1f9b111145ee80c258aaf640",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:1b3ad21ec12228ae1f9b111145ee80c258aaf640/",
         "title": "Ghost Project"
       },
       "dedsec1121fk/Hacking-Guide-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:49.561000+00:00",
+        "latest_visit_date": "2026-10-11T00:40:02.576000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -113,18 +113,18 @@
         "repository": "dedsec1121fk/Hacking-Guide-Project",
         "save_request_date": "2026-10-11T00:40:02.014161+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/",
         "title": "Hacking Guide Project"
       },
       "dedsec1121fk/Language-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:59.719000+00:00",
+        "latest_visit_date": "2026-10-11T00:40:13.142000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -132,18 +132,18 @@
         "repository": "dedsec1121fk/Language-Project",
         "save_request_date": "2026-10-11T00:40:06.266519+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/",
         "title": "Language Project"
       },
       "dedsec1121fk/Offline-Survival-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:49.405000+00:00",
+        "latest_visit_date": "2026-10-11T00:40:02.541000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -151,18 +151,18 @@
         "repository": "dedsec1121fk/Offline-Survival-Project",
         "save_request_date": "2026-10-11T00:39:57.921342+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/",
         "title": "Offline Survival"
       },
       "dedsec1121fk/Pocket-AI-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:39.070000+00:00",
+        "latest_visit_date": "2026-10-11T00:39:52.486000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -170,18 +170,18 @@
         "repository": "dedsec1121fk/Pocket-AI-Project",
         "save_request_date": "2026-10-11T00:39:48.503748+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/",
         "title": "Pocket AI"
       },
       "dedsec1121fk/Praying-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:49.434000+00:00",
+        "latest_visit_date": "2026-10-11T00:40:02.582000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -189,18 +189,18 @@
         "repository": "dedsec1121fk/Praying-Project",
         "save_request_date": "2026-10-11T00:39:52.739569+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:0215a9396aacac43a156b1344f724426a1644a4d",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:0215a9396aacac43a156b1344f724426a1644a4d/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:460e3ae2d09170b4785bb45c8a8ef531bd17322e",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:460e3ae2d09170b4785bb45c8a8ef531bd17322e/",
         "title": "Praying Project"
       },
       "dedsec1121fk/Save-DedSec-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:33:10.097000+00:00",
+        "latest_visit_date": "2026-10-11T00:40:23.497000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -208,18 +208,18 @@
         "repository": "dedsec1121fk/Save-DedSec-Project",
         "save_request_date": "2026-10-11T00:40:16.819947+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:7cc139288250cdaacf290d85251dde0e579adfc2",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7cc139288250cdaacf290d85251dde0e579adfc2/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:4e5a053c66a38c2cf42c9e275e5dee4df1a29983",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:4e5a053c66a38c2cf42c9e275e5dee4df1a29983/",
         "title": "Save DedSec Project"
       },
       "dedsec1121fk/dedsec1121fk": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk",
         "error": null,
-        "latest_visit_date": "2026-10-09T09:32:28.631000+00:00",
+        "latest_visit_date": "2026-10-11T00:39:42.031000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -227,15 +227,15 @@
         "repository": "dedsec1121fk/dedsec1121fk",
         "save_request_date": "2026-10-11T00:39:40.372057+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:bfe5d640f11d5777b58e18a363f8c58ee4cf2b5a",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:bfe5d640f11d5777b58e18a363f8c58ee4cf2b5a/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:ac9c0abac78d5be1e44d6726bd61de676a31e292",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ac9c0abac78d5be1e44d6726bd61de676a31e292/",
         "title": "GitHub profile"
       },
       "dedsec1121fk/dedsec1121fk.github.io": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io",
         "error": null,
         "latest_visit_date": "2026-10-09T21:02:19.543000+00:00",
@@ -244,17 +244,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/dedsec1121fk.github.io",
         "repository": "dedsec1121fk/dedsec1121fk.github.io",
-        "save_request_date": "2026-10-09T21:02:10.549247+00:00",
+        "save_request_date": "2026-10-12T08:48:12.349122+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:43d093b34b7e9a4ad806fc44c4a4138350c8ac09",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:43d093b34b7e9a4ad806fc44c4a4138350c8ac09/",
         "title": "Websites"
       },
       "sal-scar/DedSec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec",
         "error": null,
         "latest_visit_date": "2026-10-09T21:02:09.152000+00:00",
@@ -263,17 +263,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/DedSec",
         "repository": "sal-scar/DedSec",
-        "save_request_date": "2026-10-09T21:02:03.496772+00:00",
+        "save_request_date": "2026-10-12T08:48:07.853721+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:19f045a9352d55e580333c62e7804721fdc55061",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:19f045a9352d55e580333c62e7804721fdc55061/",
         "title": "DedSec backup"
       },
       "sal-scar/ded-sec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec",
         "error": null,
         "latest_visit_date": "2026-10-09T21:02:19.575000+00:00",
@@ -282,11 +282,11 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/ded-sec",
         "repository": "sal-scar/ded-sec",
-        "save_request_date": "2026-10-09T21:02:17.559683+00:00",
+        "save_request_date": "2026-10-12T08:48:20.691766+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:dbf144e326fbc2811b884165c732d67ec6a267f0",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:dbf144e326fbc2811b884165c732d67ec6a267f0/",
         "title": "Website mirror"
@@ -16165,22 +16165,22 @@
     "dedsec-backup": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "349f5f8c64f599b569840df54fee7dc8774869854c4367b113da1f59698a00d8",
-        "size": 115485323,
-        "snapshot_sha256": "a4bb5326b2855d103bfe9d1c32afc5ab4374c4c7991587a1901883851662656e",
-        "updated_at_utc": "2026-10-02T21:08:56Z"
+        "sha256": "b497f0afce58abb770167a871862aff1ced8c9f44b1dfff6d61e40be152f423b",
+        "size": 115518873,
+        "snapshot_sha256": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
+        "updated_at_utc": "2026-10-12T09:00:12Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-10-09T21:09:46Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-10-12T09:00:15Z",
         "run_attempt": "1",
-        "run_id": "37990853367",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-10-09T21:09:46Z",
+        "run_id": "38225745687",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-10-12T08:55:54Z",
         "state_source": "github_update_json",
         "status": "complete",
-        "total_current_files": 238
+        "total_current_files": 246
       },
       "directories": [
         ".github",
@@ -16256,8 +16256,8 @@
         "CROSS_PLATFORM.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "35776ad94cb997c93790c18d0cb8aadc1585f2d751b554144ae6bd7418f70322",
-          "size": 5428,
+          "sha256": "c01be4e3a14dbb5a43cbbf22f2191c08bdf2c5d08bee0a6fc2dee8dd36e0b7b3",
+          "size": 6247,
           "type": "file"
         },
         "Compat/bin/pkg": {
@@ -16335,6 +16335,13 @@
           "mode": "0644",
           "sha256": "d390ab9e654740e13820d84e3ee1d2de8d9cd57f73859ebf1cecc899b5974257",
           "size": 196,
+          "type": "file"
+        },
+        "Compat/legal_consent.sh": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "fb7c75fcfb1adc187909f265992fc4b750126f64ab5052adb57086411341e08f",
+          "size": 3952,
           "type": "file"
         },
         "Compat/repair_unicode_names.py": {
@@ -16617,6 +16624,20 @@
           "size": 8293,
           "type": "file"
         },
+        "Important Documents/DEDSEC_FULL_MAINTENANCE_HANDBOOK_EN.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "2b316263505e680bc6d9dda35c229e091f0aeecd7c1000abac9cde599c36b98e",
+          "size": 24296,
+          "type": "file"
+        },
+        "Important Documents/DEDSEC_ΟΔΗΓΟΣ_ΣΥΝΤΗΡΗΣΗΣ_GR.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e3541f28986db6f87c8250f9497b64b06d458689d8cd5701ae6f7f73cad280a7",
+          "size": 8561,
+          "type": "file"
+        },
         "Important Documents/Instructions For Contributors EN.txt": {
           "executable": false,
           "mode": "0644",
@@ -16638,11 +16659,32 @@
           "size": 24336,
           "type": "file"
         },
+        "Important Documents/Legal Disclaimer English Version.txt": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4666fa46b1f7d5327df6c72b41cfaf018fbfd7b562b7368d4ad58250b1936f33",
+          "size": 8976,
+          "type": "file"
+        },
         "Important Documents/Legal Disclaimer Greek Version.docx": {
           "executable": false,
           "mode": "0644",
           "sha256": "421ed805b55d51d7e6aa17dd668ec35f880254413a9b845d055b08abc5336d13",
           "size": 1682784,
+          "type": "file"
+        },
+        "Important Documents/Legal Disclaimer Greek Version.txt": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "89dfd3a48b49b95594294e19e03922beb6614e67cca737ea89978fdf605b274e",
+          "size": 17226,
+          "type": "file"
+        },
+        "Important Documents/MAINTENANCE_CHANGELOG_2026-10-10.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b154e7557efe8f786c744d1ad1f9152e6edaf9e16c7d6e6ca48876ae0a926fc6",
+          "size": 1285,
           "type": "file"
         },
         "Important Documents/Master Termux In 7 Days English.pdf": {
@@ -16657,6 +16699,13 @@
           "mode": "0644",
           "sha256": "4a931f77443a5eb90493f7778b021eb2bc007192f80467dad15ffc8955fa469f",
           "size": 3245595,
+          "type": "file"
+        },
+        "Important Documents/UBUNTU_QA_REPAIR_TRACKER.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "6911dcd8f2e128052ede2d3b3a7710692afc5785fdecfa8934b0a6aaaac1ce38",
+          "size": 5334,
           "type": "file"
         },
         "LICENSE.txt": {
@@ -16690,8 +16739,8 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "913cf3b732140521faa4e0cf0f339dd5de4558e918b003734fa5b7150a2cce98",
-          "size": 342456,
+          "sha256": "d5796bc9950ef44b0d5d26553deae163f3bf7a279386e0a29da8fa3ae5d6801c",
+          "size": 343224,
           "type": "file"
         },
         "Run.sh": {
@@ -16711,8 +16760,8 @@
         "Scripts/ButSystem.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c64bd48b0df98fe2b1cd267550064c49be2587a85907b1663a07f6108c973dc4",
-          "size": 848647,
+          "sha256": "7289f5358f7fa1a9b07608ae37e23e7ee6a67c59b30a011b3a576eb27ddfeed6",
+          "size": 849220,
           "type": "file"
         },
         "Scripts/DedSec Market.py": {
@@ -16991,8 +17040,8 @@
         "Scripts/Games/Buzz.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e1d46131aac44445de75709717d143c42098dd0ce4d3a42bb41fb226dbd37f4d",
-          "size": 487422,
+          "sha256": "a7754e8f1861ea04f4d72c7ed137995dca16313ddc840ce661cd16574f9e4e80",
+          "size": 487461,
           "type": "file"
         },
         "Scripts/Games/CTF God.py": {
@@ -17257,15 +17306,15 @@
         "Scripts/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3559ecc8e2efbdd732683f520b012b06f46f4e7ddbb4fd68d60c367f368cdbc0",
-          "size": 2608892,
+          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
+          "size": 2618636,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/ButSystem.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c64bd48b0df98fe2b1cd267550064c49be2587a85907b1663a07f6108c973dc4",
-          "size": 848647,
+          "sha256": "7289f5358f7fa1a9b07608ae37e23e7ee6a67c59b30a011b3a576eb27ddfeed6",
+          "size": 849220,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/DedSec Market.py": {
@@ -17285,8 +17334,8 @@
         "Scripts/Ελληνική Έκδοση/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3559ecc8e2efbdd732683f520b012b06f46f4e7ddbb4fd68d60c367f368cdbc0",
-          "size": 2608892,
+          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
+          "size": 2618636,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Άλλα Εργαλεία/Android App Launcher.py": {
@@ -17817,15 +17866,15 @@
         "Setup-Termux.sh": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fca2c188234f0f18acc88a1fc942838a058cebed3f65fd63f9246c58d06376c3",
-          "size": 17304,
+          "sha256": "774de2386d8fc41f9bf76c1fb7500591394253ba54dee34388cde3f61d51826d",
+          "size": 17764,
           "type": "file"
         },
         "Setup.sh": {
           "executable": false,
           "mode": "0644",
-          "sha256": "806c5a6bb0eec4fb9d90ea5f7fa3e9460f227a11569341945d779e3c1dd600de",
-          "size": 7350,
+          "sha256": "540049b9bc8a20672794f6f1d2a5054c956a8fb24904a5c596d805cef38a5e62",
+          "size": 8198,
           "type": "file"
         },
         "TESTING.md": {
@@ -17856,6 +17905,13 @@
           "size": 603,
           "type": "file"
         },
+        "tests/test_maintenance_regressions.py": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f2f462842473f23e04c9abbaacc8e8d99c22ed3e0290d1a0530b73913e65070e",
+          "size": 5185,
+          "type": "file"
+        },
         "tests/test_python_syntax.py": {
           "executable": false,
           "mode": "0644",
@@ -17879,25 +17935,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-10 00:09:46 EEST",
-      "last_completed_at_utc": "2026-10-09T21:09:46Z",
-      "last_completed_snapshot": "a4bb5326b2855d103bfe9d1c32afc5ab4374c4c7991587a1901883851662656e",
-      "last_remote_verified_at_utc": "2026-10-09T21:09:46Z",
+      "last_completed_at_greece": "2026-10-12 12:00:15 EEST",
+      "last_completed_at_utc": "2026-10-12T09:00:15Z",
+      "last_completed_snapshot": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
+      "last_remote_verified_at_utc": "2026-10-12T09:00:15Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 17,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 588,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 238,
+        "snapshot_changed": true,
+        "unchanged_files": 229,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-09T21:10:20Z",
+      "state_updated_at_utc": "2026-10-12T09:00:52Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -17912,7 +17968,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-10-09T21:09:46Z",
+        "last_queue_update_at_utc": "2026-10-12T09:00:12Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -17922,22 +17978,22 @@
     "dedsec-main": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "349f5f8c64f599b569840df54fee7dc8774869854c4367b113da1f59698a00d8",
-        "size": 115485323,
-        "snapshot_sha256": "a4bb5326b2855d103bfe9d1c32afc5ab4374c4c7991587a1901883851662656e",
-        "updated_at_utc": "2026-10-02T21:13:44Z"
+        "sha256": "b497f0afce58abb770167a871862aff1ced8c9f44b1dfff6d61e40be152f423b",
+        "size": 115518873,
+        "snapshot_sha256": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
+        "updated_at_utc": "2026-10-12T09:05:41Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": false,
-        "completed_at_utc": "2026-10-09T21:11:29Z",
+        "compact_archive_upload_required": true,
+        "completed_at_utc": "2026-10-12T09:05:42Z",
         "run_attempt": "1",
-        "run_id": "37990853367",
-        "snapshot_changed": false,
-        "started_at_utc": "2026-10-09T21:11:29Z",
+        "run_id": "38225745687",
+        "snapshot_changed": true,
+        "started_at_utc": "2026-10-12T09:02:01Z",
         "state_source": "github_update_json",
         "status": "complete",
-        "total_current_files": 238
+        "total_current_files": 246
       },
       "directories": [
         ".github",
@@ -18013,8 +18069,8 @@
         "CROSS_PLATFORM.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "35776ad94cb997c93790c18d0cb8aadc1585f2d751b554144ae6bd7418f70322",
-          "size": 5428,
+          "sha256": "c01be4e3a14dbb5a43cbbf22f2191c08bdf2c5d08bee0a6fc2dee8dd36e0b7b3",
+          "size": 6247,
           "type": "file"
         },
         "Compat/bin/pkg": {
@@ -18092,6 +18148,13 @@
           "mode": "0644",
           "sha256": "d390ab9e654740e13820d84e3ee1d2de8d9cd57f73859ebf1cecc899b5974257",
           "size": 196,
+          "type": "file"
+        },
+        "Compat/legal_consent.sh": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "fb7c75fcfb1adc187909f265992fc4b750126f64ab5052adb57086411341e08f",
+          "size": 3952,
           "type": "file"
         },
         "Compat/repair_unicode_names.py": {
@@ -18374,6 +18437,20 @@
           "size": 8293,
           "type": "file"
         },
+        "Important Documents/DEDSEC_FULL_MAINTENANCE_HANDBOOK_EN.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "2b316263505e680bc6d9dda35c229e091f0aeecd7c1000abac9cde599c36b98e",
+          "size": 24296,
+          "type": "file"
+        },
+        "Important Documents/DEDSEC_ΟΔΗΓΟΣ_ΣΥΝΤΗΡΗΣΗΣ_GR.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "e3541f28986db6f87c8250f9497b64b06d458689d8cd5701ae6f7f73cad280a7",
+          "size": 8561,
+          "type": "file"
+        },
         "Important Documents/Instructions For Contributors EN.txt": {
           "executable": false,
           "mode": "0644",
@@ -18395,11 +18472,32 @@
           "size": 24336,
           "type": "file"
         },
+        "Important Documents/Legal Disclaimer English Version.txt": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "4666fa46b1f7d5327df6c72b41cfaf018fbfd7b562b7368d4ad58250b1936f33",
+          "size": 8976,
+          "type": "file"
+        },
         "Important Documents/Legal Disclaimer Greek Version.docx": {
           "executable": false,
           "mode": "0644",
           "sha256": "421ed805b55d51d7e6aa17dd668ec35f880254413a9b845d055b08abc5336d13",
           "size": 1682784,
+          "type": "file"
+        },
+        "Important Documents/Legal Disclaimer Greek Version.txt": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "89dfd3a48b49b95594294e19e03922beb6614e67cca737ea89978fdf605b274e",
+          "size": 17226,
+          "type": "file"
+        },
+        "Important Documents/MAINTENANCE_CHANGELOG_2026-10-10.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b154e7557efe8f786c744d1ad1f9152e6edaf9e16c7d6e6ca48876ae0a926fc6",
+          "size": 1285,
           "type": "file"
         },
         "Important Documents/Master Termux In 7 Days English.pdf": {
@@ -18414,6 +18512,13 @@
           "mode": "0644",
           "sha256": "4a931f77443a5eb90493f7778b021eb2bc007192f80467dad15ffc8955fa469f",
           "size": 3245595,
+          "type": "file"
+        },
+        "Important Documents/UBUNTU_QA_REPAIR_TRACKER.md": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "6911dcd8f2e128052ede2d3b3a7710692afc5785fdecfa8934b0a6aaaac1ce38",
+          "size": 5334,
           "type": "file"
         },
         "LICENSE.txt": {
@@ -18447,8 +18552,8 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "913cf3b732140521faa4e0cf0f339dd5de4558e918b003734fa5b7150a2cce98",
-          "size": 342456,
+          "sha256": "d5796bc9950ef44b0d5d26553deae163f3bf7a279386e0a29da8fa3ae5d6801c",
+          "size": 343224,
           "type": "file"
         },
         "Run.sh": {
@@ -18468,8 +18573,8 @@
         "Scripts/ButSystem.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c64bd48b0df98fe2b1cd267550064c49be2587a85907b1663a07f6108c973dc4",
-          "size": 848647,
+          "sha256": "7289f5358f7fa1a9b07608ae37e23e7ee6a67c59b30a011b3a576eb27ddfeed6",
+          "size": 849220,
           "type": "file"
         },
         "Scripts/DedSec Market.py": {
@@ -18748,8 +18853,8 @@
         "Scripts/Games/Buzz.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e1d46131aac44445de75709717d143c42098dd0ce4d3a42bb41fb226dbd37f4d",
-          "size": 487422,
+          "sha256": "a7754e8f1861ea04f4d72c7ed137995dca16313ddc840ce661cd16574f9e4e80",
+          "size": 487461,
           "type": "file"
         },
         "Scripts/Games/CTF God.py": {
@@ -19014,15 +19119,15 @@
         "Scripts/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3559ecc8e2efbdd732683f520b012b06f46f4e7ddbb4fd68d60c367f368cdbc0",
-          "size": 2608892,
+          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
+          "size": 2618636,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/ButSystem.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c64bd48b0df98fe2b1cd267550064c49be2587a85907b1663a07f6108c973dc4",
-          "size": 848647,
+          "sha256": "7289f5358f7fa1a9b07608ae37e23e7ee6a67c59b30a011b3a576eb27ddfeed6",
+          "size": 849220,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/DedSec Market.py": {
@@ -19042,8 +19147,8 @@
         "Scripts/Ελληνική Έκδοση/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3559ecc8e2efbdd732683f520b012b06f46f4e7ddbb4fd68d60c367f368cdbc0",
-          "size": 2608892,
+          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
+          "size": 2618636,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Άλλα Εργαλεία/Android App Launcher.py": {
@@ -19574,15 +19679,15 @@
         "Setup-Termux.sh": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fca2c188234f0f18acc88a1fc942838a058cebed3f65fd63f9246c58d06376c3",
-          "size": 17304,
+          "sha256": "774de2386d8fc41f9bf76c1fb7500591394253ba54dee34388cde3f61d51826d",
+          "size": 17764,
           "type": "file"
         },
         "Setup.sh": {
           "executable": false,
           "mode": "0644",
-          "sha256": "806c5a6bb0eec4fb9d90ea5f7fa3e9460f227a11569341945d779e3c1dd600de",
-          "size": 7350,
+          "sha256": "540049b9bc8a20672794f6f1d2a5054c956a8fb24904a5c596d805cef38a5e62",
+          "size": 8198,
           "type": "file"
         },
         "TESTING.md": {
@@ -19613,6 +19718,13 @@
           "size": 603,
           "type": "file"
         },
+        "tests/test_maintenance_regressions.py": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "f2f462842473f23e04c9abbaacc8e8d99c22ed3e0290d1a0530b73913e65070e",
+          "size": 5185,
+          "type": "file"
+        },
         "tests/test_python_syntax.py": {
           "executable": false,
           "mode": "0644",
@@ -19636,25 +19748,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-10 00:11:29 EEST",
-      "last_completed_at_utc": "2026-10-09T21:11:29Z",
-      "last_completed_snapshot": "a4bb5326b2855d103bfe9d1c32afc5ab4374c4c7991587a1901883851662656e",
-      "last_remote_verified_at_utc": "2026-10-09T21:11:29Z",
+      "last_completed_at_greece": "2026-10-12 12:05:42 EEST",
+      "last_completed_at_utc": "2026-10-12T09:05:42Z",
+      "last_completed_snapshot": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
+      "last_remote_verified_at_utc": "2026-10-12T09:05:42Z",
       "last_result": {
-        "archive_uploaded": false,
-        "changed_or_added_files": 0,
+        "archive_uploaded": true,
+        "changed_or_added_files": 17,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 589,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": false,
-        "unchanged_files": 238,
+        "snapshot_changed": true,
+        "unchanged_files": 229,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-09T21:12:05Z",
+      "state_updated_at_utc": "2026-10-12T09:06:16Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -19669,7 +19781,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-10-09T21:11:29Z",
+        "last_queue_update_at_utc": "2026-10-12T09:05:41Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -19679,22 +19791,22 @@
     "dedsec-website-mirror": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "4dca61982881ae3c3fda358a0859caa660488201254a23ce2ac4c449613575c0",
-        "size": 7340427,
-        "snapshot_sha256": "209fb7fac2098b33c2fc4134ebf836628e6bc517f4bf0a382a1bc71b4432e115",
-        "updated_at_utc": "2026-10-09T21:04:43Z"
+        "sha256": "0ed0d8a22253a50a645ec91f8d0944772c4b7172e086720a8d5664a6fa4d7fde",
+        "size": 7315499,
+        "snapshot_sha256": "ec73b65487884fa11bcd750a14ad5df85ddb171041caeedcea0f17ddb626afd3",
+        "updated_at_utc": "2026-10-12T08:50:40Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-10-09T21:04:43Z",
+        "completed_at_utc": "2026-10-12T08:50:40Z",
         "run_attempt": "1",
-        "run_id": "37990853367",
+        "run_id": "38225745687",
         "snapshot_changed": true,
-        "started_at_utc": "2026-10-09T21:02:58Z",
+        "started_at_utc": "2026-10-12T08:48:54Z",
         "state_source": "github_update_json",
         "status": "complete",
-        "total_current_files": 253
+        "total_current_files": 249
       },
       "directories": [
         ".github",
@@ -19715,8 +19827,7 @@
         "el",
         "el/Assistance",
         "el/Pages",
-        "scripts",
-        "scripts/__pycache__"
+        "scripts"
       ],
       "files": {
         ".github/workflows/static.yml": {
@@ -19848,8 +19959,8 @@
         "Assets/search-index.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "37d8aea194b4187703ff803f78de4b65479f50a85a44df962072951fe219b1b9",
-          "size": 200704,
+          "sha256": "ccdf713376838e27800d5115c415e82e25c670790440a1100550177fa6e86eb3",
+          "size": 200811,
           "type": "file"
         },
         "Assets/vendor/fontawesome/LICENSE.txt": {
@@ -20044,8 +20155,8 @@
         "Assistance/dedsec-linux-venv-paths.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "dc2f03fb4ec1bf64198213321cfd72ecca6b8f03f83996cb0b78173dc0c391aa",
-          "size": 13307,
+          "sha256": "b4a72f1e3a37690d5e96c47a1fb5c894fd92c45bb8dbb17c8beb04603b5d6daa",
+          "size": 13303,
           "type": "file"
         },
         "Assistance/fix-dedsec-broken-install.html": {
@@ -20058,8 +20169,8 @@
         "Assistance/fix-dedsec-linux-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b7762395f42bae97deadfefece123035daacd92fea360c8640a7063fca4bcf12",
-          "size": 13165,
+          "sha256": "83b0468d7661cd0b707ca6cd2b08fcc4b45c3ebb902cdfac2f8e4a08b5132d26",
+          "size": 13159,
           "type": "file"
         },
         "Assistance/fix-github-ssh-authentication-termux.html": {
@@ -20191,8 +20302,8 @@
         "Assistance/install-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9b1ac6edb5c7c69d71fe6bbf3d5028db66055201b50856bcdaeb393c70ebeaae",
-          "size": 13318,
+          "sha256": "4ddf34b764a233a52704e6a2f1035fbd6beee93c44e7188ef86f1a4bc83eacdc",
+          "size": 13324,
           "type": "file"
         },
         "Assistance/keep-termux-running-background.html": {
@@ -20590,8 +20701,8 @@
         "Assistance/update-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "38eed25b0c8be9d5e758377cb579be8a05b21b1c8ba95b2b48526a946984ac2f",
-          "size": 12986,
+          "sha256": "ccc3f044796f22c2609743f7c5ccbfb9036e053a08300e58befd4df4035fd967",
+          "size": 12990,
           "type": "file"
         },
         "Assistance/update-dedsec-project.html": {
@@ -20709,8 +20820,8 @@
         "Pages/butsystem-exclusive.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "49215be638c20874ed3a8025c70f577a97c5a0ce3a0d12a49a393cbf02485873",
-          "size": 55540,
+          "sha256": "91519f7b07039e0d896f08f26927ab249b8e1bba72573a6ab807b452e6574785",
+          "size": 55542,
           "type": "file"
         },
         "Pages/contact-credits.html": {
@@ -20723,8 +20834,8 @@
         "Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "970be3192c34227299f9e83e73bd4f07fcebaee4c387d09be12240a720c0c187",
-          "size": 87791,
+          "sha256": "bc45588c0b899fc7cf4e9023561b9a06d1341ee4773c7e0c7cf86367f32364db",
+          "size": 87088,
           "type": "file"
         },
         "Pages/guide-for-installation.html": {
@@ -20751,15 +20862,15 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "870bf75b9bc6ef19aed7919c2eb48f4c0ecb4711965bb14c4e36f72fe8d06016",
-          "size": 20204,
+          "sha256": "bb549b04c7fef280c35abe9cadca69867e49412b01975a01dc1037b525d871ad",
+          "size": 21259,
           "type": "file"
         },
         "el/Assistance/dedsec-linux-venv-paths.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9b8c197fddf801484c274c61bb011839fcc51e0018033c398f831cd2e0b31865",
-          "size": 15055,
+          "sha256": "ac4dd79432065bef6cd4ee853b4457316b4b5222aea7a3147edbfdab02a66350",
+          "size": 15051,
           "type": "file"
         },
         "el/Assistance/fix-dedsec-broken-install.html": {
@@ -20772,8 +20883,8 @@
         "el/Assistance/fix-dedsec-linux-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4fbde19b851ce678fd7125c950b69c70e3c6006153997199612532a35b3e367d",
-          "size": 14960,
+          "sha256": "1f77e3b650ae3268c24d375821c16cbbdec77329f451e1d40bba8158c99bd3cf",
+          "size": 14954,
           "type": "file"
         },
         "el/Assistance/fix-github-ssh-authentication-termux.html": {
@@ -20905,8 +21016,8 @@
         "el/Assistance/install-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4fe42cea9a4492e8e4de76a44b681c7708b2d65a04a4931c5adeba67c343609d",
-          "size": 15096,
+          "sha256": "b84ffc189ea8628b86264904ffa01d52684db5f9119cd7ad15a96d7baa29af55",
+          "size": 15102,
           "type": "file"
         },
         "el/Assistance/keep-termux-running-background.html": {
@@ -21304,8 +21415,8 @@
         "el/Assistance/update-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d92b3c88cf62bf3ea3c793798c8d81ee92f3d8111f2ad4d5779bc47a83a8dae1",
-          "size": 14701,
+          "sha256": "5ff578912b042dc97ef2ae404f10eb7a834b6d65e3815f71dda00f8bb369eb21",
+          "size": 14705,
           "type": "file"
         },
         "el/Assistance/update-dedsec-project.html": {
@@ -21332,8 +21443,8 @@
         "el/Pages/butsystem-exclusive.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6be31f036f289333e968258f14f4de94af48a3a6118d132405a21e1cc2d16d75",
-          "size": 67214,
+          "sha256": "47ab102ea1bc59a09c7115c7caf86410251bdcd575af0f2a1e316fb576a8b6b7",
+          "size": 67235,
           "type": "file"
         },
         "el/Pages/contact-credits.html": {
@@ -21346,8 +21457,8 @@
         "el/Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "76ed39fd8fdac11ee5cb17812aeddc3c629c76fc67aa2edd3bc02b13c74fb07f",
-          "size": 103028,
+          "sha256": "57836e600aaa9dbef31f5f8d6e0e2cb915c2d29b01b485377e3aa664d85cf74b",
+          "size": 101878,
           "type": "file"
         },
         "el/Pages/guide-for-installation.html": {
@@ -21388,22 +21499,22 @@
         "llms-full.txt": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0f926163792dcd965d983319b1cd7d0cc23facd4ff4b98a5dd861430c4727d8e",
-          "size": 56908,
+          "sha256": "dc199bfea85da8cfef472530f58a8b74c301434aea6ff7351cb102ec10dca479",
+          "size": 59051,
           "type": "file"
         },
         "llms.txt": {
           "executable": false,
           "mode": "0644",
-          "sha256": "107a797ac09095e9ff1e7b11cb0f10b4a856c5ee61604c482f61bacfcb1ac6b1",
-          "size": 2873,
+          "sha256": "13447776bfcdf49b0992f7eca521de970799c345837e6b4abd829cea8bc4533b",
+          "size": 4629,
           "type": "file"
         },
         "robots.txt": {
           "executable": false,
           "mode": "0644",
-          "sha256": "15ffb4e76160792a2b34343966ae86b66565456a51a4c41935d9e748ca7b0c7b",
-          "size": 67,
+          "sha256": "47246050f639f1f675daec7937f7086df172cd37c877bfd633047f950db3a757",
+          "size": 173,
           "type": "file"
         },
         "script.js": {
@@ -21411,34 +21522,6 @@
           "mode": "0644",
           "sha256": "86bceca06a125693b8f24479adcf80f7fe46880bca642682f801f3227746ddec",
           "size": 83369,
-          "type": "file"
-        },
-        "scripts/__pycache__/audit_source.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "95b481af4b865bf6e138db12823a5de27279b32c9f82c9bdd97c1d5dfe485c91",
-          "size": 10001,
-          "type": "file"
-        },
-        "scripts/__pycache__/build_for_repository.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "bb230b550c555a4a2f202be562a7c576e9fd444f0ecbe473acd1d925d5d45f76",
-          "size": 27278,
-          "type": "file"
-        },
-        "scripts/__pycache__/prepare_mirror_repository.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "50f11e715bce63c893e7f5bcd87d0b8b0addacf2bd0b7caea96a6313ba64ac56",
-          "size": 4311,
-          "type": "file"
-        },
-        "scripts/__pycache__/validate_site.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "de1d1b6c0790e91ab81cb36d8bc6bd0dc72b9e63a39837f509c42be4357aab8b",
-          "size": 10652,
           "type": "file"
         },
         "scripts/audit_source.py": {
@@ -21451,8 +21534,8 @@
         "scripts/build_for_repository.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6d10891591b6474161dc9ed92fcfc80893abfa5ca69eec4ac42ea9afcfefdd2f",
-          "size": 20876,
+          "sha256": "dd7ebc99dc3d63acbd18a1363a73fe184ebfed76e46ba68f0858e2df6bada645",
+          "size": 22158,
           "type": "file"
         },
         "scripts/prepare_mirror_repository.py": {
@@ -21465,8 +21548,8 @@
         "scripts/validate_site.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "be2d283ee215565fdc9a830e9fedc00f56f25889a8419d7889987f6c2f5f8d49",
-          "size": 7062,
+          "sha256": "73643e9401804a5bbb5018d3392b2de7472f17198db2c407124deeb5674cb34a",
+          "size": 8992,
           "type": "file"
         },
         "site.webmanifest": {
@@ -21479,38 +21562,38 @@
         "sitemap.xml": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d3cb3ace5325a68a510c1fec04494f3097d7fcdf6165b0f5488e6880fe1261ca",
-          "size": 102600,
+          "sha256": "7291332392c3cda7f6fc611c90e8ee729533a7d8ae097c4bfbd998dac97eb557",
+          "size": 85182,
           "type": "file"
         },
         "style.css": {
           "executable": false,
           "mode": "0644",
-          "sha256": "01aa5785fa79c8fd5deb960cbf947c7394f2e74b34595fb73772db609d4013ce",
-          "size": 319040,
+          "sha256": "c7ed4c9d35822f79d5d8d9f2d0680b43fdae2d4d0f390321a67ffe01e8f90250",
+          "size": 318981,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-10 00:04:43 EEST",
-      "last_completed_at_utc": "2026-10-09T21:04:43Z",
-      "last_completed_snapshot": "209fb7fac2098b33c2fc4134ebf836628e6bc517f4bf0a382a1bc71b4432e115",
-      "last_remote_verified_at_utc": "2026-10-09T21:04:43Z",
+      "last_completed_at_greece": "2026-10-12 11:50:40 EEST",
+      "last_completed_at_utc": "2026-10-12T08:50:40Z",
+      "last_completed_snapshot": "ec73b65487884fa11bcd750a14ad5df85ddb171041caeedcea0f17ddb626afd3",
+      "last_remote_verified_at_utc": "2026-10-12T08:50:40Z",
       "last_result": {
         "archive_uploaded": true,
-        "changed_or_added_files": 183,
-        "deleted_from_repository": 0,
+        "changed_or_added_files": 21,
+        "deleted_from_repository": 4,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 0,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": true,
-        "unchanged_files": 70,
+        "unchanged_files": 228,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-09T21:05:16Z",
+      "state_updated_at_utc": "2026-10-12T08:51:14Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-mirror-repository-snapshots",
         "kind": "repository",
@@ -21525,7 +21608,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-10-09T21:04:43Z",
+        "last_queue_update_at_utc": "2026-10-12T08:50:40Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -21535,22 +21618,22 @@
     "dedsec-websites": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "636e88833c54eec97ac432e59f5c36ea2af96c662db68c39e5a0e9014030af78",
-        "size": 7340424,
-        "snapshot_sha256": "5a8b41e3c3a3c77f5fe0adb27e0b78ab93b571f31dbf1b452c6dba6ddbce8c42",
-        "updated_at_utc": "2026-10-09T21:08:09Z"
+        "sha256": "245bde634a7224ee21e2fc43fa8046c97d3f1b30d002797099627671eb4b8c58",
+        "size": 7315498,
+        "snapshot_sha256": "745ce848ac05d501498fde7835c606c0b9dbeae7674e966150f96bf689dcf87a",
+        "updated_at_utc": "2026-10-12T08:54:11Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-10-09T21:08:10Z",
+        "completed_at_utc": "2026-10-12T08:54:13Z",
         "run_attempt": "1",
-        "run_id": "37990853367",
+        "run_id": "38225745687",
         "snapshot_changed": true,
-        "started_at_utc": "2026-10-09T21:06:21Z",
+        "started_at_utc": "2026-10-12T08:52:20Z",
         "state_source": "internet_archive",
         "status": "complete",
-        "total_current_files": 253
+        "total_current_files": 249
       },
       "directories": [
         ".github",
@@ -21571,8 +21654,7 @@
         "el",
         "el/Assistance",
         "el/Pages",
-        "scripts",
-        "scripts/__pycache__"
+        "scripts"
       ],
       "files": {
         ".github/workflows/static.yml": {
@@ -21704,8 +21786,8 @@
         "Assets/search-index.json": {
           "executable": false,
           "mode": "0644",
-          "sha256": "37d8aea194b4187703ff803f78de4b65479f50a85a44df962072951fe219b1b9",
-          "size": 200704,
+          "sha256": "ccdf713376838e27800d5115c415e82e25c670790440a1100550177fa6e86eb3",
+          "size": 200811,
           "type": "file"
         },
         "Assets/vendor/fontawesome/LICENSE.txt": {
@@ -21900,8 +21982,8 @@
         "Assistance/dedsec-linux-venv-paths.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "dc2f03fb4ec1bf64198213321cfd72ecca6b8f03f83996cb0b78173dc0c391aa",
-          "size": 13307,
+          "sha256": "b4a72f1e3a37690d5e96c47a1fb5c894fd92c45bb8dbb17c8beb04603b5d6daa",
+          "size": 13303,
           "type": "file"
         },
         "Assistance/fix-dedsec-broken-install.html": {
@@ -21914,8 +21996,8 @@
         "Assistance/fix-dedsec-linux-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b7762395f42bae97deadfefece123035daacd92fea360c8640a7063fca4bcf12",
-          "size": 13165,
+          "sha256": "83b0468d7661cd0b707ca6cd2b08fcc4b45c3ebb902cdfac2f8e4a08b5132d26",
+          "size": 13159,
           "type": "file"
         },
         "Assistance/fix-github-ssh-authentication-termux.html": {
@@ -22047,8 +22129,8 @@
         "Assistance/install-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9b1ac6edb5c7c69d71fe6bbf3d5028db66055201b50856bcdaeb393c70ebeaae",
-          "size": 13318,
+          "sha256": "4ddf34b764a233a52704e6a2f1035fbd6beee93c44e7188ef86f1a4bc83eacdc",
+          "size": 13324,
           "type": "file"
         },
         "Assistance/keep-termux-running-background.html": {
@@ -22446,8 +22528,8 @@
         "Assistance/update-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "38eed25b0c8be9d5e758377cb579be8a05b21b1c8ba95b2b48526a946984ac2f",
-          "size": 12986,
+          "sha256": "ccc3f044796f22c2609743f7c5ccbfb9036e053a08300e58befd4df4035fd967",
+          "size": 12990,
           "type": "file"
         },
         "Assistance/update-dedsec-project.html": {
@@ -22565,8 +22647,8 @@
         "Pages/butsystem-exclusive.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "49215be638c20874ed3a8025c70f577a97c5a0ce3a0d12a49a393cbf02485873",
-          "size": 55540,
+          "sha256": "91519f7b07039e0d896f08f26927ab249b8e1bba72573a6ab807b452e6574785",
+          "size": 55542,
           "type": "file"
         },
         "Pages/contact-credits.html": {
@@ -22579,8 +22661,8 @@
         "Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "970be3192c34227299f9e83e73bd4f07fcebaee4c387d09be12240a720c0c187",
-          "size": 87791,
+          "sha256": "bc45588c0b899fc7cf4e9023561b9a06d1341ee4773c7e0c7cf86367f32364db",
+          "size": 87088,
           "type": "file"
         },
         "Pages/guide-for-installation.html": {
@@ -22607,15 +22689,15 @@
         "README.md": {
           "executable": false,
           "mode": "0644",
-          "sha256": "870bf75b9bc6ef19aed7919c2eb48f4c0ecb4711965bb14c4e36f72fe8d06016",
-          "size": 20204,
+          "sha256": "bb549b04c7fef280c35abe9cadca69867e49412b01975a01dc1037b525d871ad",
+          "size": 21259,
           "type": "file"
         },
         "el/Assistance/dedsec-linux-venv-paths.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9b8c197fddf801484c274c61bb011839fcc51e0018033c398f831cd2e0b31865",
-          "size": 15055,
+          "sha256": "ac4dd79432065bef6cd4ee853b4457316b4b5222aea7a3147edbfdab02a66350",
+          "size": 15051,
           "type": "file"
         },
         "el/Assistance/fix-dedsec-broken-install.html": {
@@ -22628,8 +22710,8 @@
         "el/Assistance/fix-dedsec-linux-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4fbde19b851ce678fd7125c950b69c70e3c6006153997199612532a35b3e367d",
-          "size": 14960,
+          "sha256": "1f77e3b650ae3268c24d375821c16cbbdec77329f451e1d40bba8158c99bd3cf",
+          "size": 14954,
           "type": "file"
         },
         "el/Assistance/fix-github-ssh-authentication-termux.html": {
@@ -22761,8 +22843,8 @@
         "el/Assistance/install-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4fe42cea9a4492e8e4de76a44b681c7708b2d65a04a4931c5adeba67c343609d",
-          "size": 15096,
+          "sha256": "b84ffc189ea8628b86264904ffa01d52684db5f9119cd7ad15a96d7baa29af55",
+          "size": 15102,
           "type": "file"
         },
         "el/Assistance/keep-termux-running-background.html": {
@@ -23160,8 +23242,8 @@
         "el/Assistance/update-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d92b3c88cf62bf3ea3c793798c8d81ee92f3d8111f2ad4d5779bc47a83a8dae1",
-          "size": 14701,
+          "sha256": "5ff578912b042dc97ef2ae404f10eb7a834b6d65e3815f71dda00f8bb369eb21",
+          "size": 14705,
           "type": "file"
         },
         "el/Assistance/update-dedsec-project.html": {
@@ -23188,8 +23270,8 @@
         "el/Pages/butsystem-exclusive.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6be31f036f289333e968258f14f4de94af48a3a6118d132405a21e1cc2d16d75",
-          "size": 67214,
+          "sha256": "47ab102ea1bc59a09c7115c7caf86410251bdcd575af0f2a1e316fb576a8b6b7",
+          "size": 67235,
           "type": "file"
         },
         "el/Pages/contact-credits.html": {
@@ -23202,8 +23284,8 @@
         "el/Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "76ed39fd8fdac11ee5cb17812aeddc3c629c76fc67aa2edd3bc02b13c74fb07f",
-          "size": 103028,
+          "sha256": "57836e600aaa9dbef31f5f8d6e0e2cb915c2d29b01b485377e3aa664d85cf74b",
+          "size": 101878,
           "type": "file"
         },
         "el/Pages/guide-for-installation.html": {
@@ -23244,22 +23326,22 @@
         "llms-full.txt": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0f926163792dcd965d983319b1cd7d0cc23facd4ff4b98a5dd861430c4727d8e",
-          "size": 56908,
+          "sha256": "dc199bfea85da8cfef472530f58a8b74c301434aea6ff7351cb102ec10dca479",
+          "size": 59051,
           "type": "file"
         },
         "llms.txt": {
           "executable": false,
           "mode": "0644",
-          "sha256": "107a797ac09095e9ff1e7b11cb0f10b4a856c5ee61604c482f61bacfcb1ac6b1",
-          "size": 2873,
+          "sha256": "13447776bfcdf49b0992f7eca521de970799c345837e6b4abd829cea8bc4533b",
+          "size": 4629,
           "type": "file"
         },
         "robots.txt": {
           "executable": false,
           "mode": "0644",
-          "sha256": "15ffb4e76160792a2b34343966ae86b66565456a51a4c41935d9e748ca7b0c7b",
-          "size": 67,
+          "sha256": "47246050f639f1f675daec7937f7086df172cd37c877bfd633047f950db3a757",
+          "size": 173,
           "type": "file"
         },
         "script.js": {
@@ -23267,34 +23349,6 @@
           "mode": "0644",
           "sha256": "86bceca06a125693b8f24479adcf80f7fe46880bca642682f801f3227746ddec",
           "size": 83369,
-          "type": "file"
-        },
-        "scripts/__pycache__/audit_source.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "95b481af4b865bf6e138db12823a5de27279b32c9f82c9bdd97c1d5dfe485c91",
-          "size": 10001,
-          "type": "file"
-        },
-        "scripts/__pycache__/build_for_repository.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "bb230b550c555a4a2f202be562a7c576e9fd444f0ecbe473acd1d925d5d45f76",
-          "size": 27278,
-          "type": "file"
-        },
-        "scripts/__pycache__/prepare_mirror_repository.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "50f11e715bce63c893e7f5bcd87d0b8b0addacf2bd0b7caea96a6313ba64ac56",
-          "size": 4311,
-          "type": "file"
-        },
-        "scripts/__pycache__/validate_site.cpython-313.pyc": {
-          "executable": false,
-          "mode": "0644",
-          "sha256": "de1d1b6c0790e91ab81cb36d8bc6bd0dc72b9e63a39837f509c42be4357aab8b",
-          "size": 10652,
           "type": "file"
         },
         "scripts/audit_source.py": {
@@ -23307,8 +23361,8 @@
         "scripts/build_for_repository.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6d10891591b6474161dc9ed92fcfc80893abfa5ca69eec4ac42ea9afcfefdd2f",
-          "size": 20876,
+          "sha256": "dd7ebc99dc3d63acbd18a1363a73fe184ebfed76e46ba68f0858e2df6bada645",
+          "size": 22158,
           "type": "file"
         },
         "scripts/prepare_mirror_repository.py": {
@@ -23321,8 +23375,8 @@
         "scripts/validate_site.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "be2d283ee215565fdc9a830e9fedc00f56f25889a8419d7889987f6c2f5f8d49",
-          "size": 7062,
+          "sha256": "73643e9401804a5bbb5018d3392b2de7472f17198db2c407124deeb5674cb34a",
+          "size": 8992,
           "type": "file"
         },
         "site.webmanifest": {
@@ -23335,38 +23389,38 @@
         "sitemap.xml": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d3cb3ace5325a68a510c1fec04494f3097d7fcdf6165b0f5488e6880fe1261ca",
-          "size": 102600,
+          "sha256": "7291332392c3cda7f6fc611c90e8ee729533a7d8ae097c4bfbd998dac97eb557",
+          "size": 85182,
           "type": "file"
         },
         "style.css": {
           "executable": false,
           "mode": "0644",
-          "sha256": "01aa5785fa79c8fd5deb960cbf947c7394f2e74b34595fb73772db609d4013ce",
-          "size": 319040,
+          "sha256": "c7ed4c9d35822f79d5d8d9f2d0680b43fdae2d4d0f390321a67ffe01e8f90250",
+          "size": 318981,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-10 00:08:10 EEST",
-      "last_completed_at_utc": "2026-10-09T21:08:10Z",
-      "last_completed_snapshot": "5a8b41e3c3a3c77f5fe0adb27e0b78ab93b571f31dbf1b452c6dba6ddbce8c42",
-      "last_remote_verified_at_utc": "2026-10-09T21:08:10Z",
+      "last_completed_at_greece": "2026-10-12 11:54:13 EEST",
+      "last_completed_at_utc": "2026-10-12T08:54:13Z",
+      "last_completed_snapshot": "745ce848ac05d501498fde7835c606c0b9dbeae7674e966150f96bf689dcf87a",
+      "last_remote_verified_at_utc": "2026-10-12T08:54:13Z",
       "last_result": {
         "archive_uploaded": true,
-        "changed_or_added_files": 183,
-        "deleted_from_repository": 0,
+        "changed_or_added_files": 21,
+        "deleted_from_repository": 4,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 821,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": true,
-        "unchanged_files": 70,
-        "wayback_pending": 1519
+        "unchanged_files": 228,
+        "wayback_pending": 1501
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-09T21:08:43Z",
+      "state_updated_at_utc": "2026-10-12T08:54:49Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-snapshots",
         "kind": "website",
@@ -23381,48 +23435,24 @@
         "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 1548,
+        "completed": 1572,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-10-08T01:06:48Z",
-          "remaining": 1517,
-          "workflow_run_id": "37703187138"
+          "processed_at_utc": "2026-10-09T22:33:48Z",
+          "remaining": 1495,
+          "workflow_run_id": "37990853367"
         },
-        "last_processed_at_utc": "2026-10-08T01:06:28Z",
-        "last_queue_added": 368,
-        "last_queue_update_at_utc": "2026-10-09T21:08:09Z",
-        "last_successful_at_utc": "2026-10-08T01:06:28Z",
-        "last_successful_url": "https://ded-sec.space/el/Smartphone-Academy/Pages/Termux-Lab/Safe-Workspaces.html",
+        "last_processed_at_utc": "2026-10-09T22:33:28Z",
+        "last_queue_added": 42,
+        "last_queue_update_at_utc": "2026-10-12T08:54:11Z",
+        "last_successful_at_utc": "2026-10-09T22:33:28Z",
+        "last_successful_url": "https://ded-sec.space/sitemap.xml",
         "last_transient_error": {
           "at_utc": "2026-09-23T20:43:55Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
           "url": "https://ded-sec.space/el/Smartphone-Academy/Pages/Practical/App-Installation/Split-Package-Planning.html"
         },
         "pending": [
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Termux-Lab/Storage-Access.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Termux-Lab/index.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Termux-Shell/",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Termux-Shell/Challenges.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Termux-Shell/index.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Web-Security/",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Web-Security/Authentication.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Web-Security/Http.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Web-Security/Web-Basics.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Pages/Web-Security/index.html",
-          "https://ded-sec.space/el/Smartphone-Academy/Smartphone-Academy-DedSec.js",
-          "https://ded-sec.space/el/Smartphone-Academy/index.html",
-          "https://ded-sec.space/el/index.html",
-          "https://ded-sec.space/index.html",
-          "https://ded-sec.space/llms-full.txt",
-          "https://ded-sec.space/llms.txt",
-          "https://ded-sec.space/robots.txt",
-          "https://ded-sec.space/script.js",
-          "https://ded-sec.space/scripts/audit_source.py",
-          "https://ded-sec.space/scripts/build_for_repository.py",
-          "https://ded-sec.space/scripts/prepare_mirror_repository.py",
-          "https://ded-sec.space/scripts/validate_site.py",
-          "https://ded-sec.space/site.webmanifest",
-          "https://ded-sec.space/sitemap.xml",
           "https://ded-sec.space/style.css",
           "https://ded-sec.online/",
           "https://ded-sec.online/Assets/Images/products/build-website-ai-phone-el.webp",
@@ -24917,7 +24947,13 @@
           "https://ded-sec.space/scripts/__pycache__/prepare_mirror_repository.cpython-313.pyc",
           "https://ded-sec.space/scripts/__pycache__/validate_site.cpython-313.pyc",
           "https://ded-sec.online/CHANGELOG-2026-10-09.txt",
-          "https://ded-sec.space/CHANGELOG-2026-10-09.txt"
+          "https://ded-sec.space/CHANGELOG-2026-10-09.txt",
+          "https://ded-sec.space/llms-full.txt",
+          "https://ded-sec.space/llms.txt",
+          "https://ded-sec.space/robots.txt",
+          "https://ded-sec.space/scripts/build_for_repository.py",
+          "https://ded-sec.space/scripts/validate_site.py",
+          "https://ded-sec.space/sitemap.xml"
         ],
         "permanent_failures": 6,
         "recent_failures": [
@@ -24952,7 +24988,7 @@
             "url": "https://ded-sec.space/Smartphone-Academy/Pages/Practical/Mobile-Coding/Termux-Dev-Bootstrap.html"
           }
         ],
-        "remaining": 1519
+        "remaining": 1501
       }
     },
     "ghost-project": {
