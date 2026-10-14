@@ -7,7 +7,7 @@
       "Termux_API.apk",
       "Termux_Styling.apk"
     ],
-    "checked_at_utc": "2026-10-13T03:05:18Z",
+    "checked_at_utc": "2026-10-14T19:59:11Z",
     "failures": [],
     "files": {
       "F-Droid.apk": {
@@ -37,18 +37,18 @@
     "uploaded": false
   },
   "archive_mode": "single_current_working_tree_archive",
-  "generated_at_utc": "2026-10-13T03:07:27Z",
+  "generated_at_utc": "2026-10-14T21:29:37Z",
   "resume_behavior": "Each repository/website target stores one current-working-tree TAR.GZ plus a manifest, checksums and one compact state checkpoint. The APK item stores the current four APK dependencies with hashes. Git/commit/push history is never archived by Internet Archive. Wayback is limited to live website URLs; public Git origins are preserved separately by Software Heritage.",
   "schema_version": 7,
   "software_heritage": {
-    "checked_at_utc": "2026-10-13T02:41:35Z",
+    "checked_at_utc": "2026-10-14T19:28:53Z",
     "link_resolution_policy": "Save requests made in the current workflow run are not resolved into README links until a later workflow run.",
     "repositories": {
       "dedsec1121fk/Corrupted-Files-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:39:52.360000+00:00",
+        "latest_visit_date": "2026-10-13T02:41:55.920000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -56,15 +56,15 @@
         "repository": "dedsec1121fk/Corrupted-Files-Project",
         "save_request_date": "2026-10-13T02:41:48.182170+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/",
         "title": "Corrupted Files"
       },
       "dedsec1121fk/DedSec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec",
         "error": null,
         "latest_visit_date": "2026-10-12T09:00:14.972000+00:00",
@@ -73,20 +73,20 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/DedSec",
         "repository": "dedsec1121fk/DedSec",
-        "save_request_date": "2026-10-12T08:47:42.572575+00:00",
+        "save_request_date": "2026-10-14T19:28:55.686377+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:643d05e5ec0c9c19a29ec47a4ff91ab9de197821",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:643d05e5ec0c9c19a29ec47a4ff91ab9de197821/",
         "title": "DedSec main"
       },
       "dedsec1121fk/Ghost-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FGhost-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:40:13.663000+00:00",
+        "latest_visit_date": "2026-10-13T02:42:14.726000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -94,18 +94,18 @@
         "repository": "dedsec1121fk/Ghost-Project",
         "save_request_date": "2026-10-13T02:42:11.634534+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:1b3ad21ec12228ae1f9b111145ee80c258aaf640",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:1b3ad21ec12228ae1f9b111145ee80c258aaf640/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:4bda493b383280611396ebd577294a179ec690b5",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:4bda493b383280611396ebd577294a179ec690b5/",
         "title": "Ghost Project"
       },
       "dedsec1121fk/Hacking-Guide-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:40:02.576000+00:00",
+        "latest_visit_date": "2026-10-13T02:42:13.067000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -113,18 +113,18 @@
         "repository": "dedsec1121fk/Hacking-Guide-Project",
         "save_request_date": "2026-10-13T02:42:03.880911+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/",
         "title": "Hacking Guide Project"
       },
       "dedsec1121fk/Language-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:40:13.142000+00:00",
+        "latest_visit_date": "2026-10-13T02:42:13.852000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -132,18 +132,18 @@
         "repository": "dedsec1121fk/Language-Project",
         "save_request_date": "2026-10-13T02:42:07.857993+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/",
         "title": "Language Project"
       },
       "dedsec1121fk/Offline-Survival-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:40:02.541000+00:00",
+        "latest_visit_date": "2026-10-13T02:42:04.749000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -151,18 +151,18 @@
         "repository": "dedsec1121fk/Offline-Survival-Project",
         "save_request_date": "2026-10-13T02:42:00.023372+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/",
         "title": "Offline Survival"
       },
       "dedsec1121fk/Pocket-AI-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:39:52.486000+00:00",
+        "latest_visit_date": "2026-10-13T02:41:56.773000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -170,18 +170,18 @@
         "repository": "dedsec1121fk/Pocket-AI-Project",
         "save_request_date": "2026-10-13T02:41:52.070976+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
         "snapshot_swhid": "swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/",
         "title": "Pocket AI"
       },
       "dedsec1121fk/Praying-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:40:02.582000+00:00",
+        "latest_visit_date": "2026-10-13T02:42:02.859000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -189,18 +189,18 @@
         "repository": "dedsec1121fk/Praying-Project",
         "save_request_date": "2026-10-13T02:41:55.932606+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:460e3ae2d09170b4785bb45c8a8ef531bd17322e",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:460e3ae2d09170b4785bb45c8a8ef531bd17322e/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:0ea63d75725ca1839fe0a7b2ac7ec321fe9718e5",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:0ea63d75725ca1839fe0a7b2ac7ec321fe9718e5/",
         "title": "Praying Project"
       },
       "dedsec1121fk/Save-DedSec-Project": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:40:23.497000+00:00",
+        "latest_visit_date": "2026-10-13T02:42:23.299000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -208,18 +208,18 @@
         "repository": "dedsec1121fk/Save-DedSec-Project",
         "save_request_date": "2026-10-13T02:42:15.487345+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:4e5a053c66a38c2cf42c9e275e5dee4df1a29983",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:4e5a053c66a38c2cf42c9e275e5dee4df1a29983/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:0bb093e0b80bd5048d1bbc6b52ab30a8ed6847a2",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:0bb093e0b80bd5048d1bbc6b52ab30a8ed6847a2/",
         "title": "Save DedSec Project"
       },
       "dedsec1121fk/dedsec1121fk": {
-        "awaiting_link_check": true,
+        "awaiting_link_check": false,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk",
         "error": null,
-        "latest_visit_date": "2026-10-11T00:39:42.031000+00:00",
+        "latest_visit_date": "2026-10-13T02:41:52.645000+00:00",
         "latest_visit_status": "full",
         "link_check_basis": "previous_run_only",
         "link_checked_this_run": true,
@@ -227,15 +227,15 @@
         "repository": "dedsec1121fk/dedsec1121fk",
         "save_request_date": "2026-10-13T02:41:44.064502+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": true,
-        "save_task_status": "pending",
-        "selected_this_run": true,
-        "snapshot_swhid": "swh:1:snp:ac9c0abac78d5be1e44d6726bd61de676a31e292",
-        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:ac9c0abac78d5be1e44d6726bd61de676a31e292/",
+        "save_requested_this_run": false,
+        "save_task_status": "succeeded",
+        "selected_this_run": false,
+        "snapshot_swhid": "swh:1:snp:494ff94d4e83e9fcec255145d0209d04760709ac",
+        "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:494ff94d4e83e9fcec255145d0209d04760709ac/",
         "title": "GitHub profile"
       },
       "dedsec1121fk/dedsec1121fk.github.io": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io",
         "error": null,
         "latest_visit_date": "2026-10-12T09:00:20.675000+00:00",
@@ -244,17 +244,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/dedsec1121fk/dedsec1121fk.github.io",
         "repository": "dedsec1121fk/dedsec1121fk.github.io",
-        "save_request_date": "2026-10-12T08:48:12.349122+00:00",
+        "save_request_date": "2026-10-14T19:29:03.338817+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:69fc050455bca8ac01dc87f5fcac27f54436ea33",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:69fc050455bca8ac01dc87f5fcac27f54436ea33/",
         "title": "Websites"
       },
       "sal-scar/DedSec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec",
         "error": null,
         "latest_visit_date": "2026-10-12T09:00:17.935000+00:00",
@@ -263,17 +263,17 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/DedSec",
         "repository": "sal-scar/DedSec",
-        "save_request_date": "2026-10-12T08:48:07.853721+00:00",
+        "save_request_date": "2026-10-14T19:28:59.338276+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:a268411c41f743b879cdac54a816c6731a16043d",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:a268411c41f743b879cdac54a816c6731a16043d/",
         "title": "DedSec backup"
       },
       "sal-scar/ded-sec": {
-        "awaiting_link_check": false,
+        "awaiting_link_check": true,
         "browse_url": "https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec",
         "error": null,
         "latest_visit_date": "2026-10-12T09:00:22.717000+00:00",
@@ -282,11 +282,11 @@
         "link_checked_this_run": true,
         "origin_url": "https://github.com/sal-scar/ded-sec",
         "repository": "sal-scar/ded-sec",
-        "save_request_date": "2026-10-12T08:48:20.691766+00:00",
+        "save_request_date": "2026-10-14T19:29:07.325083+00:00",
         "save_request_status": "accepted",
-        "save_requested_this_run": false,
-        "save_task_status": "succeeded",
-        "selected_this_run": false,
+        "save_requested_this_run": true,
+        "save_task_status": "pending",
+        "selected_this_run": true,
         "snapshot_swhid": "swh:1:snp:5193b2d8ba4ade25271f2a616598591a93d36668",
         "snapshot_url": "https://archive.softwareheritage.org/swh:1:snp:5193b2d8ba4ade25271f2a616598591a93d36668/",
         "title": "Website mirror"
@@ -16165,19 +16165,19 @@
     "dedsec-backup": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "b497f0afce58abb770167a871862aff1ced8c9f44b1dfff6d61e40be152f423b",
-        "size": 115518873,
-        "snapshot_sha256": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
-        "updated_at_utc": "2026-10-12T09:00:12Z"
+        "sha256": "38df2312ee9abed5751883df94f5afa6f9fc2a88990e03026903217d826d03b1",
+        "size": 115520633,
+        "snapshot_sha256": "5325cf2bb59aa2d3e3a796d8e0b2306daacc6695d76adaddaddb8660a3a02fdc",
+        "updated_at_utc": "2026-10-14T19:43:13Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-10-12T09:00:15Z",
+        "completed_at_utc": "2026-10-14T19:43:13Z",
         "run_attempt": "1",
-        "run_id": "38225745687",
+        "run_id": "38623995460",
         "snapshot_changed": true,
-        "started_at_utc": "2026-10-12T08:55:54Z",
+        "started_at_utc": "2026-10-14T19:35:22Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 246
@@ -17306,8 +17306,8 @@
         "Scripts/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
-          "size": 2618636,
+          "sha256": "637d224ac340e8e3106e0241fe1cf7cb1821ae934da220fe9ab7442eaf5e61c7",
+          "size": 2622915,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/ButSystem.py": {
@@ -17334,8 +17334,8 @@
         "Scripts/Ελληνική Έκδοση/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
-          "size": 2618636,
+          "sha256": "637d224ac340e8e3106e0241fe1cf7cb1821ae934da220fe9ab7442eaf5e61c7",
+          "size": 2622915,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Άλλα Εργαλεία/Android App Launcher.py": {
@@ -17935,13 +17935,13 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-12 12:00:15 EEST",
-      "last_completed_at_utc": "2026-10-12T09:00:15Z",
-      "last_completed_snapshot": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
-      "last_remote_verified_at_utc": "2026-10-12T09:00:15Z",
+      "last_completed_at_greece": "2026-10-14 22:43:13 EEST",
+      "last_completed_at_utc": "2026-10-14T19:43:13Z",
+      "last_completed_snapshot": "5325cf2bb59aa2d3e3a796d8e0b2306daacc6695d76adaddaddb8660a3a02fdc",
+      "last_remote_verified_at_utc": "2026-10-14T19:43:13Z",
       "last_result": {
         "archive_uploaded": true,
-        "changed_or_added_files": 17,
+        "changed_or_added_files": 2,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
@@ -17949,11 +17949,11 @@
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": true,
-        "unchanged_files": 229,
+        "unchanged_files": 244,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-12T09:00:52Z",
+      "state_updated_at_utc": "2026-10-14T19:43:57Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-backup-repository-snapshots",
         "kind": "repository",
@@ -17968,7 +17968,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-10-12T09:00:12Z",
+        "last_queue_update_at_utc": "2026-10-14T19:43:13Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -17978,19 +17978,19 @@
     "dedsec-main": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "b497f0afce58abb770167a871862aff1ced8c9f44b1dfff6d61e40be152f423b",
-        "size": 115518873,
-        "snapshot_sha256": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
-        "updated_at_utc": "2026-10-12T09:05:41Z"
+        "sha256": "38df2312ee9abed5751883df94f5afa6f9fc2a88990e03026903217d826d03b1",
+        "size": 115520633,
+        "snapshot_sha256": "5325cf2bb59aa2d3e3a796d8e0b2306daacc6695d76adaddaddb8660a3a02fdc",
+        "updated_at_utc": "2026-10-14T19:58:28Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-10-12T09:05:42Z",
+        "completed_at_utc": "2026-10-14T19:58:28Z",
         "run_attempt": "1",
-        "run_id": "38225745687",
+        "run_id": "38623995460",
         "snapshot_changed": true,
-        "started_at_utc": "2026-10-12T09:02:01Z",
+        "started_at_utc": "2026-10-14T19:45:06Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 246
@@ -19119,8 +19119,8 @@
         "Scripts/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
-          "size": 2618636,
+          "sha256": "637d224ac340e8e3106e0241fe1cf7cb1821ae934da220fe9ab7442eaf5e61c7",
+          "size": 2622915,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/ButSystem.py": {
@@ -19147,8 +19147,8 @@
         "Scripts/Ελληνική Έκδοση/Settings.py": {
           "executable": false,
           "mode": "0644",
-          "sha256": "58f9f4cf40571e3d800c3ec0aec6a9e91d1db4db6d776e10004370640271128c",
-          "size": 2618636,
+          "sha256": "637d224ac340e8e3106e0241fe1cf7cb1821ae934da220fe9ab7442eaf5e61c7",
+          "size": 2622915,
           "type": "file"
         },
         "Scripts/Ελληνική Έκδοση/Άλλα Εργαλεία/Android App Launcher.py": {
@@ -19748,13 +19748,13 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-12 12:05:42 EEST",
-      "last_completed_at_utc": "2026-10-12T09:05:42Z",
-      "last_completed_snapshot": "f454f33c75ef29ede336a9c7ce24885c45303c42038ad7b9a99e205318e8152c",
-      "last_remote_verified_at_utc": "2026-10-12T09:05:42Z",
+      "last_completed_at_greece": "2026-10-14 22:58:28 EEST",
+      "last_completed_at_utc": "2026-10-14T19:58:28Z",
+      "last_completed_snapshot": "5325cf2bb59aa2d3e3a796d8e0b2306daacc6695d76adaddaddb8660a3a02fdc",
+      "last_remote_verified_at_utc": "2026-10-14T19:58:28Z",
       "last_result": {
         "archive_uploaded": true,
-        "changed_or_added_files": 17,
+        "changed_or_added_files": 2,
         "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
@@ -19762,11 +19762,11 @@
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": true,
-        "unchanged_files": 229,
+        "unchanged_files": 244,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-12T09:06:16Z",
+      "state_updated_at_utc": "2026-10-14T19:59:01Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-project-repository-snapshots",
         "kind": "repository",
@@ -19781,7 +19781,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-10-12T09:05:41Z",
+        "last_queue_update_at_utc": "2026-10-14T19:58:28Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -19798,12 +19798,12 @@
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
-        "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-10-12T08:50:40Z",
+        "compact_archive_upload_required": false,
+        "completed_at_utc": "2026-10-14T19:30:09Z",
         "run_attempt": "1",
-        "run_id": "38225745687",
-        "snapshot_changed": true,
-        "started_at_utc": "2026-10-12T08:48:54Z",
+        "run_id": "38623995460",
+        "snapshot_changed": false,
+        "started_at_utc": "2026-10-14T19:30:09Z",
         "state_source": "github_update_json",
         "status": "complete",
         "total_current_files": 249
@@ -21575,25 +21575,25 @@
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-12 11:50:40 EEST",
-      "last_completed_at_utc": "2026-10-12T08:50:40Z",
+      "last_completed_at_greece": "2026-10-14 22:30:09 EEST",
+      "last_completed_at_utc": "2026-10-14T19:30:09Z",
       "last_completed_snapshot": "ec73b65487884fa11bcd750a14ad5df85ddb171041caeedcea0f17ddb626afd3",
-      "last_remote_verified_at_utc": "2026-10-12T08:50:40Z",
+      "last_remote_verified_at_utc": "2026-10-14T19:30:09Z",
       "last_result": {
-        "archive_uploaded": true,
-        "changed_or_added_files": 21,
-        "deleted_from_repository": 4,
+        "archive_uploaded": false,
+        "changed_or_added_files": 0,
+        "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 0,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
-        "snapshot_changed": true,
-        "unchanged_files": 228,
+        "snapshot_changed": false,
+        "unchanged_files": 249,
         "wayback_pending": 0
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-12T08:51:14Z",
+      "state_updated_at_utc": "2026-10-14T19:30:52Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-mirror-repository-snapshots",
         "kind": "repository",
@@ -21608,7 +21608,7 @@
         "completed": 0,
         "initial_queue_created": true,
         "last_queue_added": 0,
-        "last_queue_update_at_utc": "2026-10-12T08:50:40Z",
+        "last_queue_update_at_utc": "2026-10-14T19:30:09Z",
         "pending": [],
         "permanent_failures": 0,
         "recent_failures": [],
@@ -21618,22 +21618,22 @@
     "dedsec-websites": {
       "archive": {
         "remote_name": "current-working-tree.tar.gz",
-        "sha256": "245bde634a7224ee21e2fc43fa8046c97d3f1b30d002797099627671eb4b8c58",
-        "size": 7315498,
-        "snapshot_sha256": "745ce848ac05d501498fde7835c606c0b9dbeae7674e966150f96bf689dcf87a",
-        "updated_at_utc": "2026-10-12T08:54:11Z"
+        "sha256": "4caa5220a1fda1c47e6ead1d2e011f152c300608bb405e0746b8c2e346552b37",
+        "size": 7331041,
+        "snapshot_sha256": "cddb8aa92874e1145d6c5b5754efe363548f331e396fa0e1d0d31bf65389a99d",
+        "updated_at_utc": "2026-10-14T19:33:42Z"
       },
       "archive_mode": "single_current_working_tree_archive",
       "current_run": {
         "compact_archive_upload_required": true,
-        "completed_at_utc": "2026-10-12T08:54:13Z",
+        "completed_at_utc": "2026-10-14T19:33:42Z",
         "run_attempt": "1",
-        "run_id": "38225745687",
+        "run_id": "38623995460",
         "snapshot_changed": true,
-        "started_at_utc": "2026-10-12T08:52:20Z",
+        "started_at_utc": "2026-10-14T19:31:57Z",
         "state_source": "internet_archive",
         "status": "complete",
-        "total_current_files": 249
+        "total_current_files": 250
       },
       "directories": [
         ".github",
@@ -21681,8 +21681,8 @@
         "404.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8337f0e8c05baaa2edefa820380b50176c0963815cd3f62b8e8aac27af9d1958",
-          "size": 9483,
+          "sha256": "8d26e46487c9dfe37f2f3d1b6936fba76d1da631f880f56a81d11ab958563d97",
+          "size": 9556,
           "type": "file"
         },
         "Assets/Images/Logos/Black Purple Butterfly Logo.jpeg": {
@@ -21774,6 +21774,13 @@
           "mode": "0644",
           "sha256": "067550c4201f9bbe871a27da95c1bcc1dbe9edaa07b91791e58acadd4e1ba7d5",
           "size": 17675,
+          "type": "file"
+        },
+        "Assets/premium-theme.css": {
+          "executable": false,
+          "mode": "0644",
+          "sha256": "b3af24f65055507a93b407b82f96be517a5e934ed44d052fd9793f0dfcbe9ca9",
+          "size": 11448,
           "type": "file"
         },
         "Assets/sales-optimization.css": {
@@ -21982,561 +21989,561 @@
         "Assistance/dedsec-linux-venv-paths.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b4a72f1e3a37690d5e96c47a1fb5c894fd92c45bb8dbb17c8beb04603b5d6daa",
-          "size": 13303,
+          "sha256": "2aa6c555557504ac126e6b012158f6d863756040ec339f6686c891d7698c7cce",
+          "size": 13376,
           "type": "file"
         },
         "Assistance/fix-dedsec-broken-install.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d89aaadaf3ff3a854ed6bc237d2bdc15ddeee578e4ac63d1bb622760d18729b7",
-          "size": 27118,
+          "sha256": "77ab5fdb1778b518a44c00f50444661744e2c5dd464fe8314baadc45cc6fda4a",
+          "size": 27191,
           "type": "file"
         },
         "Assistance/fix-dedsec-linux-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "83b0468d7661cd0b707ca6cd2b08fcc4b45c3ebb902cdfac2f8e4a08b5132d26",
-          "size": 13159,
+          "sha256": "bf2cda55a2e90c3b5d13697e3764dd0528e0ac82599a308b2a1bf12ffae70f26",
+          "size": 13232,
           "type": "file"
         },
         "Assistance/fix-github-ssh-authentication-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "36620546aea09f263d00e8ebb55622d8385b03d4bd63c0e62478ce1d06b0fd2a",
-          "size": 26205,
+          "sha256": "8fb8e8f9465c6eece2691699b788d2b6ea1fbe108a4a2ba8b25f3d995841deb1",
+          "size": 26278,
           "type": "file"
         },
         "Assistance/fix-localhost-server-not-opening-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0ef276598a9601d9dbedc5f7848cb06c17b9b3a63ec930acc74cbb258b32d1d8",
-          "size": 26764,
+          "sha256": "6ae3d49f97266e74b60266534a3e8eeccb8394bfcafa4153cd3324acbbfe68f9",
+          "size": 26837,
           "type": "file"
         },
         "Assistance/fix-node-npm-errors-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3f0e60770fdaed8e29980003a1a3b08e54e34bdc09bd4bddcd09fde8aae2a203",
-          "size": 27061,
+          "sha256": "405357743b90a3774ef1e7835fee55c426656acd4675b960c5aa3a4e99712e2f",
+          "size": 27134,
           "type": "file"
         },
         "Assistance/fix-pip-errors-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f57452c8b8784ac3d237e9e5fcd3344a1c3b7a4ad992febfc70514997549db2c",
-          "size": 27764,
+          "sha256": "64757808f743cbd72b979e5f851b2481633cae5e7cbf0f02446f8f92d200da26",
+          "size": 27837,
           "type": "file"
         },
         "Assistance/fix-python-module-not-found-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "dc34ed3c4c8878c64dd746afef40a7f5ffc7a8c12e7a98302af9e7a40ebb041c",
-          "size": 27666,
+          "sha256": "41185787f3b497b3740e5e4c1ba1760afa8f4bbb47ef202cd3598ac42fca5ac6",
+          "size": 27739,
           "type": "file"
         },
         "Assistance/fix-python-syntax-errors-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f0ae2de6dbbae62bc13568796c2fa5e88e23c3668906468c38196661e2e8e55d",
-          "size": 26494,
+          "sha256": "0a5516b998ffea66dad0835faaafffbd8f85ec74b31c982636a68731ac346d07",
+          "size": 26567,
           "type": "file"
         },
         "Assistance/fix-termux-dpkg-apt-lock.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "331352376f3d9a3fc46ad91032f44d69c49e799bdf13d9d1d0f24f5f44f31d04",
-          "size": 26477,
+          "sha256": "40a7ca61ec4eab7cf68637bd1e9baec471ba4d008a80061158e857d467e95df1",
+          "size": 26550,
           "type": "file"
         },
         "Assistance/fix-termux-git-push-email-identity.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "727223d744cf150a0bb979fb2f8433fba8cacdfddc68f23196ba8ca91a00dd72",
-          "size": 25463,
+          "sha256": "352654d4e51c8b77b8558f1236a02529d2d7b0dba6ef3346ad72801ab5988ae1",
+          "size": 25536,
           "type": "file"
         },
         "Assistance/fix-termux-no-space-left.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "90bb9added8b3cd31af888b64af11d1d707d49568e28d4a7b335bc7823a25059",
-          "size": 26528,
+          "sha256": "6b2715002e6201823c089274660dc3bf8c0755a110595879b936e5c5ac84c8e5",
+          "size": 26601,
           "type": "file"
         },
         "Assistance/fix-termux-no-such-file-or-directory.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "84a71258f673ee6b7f7a65ceb835573505beefbc0968a27e73aade25e66d817f",
-          "size": 27375,
+          "sha256": "3d2c5ce33371c29fd49fa8fd7c5bce4aeda082c53a5e83209e5e8de52f4d889d",
+          "size": 27448,
           "type": "file"
         },
         "Assistance/fix-termux-permission-denied-executable.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3e27a4d64454ff33a82f2dd7900ad9c086b63943c6358d222637bd18741fa6f6",
-          "size": 27070,
+          "sha256": "a67a1836b2e96678b54837afa8856055aef19785ece324d31755e2afd547fa2a",
+          "size": 27143,
           "type": "file"
         },
         "Assistance/fix-termux-port-already-in-use.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8bd2dec64c1755a75018c51ab0c458612c1c1646a8465c2176bfffd5dfe93ec7",
-          "size": 26619,
+          "sha256": "ac6e0320c13d1c9bef47a2b1bd521d589850d17fee4cde29be0ffe526e744a83",
+          "size": 26692,
           "type": "file"
         },
         "Assistance/fix-termux-repository-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5d0309b72d21d93c7c25bd92aa3057631487b65bbf45d7a6992ed87c0e423079",
-          "size": 27215,
+          "sha256": "ce3ef76732faa92f8d5e9c9b0b89e573388d41a63a66b3beafc3e7286c998124",
+          "size": 27288,
           "type": "file"
         },
         "Assistance/fix-termux-ssl-certificate-curl-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b00f333a1bbb0f8817ced66acb8304020c992946db1eed6f27bbef8a7566b335",
-          "size": 26929,
+          "sha256": "7de62ded10d7207479dd073dc492448758db3aa3a39f47244807c670b1b5f664",
+          "size": 27002,
           "type": "file"
         },
         "Assistance/fix-termux-storage-permission.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9e78ff4d4b3bc94a9295100262f898d5c97801aedc5a684c7a8a7f69a1b3026a",
-          "size": 27201,
+          "sha256": "b9a581032d845f1d5cc2ba810db3ceb10fb351547341f65c0bd1a65194cf765b",
+          "size": 27274,
           "type": "file"
         },
         "Assistance/fix-termux-widget-scripts.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f74b2011b9bcc9eea54b2bc2586d0933b6f0c16571adc01cc49730794fbf6d41",
-          "size": 26019,
+          "sha256": "e5980c81a94fac71448d0672147318319a7b47042088cf2f836e24fa33b0fb0f",
+          "size": 26092,
           "type": "file"
         },
         "Assistance/github-clone-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "798465cb85af9cac43bfca2ed09d49ca26293216e636f967fde8d7e076f4644f",
-          "size": 26751,
+          "sha256": "ee939a7326ecffb46509db2dc42bd475695747103a476bce76d762f2e6ad5429",
+          "size": 26824,
           "type": "file"
         },
         "Assistance/install-dedsec-project-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d7dedaba97f5e20032ed4f17b3281aebdd4016ea63180f357c807004e9bb095d",
-          "size": 27244,
+          "sha256": "76b5962fc2f1dfbf77ba1ddd45fc8610af8258c2da0fb9268c413eee98852f14",
+          "size": 27317,
           "type": "file"
         },
         "Assistance/install-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4ddf34b764a233a52704e6a2f1035fbd6beee93c44e7188ef86f1a4bc83eacdc",
-          "size": 13324,
+          "sha256": "88f329e78d0dd03ef53208c0d4ddd116284e4a2e0d40fd3422677592f3d368c1",
+          "size": 13397,
           "type": "file"
         },
         "Assistance/keep-termux-running-background.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "14d1b266a6c23a13cb19a62bf47278e6805a38a444cfbf397b813a2892484738",
-          "size": 26671,
+          "sha256": "a87a254b4778deae8e818903d6f60b49b1f8752816f19cba6fff6cf8435a16d7",
+          "size": 26744,
           "type": "file"
         },
         "Assistance/termux-android-webview-browser-tips.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "bf5248d8273889e742b215fb85669b0504c0f6ff06ad90762340e182ac919891",
-          "size": 25887,
+          "sha256": "13a564c81af3af1fc6a1d6aedbcbac96c70dd302c3d1b261fb065e45768b6b84",
+          "size": 25960,
           "type": "file"
         },
         "Assistance/termux-backup-restore-workflow.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "43d47d28f5d5b7e259c43aa341a1aa0bfa8af1a37b692f6eb8e2876feaf07c55",
-          "size": 27310,
+          "sha256": "d252d27d8ebf220f7e3c7a7417c8dc8fae1af3bb1f74a9c9a51de7f76fa517ea",
+          "size": 27383,
           "type": "file"
         },
         "Assistance/termux-beginner-guide-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "254092be8012bba5ea3c42aa326db5a2424aa384974a64fb8877a8e528c7ad06",
-          "size": 26644,
+          "sha256": "cb8fc44650ba8d48e717565c2c0b08a5cd42261f0bef212d91095db015a7c457",
+          "size": 26717,
           "type": "file"
         },
         "Assistance/termux-build-dedsec-style-tool.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "de7947599807062cd0f3d662a7aa545d1d1c08a68138191b0e255fe5f19bd142",
-          "size": 25654,
+          "sha256": "f3a29e2262d6faad8159235caaa715ff4cf396843a38a7c2394a944b9926ff13",
+          "size": 25727,
           "type": "file"
         },
         "Assistance/termux-check-broken-links-locally.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9a305014a388d28928e7fccba059ccf1729577e85b8aadb8e3c5a559f3037971",
-          "size": 28565,
+          "sha256": "e0408a699fe3ab90b03de0e4800573c3665e7705f3cb37fe40e5eddb605f73eb",
+          "size": 28638,
           "type": "file"
         },
         "Assistance/termux-clean-cache-safely.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "959dee62714b65ad70d66ae9b08cac14e66d491bc2ac383b51787d0f2ddf8f96",
-          "size": 26060,
+          "sha256": "d09554ff500e099905d519b0ea7fdb1ff45ee50a514fa789a9377b941b3b0166",
+          "size": 26133,
           "type": "file"
         },
         "Assistance/termux-cloudflared-local-link-help.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ff7cf54425091f6e2009ab04ed2083f9101a701b82f046425b8edd41c1020a21",
-          "size": 27484,
+          "sha256": "25439a62599108b5897f1013c7655549b8a28756d04aff4e39564a59c61b58a1",
+          "size": 27557,
           "type": "file"
         },
         "Assistance/termux-command-cheat-sheet.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7daa1216a05d5f2f15c7f987320e8b263e6e3694a2ffaf8dce7032856f9ca8f2",
-          "size": 25828,
+          "sha256": "7ebce43cf7a3d2150ba15c292b2fd8fa9d70aa79d274039714ddee3fd1203eba",
+          "size": 25901,
           "type": "file"
         },
         "Assistance/termux-command-history-and-aliases.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "2c20aad41264a347a3a0c60e13742f134bc640dd9e994d86c6fe15aceda29bff",
-          "size": 25875,
+          "sha256": "9c39267c7af20ecec20c2e04d7f3b086f9796f0839930710f5c3387501dec767",
+          "size": 25948,
           "type": "file"
         },
         "Assistance/termux-common-exit-codes.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ceb7de11e3b2065b037d467e1fdf6865f7fcd0e384d2b6fc8b4a664a2dad116f",
-          "size": 25737,
+          "sha256": "3f7d6bf5b39e204ec711fe82369618842aa46060e76fa1bd66585735fe00f367",
+          "size": 25810,
           "type": "file"
         },
         "Assistance/termux-cool-script-ideas.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "2ad01b48e4ca2b4877d42bfe53a433cc323905b94d6ce7c1bb3f240674c7e0b6",
-          "size": 26771,
+          "sha256": "d0ce33e99461f3024d5715b2bae611cb8905adbdebfd07c744f2867557975589",
+          "size": 26844,
           "type": "file"
         },
         "Assistance/termux-create-python-menu-script.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0c6e5ceb9abead9e855c2bc6c6c41cd26b39341e96be95b4f12185500ffe8b1a",
-          "size": 26839,
+          "sha256": "7c61bb6596e9f6b51a2e0a515a3fa707a99e357cc43c0824dab0dd1d4b1e990c",
+          "size": 26912,
           "type": "file"
         },
         "Assistance/termux-debug-log-files.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "60ed719338eae30abe2c2271101bf43ab1a82680a981819495ab7026029f6acd",
-          "size": 25645,
+          "sha256": "be140fcd0831dfea41f4fed63e34ec8dbe580378e3e4befd7058870068fd63ae",
+          "size": 25718,
           "type": "file"
         },
         "Assistance/termux-download-with-curl-wget.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6aeee4a8ac76cfb3072447d10d886e589e744facebb7c2f136ae50d6ec0b6b84",
-          "size": 25960,
+          "sha256": "555b91eceec0f803c39d813c17e516f33eb0e0948b4865502880e37e9627d77a",
+          "size": 26033,
           "type": "file"
         },
         "Assistance/termux-edit-files-with-nano.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7813a0376c66f0de00b81cc3010fea85fc0779e6f799567adb2b2e8824b37905",
-          "size": 25465,
+          "sha256": "10107830b0ca82e01ebff0187162fff85449feacea9d85c3d39eb54412ff028a",
+          "size": 25538,
           "type": "file"
         },
         "Assistance/termux-fix-bash-bad-interpreter.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7556d79eb212391f8a70001d40d6ceabf9fd58aed8d49bc192608fa2bf21ebfb",
-          "size": 26655,
+          "sha256": "99c3f981d7d64a530ad2497b3c85676ca59b0b1531c18619913bb520c4c77b89",
+          "size": 26728,
           "type": "file"
         },
         "Assistance/termux-fix-crontab-alternatives.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8732b9d5587be0a0474d586dfedffff7c37fe8306ccce270efbdf33a50e1a00d",
-          "size": 26167,
+          "sha256": "0207d9a51da248fa039ef715977ca7ef8775570b9c28b94a0436111de532dd44",
+          "size": 26240,
           "type": "file"
         },
         "Assistance/termux-fix-git-auth-token-github.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9729661da3c2d5194da6e70332fe2e82abea66a9c62887597632629cf5a52fbd",
-          "size": 26271,
+          "sha256": "64520cac5b3182f70d3dae847d8dedb6a4870168b19c38a4f3b90f270c6971d2",
+          "size": 26344,
           "type": "file"
         },
         "Assistance/termux-fix-git-large-file-push.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ce30ec55e20e64824ab404a6b1e0825fd62b934be0f4b69c88a4b9a79bde5c50",
-          "size": 26795,
+          "sha256": "e9e84b440c40ba10d946a7f4964ffa599ef788845384bd04ac14a9d6cc6445ff",
+          "size": 26868,
           "type": "file"
         },
         "Assistance/termux-fix-line-endings-windows-crlf.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "72580d6c229f567da9c683c13e390efea5a003f35d2bfd8aee3f3ecf92690e8f",
-          "size": 26601,
+          "sha256": "1383f62dc1c18056b8daecc989961e3bcb047e5df8a4ad93fe9d0101201b0f89",
+          "size": 26674,
           "type": "file"
         },
         "Assistance/termux-fix-pyinstaller-on-android-alternatives.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c1f951309f322cbae7d52f47e687afba0b3e02dd49b644f8ea34117c2029af32",
-          "size": 26849,
+          "sha256": "317ac6345223adb02341a370874ef7c99b56de15245c56b2f7137f82debb80ef",
+          "size": 26922,
           "type": "file"
         },
         "Assistance/termux-fix-python-encoding-unicode-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f1071d722616dd779fc904125da6998f7f515621716951b1f3b89927e6edf619",
-          "size": 26873,
+          "sha256": "18465dacd2e8ecd25336e8da05e14d6949da6ef2c1c4a929189aecbbdd198a68",
+          "size": 26946,
           "type": "file"
         },
         "Assistance/termux-fix-requests-ssl-and-api-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a55e029b6c33c0017059597ddad82a7ee9c70605105c93ed789c36222463e86d",
-          "size": 26971,
+          "sha256": "3e649b1afe3a70b4e5be4e928953441db3bfeca11b360e06a8ab8088869f10bf",
+          "size": 27044,
           "type": "file"
         },
         "Assistance/termux-fix-shebang-env-python.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b2a35c211777e2142ce9f6a03446bc1a4a6d6217bc2b1c9e633f43ce540f48df",
-          "size": 25941,
+          "sha256": "0892d9931a90de7ee63006c77a6c42e14592933d93033fab9eef6892e6ce3775",
+          "size": 26014,
           "type": "file"
         },
         "Assistance/termux-fix-termux-api-not-working.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7c2b6ee92715699c5b87e38153a2198769f7f5d976518c1a4995b18f37c962a3",
-          "size": 27045,
+          "sha256": "07419396e8681478489c5997d17fc7af2fc6575e4c955e4689fd77f3b6c323d1",
+          "size": 27118,
           "type": "file"
         },
         "Assistance/termux-flask-app-not-loading.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "040702759a95388db8484359dcd0eb4b3ed70ea776bc86f474a730a2b5dc7ba2",
-          "size": 26193,
+          "sha256": "ffe775bdf120fd62389e608521a055fdb1d2b50df96f8a43cdaf1e3bf5dd3d9c",
+          "size": 26266,
           "type": "file"
         },
         "Assistance/termux-git-branch-basics.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "52270ccac4036ef3b823c88f44f38ce946c6f266f85031ca8558eed5dc29230f",
-          "size": 25746,
+          "sha256": "c3b95cc4419d509254b250be01199009a70527bf3ce37e1082dcbdf9b0766fc0",
+          "size": 25819,
           "type": "file"
         },
         "Assistance/termux-git-pull-conflicts.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8dae80608b7bf20a258845077c79b31240c5517464120d0d38c0c654b82481bf",
-          "size": 25946,
+          "sha256": "5da4a41289b4489182f956b9dec7134b900fe44ea8dfd83ee0188ea7cbeb4e0b",
+          "size": 26019,
           "type": "file"
         },
         "Assistance/termux-github-pages-update-workflow.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "04f0126d31a785e0752b19d650717586ea9dec2cc5e7ae7723f0c5395615120a",
-          "size": 26962,
+          "sha256": "f258c47ebe3edd8a859d9790fa92a91283796bf34e6979f91ce79af334886251",
+          "size": 27035,
           "type": "file"
         },
         "Assistance/termux-html-css-js-editing-from-phone.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ed917e4ac8951ecaaa58304f0e9fd5217fb9fea2e3ebc616adeba33f030b22f9",
-          "size": 26079,
+          "sha256": "af448b6d134da693e75289a642d054238b85646b0bf34a9ef1f521e2cc4f7fe1",
+          "size": 26152,
           "type": "file"
         },
         "Assistance/termux-install-common-python-libraries.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ba89c1cfb5a05d8ff1b299115c04b08491253aa8f1c3c0cbcff84f7ad9f7026b",
-          "size": 27584,
+          "sha256": "662c4d2bc5f1a01ebc127e5229fe00231ce1e4e07bee5bf04d789b4c0b8e9271",
+          "size": 27657,
           "type": "file"
         },
         "Assistance/termux-install-source-and-first-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "639c82d41df46dc58533e440ee1bf22c4cc62eb653288730d8431a71027f17c3",
-          "size": 26761,
+          "sha256": "3403c4ad70697ddec9029d91177d61caadfc145e1a9fbd2123e00c58e311485e",
+          "size": 26834,
           "type": "file"
         },
         "Assistance/termux-json-file-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "2da082c1877d6b5a38bb7784664c1313bbd0a1ccc4b091ac31feb607a7e5295e",
-          "size": 26188,
+          "sha256": "941aec90926e0468e5ec5c927b1ac7d3419e6826b6e6824c0040ee83e73336b6",
+          "size": 26261,
           "type": "file"
         },
         "Assistance/termux-learn-python-by-building-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "38a1e5daf397e938ed546378af97dc77900111e73cbd1c3b47a446d17a1be3f9",
-          "size": 27068,
+          "sha256": "88c0cb6c35952487abc94d1bf7ac46dfa5b5ded89ecb66e1dcce8f06872163f2",
+          "size": 27141,
           "type": "file"
         },
         "Assistance/termux-learning-roadmap.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "30fed8e450c3f2c42750969f9f226a2aec0dc12a364732f9457616488ba7c649",
-          "size": 26483,
+          "sha256": "f9fe7d618ae68e5e5346b7adf6b61f2827b9c874ce4e5ae3562b5dfc0fcbdbe3",
+          "size": 26556,
           "type": "file"
         },
         "Assistance/termux-local-website-python-server.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a9c5d631f4632e50ed1b78a7053a81f7095724545df9e557532ba5b658762636",
-          "size": 26407,
+          "sha256": "5783e87f1b1c369c9e2f32e9f2791236004059df8c82b6285b8a63ddd71554d7",
+          "size": 26480,
           "type": "file"
         },
         "Assistance/termux-low-end-phone-performance-tips.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9d4d9ffc232c8b49366d856eeeba5db5f30b0da4398b5ed995f5aadf6737e0e4",
-          "size": 26122,
+          "sha256": "6df0f7224cab2ba9a5956763d792685f672afb2ac95a0bc702d28596e564db46",
+          "size": 26195,
           "type": "file"
         },
         "Assistance/termux-manage-large-projects-on-phone.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5b69fa0bf916f82577b0b9abf8ccd2273a0b27cd099addc9c5c3da9f9639a327",
-          "size": 26440,
+          "sha256": "72d3547cf4e22a0de9f8249732a143c6e3869f685e9aed5bbe044a766aab1b33",
+          "size": 26513,
           "type": "file"
         },
         "Assistance/termux-no-root-limitations.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ad77e744a3519777782f692f74f5b60855415366e6fbe838fe48df0e9d08a787",
-          "size": 26272,
+          "sha256": "e3f21bd447b7bee53b98b5281bfe990b913a299fe77b3d25a222b673c39f42c9",
+          "size": 26345,
           "type": "file"
         },
         "Assistance/termux-offline-documentation-folder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e1a6416238101c7e6454f999692379fb41e65cc245f563710636ebef2492e765",
-          "size": 26186,
+          "sha256": "8a83e7bca6d42510680118187d3dac2311568eb61f00ce738d22f1e56b29157d",
+          "size": 26259,
           "type": "file"
         },
         "Assistance/termux-package-command-not-found.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "6b9972cae20621f05b4fae5dc91bc0f0e7def5eb1e4e8e136f012b501cfba64b",
-          "size": 26714,
+          "sha256": "ca9e5b52cf8aefecb5dd8e2ab42e5339041d9e7e9d8ecdec33a3701b0e73f175",
+          "size": 26787,
           "type": "file"
         },
         "Assistance/termux-phone-coding-workflow.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "bb2e8d5e51fe4febf0600c0fac824664bb6d6f6a95cd1398741455423555d229",
-          "size": 25882,
+          "sha256": "7f81d8c895c55a0ec4887b66baf6670a55d007c771d553f97b472b2094b185e4",
+          "size": 25955,
           "type": "file"
         },
         "Assistance/termux-project-folder-structure.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ebfd2f961d5960646d24dc15ff304d8cdbe59425703ce4b640b8650e206a873e",
-          "size": 26136,
+          "sha256": "08d5619f39029261594666502770337172a6e49dfa495fe263c0c8ccda7f7cd8",
+          "size": 26209,
           "type": "file"
         },
         "Assistance/termux-python-error-debugging-roadmap.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "864840f9433f36c690ae6abacf07db3e4fdb2071a62d95279a3cd7a12eeb199f",
-          "size": 26888,
+          "sha256": "be4b658c662596558dd30cb0ee9d6a0fcfa3e914004349d64d158de0b63542b0",
+          "size": 26961,
           "type": "file"
         },
         "Assistance/termux-python-virtual-environment.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fac68832b032e61fafaa4044cbbe968f9f2d2b1c01d2da5275ee1029401bff3a",
-          "size": 27950,
+          "sha256": "8ae9b6669e0040cbb2ae6f9e7abc145403fad8adf8167cb5a5681dac3f43d97a",
+          "size": 28023,
           "type": "file"
         },
         "Assistance/termux-run-python-script-correctly.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "aeb73c99b3205abb177aa1c03b25108e4231f1402b73ff472142510cc2da7099",
-          "size": 25724,
+          "sha256": "e2785c18054d111eec33ea0fd1cc06bb7858b9079776585f1383319cfc8738ed",
+          "size": 25797,
           "type": "file"
         },
         "Assistance/termux-safe-automation-ideas.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "57027c5ef694afe3a13c24172d437ed15e32b42c9aee2845a21d5eba302d413b",
-          "size": 26072,
+          "sha256": "80d65a6b1aa116bf5f3641fceddd2e8ff8ddb400f80b4b7070e8af4519e4a0b2",
+          "size": 26145,
           "type": "file"
         },
         "Assistance/termux-safe-copy-paste.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "61cae527f73a9da8dffa3a3d30f263248e1e96ec63afb25a3f77fc8d0ecaf771",
-          "size": 25471,
+          "sha256": "e1b6e2313b62c700f57ef3ca72d0e17af52d455e4a845d75f7980ee830313980",
+          "size": 25544,
           "type": "file"
         },
         "Assistance/termux-safe-update-routine.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "bfa253132bc1542c52d8496d44205f9c430b1033e7cde7f2dd271c5a5002a185",
-          "size": 26575,
+          "sha256": "a6077847f222151f9b2adc0207c71f4ca26e6d74cd5c1748e2edee3445a95786",
+          "size": 26648,
           "type": "file"
         },
         "Assistance/termux-secure-api-keys-env-file.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e6923e7ece3ae20498c2c5c8a56d0873802b3c3753286c4c30faac3b0fadc37f",
-          "size": 26032,
+          "sha256": "cc088895eaa2933f370ea67a60506745690b1552094f46a49cc2b59ac6151743",
+          "size": 26105,
           "type": "file"
         },
         "Assistance/termux-site-seo-checklist-from-phone.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8803ad2844c68940d7c3e86498bfeb4101ef0077f5ca8ad36f7a1a4266e66d69",
-          "size": 25785,
+          "sha256": "04c984b503ad4717e45400c45b74e74993cccc8c61e9c341725b24d8d5dbbdc1",
+          "size": 25858,
           "type": "file"
         },
         "Assistance/termux-troubleshooting-checklist.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fb7e1cba8fbed73b1ee5700f6b634d3835f4265b136f97b4ed3008bee38abfbd",
-          "size": 26651,
+          "sha256": "5c41651f1ddae5da9b1d565afef6e7124e9f1b684a5b1832145f6d0ecadbdb41",
+          "size": 26724,
           "type": "file"
         },
         "Assistance/termux-websocket-socketio-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9c7ea4d4e96d0d44a25d10e6cabf7d3027619996129452855865d3d87e6e6184",
-          "size": 26531,
+          "sha256": "062de6ab715307eb69c7b5dc3de3376e064b80bb7af06449ab522d4ab362829a",
+          "size": 26604,
           "type": "file"
         },
         "Assistance/termux-write-better-readme.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3ee85947271134103c9fdf4f79180c36109d822a5f490e15fd53fb84acc1ce70",
-          "size": 26233,
+          "sha256": "4c68d1d86c8c67a70ef1e61ee1e64dafb3fcac09bb514abcb6c3e58ae6a73a5b",
+          "size": 26306,
           "type": "file"
         },
         "Assistance/unzip-files-termux-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9cd36cf4cc667840e9019ca5ba5c262856c3e26cd914d9e6519f873bafc7bd4a",
-          "size": 27100,
+          "sha256": "069719b26cb9b2f5e109b0ca02554f2ac9a366234a8e2d81367ba21e97403beb",
+          "size": 27173,
           "type": "file"
         },
         "Assistance/update-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ccc3f044796f22c2609743f7c5ccbfb9036e053a08300e58befd4df4035fd967",
-          "size": 12990,
+          "sha256": "d829ae94c45a98dfe05bfcb24c295990b4f5fdbd06707e593b56480a45e0f021",
+          "size": 13063,
           "type": "file"
         },
         "Assistance/update-dedsec-project.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e54a799774a5699943faf35734b439ac2f02f749f84a364d370742847300edb2",
-          "size": 26726,
+          "sha256": "c68e51fc4b4d68698c54df64f8494f8d06ccf1fb2f32283ab2e8f7b798c659a1",
+          "size": 26799,
           "type": "file"
         },
         "CHANGELOG-2026-10-09.txt": {
@@ -22633,57 +22640,57 @@
         "Pages/about-founder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ba896ae70289c1dbf10108443d2e9077cb6ac7685ec96ec5380bc90ada6f443d",
-          "size": 55749,
+          "sha256": "4e3e2466c54c45e70f514dfbd2c5697fa8ccee508cdad3befe46d4290c99d30e",
+          "size": 55225,
           "type": "file"
         },
         "Pages/assistance.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "549e97239fc54f9cdb822606c31116d7427a7a8cf89d077ff9956a759070ef1e",
-          "size": 235083,
+          "sha256": "b260258f66006bc0bb664701a6cf47ddf0a43023e3116e3419c611ea920265a2",
+          "size": 235156,
           "type": "file"
         },
         "Pages/butsystem-exclusive.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "91519f7b07039e0d896f08f26927ab249b8e1bba72573a6ab807b452e6574785",
-          "size": 55542,
+          "sha256": "90e0f3995c808d74e6ad87773cbd11341cf7f5d7b0513042a6d8d0cb56fc824b",
+          "size": 55615,
           "type": "file"
         },
         "Pages/contact-credits.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "95f623711a67edbdb9a08d07c133b86f77ae575614b80c1f3702b77ccae707b9",
-          "size": 12518,
+          "sha256": "d449c6e40b2124a378f060738c630692fe6126241d5cd69bb19b08c92dba0bfc",
+          "size": 12591,
           "type": "file"
         },
         "Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "bc45588c0b899fc7cf4e9023561b9a06d1341ee4773c7e0c7cf86367f32364db",
-          "size": 87088,
+          "sha256": "a61dc1765d1af58482e4b57959c57a50ef795d4333a2a4bf27650f2e8327ecd4",
+          "size": 87161,
           "type": "file"
         },
         "Pages/guide-for-installation.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3d89e373b4e7f64984031247e5161e88b04c2060b825f04107b454cf52d232a3",
-          "size": 34276,
+          "sha256": "00a7761ab99171e58108ba145eb0d3a3a8cd1e8c958c564e2c102e2ed32ea7d3",
+          "size": 34349,
           "type": "file"
         },
         "Pages/learn-about-the-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "96f24f33ca8440fe590c29499f9c4c7460a7f9a0e9019046ba79fce65a75c2e7",
-          "size": 400547,
+          "sha256": "21c054607f9b26fb56cb5d157eb68dbc6f48b45c07094c2d5c3f354622c3a130",
+          "size": 400620,
           "type": "file"
         },
         "Pages/privacy-policy.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0680bcd16d95a45952cc038a02845cb95b862204814425230cde092aba92b45e",
-          "size": 24880,
+          "sha256": "55cc7f800dbdd555e4352aab2edc875b0fafac8b71ca9fa46a2f852606d573f7",
+          "size": 24953,
           "type": "file"
         },
         "README.md": {
@@ -22696,631 +22703,631 @@
         "el/Assistance/dedsec-linux-venv-paths.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ac4dd79432065bef6cd4ee853b4457316b4b5222aea7a3147edbfdab02a66350",
-          "size": 15051,
+          "sha256": "144d6a38546e81c0e83239b2160c3b6d732407649716ad48e8097bda586fa35b",
+          "size": 15124,
           "type": "file"
         },
         "el/Assistance/fix-dedsec-broken-install.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3b3cee06e302b75b26b1d3826efca3fb7a096c28aa489e1fd2ce9c3c052f7cdc",
-          "size": 31643,
+          "sha256": "7dbc950690dff7363d40569dc0ea91b880c49d2ac187b094f9dae47a73870701",
+          "size": 31716,
           "type": "file"
         },
         "el/Assistance/fix-dedsec-linux-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "1f77e3b650ae3268c24d375821c16cbbdec77329f451e1d40bba8158c99bd3cf",
-          "size": 14954,
+          "sha256": "13b5a09065cf7de2950704b5774eace28e1229e90e2feeefd4d4f049da1f2e22",
+          "size": 15027,
           "type": "file"
         },
         "el/Assistance/fix-github-ssh-authentication-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "101b2a0240fbdfc8615954429e63b424c6f00e17cff239d0ec36aac64ba8d983",
-          "size": 30291,
+          "sha256": "c1a89872ed2f1adbf1523a3513478f8bde3c79d3eda0153975c8f9f80f883db1",
+          "size": 30364,
           "type": "file"
         },
         "el/Assistance/fix-localhost-server-not-opening-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d471ff1c5fb886c6b0605883313b1cbfab24a5a322684e8c888358ed0d3568b1",
-          "size": 30626,
+          "sha256": "2b6e54797e0f86fd3d2dbf321d475a57296db010629e329601e9622ccb6552d2",
+          "size": 30699,
           "type": "file"
         },
         "el/Assistance/fix-node-npm-errors-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d54b299d2380d556308f75b9e7bfc77f2d5ce505854231e093c9f26cecf87c18",
-          "size": 31270,
+          "sha256": "12a9133c3fc2ee9cf6fce2a5a3eb97eded5f8498bdd7bd4a083bef5d39d6b56a",
+          "size": 31343,
           "type": "file"
         },
         "el/Assistance/fix-pip-errors-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "404b6079d6b01dbdd057e11e485bff08f3d7dcb1a19a1a21fb51960b12d0ee3d",
-          "size": 31690,
+          "sha256": "e0e7c00ca500aba55c902fd16716fcacd97391133fc09cd6ede443a7cc7cbc39",
+          "size": 31763,
           "type": "file"
         },
         "el/Assistance/fix-python-module-not-found-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5e8d33269c84f1c22759291ce84d9ff6ebda31a90c81ffb47a2bc5d4787a35e9",
-          "size": 31726,
+          "sha256": "4b6009493dbd9ed4fe6082712cedbc51b6d3eec7f7870cbfcbc9c4b7c596b46e",
+          "size": 31799,
           "type": "file"
         },
         "el/Assistance/fix-python-syntax-errors-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "cdfa6668fe4eda5e43932587f85978db59ce6f77532740496c5cc1c8bc38a47e",
-          "size": 30703,
+          "sha256": "0d48e0712d64d33baa935f0ebe8ac2fa392620f3619d4699f9b42320e52076c5",
+          "size": 30776,
           "type": "file"
         },
         "el/Assistance/fix-termux-dpkg-apt-lock.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4eabab13df2b7aafa90a0f746dbe65f004db5c9e80e00141f98858b86b2bb5ba",
-          "size": 30359,
+          "sha256": "90aaeeba48ce9162b49e35df0f766519330f6738bc551bf6d7fbc6b44ce87816",
+          "size": 30432,
           "type": "file"
         },
         "el/Assistance/fix-termux-git-push-email-identity.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9eaad1751a1cdb408e8435cac760bfe67d2a4b5ec68118f31acd9a2055565d7c",
-          "size": 29050,
+          "sha256": "122bc39d6b7395573a25e79a503431e27c63513bd1b0cc50cb4e17f079147a4b",
+          "size": 29123,
           "type": "file"
         },
         "el/Assistance/fix-termux-no-space-left.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d1855788ffc0b5a9cd088c77e093b7eac6568524ccb344eaf824e86c4ea5a6fa",
-          "size": 30749,
+          "sha256": "45ef8a3f9bfdb7b16f269c28d909800690b629d164f1d634b76c949e91d0f269",
+          "size": 30822,
           "type": "file"
         },
         "el/Assistance/fix-termux-no-such-file-or-directory.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "34db90075e070f88288228f98094afbd2520e60cc6eaf4957c10d01eeab920a7",
-          "size": 31330,
+          "sha256": "40c997cdc62de2de63b120c65c80ea6fda060ce6c5b838ec41e90c9719fae58c",
+          "size": 31403,
           "type": "file"
         },
         "el/Assistance/fix-termux-permission-denied-executable.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a9a8e67ee43078c4da3c528ab0234cc66e209865737c10aec61b7c162927fba0",
-          "size": 31000,
+          "sha256": "cfc5be32859815868ac84cb157b7b8e007fac223303f49857412c5edaf0acecb",
+          "size": 31073,
           "type": "file"
         },
         "el/Assistance/fix-termux-port-already-in-use.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "11387d74c0468f6f8272bd965fef0ffee433e9ea3332d984c756001d5dde743d",
-          "size": 30424,
+          "sha256": "ea05ca93368b998453b515cb4dc7d4320b87fd36abde6053d594cb5725ba1124",
+          "size": 30497,
           "type": "file"
         },
         "el/Assistance/fix-termux-repository-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3384ee8d37ce895750b24041716f82c8b866ce1b6e9289444bc85e5d611a60a9",
-          "size": 31279,
+          "sha256": "b730abb5889e67d5261cc6ca5e4057507309fb594b434ba839d36837cf897b7f",
+          "size": 31352,
           "type": "file"
         },
         "el/Assistance/fix-termux-ssl-certificate-curl-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "18620888e79225f6190972a9cb2376fdbe5aa25c72736bad0399beec6778114d",
-          "size": 31073,
+          "sha256": "c1e7f48dc3c9a0382ecf75ae448bb484974ca1b6f867d19509efba5ad9f62f63",
+          "size": 31146,
           "type": "file"
         },
         "el/Assistance/fix-termux-storage-permission.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "89586a1e5ddca541b3ba10fb433fbfe279a0274b354877e09722552452110fc5",
-          "size": 31358,
+          "sha256": "ef7171281b90d10406a6766c8938e95385354299c74857e38d1e028ff81e4512",
+          "size": 31431,
           "type": "file"
         },
         "el/Assistance/fix-termux-widget-scripts.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7ea31ee6361b40ecb561a43399c7257959821693a30d046ef5f29d4182a0c389",
-          "size": 29934,
+          "sha256": "aaf10a3b052febb50f58b1ab3dca0387f24c1cbef7139d408e37fc10b4dc2f93",
+          "size": 30007,
           "type": "file"
         },
         "el/Assistance/github-clone-termux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f0f405b0f023fa829d5235262fa5b1fb4616ec4361d0f726b024a2062b4fcdd4",
-          "size": 30628,
+          "sha256": "135aa1a6df6742eb46925c51173d9f426cf2d32e255ea3dea1c0698c6bfc2708",
+          "size": 30701,
           "type": "file"
         },
         "el/Assistance/install-dedsec-project-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "bb68d858a91785b21f527a1877beae2fc760f3d282a038d74458627bef805ffa",
-          "size": 31653,
+          "sha256": "3399009a9dfca38526db384299dd9939fcab7fada349aa74ef7d31149d82b0ea",
+          "size": 31726,
           "type": "file"
         },
         "el/Assistance/install-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b84ffc189ea8628b86264904ffa01d52684db5f9119cd7ad15a96d7baa29af55",
-          "size": 15102,
+          "sha256": "5ace4d46453e2b54886b7f3541036c6ec8859426b526314e3483a491619a6127",
+          "size": 15175,
           "type": "file"
         },
         "el/Assistance/keep-termux-running-background.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b9c158cece4c3277e751a8c8a100ef4573feaebb9a97a059599f9c12837a2703",
-          "size": 30675,
+          "sha256": "dfbdaf43f70514b831e20f2a82642eb0fbf36926d64e458aea142b16989c5e47",
+          "size": 30748,
           "type": "file"
         },
         "el/Assistance/termux-android-webview-browser-tips.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f3bf98b3aa358cb8491479bc7621bbd4bdcae6598f07f89651b111b9fc70addb",
-          "size": 30011,
+          "sha256": "8eccd547ca10c86259565870015c77a818c5f2a49b50e0329d4043a6795a5265",
+          "size": 30084,
           "type": "file"
         },
         "el/Assistance/termux-backup-restore-workflow.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "2d6f4258c87eb752be2b818b08e15a041293eb17891a9ff57b75dae142a25599",
-          "size": 31656,
+          "sha256": "7db8e6d7d79cbc1385aa3341df84fbf383eec9e048d925725f0189e028a04e1d",
+          "size": 31729,
           "type": "file"
         },
         "el/Assistance/termux-beginner-guide-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f5269ff5611e49d7b392884aae1504973f216dc07b8b3ae9cc0a5906931d82b1",
-          "size": 30724,
+          "sha256": "b05f245ae571a121ddb11ee557a7ae582e6a2cbbb9db585c335c1c2cc9c229b3",
+          "size": 30797,
           "type": "file"
         },
         "el/Assistance/termux-build-dedsec-style-tool.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b63464e11e223f10f3a7d5644612c90cbb78f4c35f8feb82587b35d079322b14",
-          "size": 29928,
+          "sha256": "37421d60d1d44a8823354d808559bcbe02813b975b19c4557245736e3a2f5d92",
+          "size": 30001,
           "type": "file"
         },
         "el/Assistance/termux-check-broken-links-locally.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "828e0b3ad87d32ed5cd5b9bbec04b9ddef07c2cd8a0590c70731b278faf44f74",
-          "size": 32720,
+          "sha256": "e848bdb3f02fcad1a56ce06dc9370534d4ffab43f6d1e78ee559f34e78d7b909",
+          "size": 32793,
           "type": "file"
         },
         "el/Assistance/termux-clean-cache-safely.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3860b94510090f62b62927ff70a3d76099ebae98951d30c7bd7a491692bf67bf",
-          "size": 30222,
+          "sha256": "14d37826104310d1060d6cad38e205195678b8ab4375dfba4a267e27f1b90068",
+          "size": 30295,
           "type": "file"
         },
         "el/Assistance/termux-cloudflared-local-link-help.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "48927465c05ca7eb373f6980a5069124da9dcdf33c73c544d1a953790d096b8a",
-          "size": 31332,
+          "sha256": "857ae07311fdf0e141a3b0a23ba2585eb7e0a374eaaf80c501711b35975de0b0",
+          "size": 31405,
           "type": "file"
         },
         "el/Assistance/termux-command-cheat-sheet.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3c544c77fd11a7bee532c9585bcaaffba4887a4c0a8d9e6421afe987c717f716",
-          "size": 29741,
+          "sha256": "ec65f1f069b934497e1b6da97710630c3290de916278faf760b4d5776818ce28",
+          "size": 29814,
           "type": "file"
         },
         "el/Assistance/termux-command-history-and-aliases.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4deb2aba5803c1b7cf0470b50657c76a57a4d5506b8b5e08b42cd7c02ddba328",
-          "size": 29982,
+          "sha256": "2c646f13bec6cf9924d70fab858138a4027c1a9cb9a883aafc5061d289a50a16",
+          "size": 30055,
           "type": "file"
         },
         "el/Assistance/termux-common-exit-codes.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7e465ecd0278286d5a8318ae3bfb06223dd084cfc818021df86f0870857f775e",
-          "size": 29825,
+          "sha256": "5a7ddbaaa6c5671204b3a1250248780a28f181109f3876a76fbefe119d8dc823",
+          "size": 29898,
           "type": "file"
         },
         "el/Assistance/termux-cool-script-ideas.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7fe066ead649ee5b6fa508efe66346862a56781a917801ed4d70d9e86c175597",
-          "size": 30962,
+          "sha256": "9e50605c944b9cb1fe7199d76aaaa6a0ba2af710d96d31edb5559d186ec0e62e",
+          "size": 31035,
           "type": "file"
         },
         "el/Assistance/termux-create-python-menu-script.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "1a8e250e0fddacaad1fdcdc25f4d004af123e5a2c1e0250d2b7af7619e500a10",
-          "size": 31009,
+          "sha256": "3e6b1c66093d0cd6954927158fe38469e545541f71e7f09104da867efe9088db",
+          "size": 31082,
           "type": "file"
         },
         "el/Assistance/termux-debug-log-files.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8a01b93bb42991be1d16d704b1292cfc1f71abd983dd035fd76287492439c559",
-          "size": 30003,
+          "sha256": "30029a143e196cab6333c79e1c308d2332fb5bfb2b8db83b657cd402f0c7de55",
+          "size": 30076,
           "type": "file"
         },
         "el/Assistance/termux-download-with-curl-wget.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "4304295e35f199e5b8ff8ba75e08f2024f4c49e8377add63bb25af1cb89fa770",
-          "size": 30132,
+          "sha256": "bc5a6c9eec0ab8bb5a79765f60ea6fc561ec025ad1b247a190705c1e0b082ef9",
+          "size": 30205,
           "type": "file"
         },
         "el/Assistance/termux-edit-files-with-nano.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a28d1507e08aa58692fd7b3ec8c7886ab591cf0c73752b3ffb237fd93e215ad2",
-          "size": 29280,
+          "sha256": "12a22f23a40f33f69b5a3410457f24ab8c5cf8a60b62cd21c637b0ffb358fb85",
+          "size": 29353,
           "type": "file"
         },
         "el/Assistance/termux-fix-bash-bad-interpreter.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "109968d08eb3c584841eb3a4acf3133e2955f3877291a5ca348e0f2b3d4b4716",
-          "size": 30547,
+          "sha256": "88c1abd429ac7ba387821f7d9c4527f71ddc576a76061f22b9edc61c9483c457",
+          "size": 30620,
           "type": "file"
         },
         "el/Assistance/termux-fix-crontab-alternatives.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a8bc5dbb6598f6321e6443645774794f041f1b0f82c30dbd0aacaab4bfcfc9ee",
-          "size": 30401,
+          "sha256": "12d8dbe87f68fe4cebb3bcc57103cbcc6bbe42bce837dd295817e7615785479c",
+          "size": 30474,
           "type": "file"
         },
         "el/Assistance/termux-fix-git-auth-token-github.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0406f0c8e4b0fc23b9944412fc778b7976ba2da750af10def36df30515646989",
-          "size": 30246,
+          "sha256": "53221680f79924feb67b2ec1fe840533d35ebbf122edaaf2d4a9516f2f67e3d8",
+          "size": 30319,
           "type": "file"
         },
         "el/Assistance/termux-fix-git-large-file-push.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "7f3cc33631ccba9fe2b686ca14b6efd54b0042b3590a370faf1718f189a22be3",
-          "size": 30963,
+          "sha256": "e1175ed6f2234f131e4a75a3bee03d537d26bc7651a590e0d2cdfb2cf69290a7",
+          "size": 31036,
           "type": "file"
         },
         "el/Assistance/termux-fix-line-endings-windows-crlf.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "240892ae9c3cf3996aba6a8f91d1e43f8da0403e0324a8f61932f755404860b5",
-          "size": 30534,
+          "sha256": "a6b0d7390383441d60a513f54bf9fb44ae85e5861299e412ac9cd349070c6dde",
+          "size": 30607,
           "type": "file"
         },
         "el/Assistance/termux-fix-pyinstaller-on-android-alternatives.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "51a7172e4880314a4508c798141f89582f2abbdc6240d795c6b23de0fab8faf7",
-          "size": 31014,
+          "sha256": "413daabc20f85f0ce2b4f8191d62973389e6f76f1da9e2bb93836fa33b1ac495",
+          "size": 31087,
           "type": "file"
         },
         "el/Assistance/termux-fix-python-encoding-unicode-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c5836ac979e583dd05afaabfba0d1cf7a4e0be889e6567b3c43b02e85eb51ec5",
-          "size": 30964,
+          "sha256": "1210f2e657f221d09b0c1f50f409e76c0bc8534e31a74ecdee9fd06e04d5db3b",
+          "size": 31037,
           "type": "file"
         },
         "el/Assistance/termux-fix-requests-ssl-and-api-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a8c1b6dff5727f7c17e34e983c43986e17413ba28243c94643a4165ee1ef72ee",
-          "size": 31017,
+          "sha256": "4c15cdc3b60231439caeda94f3025a29a4e2d0651cdf6ab461f3f578ccc07a26",
+          "size": 31090,
           "type": "file"
         },
         "el/Assistance/termux-fix-shebang-env-python.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "07b9ee79a2346d7dcb68f58d7d12278daa39a950538fa00dae723b119d9df173",
-          "size": 29767,
+          "sha256": "dcd8dd7e0cc9961045fb171d409e22e32fdf544885fd2f0e898f2993e6215963",
+          "size": 29840,
           "type": "file"
         },
         "el/Assistance/termux-fix-termux-api-not-working.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e4dfb1473f5c3acc0669d358999986468f3735becf96f0a674a4d026e7f51e92",
-          "size": 30889,
+          "sha256": "0b34ab400bc166175998231a76d6b163048ed833f3ad7cabbda59c87d275f402",
+          "size": 30962,
           "type": "file"
         },
         "el/Assistance/termux-flask-app-not-loading.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5d7fd974361b1a0112d7325dcc9f12a56b816a0230818d1bbacdf469ff2ff9cf",
-          "size": 29919,
+          "sha256": "09888ec38c910eb611720bae1d209bb3e5f6a36da6c1020a607ca42586cc3f6d",
+          "size": 29992,
           "type": "file"
         },
         "el/Assistance/termux-git-branch-basics.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "252df20a9a0012f933a89e7ac2d53eb5ba6cdaa271d5e09204061ea941206b04",
-          "size": 29449,
+          "sha256": "4adcb2c4efca4fbffc9868e87f781275548403a8c99b5d23765e9d2d658cdf74",
+          "size": 29522,
           "type": "file"
         },
         "el/Assistance/termux-git-pull-conflicts.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fa8a0ebbcc6b7e495cb3d12e75b1a5957247512acc93745a2ed3769cefd3f037",
-          "size": 29609,
+          "sha256": "49a67f6d9803ed5d39b752a85fe48f44fb80b2937a1adcecf465e9b09a20bdc3",
+          "size": 29682,
           "type": "file"
         },
         "el/Assistance/termux-github-pages-update-workflow.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a249da5fa8603444e63e6e487bb74c08d758a270efd5dc4c902b73d50d1ef42e",
-          "size": 30677,
+          "sha256": "19a2780b6e3d8e9c577badf7b8e225bb1a49b88d3336d281cb6f563393ecac1b",
+          "size": 30750,
           "type": "file"
         },
         "el/Assistance/termux-html-css-js-editing-from-phone.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "877995abad3425c649de7729f660d35722709875e17313e7a528271f8d3ec6ae",
-          "size": 30080,
+          "sha256": "840382925b9859e7d71b1022d93885ceb8c5c036d82a27c64a88946adbb1cab8",
+          "size": 30153,
           "type": "file"
         },
         "el/Assistance/termux-install-common-python-libraries.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a9bec5cd5458648aff8a50be3126cf40da65585c83a000dfc2c8abf04496542c",
-          "size": 31800,
+          "sha256": "7ec0c1d6c1e5654a1c665c666ad41896e46d47c11d171a30ee968ad435a2c762",
+          "size": 31873,
           "type": "file"
         },
         "el/Assistance/termux-install-source-and-first-setup.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a1970245b00b94de433f7f9a451afde902f12eb8a017069f1b06154ae8ddbc54",
-          "size": 30993,
+          "sha256": "d84ede20c4fc443bcfa2ef0704b62ed17bb57d29daad974d12825ee69e31d0fc",
+          "size": 31066,
           "type": "file"
         },
         "el/Assistance/termux-json-file-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "1ee74f6a95c836e2af55718294fbd72bf6e791218f10d14dbe1d63ed4c0414cb",
-          "size": 30320,
+          "sha256": "5358ef6b242cdb204f57038bb026a95ddec51d4bb89320fd11b7c037b3e59338",
+          "size": 30393,
           "type": "file"
         },
         "el/Assistance/termux-learn-python-by-building-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "71fe75149c6e89929902308a296e669c566b634a4bc77c97f376afcbc057716f",
-          "size": 31473,
+          "sha256": "ae41512fdb8fcec5f545d316d2f64dbff39b51e23d1983d2458a44d6c5ba08dd",
+          "size": 31546,
           "type": "file"
         },
         "el/Assistance/termux-learning-roadmap.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e625802834454bc88dc62f2e2fa9b00bf43a28f8362f61ba9f866a2bb102c14e",
-          "size": 30655,
+          "sha256": "d1bccf85f7f3a3d2bfb599132e830c2123c04be7962bae2f67d5d0018fd99a32",
+          "size": 30728,
           "type": "file"
         },
         "el/Assistance/termux-local-website-python-server.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c0ab047f5b6f55681af0eb7d23cb33bd1e31f74a9600989cb90941ec87870235",
-          "size": 29844,
+          "sha256": "c6d414c225ab401f3825fe35c81d5f0e059b4d9309acb991ad7425a5e6576425",
+          "size": 29917,
           "type": "file"
         },
         "el/Assistance/termux-low-end-phone-performance-tips.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "e7391c238fa6311274912b3202c6241d7ca800f1494a702978cf1773eb4c10d2",
-          "size": 30413,
+          "sha256": "0b358de3a32f18a46c21eb017388fc20600d0db33cb55c3dd89e5f813312aed4",
+          "size": 30486,
           "type": "file"
         },
         "el/Assistance/termux-manage-large-projects-on-phone.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ed9b1d177c689ddc9972548aa3856286f584b189a53eb4be46f4c58105d8b7b6",
-          "size": 30449,
+          "sha256": "8cea3c9eb92f9d4d702a24e8a8b8bdeaa7d6d98c4b21898734c65e1a8c5a7242",
+          "size": 30522,
           "type": "file"
         },
         "el/Assistance/termux-no-root-limitations.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "50511704a81329647c2d10983d0a337c52ce2d13463262bd291dee66b972747f",
-          "size": 31048,
+          "sha256": "501997241c0b40422429e99d0e5f40f9e90f22ea6d1208c973f7112ac0089a9a",
+          "size": 31121,
           "type": "file"
         },
         "el/Assistance/termux-offline-documentation-folder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "2760d9ab2fe64c45ad20ccdf578c1fa51173c390b53e61750928ea79baef85fe",
-          "size": 30502,
+          "sha256": "c2037ddd9e238103ded089cd9ceda4a6baea8b10f3e6cbb26e20befe38e7c9cd",
+          "size": 30575,
           "type": "file"
         },
         "el/Assistance/termux-package-command-not-found.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "fa38318ad8ea603cd658c869cd59cd758472c68da9b68bcbad2c8f6000933406",
-          "size": 30750,
+          "sha256": "afa00495722084851cafd698d24c3f5c0c913e2c7c29743bb5afc7930f831fe1",
+          "size": 30823,
           "type": "file"
         },
         "el/Assistance/termux-phone-coding-workflow.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "05299844f8b4c747e9e53c5df8d821b4c136c94798aa7a7e44cc9a53a4d13acc",
-          "size": 29948,
+          "sha256": "4308c5b46e4bdd6183a3dfda6f3e954ea27c00b2dedaef04b0c6df70c745800b",
+          "size": 30021,
           "type": "file"
         },
         "el/Assistance/termux-project-folder-structure.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "a089c17fb193a5fa2f9026f3f157f570500f5335895f071900df25d9a412b854",
-          "size": 30242,
+          "sha256": "5ce270b03b212863aa0b9974960a6f9ba861e00dd6ef3d6b3b8002ff01b8985b",
+          "size": 30315,
           "type": "file"
         },
         "el/Assistance/termux-python-error-debugging-roadmap.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "782eb5b5a86092f56f5a0a5a09d998de5aff81854a9606f77398ca3fef297654",
-          "size": 30961,
+          "sha256": "c36a236c163398c04fdad83e163fd99842fd1ac7246b099e24189ac6f5e53d82",
+          "size": 31034,
           "type": "file"
         },
         "el/Assistance/termux-python-virtual-environment.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "9dbf66c08c06484d33c80b69c555761e808bcdd7b9a0b894a922609ae77ddbee",
-          "size": 32087,
+          "sha256": "98cf763d127c0d0953304236d97cb98f5a3b895d5ade6e5fcd827b7de6e8e2be",
+          "size": 32160,
           "type": "file"
         },
         "el/Assistance/termux-run-python-script-correctly.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f4dbfe17d3a6f74f200bb3632f02bbfa716befaeda31dd4f2dbdff76bd498b18",
-          "size": 29675,
+          "sha256": "fb0f70e1708a732fd030c37af34abb838448625fc5f608059f31b202a57965ad",
+          "size": 29748,
           "type": "file"
         },
         "el/Assistance/termux-safe-automation-ideas.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c21e3053cba9c3e0ce6ffb68d04eb28bfe1475c512ec3f09710105b3a002a757",
-          "size": 30478,
+          "sha256": "a60cbdf76d5c40a52463ef4d180a8adf958803b2be77dff43329980321cd9a63",
+          "size": 30551,
           "type": "file"
         },
         "el/Assistance/termux-safe-copy-paste.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "dbee6129ea2679b0bf7dffb3462678569b91cbd6fb954054992323d74b8cda5c",
-          "size": 29806,
+          "sha256": "8099cf6c5b0eff029b1d537274521f70a8f60152a68e4c993e4d034cb05d0c7f",
+          "size": 29879,
           "type": "file"
         },
         "el/Assistance/termux-safe-update-routine.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "ffa090be2017b181b20210533890e31deab664bf13c2c259c5b99f4924934e0b",
-          "size": 30865,
+          "sha256": "dd263500ab11e088762709e08fb19ee23d9e2e8d17fd204f3f06c4b1d04b0b93",
+          "size": 30938,
           "type": "file"
         },
         "el/Assistance/termux-secure-api-keys-env-file.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "1d0d0e967cfa3dfa3dcc993f66a24f949e84abcee78be782acf6be3b90499779",
-          "size": 29953,
+          "sha256": "1242813d05e90ab4ba46152b08b2579f58e0705bfebb588cea9fb59e88662ecb",
+          "size": 30026,
           "type": "file"
         },
         "el/Assistance/termux-site-seo-checklist-from-phone.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "27ec149b54ac87a372622d1668a4e8fbc12aae95e4870932937bbf4c860903dd",
-          "size": 29980,
+          "sha256": "2a9807da7530a4efd8896a9a42bff9ed5513d0b73555118f799338239f989d9e",
+          "size": 30053,
           "type": "file"
         },
         "el/Assistance/termux-troubleshooting-checklist.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "d15c3b8cdec6dbe2a8d83d238c0ab4c089c4c1a499db0f1297c24e6f5339e506",
-          "size": 30974,
+          "sha256": "d214bc7b863721f05dcb2c5cd7218a01e80c7a1fcec61f4936f3f4dde9d5144b",
+          "size": 31047,
           "type": "file"
         },
         "el/Assistance/termux-websocket-socketio-errors.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b3188f10bd3c07793f1a3cb96d222d7d6b5badb0c61508244fd3f386586a6b6b",
-          "size": 30321,
+          "sha256": "b77d0066a080bd77ec0440fe258e838522a849cb843222ef3a8c8966746d547e",
+          "size": 30394,
           "type": "file"
         },
         "el/Assistance/termux-write-better-readme.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "f9a0111d41c65bf23a4dba367023a766d0e276876f52c7f9658e338429fedd84",
-          "size": 30431,
+          "sha256": "4cbb465bab30ec35e3a4d99b30c0357c3544070fd126da164e5f1c05507c308a",
+          "size": 30504,
           "type": "file"
         },
         "el/Assistance/unzip-files-termux-android.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "0b2a2227a7d493725e4c10b37d23c1faeae1b68a9ac7321497d2b068a4da338e",
-          "size": 31118,
+          "sha256": "4d10a641563212246d9851ee7fe29cef5639e48e1b94a701e80e6c0d26ea39a0",
+          "size": 31191,
           "type": "file"
         },
         "el/Assistance/update-dedsec-project-linux.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "5ff578912b042dc97ef2ae404f10eb7a834b6d65e3815f71dda00f8bb369eb21",
-          "size": 14705,
+          "sha256": "699938c14cadd90ec201df08b080f9847a3a5c46cfa72df2e5f57eec8d6b87b6",
+          "size": 14778,
           "type": "file"
         },
         "el/Assistance/update-dedsec-project.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "8cf240dc20929595cdbabe41d4f68933af67217df4d1505de4d178dd8b029f64",
-          "size": 30691,
+          "sha256": "161b4f23f896a4c7917329ac4a14d2b017a8773abacadbed8ba9b2d7935b930f",
+          "size": 30764,
           "type": "file"
         },
         "el/Pages/about-founder.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "27a8f0b265b6d904d3d91b383813e6c234ee7f88284ab1c5bd638c76911794ec",
-          "size": 65775,
+          "sha256": "0046e464f562ce4a28edfbf6399ca18fe15ec189631e06067f14113565673ba1",
+          "size": 65253,
           "type": "file"
         },
         "el/Pages/assistance.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "3938cfea4f845dcd28f02ea33c970961d00483d9c16adc04476a5bdd07049e2f",
-          "size": 264094,
+          "sha256": "953851ffc481f57229247a1535ac8e409911209c7d71bdfb18f37ad3af25d28a",
+          "size": 264167,
           "type": "file"
         },
         "el/Pages/butsystem-exclusive.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "47ab102ea1bc59a09c7115c7caf86410251bdcd575af0f2a1e316fb576a8b6b7",
-          "size": 67235,
+          "sha256": "6f916482406474b8f142026551a4e0118eeb6cb51cc21c14cc5f48c1aef2d1eb",
+          "size": 67308,
           "type": "file"
         },
         "el/Pages/contact-credits.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "119d5f37ff611dc0dbed02bacc8dbf4ea95adb2bd292aef585136bed98f21eec",
-          "size": 14072,
+          "sha256": "438eee4da266aac167713010fa88c6ecd201620d046a6062fbdac2465866a687",
+          "size": 14145,
           "type": "file"
         },
         "el/Pages/faq.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "57836e600aaa9dbef31f5f8d6e0e2cb915c2d29b01b485377e3aa664d85cf74b",
-          "size": 101878,
+          "sha256": "7b34926cf645495c39fc3a11b5546a0d13e2eeda05ec11ac56a40f5026891843",
+          "size": 101951,
           "type": "file"
         },
         "el/Pages/guide-for-installation.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b97971376d536f58e55f126a86a7afb3b51a174e4482b2b967889e54a2f70a44",
-          "size": 38700,
+          "sha256": "bc9944b192fbdcecc4928174279c4d9721d2f38478a45b8753a9cd6cd4e8a531",
+          "size": 38773,
           "type": "file"
         },
         "el/Pages/learn-about-the-tools.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "52eb110f25a9b5aad871987ea3fa2951a12b81ef61fcd57bfc110aed683bcc99",
-          "size": 467123,
+          "sha256": "709ad15ad618d182a58f8a4af17be3f49ab05f5e1f5374f6c5bc9b2bbf0642c8",
+          "size": 467196,
           "type": "file"
         },
         "el/Pages/privacy-policy.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "56202268e2c500abcf4f41d3ff02fa8f8ecbacf8d6b6656cd34686315247a5b0",
-          "size": 39740,
+          "sha256": "42873d25ebeff2554c486f022fd0e0c41f098984665918fb6ec77639545f6f0d",
+          "size": 39813,
           "type": "file"
         },
         "el/index.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "b5d7f702b5cd64f634c8d3492bfad0f295d2b584fef362d46363f8757f48d93e",
-          "size": 20831,
+          "sha256": "e90431ea942a3797c1e57fd04d88f78f9f2175029ce5f145903e6ca45024cd91",
+          "size": 20904,
           "type": "file"
         },
         "index.html": {
           "executable": false,
           "mode": "0644",
-          "sha256": "55462bf9b43628e47730eb25ef0cd131e4505645cbccc950cc0d8b9d90d7e10b",
-          "size": 18366,
+          "sha256": "b23ba77eb09ef5584c8f960526ccc3816d52b39f85ef842edae9731be666c05b",
+          "size": 18439,
           "type": "file"
         },
         "llms-full.txt": {
@@ -23347,8 +23354,8 @@
         "script.js": {
           "executable": false,
           "mode": "0644",
-          "sha256": "86bceca06a125693b8f24479adcf80f7fe46880bca642682f801f3227746ddec",
-          "size": 83369,
+          "sha256": "a7f98a3148721945ac1d3bf861f9d4c72912be8fed07dbe6d63570e5060aab7c",
+          "size": 90604,
           "type": "file"
         },
         "scripts/audit_source.py": {
@@ -23396,31 +23403,31 @@
         "style.css": {
           "executable": false,
           "mode": "0644",
-          "sha256": "c7ed4c9d35822f79d5d8d9f2d0680b43fdae2d4d0f390321a67ffe01e8f90250",
-          "size": 318981,
+          "sha256": "0f1fd637693822a32a6a740d293b5bd25e1dae29583e30d8946fdeeda1e0aba1",
+          "size": 321354,
           "type": "file"
         }
       },
       "initial_sync_completed": true,
-      "last_completed_at_greece": "2026-10-12 11:54:13 EEST",
-      "last_completed_at_utc": "2026-10-12T08:54:13Z",
-      "last_completed_snapshot": "745ce848ac05d501498fde7835c606c0b9dbeae7674e966150f96bf689dcf87a",
-      "last_remote_verified_at_utc": "2026-10-12T08:54:13Z",
+      "last_completed_at_greece": "2026-10-14 22:33:42 EEST",
+      "last_completed_at_utc": "2026-10-14T19:33:42Z",
+      "last_completed_snapshot": "cddb8aa92874e1145d6c5b5754efe363548f331e396fa0e1d0d31bf65389a99d",
+      "last_remote_verified_at_utc": "2026-10-14T19:33:42Z",
       "last_result": {
         "archive_uploaded": true,
-        "changed_or_added_files": 21,
-        "deleted_from_repository": 4,
+        "changed_or_added_files": 182,
+        "deleted_from_repository": 0,
         "deleted_history_archives": 0,
         "history_cleanup_pending": 0,
         "legacy_mirror_objects_visible": 821,
         "mirror_verified": true,
         "remote_state_checkpoint_uploaded": true,
         "snapshot_changed": true,
-        "unchanged_files": 228,
+        "unchanged_files": 68,
         "wayback_pending": 1501
       },
       "schema_version": 7,
-      "state_updated_at_utc": "2026-10-12T08:54:49Z",
+      "state_updated_at_utc": "2026-10-14T19:34:15Z",
       "target": {
         "ia_item": "dedsec1121fk-dedsec-website-snapshots",
         "kind": "website",
@@ -23435,48 +23442,24 @@
         "window": "Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens"
       },
       "wayback": {
-        "completed": 1572,
+        "completed": 1589,
         "initial_queue_created": true,
         "last_batch": {
-          "processed_at_utc": "2026-10-09T22:33:48Z",
-          "remaining": 1495,
-          "workflow_run_id": "37990853367"
+          "processed_at_utc": "2026-10-12T10:17:08Z",
+          "remaining": 1484,
+          "workflow_run_id": "38225745687"
         },
-        "last_processed_at_utc": "2026-10-09T22:33:28Z",
-        "last_queue_added": 42,
-        "last_queue_update_at_utc": "2026-10-12T08:54:11Z",
-        "last_successful_at_utc": "2026-10-09T22:33:28Z",
-        "last_successful_url": "https://ded-sec.space/sitemap.xml",
+        "last_processed_at_utc": "2026-10-12T10:16:48Z",
+        "last_queue_added": 368,
+        "last_queue_update_at_utc": "2026-10-14T19:33:42Z",
+        "last_successful_at_utc": "2026-10-12T10:16:48Z",
+        "last_successful_url": "https://ded-sec.online/Assistance/fix-node-npm-errors-termux.html",
         "last_transient_error": {
-          "at_utc": "2026-09-23T20:43:55Z",
+          "at_utc": "2026-10-12T10:15:26Z",
           "error": "URLError(ConnectionResetError(104, 'Connection reset by peer'))",
-          "url": "https://ded-sec.space/el/Smartphone-Academy/Pages/Practical/App-Installation/Split-Package-Planning.html"
+          "url": "https://ded-sec.online/Assistance/fix-localhost-server-not-opening-android.html"
         },
         "pending": [
-          "https://ded-sec.space/style.css",
-          "https://ded-sec.online/",
-          "https://ded-sec.online/Assets/Images/products/build-website-ai-phone-el.webp",
-          "https://ded-sec.online/Assets/Images/products/build-website-ai-phone-en.webp",
-          "https://ded-sec.online/Smartphone-Academy/Smartphone-Academy-DedSec.js",
-          "https://ded-sec.online/Smartphone-Academy/Start-Termux.sh",
-          "https://ded-sec.online/Smartphone-Academy/index.html",
-          "https://ded-sec.online/el/Assistance/fix-termux-no-space-left.html",
-          "https://ded-sec.online/el/Assistance/fix-termux-port-already-in-use.html",
-          "https://ded-sec.online/el/Assistance/termux-command-cheat-sheet.html",
-          "https://ded-sec.online/el/Assistance/termux-fix-git-large-file-push.html",
-          "https://ded-sec.online/el/Assistance/termux-fix-requests-ssl-and-api-errors.html",
-          "https://ded-sec.online/el/Assistance/termux-git-pull-conflicts.html",
-          "https://ded-sec.online/el/Assistance/termux-secure-api-keys-env-file.html",
-          "https://ded-sec.online/el/Assistance/unzip-files-termux-android.html",
-          "https://ded-sec.online/el/Pages/faq.html",
-          "https://ded-sec.online/el/Smartphone-Academy/Pages/Android-Security/Overlay-Accessibility-Notification-Risks.html",
-          "https://ded-sec.online/el/Smartphone-Academy/Pages/App-Discovery/Compare-App-Alternatives.html",
-          "https://ded-sec.online/el/Smartphone-Academy/Pages/Apps-Apks/Uninstall-Disable-Archive-Reset.html",
-          "https://ded-sec.online/404.html",
-          "https://ded-sec.online/Assistance/fix-dedsec-broken-install.html",
-          "https://ded-sec.online/Assistance/fix-github-ssh-authentication-termux.html",
-          "https://ded-sec.online/Assistance/fix-localhost-server-not-opening-android.html",
-          "https://ded-sec.online/Assistance/fix-node-npm-errors-termux.html",
           "https://ded-sec.online/Assistance/fix-pip-errors-termux.html",
           "https://ded-sec.online/Assistance/fix-python-module-not-found-termux.html",
           "https://ded-sec.online/Assistance/fix-python-syntax-errors-termux.html",
@@ -24953,7 +24936,31 @@
           "https://ded-sec.space/robots.txt",
           "https://ded-sec.space/scripts/build_for_repository.py",
           "https://ded-sec.space/scripts/validate_site.py",
-          "https://ded-sec.space/sitemap.xml"
+          "https://ded-sec.space/sitemap.xml",
+          "https://ded-sec.online/",
+          "https://ded-sec.online/Assets/Images/products/build-website-ai-phone-en.webp",
+          "https://ded-sec.online/Smartphone-Academy/index.html",
+          "https://ded-sec.online/el/Assistance/fix-termux-port-already-in-use.html",
+          "https://ded-sec.online/el/Assistance/termux-secure-api-keys-env-file.html",
+          "https://ded-sec.online/el/Smartphone-Academy/Pages/Android-Security/Overlay-Accessibility-Notification-Risks.html",
+          "https://ded-sec.online/Assistance/fix-localhost-server-not-opening-android.html",
+          "https://ded-sec.online/404.html",
+          "https://ded-sec.online/Assets/premium-theme.css",
+          "https://ded-sec.online/Assistance/fix-dedsec-broken-install.html",
+          "https://ded-sec.online/Assistance/fix-github-ssh-authentication-termux.html",
+          "https://ded-sec.online/Assistance/fix-node-npm-errors-termux.html",
+          "https://ded-sec.online/el/Assistance/fix-termux-no-space-left.html",
+          "https://ded-sec.online/el/Assistance/termux-command-cheat-sheet.html",
+          "https://ded-sec.online/el/Assistance/termux-fix-git-large-file-push.html",
+          "https://ded-sec.online/el/Assistance/termux-fix-requests-ssl-and-api-errors.html",
+          "https://ded-sec.online/el/Assistance/termux-git-pull-conflicts.html",
+          "https://ded-sec.online/el/Assistance/unzip-files-termux-android.html",
+          "https://ded-sec.online/el/Pages/faq.html",
+          "https://ded-sec.space/Assets/premium-theme.css",
+          "https://ded-sec.space/el/index.html",
+          "https://ded-sec.space/index.html",
+          "https://ded-sec.space/script.js",
+          "https://ded-sec.space/style.css"
         ],
         "permanent_failures": 6,
         "recent_failures": [
