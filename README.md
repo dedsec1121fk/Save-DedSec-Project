@@ -160,15 +160,9 @@ All scheduled times use `Europe/Athens`.
 
 | Day | Greece time | Archive targets |
 |---|---:|---|
-| Monday | 11:11 | DedSec Project main/backup + website source + website mirror + both live websites |
-| Tuesday | 05:05 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
-| Wednesday | 22:22 | DedSec Project main/backup + website source + website mirror + both live websites |
-| Friday | 12:12 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
-| Saturday | 00:00 | DedSec Project main/backup + website source + website mirror + both live websites |
-| 1st & 3rd Sunday | 03:33 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
-| 2nd & 4th Sunday | 03:00 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+| Every Sunday | 12:00 (noon) | All configured repositories, the GitHub profile, website source, website mirror and both live websites |
 
-If a month has a fifth Sunday, no Sunday backup is scheduled for that fifth occurrence.
+Runs every Sunday, including a fifth Sunday. `Europe/Athens` automatically follows Greece's winter and summer time. Manual runs remain available from the Actions tab.
 
 ### Monthly Backup Order Rotation
 
@@ -178,7 +172,7 @@ Scheduled repository backups run one target at a time so the configured order is
 - **February, April, June, August, October and December:** the same target list runs in reverse order.
 - **Manual runs:** keep the normal listed order.
 
-For the DedSec/website group, the normal repository order is DedSec main → DedSec backup → website source/live websites → website mirror; the reverse order starts with the website mirror. For the other-projects group, the normal order is GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, and even-numbered months reverse that sequence.
+The weekly run includes all targets in one list. For the DedSec/website group, the normal repository order is DedSec main → DedSec backup → website source/live websites → website mirror; the reverse order starts with the website mirror. For the other-projects group, the normal order is GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, and even-numbered months reverse that sequence.
 
 </details>
 <details>
@@ -239,7 +233,7 @@ Last checked: `2026-10-21T19:36:30Z`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 246 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 589. They are frozen and are not used for future backups.  
 
@@ -260,7 +254,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 246 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 588. They are frozen and are not used for future backups.  
 
@@ -281,7 +275,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 1 deleted, 5945 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
 **Wayback queue remaining:** 12867  
@@ -306,7 +300,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 249 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots)
@@ -326,7 +320,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 34 changed/added, 0 deleted, 20 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 8. They are frozen and are not used for future backups.  
 
@@ -347,7 +341,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 2141. They are frozen and are not used for future backups.  
 
@@ -368,7 +362,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 128. They are frozen and are not used for future backups.  
 
@@ -389,7 +383,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 1 changed/added, 0 deleted, 1501 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 74. They are frozen and are not used for future backups.  
 
@@ -410,7 +404,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 921 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 1410. They are frozen and are not used for future backups.  
 
@@ -431,7 +425,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 6. They are frozen and are not used for future backups.  
 
@@ -452,7 +446,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 0 changed/added, 0 deleted, 10753 unchanged.  
 **Compact archive uploaded this run:** `False`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-language-project-repository-snapshots)
@@ -472,7 +466,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 21 changed/added, 0 deleted, 415 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-ghost-project-repository-snapshots)
@@ -492,7 +486,7 @@ This section is generated from `update.json`.
 **Latest working-tree change:** 2 changed/added, 0 deleted, 5 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
-**Scheduled time(s):** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 5. They are frozen and are not used for future backups.  
 
@@ -662,15 +656,9 @@ update.json
 
 | Ημέρα | Ώρα Ελλάδας | Archive targets |
 |---|---:|---|
-| Δευτέρα | 11:11 | DedSec Project main/backup + website source + website mirror + και οι δύο live ιστοσελίδες |
-| Τρίτη | 05:05 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
-| Τετάρτη | 22:22 | DedSec Project main/backup + website source + website mirror + και οι δύο live ιστοσελίδες |
-| Παρασκευή | 12:12 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
-| Σάββατο | 00:00 | DedSec Project main/backup + website source + website mirror + και οι δύο live ιστοσελίδες |
-| 1η & 3η Κυριακή | 03:33 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
-| 2η & 4η Κυριακή | 03:00 | GitHub profile, Corrupted Files, Pocket AI, Praying Project, Offline Survival, Hacking Guide Project, Language Project, Ghost Project and Save DedSec Project |
+| Κάθε Κυριακή | 12:00 (μεσημέρι) | Όλα τα ρυθμισμένα repositories, το GitHub profile, ο πηγαίος κώδικας και το mirror του website και οι δύο live ιστοσελίδες |
 
-Αν ένας μήνας έχει πέμπτη Κυριακή, δεν προγραμματίζεται Sunday backup για αυτή την πέμπτη εμφάνιση.
+Εκτελείται κάθε Κυριακή, συμπεριλαμβανομένης της πέμπτης Κυριακής. Η ζώνη `Europe/Athens` ακολουθεί αυτόματα τη χειμερινή και θερινή ώρα Ελλάδας. Η χειροκίνητη εκτέλεση παραμένει διαθέσιμη από την καρτέλα Actions.
 
 ### Μηνιαία Εναλλαγή Σειράς Backup
 
@@ -680,7 +668,7 @@ update.json
 - **Φεβρουάριος, Απρίλιος, Ιούνιος, Αύγουστος, Οκτώβριος και Δεκέμβριος:** η ίδια λίστα targets τρέχει με αντίστροφη σειρά.
 - **Manual runs:** κρατούν την κανονική σειρά.
 
-Για το DedSec/website group, η κανονική σειρά repositories είναι DedSec main → DedSec backup → website source/live websites → website mirror· η αντίστροφη σειρά ξεκινά από το website mirror. Για το other-projects group, η κανονική σειρά είναι GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, και οι ζυγοί μήνες αντιστρέφουν αυτή τη σειρά.
+Η εβδομαδιαία εκτέλεση περιλαμβάνει όλα τα targets σε μία λίστα. Για το DedSec/website group, η κανονική σειρά repositories είναι DedSec main → DedSec backup → website source/live websites → website mirror· η αντίστροφη σειρά ξεκινά από το website mirror. Για το other-projects group, η κανονική σειρά είναι GitHub profile → Corrupted Files → Pocket AI → Praying Project → Offline Survival → Hacking Guide Project → Language Project → Ghost Project → Save DedSec Project, και οι ζυγοί μήνες αντιστρέφουν αυτή τη σειρά.
 
 </details>
 <details>
@@ -741,7 +729,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 246 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 589. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -762,7 +750,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 246 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 588. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -783,7 +771,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 1 διαγράφηκαν, 5945 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 821. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 **Υπόλοιπο Wayback queue:** 12867  
@@ -808,7 +796,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 249 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Monday 11:11, Wednesday 22:22 and Saturday 00:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 
 - [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-website-mirror-repository-snapshots)
@@ -828,7 +816,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 34 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 20 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 8. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -849,7 +837,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 2148 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 2141. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -870,7 +858,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 128 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 128. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -891,7 +879,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 1 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 1501 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 74. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -912,7 +900,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 921 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 1410. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -933,7 +921,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 334 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 6. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 
@@ -954,7 +942,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 10753 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 
 - [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-language-project-repository-snapshots)
@@ -974,7 +962,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 21 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 415 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 
 - [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-ghost-project-repository-snapshots)
@@ -994,7 +982,7 @@ update.json
 **Τελευταία αλλαγή working tree:** 2 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 5 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
-**Προγραμματισμένες ώρες:** Tuesday 05:05, Friday 12:12, 1st/3rd Sunday 03:33 and 2nd/4th Sunday 03:00 Europe/Athens  
+**Προγραμματισμένες ώρες:** Κάθε Κυριακή 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 5. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
 

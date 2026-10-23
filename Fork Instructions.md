@@ -165,7 +165,7 @@ A successful run should:
 <summary><strong>Scheduled Target Order</strong></summary>
 
 
-Scheduled runs are intentionally serial. January, March, May, July, September and November use the target order defined in the workflow; February, April, June, August, October and December use the reverse order. Manual runs keep the normal listed order.
+All targets are scheduled every Sunday at 12:00 noon Greece time (`Europe/Athens`), including fifth Sundays. The timezone automatically follows winter and summer time. Manual runs remain available. Scheduled runs are intentionally serial. January, March, May, July, September and November use the target order defined in the workflow; February, April, June, August, October and December use the reverse order. Manual runs keep the normal listed order.
 
 For the other-projects group, Ghost Project is archived after Language Project and before Save DedSec Project in the normal order.
 
@@ -373,7 +373,7 @@ APK_IA_ITEM_IDENTIFIER: dedsec1121fk-dedsec-project-apk-backups
 <summary><strong>Προγραμματισμένη Σειρά Targets</strong></summary>
 
 
-Τα scheduled runs είναι σκόπιμα σειριακά. Ιανουάριος, Μάρτιος, Μάιος, Ιούλιος, Σεπτέμβριος και Νοέμβριος χρησιμοποιούν τη σειρά targets που ορίζεται στο workflow· Φεβρουάριος, Απρίλιος, Ιούνιος, Αύγουστος, Οκτώβριος και Δεκέμβριος χρησιμοποιούν την αντίστροφη σειρά. Τα manual runs κρατούν την κανονική σειρά.
+Όλα τα targets εκτελούνται κάθε Κυριακή στις 12:00 το μεσημέρι ώρα Ελλάδας (`Europe/Athens`), συμπεριλαμβανομένης της πέμπτης Κυριακής. Η ζώνη ώρας ακολουθεί αυτόματα τη χειμερινή και θερινή ώρα. Η χειροκίνητη εκτέλεση παραμένει διαθέσιμη. Τα scheduled runs είναι σκόπιμα σειριακά. Ιανουάριος, Μάρτιος, Μάιος, Ιούλιος, Σεπτέμβριος και Νοέμβριος χρησιμοποιούν τη σειρά targets που ορίζεται στο workflow· Φεβρουάριος, Απρίλιος, Ιούνιος, Αύγουστος, Οκτώβριος και Δεκέμβριος χρησιμοποιούν την αντίστροφη σειρά. Τα manual runs κρατούν την κανονική σειρά.
 
 Για το other-projects group, το Ghost Project αρχειοθετείται μετά το Language Project και πριν το Save DedSec Project στην κανονική σειρά.
 
