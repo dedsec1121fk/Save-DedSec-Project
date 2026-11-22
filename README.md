@@ -81,19 +81,19 @@ Software Heritage Save Code Now requests are submitted during one workflow run, 
 
 - **DedSec main:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:300dc23f11178ba8c6c543cc46d1b33a43bf935d/) · `full`
 - **DedSec backup:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ffca4658d36830e053397a46bfd76d22912092b5/) · `full`
-- **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:b65ab368803f64d4e349996382f324032b95714b/) · `full`
+- **Websites:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:6f83cbfaa0e8a1afa3b2f562198bd6476f29e011/) · `full`
 - **Website mirror:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:5193b2d8ba4ade25271f2a616598591a93d36668/) · `full`
-- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:4885aa1befc9f9ab2cb8d98e870a9ca2252fc194/) · `full`
+- **GitHub profile:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:9de65aab4ee626798f50b89abc52000fef2bba05/) · `full`
 - **Corrupted Files:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
 - **Pocket AI:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
-- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:60f5591d4167674800221a3aa646ba7fafc27c49/) · `full`
+- **Praying Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:1b2b5abe5a8fdcb807dc7872ae5b32d4306e5575/) · `full`
 - **Offline Survival:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/) · `full`
 - **Hacking Guide Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
 - **Language Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/) · `full`
 - **Ghost Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FGhost-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:3f025b2855b20f8ae6555b853756ff9988a01019/) · `full`
 - **Save DedSec Project:** [Software Heritage archive](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [latest snapshot](https://archive.softwareheritage.org/swh:1:snp:5a59205cbccae08c2d6c2a7a0eadafa941b0fbab/) · `full`
 
-Last checked: `2026-11-15T10:05:36Z`.
+Last checked: `2026-11-22T10:05:14Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_END -->
 
@@ -214,7 +214,7 @@ The same four APK dependencies used by the local `Settings.py` Save DedSec Proje
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Last checked: `2026-11-15T10:38:29Z`.
+Last checked: `2026-11-22T10:39:06Z`.
 
 <!-- APK_ARCHIVE_STATUS_END -->
 
@@ -228,7 +228,7 @@ Last checked: `2026-11-15T10:38:29Z`.
 
 <!-- DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:06:38 EET  
+**Last complete or attempted save:** 2026-11-22 12:06:14 EET  
 **Current working-tree files:** 246  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 246 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -249,7 +249,7 @@ This section is generated from `update.json`.
 
 <!-- DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:08:13 EET  
+**Last complete or attempted save:** 2026-11-22 12:07:59 EET  
 **Current working-tree files:** 246  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 246 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -270,16 +270,16 @@ This section is generated from `update.json`.
 
 <!-- WEBSITES_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:12:02 EET  
-**Current working-tree files:** 1888  
-**Latest working-tree change:** 1 changed/added, 0 deleted, 1887 unchanged.  
+**Last complete or attempted save:** 2026-11-22 12:11:30 EET  
+**Current working-tree files:** 1907  
+**Latest working-tree change:** 28 changed/added, 0 deleted, 1879 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
 **Archive mode:** One current `current-working-tree.tar.gz` plus manifest/checksums/state; `.git`, commits and push history are excluded.
 **Legacy pre-migration mirror objects still visible:** 821. They are frozen and are not used for future backups.  
-**Wayback queue remaining:** 12881  
-**Wayback captures accepted:** 1747  
+**Wayback queue remaining:** 12895  
+**Wayback captures accepted:** 1771  
 
 - [Internet Archive working-tree archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [https://ded-sec.space Wayback history](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -295,7 +295,7 @@ This section is generated from `update.json`.
 
 <!-- DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:13:59 EET  
+**Last complete or attempted save:** 2026-11-22 12:13:35 EET  
 **Current working-tree files:** 249  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 249 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -315,9 +315,9 @@ This section is generated from `update.json`.
 
 <!-- GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:17:17 EET  
+**Last complete or attempted save:** 2026-11-22 12:17:28 EET  
 **Current working-tree files:** 54  
-**Latest working-tree change:** 32 changed/added, 0 deleted, 22 unchanged.  
+**Latest working-tree change:** 40 changed/added, 0 deleted, 14 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
@@ -336,7 +336,7 @@ This section is generated from `update.json`.
 
 <!-- CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:19:08 EET  
+**Last complete or attempted save:** 2026-11-22 12:19:24 EET  
 **Current working-tree files:** 2148  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 2148 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -357,7 +357,7 @@ This section is generated from `update.json`.
 
 <!-- POCKET_AI_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:20:52 EET  
+**Last complete or attempted save:** 2026-11-22 12:21:15 EET  
 **Current working-tree files:** 128  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 128 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -378,7 +378,7 @@ This section is generated from `update.json`.
 
 <!-- PRAYING_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:24:24 EET  
+**Last complete or attempted save:** 2026-11-22 12:24:56 EET  
 **Current working-tree files:** 1502  
 **Latest working-tree change:** 1 changed/added, 0 deleted, 1501 unchanged.  
 **Compact archive uploaded this run:** `True`  
@@ -399,7 +399,7 @@ This section is generated from `update.json`.
 
 <!-- OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:26:17 EET  
+**Last complete or attempted save:** 2026-11-22 12:26:56 EET  
 **Current working-tree files:** 921  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 921 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -420,7 +420,7 @@ This section is generated from `update.json`.
 
 <!-- HACKING_GUIDE_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:28:06 EET  
+**Last complete or attempted save:** 2026-11-22 12:28:48 EET  
 **Current working-tree files:** 334  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 334 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -441,7 +441,7 @@ This section is generated from `update.json`.
 
 <!-- LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:29:58 EET  
+**Last complete or attempted save:** 2026-11-22 12:31:00 EET  
 **Current working-tree files:** 10753  
 **Latest working-tree change:** 0 changed/added, 0 deleted, 10753 unchanged.  
 **Compact archive uploaded this run:** `False`  
@@ -461,9 +461,9 @@ This section is generated from `update.json`.
 
 <!-- GHOST_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:34:03 EET  
+**Last complete or attempted save:** 2026-11-22 12:34:39 EET  
 **Current working-tree files:** 438  
-**Latest working-tree change:** 18 changed/added, 0 deleted, 420 unchanged.  
+**Latest working-tree change:** 23 changed/added, 0 deleted, 415 unchanged.  
 **Compact archive uploaded this run:** `True`  
 **Archive verification:** `True`  
 **Scheduled time(s):** Every Sunday 12:00 Europe/Athens  
@@ -481,7 +481,7 @@ This section is generated from `update.json`.
 
 <!-- SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 **Current archive status:** `complete`  
-**Last complete or attempted save:** 2026-11-15 12:37:42 EET  
+**Last complete or attempted save:** 2026-11-22 12:38:05 EET  
 **Current working-tree files:** 7  
 **Latest working-tree change:** 2 changed/added, 0 deleted, 5 unchanged.  
 **Compact archive uploaded this run:** `True`  
@@ -577,19 +577,19 @@ This section is generated from `update.json`.
 
 - **DedSec main:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FDedSec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:300dc23f11178ba8c6c543cc46d1b33a43bf935d/) · `full`
 - **DedSec backup:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2FDedSec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:ffca4658d36830e053397a46bfd76d22912092b5/) · `full`
-- **Websites:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:b65ab368803f64d4e349996382f324032b95714b/) · `full`
+- **Websites:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk.github.io) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:6f83cbfaa0e8a1afa3b2f562198bd6476f29e011/) · `full`
 - **Website mirror:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fsal-scar%2Fded-sec) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:5193b2d8ba4ade25271f2a616598591a93d36668/) · `full`
-- **GitHub profile:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:4885aa1befc9f9ab2cb8d98e870a9ca2252fc194/) · `full`
+- **GitHub profile:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2Fdedsec1121fk) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:9de65aab4ee626798f50b89abc52000fef2bba05/) · `full`
 - **Corrupted Files:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FCorrupted-Files-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:a9c7391b498b3cda67cfdd5158d8bc7d4eee6675/) · `full`
 - **Pocket AI:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPocket-AI-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:10b3547fa34d0969398029647aed7ec4f1fe0a2d/) · `full`
-- **Praying Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:60f5591d4167674800221a3aa646ba7fafc27c49/) · `full`
+- **Praying Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FPraying-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:1b2b5abe5a8fdcb807dc7872ae5b32d4306e5575/) · `full`
 - **Offline Survival:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FOffline-Survival-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:74463bfb99413ef5d50df7cfae4845aa83fde5ed/) · `full`
 - **Hacking Guide Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FHacking-Guide-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:ad11139d5d05cae40aa4d08997f31dc69b9323a7/) · `full`
 - **Language Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FLanguage-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:7a5abba3c29b0260dd5ba46ac103006862a6886d/) · `full`
 - **Ghost Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FGhost-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:3f025b2855b20f8ae6555b853756ff9988a01019/) · `full`
 - **Save DedSec Project:** [archive στο Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https%3A%2F%2Fgithub.com%2Fdedsec1121fk%2FSave-DedSec-Project) · [τελευταίο snapshot](https://archive.softwareheritage.org/swh:1:snp:5a59205cbccae08c2d6c2a7a0eadafa941b0fbab/) · `full`
 
-Τελευταίος έλεγχος: `2026-11-15T10:05:36Z`.
+Τελευταίος έλεγχος: `2026-11-22T10:05:14Z`.
 
 <!-- SOFTWARE_HERITAGE_LINKS_EL_END -->
 
@@ -710,7 +710,7 @@ update.json
 - **Termux_API.apk:** `4497dbbf81906df52e59ed387a5223d225aa0de3aca817cc557a621e4dadda44` (3956196 bytes)
 - **Termux_Styling.apk:** `799a53f096c28e2aafae918f5ab91de500526bc5461030dbceea4e89bf56b68f` (32930486 bytes)
 
-Τελευταίος έλεγχος: `2026-11-15T10:38:29Z`.
+Τελευταίος έλεγχος: `2026-11-22T10:39:06Z`.
 
 <!-- APK_ARCHIVE_STATUS_EL_END -->
 
@@ -724,7 +724,7 @@ update.json
 
 <!-- GREEK_DEDSEC_MAIN_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:06:38 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:06:14 EET  
 **Αρχεία τρέχοντος working tree:** 246  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 246 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -745,7 +745,7 @@ update.json
 
 <!-- GREEK_DEDSEC_BACKUP_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:08:13 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:07:59 EET  
 **Αρχεία τρέχοντος working tree:** 246  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 246 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -766,16 +766,16 @@ update.json
 
 <!-- GREEK_WEBSITES_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:12:02 EET  
-**Αρχεία τρέχοντος working tree:** 1888  
-**Τελευταία αλλαγή working tree:** 1 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 1887 αμετάβλητα.  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:11:30 EET  
+**Αρχεία τρέχοντος working tree:** 1907  
+**Τελευταία αλλαγή working tree:** 28 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 1879 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
 **Προγραμματισμένες ώρες:** Every Sunday 12:00 Europe/Athens  
 **Λειτουργία αρχειοθέτησης:** Ένα τρέχον `current-working-tree.tar.gz` μαζί με manifest/checksums/state· τα `.git`, commits και push history εξαιρούνται.
 **Παλιότερα mirror objects πριν τη μετάβαση που παραμένουν ορατά:** 821. Είναι παγωμένα και δεν χρησιμοποιούνται για μελλοντικά backups.  
-**Υπόλοιπο Wayback queue:** 12881  
-**Wayback captures που έγιναν δεκτά:** 1747  
+**Υπόλοιπο Wayback queue:** 12895  
+**Wayback captures που έγιναν δεκτά:** 1771  
 
 - [Working-tree archive στο Internet Archive](https://archive.org/details/dedsec1121fk-dedsec-website-snapshots)
 - [Ιστορικό Wayback για https://ded-sec.space](https://web.archive.org/web/*/https://ded-sec.space/*)
@@ -791,7 +791,7 @@ update.json
 
 <!-- GREEK_DEDSEC_WEBSITE_MIRROR_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:13:59 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:13:35 EET  
 **Αρχεία τρέχοντος working tree:** 249  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 249 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -811,9 +811,9 @@ update.json
 
 <!-- GREEK_GITHUB_PROFILE_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:17:17 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:17:28 EET  
 **Αρχεία τρέχοντος working tree:** 54  
-**Τελευταία αλλαγή working tree:** 32 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 22 αμετάβλητα.  
+**Τελευταία αλλαγή working tree:** 40 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 14 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
 **Προγραμματισμένες ώρες:** Every Sunday 12:00 Europe/Athens  
@@ -832,7 +832,7 @@ update.json
 
 <!-- GREEK_CORRUPTED_FILES_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:19:08 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:19:24 EET  
 **Αρχεία τρέχοντος working tree:** 2148  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 2148 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -853,7 +853,7 @@ update.json
 
 <!-- GREEK_POCKET_AI_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:20:52 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:21:15 EET  
 **Αρχεία τρέχοντος working tree:** 128  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 128 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -874,7 +874,7 @@ update.json
 
 <!-- GREEK_PRAYING_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:24:24 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:24:56 EET  
 **Αρχεία τρέχοντος working tree:** 1502  
 **Τελευταία αλλαγή working tree:** 1 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 1501 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
@@ -895,7 +895,7 @@ update.json
 
 <!-- GREEK_OFFLINE_SURVIVAL_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:26:17 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:26:56 EET  
 **Αρχεία τρέχοντος working tree:** 921  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 921 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -916,7 +916,7 @@ update.json
 
 <!-- GREEK_HACKING_GUIDE_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:28:06 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:28:48 EET  
 **Αρχεία τρέχοντος working tree:** 334  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 334 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -937,7 +937,7 @@ update.json
 
 <!-- GREEK_LANGUAGE_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:29:58 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:31:00 EET  
 **Αρχεία τρέχοντος working tree:** 10753  
 **Τελευταία αλλαγή working tree:** 0 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 10753 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `False`  
@@ -957,9 +957,9 @@ update.json
 
 <!-- GREEK_GHOST_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:34:03 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:34:39 EET  
 **Αρχεία τρέχοντος working tree:** 438  
-**Τελευταία αλλαγή working tree:** 18 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 420 αμετάβλητα.  
+**Τελευταία αλλαγή working tree:** 23 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 415 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
 **Επαλήθευση archive:** `True`  
 **Προγραμματισμένες ώρες:** Every Sunday 12:00 Europe/Athens  
@@ -977,7 +977,7 @@ update.json
 
 <!-- GREEK_SAVE_DEDSEC_PROJECT_ARCHIVE_STATUS_START -->
 **Τρέχουσα κατάσταση αρχειοθέτησης:** `complete`  
-**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-15 12:37:42 EET  
+**Τελευταία ολοκληρωμένη ή επιχειρούμενη αποθήκευση:** 2026-11-22 12:38:05 EET  
 **Αρχεία τρέχοντος working tree:** 7  
 **Τελευταία αλλαγή working tree:** 2 αλλαγμένα/προστέθηκαν, 0 διαγράφηκαν, 5 αμετάβλητα.  
 **Ανέβηκε compact archive σε αυτό το run:** `True`  
